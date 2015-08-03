@@ -4,5 +4,9 @@
   "private": true,
   "description": "Ivaylo Getov Website",
   "main": "ivaylo.js",
-  "author": "Ivaylo Getov"
+  "author": "Ivaylo Getov",
+  "dependencies": {
+    "express": "^4.13.3",
+    "serve-favicon": "^2.3.0"
+  }
 }
