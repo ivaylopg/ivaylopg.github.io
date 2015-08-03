@@ -1,0 +1,8 @@
+{
+  "name": "ivaylogetov.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ivaylo Getov Website",
+  "main": "ivaylo.js",
+  "author": "Ivaylo Getov"
+}
