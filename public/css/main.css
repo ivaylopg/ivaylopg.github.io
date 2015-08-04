@@ -60,9 +60,21 @@ body {
   width: 100%; }
 .gridded .fullWidth:last-child {
   margin-right: 0; }
+@media screen and (max-width: 80.5rem) {
+  .gridded {
+    margin-left: 8.5298%;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%; }
+  .gridded:last-child {
+    margin-right: 0; } }
 
 .introText {
   font-size: 1.75rem; }
+@media screen and (max-width: 68rem) {
+  .introText {
+    font-size: 1.5rem; } }
 
 /* ========================================================================== */
 /* HTML5 Helper classes */

@@ -4,14 +4,16 @@
 
 /* ========================================================================== */
 
-// @mixin gridMargin($breakPoint) {
-// 	@include media(max-width $breakPoint, 12) {
-// 		@include shift(1);
-//     	@include span-columns(10);
-//     }
-// }
-
 $max-width: rem(1088);
+$tablet:	rem(800);
+$mobile:	rem(500);
+
+@mixin gridMargin($rem) {
+	@include media(max-width $rem + rem(200), 12) {
+		@include shift(1);
+    	@include span-columns(10);
+    }
+}
 
 $hiliteColor: 	#b3d4fc;
 $bgColor : 		#fff;
@@ -36,12 +38,15 @@ body {
 .gridded {
 	@include outer-container;
 	.fullWidth { @include span-columns(12); }
-	//@include gridMargin(1100px);
+	@include gridMargin($max-width);
 	
 }
 
 .introText {
 	font-size: 1.75rem;
+	@include media (max-width $max-width) {
+		font-size: 1.5rem;
+	}
 }
 
 
