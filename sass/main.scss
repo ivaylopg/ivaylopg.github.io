@@ -1,12 +1,48 @@
 @import "lib/bourbon/bourbon";
 @import "lib/neat/neat";
 
+
 /* ========================================================================== */
 
-$hiliteColor: #b3d4fc;
+// @mixin gridMargin($breakPoint) {
+// 	@include media(max-width $breakPoint, 12) {
+// 		@include shift(1);
+//     	@include span-columns(10);
+//     }
+// }
+
+$max-width: rem(1088);
+
+$hiliteColor: 	#b3d4fc;
+$bgColor : 		#fff;
+$textColor: 	#000;
+$fontStack1:	"fira-sans-2", "Fira Sans", sans-serif;
+$defaultWeight: 500;
 
 @import "partials/bpDefaults";
 /* ========================================================================== */
+
+body, html {
+	font-size: 100%;
+	background: $bgColor;
+}
+
+body {
+	color: $textColor;
+	font-family: $fontStack1;
+	font-weight: $defaultWeight;
+}
+
+.gridded {
+	@include outer-container;
+	.fullWidth { @include span-columns(12); }
+	//@include gridMargin(1100px);
+	
+}
+
+.introText {
+	font-size: 1.75rem;
+}
 
 
 
