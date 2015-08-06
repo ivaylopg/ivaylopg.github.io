@@ -13,6 +13,7 @@ var sketch = function( nodesP5 ) {
   var maxEdges = 3;
   var maxEdgeLength = 200;
   var interactionStartFrames = 120;
+  var numNodes = nodesP5.int(100 * (window.innerWidth/2400));
   
   var fillColor1 = 200;
   var fillColor2 = 230;
@@ -29,7 +30,7 @@ var sketch = function( nodesP5 ) {
     reset();
     system = new NodeSystem(fillColor1, 5, 1.0);
     system2 = new NodeSystem(fillColor2, 3, 0.75);
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < numNodes; i++) {
       system.addNode();
       system2.addNode();
     }
