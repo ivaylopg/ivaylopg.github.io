@@ -17,13 +17,13 @@ var sketch = function( nodesP5 ) {
   var fillColor1 = 200;
   var fillColor2 = 230;
 
+  var introFade = 255;
+
   var parentContainer = document.getElementById("nodeField");
   
   nodesP5.setup = function() {
     var theCanvas = nodesP5.createCanvas(parentContainer.clientWidth,parentContainer.clientHeight);
     theCanvas.parent(parentContainer);
-
-    console.log(parentContainer.clientWidth);
 
     wind = nodesP5.createVector(nodesP5.random(-0.5,0.5),nodesP5.random(-0.5,0.5));
     reset();
@@ -52,13 +52,18 @@ var sketch = function( nodesP5 ) {
     nodesP5.background(255);
     system.run();
     system2.run();
-    /*
-    push();
-    translate(center.x, center.y);
-    stroke(0);
-    line(0,0,wind.x,wind.y);
-    pop();
-    */
+
+    //drawMouseRange()
+
+    if (introFade > 0) {
+      nodesP5.fill(255,255,255,introFade);
+      nodesP5.rect(0,0,nodesP5.width,nodesP5.height);
+      introFade-=2;
+    };
+
+
+
+
     // console.log(int(frameRate()));
   }
   
@@ -173,6 +178,18 @@ var sketch = function( nodesP5 ) {
     nodesP5.resizeCanvas(parentContainer.clientWidth,parentContainer.clientHeight);
     reset();
   }
+
+  var drawMouseRange = function() {
+    push();
+    var windDraw = wind.copy();
+    windDraw.mult(300);
+    translate(center.x, center.y);
+    stroke(0);
+    line(0,0,wind.x,wind.y);
+    noStroke();
+    pop();
+  }
+
 };
 
 var myp5 = new p5(sketch);
