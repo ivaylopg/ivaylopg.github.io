@@ -79,7 +79,7 @@ a:hover {
   width: 100%; }
 .gridded .fullWidth:last-child {
   margin-right: 0; }
-@media screen and (max-width: 80.5rem) {
+@media screen and (max-width: 81.6rem) {
   .gridded {
     margin-left: 8.5298%;
     float: left;
@@ -109,7 +109,7 @@ a:hover {
 
 .introText {
   font-size: 1.75rem; }
-@media screen and (max-width: 68rem) {
+@media screen and (max-width: 81.6rem) {
   .introText {
     font-size: 1.5rem; } }
 @media screen and (max-width: 50rem) {

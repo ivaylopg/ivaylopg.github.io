@@ -9,14 +9,14 @@ $tablet:	rem(800);
 $mobile:	rem(500);
 
 @mixin gridMargin($rem) {
-	@include media(max-width $rem + rem(200), 12) {
+	@include media(max-width $rem * 1.2, 12) {
 		@include shift(1);
     	@include span-columns(10);
     }
 }
 
 @mixin tinyGridMargin($rem) {
-	@include media(max-width $rem + rem(100), 24) {
+	@include media(max-width $rem * 1.2, 24) {
 		@include shift(0.5);
     	@include span-columns(22);
     }
@@ -95,7 +95,7 @@ a:hover {
 
 .introText {
 	font-size: 1.75rem;
-	@include media (max-width $max-width) {
+	@include media (max-width $max-width * 1.2) {
 		font-size: 1.5rem;
 	}
 	@include media (max-width $tablet) {
