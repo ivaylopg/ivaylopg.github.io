@@ -45,6 +45,25 @@ body {
   font-family: "fira-sans-2", "Fira Sans", sans-serif;
   font-weight: 500; }
 
+section {
+  position: relative; }
+
+h1 {
+  font-size: 1.3em; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+.bolder, h1 {
+  font-weight: 600; }
+
+.spacer {
+  display: block;
+  min-height: 1rem; }
+
 .gridded {
   max-width: 68rem;
   margin-left: auto;
@@ -69,12 +88,33 @@ body {
     width: 82.94039%; }
   .gridded:last-child {
     margin-right: 0; } }
+@media screen and (max-width: 37.5rem) {
+  .gridded {
+    margin-left: 4.2649%;
+    float: left;
+    display: block;
+    margin-right: 1.16509%;
+    width: 91.56958%; }
+  .gridded:last-child {
+    margin-right: 0; } }
+
+#nodeField {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden; }
 
 .introText {
   font-size: 1.75rem; }
 @media screen and (max-width: 68rem) {
   .introText {
     font-size: 1.5rem; } }
+@media screen and (max-width: 50rem) {
+  .introText {
+    font-size: 1.2rem; } }
 
 /* ========================================================================== */
 /* HTML5 Helper classes */

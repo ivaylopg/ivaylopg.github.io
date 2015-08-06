@@ -15,6 +15,18 @@ $mobile:	rem(500);
     }
 }
 
+@mixin tinyGridMargin($rem) {
+	@include media(max-width $rem + rem(100), 24) {
+		@include shift(0.5);
+    	@include span-columns(22);
+    }
+}
+
+@mixin threeWidthGrid {
+	@include gridMargin($max-width);
+	@include tinyGridMargin($mobile);
+}
+
 $hiliteColor: 	#b3d4fc;
 $bgColor : 		#fff;
 $textColor: 	#000;
@@ -35,17 +47,59 @@ body {
 	font-weight: $defaultWeight;
 }
 
+section {
+	position: relative;
+}
+
+h1 {
+	@extend .bolder;
+	font-size: 1.3em;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+.bolder {
+	font-weight: $defaultWeight + 100;
+}
+
+.spacer {
+	display: block;
+	min-height: 1rem;
+}
+
 .gridded {
 	@include outer-container;
 	.fullWidth { @include span-columns(12); }
-	@include gridMargin($max-width);
-	
+	@include threeWidthGrid;
 }
+
+
+#nodeField {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+}
+
+
 
 .introText {
 	font-size: 1.75rem;
 	@include media (max-width $max-width) {
 		font-size: 1.5rem;
+	}
+	@include media (max-width $tablet) {
+		font-size: 1.2rem;
 	}
 }
 
