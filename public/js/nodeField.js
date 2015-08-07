@@ -28,18 +28,20 @@ var sketch = function( nodesP5 ) {
 
     wind = nodesP5.createVector(nodesP5.random(-0.5,0.5),nodesP5.random(-0.5,0.5));
     reset();
+    
+  }
+  
+  var reset = function(){
+    introFade = 255;
+    center = nodesP5.createVector(nodesP5.width/2, nodesP5.height/2);
+    maxDist = nodesP5.dist(0,0, center.x, center.y);
+    mousePos = center.copy();
     system = new NodeSystem(fillColor1, 5, 1.0);
     system2 = new NodeSystem(fillColor2, 3, 0.75);
     for (var i = 0; i < numNodes; i++) {
       system.addNode();
       system2.addNode();
     }
-  }
-  
-  var reset = function(){
-    center = nodesP5.createVector(nodesP5.width/2, nodesP5.height/2);
-    maxDist = nodesP5.dist(0,0, center.x, center.y);
-    mousePos = center.copy();
   }
   
   nodesP5.draw = function() {
@@ -81,7 +83,10 @@ var sketch = function( nodesP5 ) {
     if (nodesP5.random(1) > 0.8) {
       this.edgesOn = true;
     }
-    this.mass = nodesP5.random(0.8,1.8);
+    this.mass = nodesP5.random(0.8,1.9);
+    if (nodesP5.random(1) > 0.94) {
+      this.mass = 3.0;
+    }
   };
   
   Node.prototype.run = function() {
