@@ -56,8 +56,21 @@
                     I was part of a hackathon, a few years ago now, where we had to apply as a specific member of a team. I wasn’t sure if I should apply as a Storyteller or aTechnologist. At the bottom of the list they had another option, which seemed to be a pretty good fit - The Blackbox.
                 </p>
 
-                <div>
-                    (Here there will be a cool 3D animation of a spinning black cube)
+                <div id="theBlackBox">
+                    <!--
+                      This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com), 
+                      and uses a good amout of his code. I made some changes, specifically to the interactivity in 
+                      the JS, but the CSS is all his, and the idea of doing an interactive cube with CSS transforms
+                      intead of WebGL is his too.
+                    -->
+                    <section class="cube">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
                 </div>
 
                 <p>
@@ -95,9 +108,11 @@
 
         <script src="js/encode.min.js"></script>
         <script src="js/detectmobile.min.js"></script>
+        
+        <script src="js/nodeField.js"></script>
+        <script src="js/cube.js"></script>
 
         <script src="js/main.js"></script>
-        <script src="js/nodeField.js"></script>
 
 
 

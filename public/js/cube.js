@@ -71,6 +71,8 @@ $(function(){
         return Math.min(Math.max(this, min), max);
     };
 
+
+    //USE A TARGET AND INCREMENTAL CHANGES/////////////////////////////////////////////////////////////////
     var Vector2d = function(x,y) {
         this.x = x;
         this.y = y;
