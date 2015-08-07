@@ -3,83 +3,16 @@
 
 var isMobile = false;
 
+var el = document.createElement('div'),
+    transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
+    transformProp = support(transformProps),
+    transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
+    transitionDurationProp = support(transitionDuration);
+
 ////////////////////////
 // SETUP ON READY
 
 $(document).ready(function() {
-    //$("#staticBg").backstretch("img/017.jpg");
-
-    /* * * * 
-      This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com), 
-      and uses a good amout of his code. I made some changes, specifically to the interactivity in 
-      the JS, but the CSS is all his, and the idea of doing an interactive cube with CSS transforms
-      intead of WebGL is his too.
-     * * * */
-
-
-
-
-
-    var el = document.createElement('div'),
-        transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
-        transformProp = support(transformProps),
-        transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
-        transitionDurationProp = support(transitionDuration);
-
-    function support(props) {
-        for(var i = 0, l = props.length; i < l; i++) {
-            if(typeof el.style[props[i]] !== "undefined") {
-                return props[i];
-            }
-        }
-    }
-
-    
-
-    var viewCenter = {
-        x: window.innerWidth/2,
-        y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
-    }
-    //$("#theBlackBox").offset().top - $(window).scrollTop() + ($("#theBlackBox").height()/2)
-
-
-    var Cube = {
-        startX: -20.0,
-        startY: 45.0,
-        xRange: 30.0,
-        yRange: 35.0,
-        spinSpeed: 0.2,
-        viewport: {}
-    }
-
-    Cube.viewport = {
-        posVector: new Vector2d(Cube.startX, Cube.startY),
-        targVector: new Vector2d(Cube.startX, Cube.startY),
-        speed: Cube.spinSpeed,
-        el: $('.cube')[0],
-        update: function(coords) {
-            if(coords && (typeof coords.x === "number" && typeof coords.y === "number")) {
-                this.targVector.x = coords.x.clamp(Cube.startX-Cube.xRange, Cube.startX+Cube.xRange);
-                this.targVector.y = coords.y.clamp(Cube.startY-Cube.yRange, Cube.startY+Cube.yRange);
-            }
-            //console.log(Math.floor(coords.x),Math.floor(coords.y));
-        },
-        move: function() {
-            var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
-            if (dirVector.mag() > this.speed) {
-                 dirVector.setMag(this.speed);
-            }
-            this.posVector.add(dirVector);
-            this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
-        },
-        reset: function() {
-            this.update({x: Cube.startX, y: Cube.startY});
-        }
-    }
-
-
-
-
 
     var animId;
     function draw(){
@@ -87,43 +20,6 @@ $(document).ready(function() {
         animId = requestAnimationFrame(draw);
     }
     animId = requestAnimationFrame(draw);
-
-    $(document).keydown(function(evt) {
-        switch(evt.keyCode)
-        {
-            case 27: //esc
-                Cube.viewport.reset();
-                break;
-
-            default:
-                break;
-        };
-    })
-
-    $("#theBlackBox").mouseenter(function(evt){
-        $(document).bind('mousemove', function(event) {
-            event.preventDefault();
-            $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
-        });
-    });
-
-    $("#theBlackBox").mouseleave(function(evt){
-        Cube.viewport.reset();
-        $(document).unbind('mousemove');
-    });
-
-
-
-    $('#theBlackBox').bind('move-viewport', function(evt, movedMouse) {
-        movementScaleFactor = 4;
-
-        Cube.viewport.update({
-            x: Cube.viewport.posVector.x + parseInt((viewCenter.y - movedMouse.y)/movementScaleFactor),
-            y: Cube.viewport.posVector.y - parseInt((viewCenter.x - movedMouse.x)/movementScaleFactor)
-        });
-
-        //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
-    });
 });
 
 ////////////////////////
@@ -152,6 +48,42 @@ $( window ).resize(function() {
 $(window).scroll(function(e) {
 });
 
+$(document).keydown(function(evt) {
+    switch(evt.keyCode)
+    {
+        case 27: //esc
+            Cube.viewport.reset();
+            break;
+
+        default:
+            break;
+    };
+})
+
+$("#theBlackBox").mouseenter(function(evt){
+    $(document).bind('mousemove', function(event) {
+        event.preventDefault();
+        $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
+    });
+});
+
+$("#theBlackBox").mouseleave(function(evt){
+    Cube.viewport.reset();
+    $(document).unbind('mousemove');
+});
+
+
+
+$('#theBlackBox').bind('move-viewport', function(evt, movedMouse) {
+    movementScaleFactor = 4;
+
+    Cube.viewport.update({
+        x: Cube.viewport.posVector.x + parseInt((Cube.viewCenter.y - movedMouse.y)/movementScaleFactor),
+        y: Cube.viewport.posVector.y - parseInt((Cube.viewCenter.x - movedMouse.x)/movementScaleFactor)
+    });
+
+    //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
+});
 
 
 
@@ -162,7 +94,52 @@ $(window).scroll(function(e) {
 
 
 ////////////////////////
-// THE Cube
+// THE CUBE
+
+    /* * * * 
+      This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com), 
+      and uses a good amout of his code. I made some changes, specifically to the interactivity in 
+      the JS, but the CSS is all his, and the idea of doing an interactive cube with CSS transforms
+      intead of WebGL is his too.
+     * * * */
+
+var Cube = {
+    startX: -20.0,
+    startY: 45.0,
+    xRange: 30.0,
+    yRange: 35.0,
+    spinSpeed: 0.2,
+    viewport: {},
+    viewCenter: {
+        x: window.innerWidth/2,
+        y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
+    }
+}
+
+Cube.viewport = {
+    posVector: new Vector2d(Cube.startX, Cube.startY),
+    targVector: new Vector2d(Cube.startX, Cube.startY),
+    speed: Cube.spinSpeed,
+    el: $('.cube')[0],
+    update: function(coords) {
+        if(coords && (typeof coords.x === "number" && typeof coords.y === "number")) {
+            this.targVector.x = coords.x.clamp(Cube.startX-Cube.xRange, Cube.startX+Cube.xRange);
+            this.targVector.y = coords.y.clamp(Cube.startY-Cube.yRange, Cube.startY+Cube.yRange);
+        }
+        //console.log(Math.floor(coords.x),Math.floor(coords.y));
+    },
+    move: function() {
+        var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
+        if (dirVector.mag() > this.speed) {
+             dirVector.setMag(this.speed);
+        }
+        this.posVector.add(dirVector);
+        this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
+    },
+    reset: function() {
+        this.update({x: Cube.startX, y: Cube.startY});
+    }
+}
 
 
 
@@ -230,6 +207,14 @@ function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,250)}
             clearTimeout(id);
         };
 }());
+
+function support(props) {
+    for(var i = 0, l = props.length; i < l; i++) {
+        if(typeof el.style[props[i]] !== "undefined") {
+            return props[i];
+        }
+    }
+}
 
 
 //Extend JS with clamp function
