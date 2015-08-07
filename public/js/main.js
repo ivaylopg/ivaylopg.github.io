@@ -9,17 +9,19 @@ var el = document.createElement('div'),
     transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
     transitionDurationProp = support(transitionDuration);
 
+var animId;
+
 ////////////////////////
 // SETUP ON READY
 
 $(document).ready(function() {
 
-    var animId;
     function draw(){
         Cube.viewport.move();
         animId = requestAnimationFrame(draw);
     }
     animId = requestAnimationFrame(draw);
+    
 });
 
 ////////////////////////
@@ -140,10 +142,6 @@ Cube.viewport = {
         this.update({x: Cube.startX, y: Cube.startY});
     }
 }
-
-
-
-
 
 
 ////////////////////////
