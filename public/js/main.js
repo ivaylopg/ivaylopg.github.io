@@ -16,6 +16,10 @@ $(document).ready(function() {
       intead of WebGL is his too.
      * * * */
 
+
+
+
+
     var el = document.createElement('div'),
         transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
         transformProp = support(transformProps),
@@ -30,11 +34,7 @@ $(document).ready(function() {
         }
     }
 
-    var startX = -20.0;
-    var startY = 45.0;
-    var xRange = 30.0;
-    var yRange = 35.0;
-    var spinSpeed = 0.2;
+    
 
     var viewCenter = {
         x: window.innerWidth/2,
@@ -43,37 +43,47 @@ $(document).ready(function() {
     //$("#theBlackBox").offset().top - $(window).scrollTop() + ($("#theBlackBox").height()/2)
 
 
-    var viewport = {
-            posVector: new Vector2d(startX, startY),
-            targVector: new Vector2d(startX, startY),
-            speed: spinSpeed,
-            el: $('.cube')[0],
-            update: function(coords) {
-                if(coords && (typeof coords.x === "number" && typeof coords.y === "number")) {
-                    this.targVector.x = coords.x.clamp(startX-xRange, startX+xRange);
-                    this.targVector.y = coords.y.clamp(startY-yRange, startY+yRange);
-                }
-                //console.log(Math.floor(coords.x),Math.floor(coords.y));
-            },
-            move: function() {
-                var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
-                if (dirVector.mag() > this.speed) {
-                     dirVector.setMag(this.speed);
-                }
-                this.posVector.add(dirVector);
-                this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
-            },
-            reset: function() {
-                this.update({x: startX, y: startY});
-                delete mouse.last;
-                mouse.start.x = viewCenter.x;
-                mouse.start.y = viewCenter.y;
+    var Cube = {
+        startX: -20.0,
+        startY: 45.0,
+        xRange: 30.0,
+        yRange: 35.0,
+        spinSpeed: 0.2,
+        viewport: {}
+    }
+
+    Cube.viewport = {
+        posVector: new Vector2d(Cube.startX, Cube.startY),
+        targVector: new Vector2d(Cube.startX, Cube.startY),
+        speed: Cube.spinSpeed,
+        el: $('.cube')[0],
+        update: function(coords) {
+            if(coords && (typeof coords.x === "number" && typeof coords.y === "number")) {
+                this.targVector.x = coords.x.clamp(Cube.startX-Cube.xRange, Cube.startX+Cube.xRange);
+                this.targVector.y = coords.y.clamp(Cube.startY-Cube.yRange, Cube.startY+Cube.yRange);
             }
-        };
+            //console.log(Math.floor(coords.x),Math.floor(coords.y));
+        },
+        move: function() {
+            var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
+            if (dirVector.mag() > this.speed) {
+                 dirVector.setMag(this.speed);
+            }
+            this.posVector.add(dirVector);
+            this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
+        },
+        reset: function() {
+            this.update({x: Cube.startX, y: Cube.startY});
+        }
+    }
+
+
+
+
 
     var animId;
     function draw(){
-        viewport.move();
+        Cube.viewport.move();
         animId = requestAnimationFrame(draw);
     }
     animId = requestAnimationFrame(draw);
@@ -82,7 +92,7 @@ $(document).ready(function() {
         switch(evt.keyCode)
         {
             case 27: //esc
-                viewport.reset();
+                Cube.viewport.reset();
                 break;
 
             default:
@@ -98,7 +108,7 @@ $(document).ready(function() {
     });
 
     $("#theBlackBox").mouseleave(function(evt){
-        viewport.reset();
+        Cube.viewport.reset();
         $(document).unbind('mousemove');
     });
 
@@ -107,9 +117,9 @@ $(document).ready(function() {
     $('#theBlackBox').bind('move-viewport', function(evt, movedMouse) {
         movementScaleFactor = 4;
 
-        viewport.update({
-            x: viewport.posVector.x + parseInt((viewCenter.y - movedMouse.y)/movementScaleFactor),
-            y: viewport.posVector.y - parseInt((viewCenter.x - movedMouse.x)/movementScaleFactor)
+        Cube.viewport.update({
+            x: Cube.viewport.posVector.x + parseInt((viewCenter.y - movedMouse.y)/movementScaleFactor),
+            y: Cube.viewport.posVector.y - parseInt((viewCenter.x - movedMouse.x)/movementScaleFactor)
         });
 
         //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
