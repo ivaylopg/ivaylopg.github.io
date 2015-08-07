@@ -34,7 +34,6 @@ $(document).ready(function() {
     var startY = 45.0;
     var xRange = 30.0;
     var yRange = 35.0;
-    var dur = 5000;
     var spinSpeed = 0.2;
 
     var viewCenter = {
@@ -44,11 +43,7 @@ $(document).ready(function() {
     //$("#theBlackBox").offset().top - $(window).scrollTop() + ($("#theBlackBox").height()/2)
 
 
-    var mouse = {
-            start : {}
-        },
-        touch = document.ontouchmove !== undefined,
-        viewport = {
+    var viewport = {
             posVector: new Vector2d(startX, startY),
             targVector: new Vector2d(startX, startY),
             speed: spinSpeed,
@@ -76,11 +71,6 @@ $(document).ready(function() {
             }
         };
 
-    viewport.duration = function() {
-        //viewport.el.style[transitionDurationProp] = dur + "ms";
-        return dur;
-    }();
-
     var animId;
     function draw(){
         viewport.move();
@@ -89,62 +79,41 @@ $(document).ready(function() {
     animId = requestAnimationFrame(draw);
 
     $(document).keydown(function(evt) {
-    switch(evt.keyCode)
-    {
-        case 27: //esc
-            viewport.reset();
-            break;
+        switch(evt.keyCode)
+        {
+            case 27: //esc
+                viewport.reset();
+                break;
 
-        default:
-            break;
-    };
-})
+            default:
+                break;
+        };
+    })
 
-$("#theBlackBox").mouseenter(function(evt){
-    //console.log("IN");
-
-    delete mouse.last;
-    
-
-    //mouse.start.x = evt.pageX;
-    //mouse.start.y = evt.pageY;
-
-    mouse.start.x = viewCenter.x;
-    mouse.start.y = viewCenter.y;
-    // console.log(mouse.start);
-
-    ///*
-    $(document).bind('mousemove', function(event) {
-        event.preventDefault();
-        $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
-    });
-    //*/
-
-});
-
-$("#theBlackBox").mouseleave(function(evt){
-    //console.log("OUT");
-
-    viewport.reset();
-    delete mouse.last;
-    mouse.start.x = viewCenter.x;
-    mouse.start.y = viewCenter.y;
-
-    $(document).unbind('mousemove');
-});
-
-
-
-$('#theBlackBox').bind('move-viewport', function(evt, movedMouse) {
-    movementScaleFactor = 4;
-
-    viewport.update({
-        x: viewport.posVector.x + parseInt((viewCenter.y - movedMouse.y)/movementScaleFactor),
-        y: viewport.posVector.y - parseInt((viewCenter.x - movedMouse.x)/movementScaleFactor)
+    $("#theBlackBox").mouseenter(function(evt){
+        $(document).bind('mousemove', function(event) {
+            event.preventDefault();
+            $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
+        });
     });
 
-    //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
-});
+    $("#theBlackBox").mouseleave(function(evt){
+        viewport.reset();
+        $(document).unbind('mousemove');
+    });
+
+
+
+    $('#theBlackBox').bind('move-viewport', function(evt, movedMouse) {
+        movementScaleFactor = 4;
+
+        viewport.update({
+            x: viewport.posVector.x + parseInt((viewCenter.y - movedMouse.y)/movementScaleFactor),
+            y: viewport.posVector.y - parseInt((viewCenter.x - movedMouse.x)/movementScaleFactor)
+        });
+
+        //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
+    });
 });
 
 ////////////////////////
@@ -260,9 +229,9 @@ Number.prototype.clamp = function(min, max) {
 
 
 //Quick vector implementation....
-function Vector2d(_x,_y){
-    this.x = _x;
-    this.y = _y;
+function Vector2d(x,y){
+    this.x = x;
+    this.y = y;
 
     this.set = function(x,y) {
         this.x = x;
