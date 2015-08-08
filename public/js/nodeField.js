@@ -21,21 +21,28 @@ var sketch = function( nodesP5 ) {
   var introFade = 255;
 
   var parentContainer = document.getElementById("nodeField");
+  var parentDimensions;
   
   nodesP5.setup = function() {
-    var theCanvas = nodesP5.createCanvas(parentContainer.clientWidth,parentContainer.clientHeight);
+    parentDimensions = nodesP5.createVector(parentContainer.clientWidth,parentContainer.clientHeight);
+    var theCanvas = nodesP5.createCanvas(parentDimensions.x, parentDimensions.y);
     theCanvas.parent(parentContainer);
 
     wind = nodesP5.createVector(nodesP5.random(-0.5,0.5),nodesP5.random(-0.5,0.5));
     reset();
+    remake();
     
   }
   
-  var reset = function(){
-    introFade = 255;
+  var reset = function(){    
     center = nodesP5.createVector(nodesP5.width/2, nodesP5.height/2);
     maxDist = nodesP5.dist(0,0, center.x, center.y);
     mousePos = center.copy();
+
+  }
+
+  var remake = function(){
+    introFade = 255;
     system = new NodeSystem(fillColor1, 5, 1.0);
     system2 = new NodeSystem(fillColor2, 3, 0.75);
     for (var i = 0; i < numNodes; i++) {
@@ -181,8 +188,18 @@ var sketch = function( nodesP5 ) {
   };
   
   nodesP5.windowResized = function(){
-    nodesP5.resizeCanvas(parentContainer.clientWidth,parentContainer.clientHeight);
+    var newDimensions = nodesP5.createVector(parentContainer.clientWidth,parentContainer.clientHeight);
+    var dX = Math.abs(parentDimensions.x - newDimensions.x)/parentDimensions.x;
+    var dY = Math.abs(parentDimensions.y - newDimensions.y)/parentDimensions.y;
+    parentDimensions = newDimensions.copy();
+
+    nodesP5.resizeCanvas(parentDimensions.x, parentDimensions.y);
     reset();
+
+    if (dX > 0.2 || dY > 0.2) {
+      remake();  
+    };
+    
   }
 
   var drawMouseRange = function() {
