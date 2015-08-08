@@ -21,7 +21,7 @@ $(document).ready(function() {
         animId = requestAnimationFrame(draw);
     }
     animId = requestAnimationFrame(draw);
-    
+
 });
 
 ////////////////////////
@@ -41,6 +41,13 @@ $( window ).load(function() {
 
 on_resize(function() {
     //Throttled on-resize handler
+    if (Cube != undefined) {
+        Cube.viewCenter = {
+            x: window.innerWidth/2,
+            y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
+        }
+    };
+    
 })();
 
 $( window ).resize(function() {
