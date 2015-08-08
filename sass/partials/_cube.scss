@@ -14,6 +14,26 @@ $initialScale: 0.7;
     padding-top: 120px;
     height: 600px;
     margin-top: -8rem;
+
+    @include media(max-width $tablet * 1.2) {
+        @include transform(scale($initialScale * 0.8,$initialScale * 0.8));
+        margin-top: -9rem;
+        margin-bottom: -5rem;
+    }
+
+    @include media(max-width $tablet) {
+        @include transform(scale($initialScale * 0.7,$initialScale * 0.7));
+        margin-top: -11rem;
+        margin-bottom: -7rem;
+    }
+
+    @include media(max-width $mobile) {
+        @include transform(scale($initialScale * 0.6,$initialScale * 0.6));
+        margin-top: -11rem;
+        margin-bottom: -9rem;
+        @include shift(-0.5);
+    }
+
 }
 
 .cube {

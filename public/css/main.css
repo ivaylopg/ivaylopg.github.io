@@ -141,6 +141,34 @@ a:hover {
   padding-top: 120px;
   height: 600px;
   margin-top: -8rem; }
+@media screen and (max-width: 60rem) {
+  #theBlackBox {
+    -webkit-transform: scale(0.56, 0.56);
+    -moz-transform: scale(0.56, 0.56);
+    -ms-transform: scale(0.56, 0.56);
+    -o-transform: scale(0.56, 0.56);
+    transform: scale(0.56, 0.56);
+    margin-top: -9rem;
+    margin-bottom: -5rem; } }
+@media screen and (max-width: 50rem) {
+  #theBlackBox {
+    -webkit-transform: scale(0.49, 0.49);
+    -moz-transform: scale(0.49, 0.49);
+    -ms-transform: scale(0.49, 0.49);
+    -o-transform: scale(0.49, 0.49);
+    transform: scale(0.49, 0.49);
+    margin-top: -11rem;
+    margin-bottom: -7rem; } }
+@media screen and (max-width: 31.25rem) {
+  #theBlackBox {
+    -webkit-transform: scale(0.42, 0.42);
+    -moz-transform: scale(0.42, 0.42);
+    -ms-transform: scale(0.42, 0.42);
+    -o-transform: scale(0.42, 0.42);
+    transform: scale(0.42, 0.42);
+    margin-top: -11rem;
+    margin-bottom: -9rem;
+    margin-left: -2.10761%; } }
 
 .cube {
   position: relative;
