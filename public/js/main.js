@@ -16,6 +16,11 @@ var animId;
 
 $(document).ready(function() {
 
+    if (Modernizr.touch) {
+        //console.log("touch enabled device");
+        Cube.autoRotate = true;
+    };
+
     function draw(){
         Cube.viewport.move();
         animId = requestAnimationFrame(draw);
@@ -41,13 +46,13 @@ $( window ).load(function() {
 
 on_resize(function() {
     //Throttled on-resize handler
+
     if (Cube != undefined) {
         Cube.viewCenter = {
             x: window.innerWidth/2,
             y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
         }
     };
-    
 })();
 
 $( window ).resize(function() {
@@ -118,6 +123,7 @@ var Cube = {
     xRange: 30.0,
     yRange: 35.0,
     spinSpeed: 0.2,
+    autoRotate: false,
     viewport: {},
     viewCenter: {
         x: window.innerWidth/2,
@@ -138,11 +144,20 @@ Cube.viewport = {
         //console.log(Math.floor(coords.x),Math.floor(coords.y));
     },
     move: function() {
-        var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
-        if (dirVector.mag() > this.speed) {
-             dirVector.setMag(this.speed);
+        if (!Cube.autoRotate){
+            var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
+            if (dirVector.mag() > this.speed) {
+                 dirVector.setMag(this.speed);
+            }
+            this.posVector.add(dirVector);
+        } else {
+            this.posVector.y += Cube.spinSpeed/2;
         }
-        this.posVector.add(dirVector);
+        
+
+        if (this.posVector.y >= Cube.startY+360) {
+            this.posVector.y = Cube.startY;
+        };
         this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
     },
     reset: function() {
