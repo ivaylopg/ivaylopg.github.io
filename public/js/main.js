@@ -155,7 +155,7 @@ Cube.viewport = {
         }
         
 
-        if (this.posVector.y >= Cube.startY+360) {
+        if (this.posVector.y >= Cube.startY+(36000)) {
             this.posVector.y = Cube.startY;
         };
         this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
