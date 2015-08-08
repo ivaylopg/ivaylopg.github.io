@@ -68,6 +68,16 @@ a:hover {
   display: block;
   min-height: 1rem; }
 
+.bigSpacer {
+  display: block;
+  min-height: 14rem; }
+@media screen and (max-width: 50rem) {
+  .bigSpacer {
+    min-height: 8rem; } }
+@media screen and (max-width: 31.25rem) {
+  .bigSpacer {
+    min-height: 5rem; } }
+
 .gridded {
   max-width: 68rem;
   margin-left: auto;

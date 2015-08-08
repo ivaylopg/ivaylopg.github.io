@@ -74,6 +74,17 @@ a:hover {
 	min-height: 1rem;
 }
 
+.bigSpacer {
+	display: block;
+	min-height: 14rem;
+	@include media(max-width $tablet){
+		min-height: 8rem;
+	}
+	@include media(max-width $mobile){
+		min-height: 5rem;
+	}
+}
+
 .gridded {
 	@include outer-container;
 	.fullWidth { @include span-columns(12); }
