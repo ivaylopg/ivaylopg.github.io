@@ -25,7 +25,7 @@ $(document).ready(function() {
     if (Modernizr.touch) {
         //console.log("touch enabled device");
         Cube.autoRotate = true;
-        var el = $(".cube")[0];
+        var el = $(".cube");
         el.on("touchstart", function(e){
             if($(e.target).is('a, iframe')) {
                 return true;
@@ -43,7 +43,7 @@ $(document).ready(function() {
         animId = requestAnimationFrame(draw);
     }
     animId = requestAnimationFrame(draw);
-    
+
 });
 
 ////////////////////////
