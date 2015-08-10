@@ -10,7 +10,7 @@
 
 	// Add the ignore rules that Koala will not search them.
 	// e.g. ["*.json", "*.txt", "test", "path/libs"]
-	"ignores": ["*.css", "*.coffee"],
+	"ignores": ["*.coffee"],
 
 	// Compile options of LESS.
 	"options": {
