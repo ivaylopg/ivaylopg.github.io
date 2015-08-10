@@ -59,12 +59,17 @@ $mobile:	rem(500);
     
 }
 
+@font-face {font-family: 'helveticaLight'; src: local('Helvetica'); font-weight: 100;}
+@font-face {font-family: 'helveticaRegular'; src: local('Helvetica'); font-weight: 500;}
+
 $hiliteColor: 	#b3d4fc;
 $bgColor : 		#fff;
 $textColor: 	#000;
-$fontStack1:	"fira-sans-2", "Fira Sans", sans-serif;
-$defaultWeight: 200;
-// $defaultWeight: 500;
+$fontStack1:	"fira-sans-2", "FiraSansUL", "helveticaLight", sans-serif;
+$fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
+
+//$defaultWeight: 200;
+$defaultWeight: 500;
 
 @import "partials/bpDefaults";
 /* ========================================================================== */
@@ -107,6 +112,7 @@ a:hover {
 
 
 .bolder {
+	font-family: $fontStack2;
 	font-weight: $defaultWeight + 100;
 }
 
@@ -143,6 +149,25 @@ a:hover {
 	@include outer-container;
 	.fullWidth { @include span-columns(12); }
 	@include threeWidthGrid;
+}
+
+.opacity.csstransitions .gridded {
+	p, h1 {
+		@include transition(opacity 1.5s linear);
+		opacity: 1.0;
+	}
+}
+
+.wf-loading .gridded {
+	p, h1 {
+		visibility: hidden;
+	}
+}
+
+.opacity.csstransitions.wf-loading .gridded {
+	p, h1 {
+		opacity: 0.0;
+	}
 }
 
 
