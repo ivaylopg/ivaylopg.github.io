@@ -1,4 +1,5 @@
 $initialScale: 0.7;
+$opacity: 0.75;
 
 
 // ANIMATE THE COLOR WHEN ACTIVE
@@ -69,13 +70,35 @@ p.belowCube {
     border-radius: 8px;
 }
 
-.opacity .cube > div {
-    opacity: 0.75;
+.no-touch.opacity .cube {
+    opacity: $opacity;
     @include transition(opacity 1.0s ease-out);
 }
 
-.opacity #theBlackBox:hover .cube > div {
+.no-touch.opacity #theBlackBox:hover .cube {
     opacity: 1.0;
+}
+
+.touch.opacity .cube {
+    opacity: $opacity;
+    @include keyframes(pulse) {
+      from {
+        opacity: $opacity;
+      }
+      20% {
+        opacity: 1.0;
+      }
+      30% {
+        opacity: 1.0;
+      }
+      to {
+        opacity: $opacity;
+      }
+    }
+}
+
+.touch.opacity .cube.pulse {
+    @include animation(pulse 2.0s linear 1);
 }
 
 .cube > div:first-child {

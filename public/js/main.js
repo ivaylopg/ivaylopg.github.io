@@ -25,6 +25,17 @@ $(document).ready(function() {
     if (Modernizr.touch) {
         //console.log("touch enabled device");
         Cube.autoRotate = true;
+        var el = $(".cube")[0];
+        el.on("touchstart", function(e){
+            if($(e.target).is('a, iframe')) {
+                return true;
+            }
+            e.stopPropagation()
+            el.addClass("pulse");
+            setTimeout(function(){
+                el.removeClass("pulse");
+            }, 2000);
+        });
     };
 
     function draw(){
@@ -32,7 +43,7 @@ $(document).ready(function() {
         animId = requestAnimationFrame(draw);
     }
     animId = requestAnimationFrame(draw);
-
+    
 });
 
 ////////////////////////
@@ -94,7 +105,7 @@ $(document).keydown(function(evt) {
 })
 
 $("#theBlackBox").mouseenter(function(evt){
-    $(document).bind('mousemove', function(event) {
+    $(document).on('mousemove', function(event) {
         event.preventDefault();
         $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
     });
@@ -102,12 +113,12 @@ $("#theBlackBox").mouseenter(function(evt){
 
 $("#theBlackBox").mouseleave(function(evt){
     Cube.viewport.reset();
-    $(document).unbind('mousemove');
+    $(document).off('mousemove');
 });
 
 
 
-$('#theBlackBox').bind('move-viewport', function(evt, movedMouse) {
+$('#theBlackBox').on('move-viewport', function(evt, movedMouse) {
     movementScaleFactor = 4;
 
     Cube.viewport.update({

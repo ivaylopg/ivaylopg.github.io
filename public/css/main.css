@@ -217,14 +217,48 @@ a:hover {
   border: 4px solid #333;
   border-radius: 8px; }
 
-.opacity .cube > div {
+.no-touch.opacity .cube {
   opacity: 0.75;
   -webkit-transition: opacity 1s ease-out;
   -moz-transition: opacity 1s ease-out;
   transition: opacity 1s ease-out; }
 
-.opacity #theBlackBox:hover .cube > div {
+.no-touch.opacity #theBlackBox:hover .cube {
   opacity: 1.0; }
+
+.touch.opacity .cube {
+  opacity: 0.75; }
+@-webkit-keyframes pulse {
+  from {
+    opacity: 0.75; }
+  20% {
+    opacity: 1.0; }
+  30% {
+    opacity: 1.0; }
+  to {
+    opacity: 0.75; } }
+@-moz-keyframes pulse {
+  from {
+    opacity: 0.75; }
+  20% {
+    opacity: 1.0; }
+  30% {
+    opacity: 1.0; }
+  to {
+    opacity: 0.75; } }
+@keyframes pulse {
+  from {
+    opacity: 0.75; }
+  20% {
+    opacity: 1.0; }
+  30% {
+    opacity: 1.0; }
+  to {
+    opacity: 0.75; } }
+.touch.opacity .cube.pulse {
+  -webkit-animation: pulse 2s linear 1;
+  -moz-animation: pulse 2s linear 1;
+  animation: pulse 2s linear 1; }
 
 .cube > div:first-child {
   -webkit-transform: rotateX(90deg) translateZ(200px);
