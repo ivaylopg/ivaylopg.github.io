@@ -198,13 +198,13 @@ var sketch = function( nodesP5 ) {
   
   nodesP5.windowResized = function(){
     var newDimensions = nodesP5.createVector(parentContainer.clientWidth,parentContainer.clientHeight);
+    nodesP5.resizeCanvas(newDimensions.x, newDimensions.y);
+
     var dX = Math.abs(parentDimensions.x - newDimensions.x)/parentDimensions.x;
     var dY = Math.abs(parentDimensions.y - newDimensions.y)/parentDimensions.y;
     parentDimensions = newDimensions.copy();
-
-    nodesP5.resizeCanvas(parentDimensions.x, parentDimensions.y);
+    
     reset();
-
     if (dX > 0.2 || dY > 0.2) {
       remake();  
     };

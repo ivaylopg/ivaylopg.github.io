@@ -201,15 +201,12 @@ Cube.resize = function(winWidth){
     // way works without noticeable slowdown or overhead, so....yeah.
 
     if (winWidth === 0) {
-        console.log("wooooo");
         $(".cube").removeAttr("style");
         $(".cube div").removeAttr("style");
         $('.cube')[0].style[transformProp] = "rotateX("+Cube.viewport.posVector.x+"deg) rotateY("+Cube.viewport.posVector.y+"deg)";
     } else {
         var ratio = (winWidth/500);
         ratio.clamp(0.75,1.0);
-
-        console.log(winWidth);
 
         $(".cube").css({
             "height": 400 * ratio + "px",
@@ -309,67 +306,6 @@ Number.prototype.clamp = function(min, max) {
 };
 
 
-//Quick vector implementation....
-function Vector2d(x,y){
-    this.x = x;
-    this.y = y;
-
-    this.set = function(x,y) {
-        this.x = x;
-        this.y = y;
-    };
-    
-    this.magSq =  function() {
-        var x = this.x, y = this.y;
-        return x * x + y * y;
-    };
-
-    this.mag = function(){
-        return Math.sqrt(this.magSq());
-    };
-
-    this.add = function (x, y) {
-        if (x instanceof Vector2d) {
-            this.x += x.x;
-            this.y += x.y;
-            return this;
-        }
-        this.x += x;
-        this.y += y;
-        return this;
-    };
-
-    this.sub = function (x, y) {
-        if (x instanceof Vector2d) {
-            this.x -= x.x;
-            this.y -= x.y;
-            return this;
-        }
-        this.x -= x;
-        this.y -= y;
-        return this;
-    };
-
-    this.div = function (n) {
-        this.x /= n;
-        this.y /= n;
-        return this;
-    };
-
-    this.mult = function (n) {
-        this.x *= n;
-        this.y *= n;
-        return this;
-    };
-
-    this.normalize = function () {
-        return this.div(this.mag());
-    };
-
-    this.setMag = function (n) {
-        return this.normalize().mult(n);
-    };
-}
 
 
 

@@ -8,16 +8,24 @@ $max-width: rem(1088);
 $tablet:	rem(800);
 $mobile:	rem(500);
 
+
+// Neat omega reset by www.joshfry.me
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+/////
+
 @mixin gridMargin($rem) {
 	@include media(max-width $rem * 1.2, 12) {
 		@include shift(1);
-    	@include span-columns(10);
+    	@include span-columns(10 of 12);
     }
 }
 
 @mixin tinyGridMargin($rem) {
 	@include media(max-width $rem * 1.2, 24) {
-		@include shift(0.5);
+		@include shift-in-context(1 of 24);
     	@include span-columns(22);
     }
 }
@@ -27,11 +35,36 @@ $mobile:	rem(500);
 	@include tinyGridMargin($mobile);
 }
 
+@mixin bigThirds {
+
+	@include span-columns(3);
+	@include omega(4n);
+
+	@include media(max-width $max-width * 1.2) {
+		@include omega-reset(4n);
+    	@include span-columns(4);
+    	@include omega(3n);
+    }
+
+	@include media(max-width $tablet * 1.2) {
+		@include omega-reset(3n);
+    	@include span-columns(6);
+    	@include omega(2n);
+    }
+
+    @include media(max-width $mobile * 1.2) {
+    	@include omega-reset(2n);
+    	@include span-columns(12);
+    }
+    
+}
+
 $hiliteColor: 	#b3d4fc;
 $bgColor : 		#fff;
 $textColor: 	#000;
 $fontStack1:	"fira-sans-2", "Fira Sans", sans-serif;
-$defaultWeight: 500;
+$defaultWeight: 200;
+// $defaultWeight: 500;
 
 @import "partials/bpDefaults";
 /* ========================================================================== */
@@ -45,6 +78,14 @@ body {
 	color: $textColor;
 	font-family: $fontStack1;
 	font-weight: $defaultWeight;
+	font-size: 1.75rem;
+
+	@include media (max-width $max-width * 1.2) {
+		font-size: 1.5rem;
+	}
+	@include media (max-width $tablet) {
+		font-size: 1.2rem;
+	}
 }
 
 section {
@@ -72,6 +113,19 @@ a:hover {
 .spacer {
 	display: block;
 	min-height: 1rem;
+}
+
+
+
+.medSpacer {
+	display: block;
+	min-height: 7rem;
+	@include media(max-width $tablet){
+		min-height: 4rem;
+	}
+	@include media(max-width $mobile){
+		min-height: 2.5rem;
+	}
 }
 
 .bigSpacer {
@@ -102,14 +156,14 @@ a:hover {
 	overflow: hidden;
 }
 
-.introText {
-	font-size: 1.75rem;
-	@include media (max-width $max-width * 1.2) {
-		font-size: 1.5rem;
-	}
-	@include media (max-width $tablet) {
-		font-size: 1.2rem;
-	}
+.introText {	
+}
+
+.projectEntry {
+	background: #ccc;
+	min-height: 300px;
+	margin-bottom: $gutter/2;
+	@include bigThirds;
 }
 
 /* ========================================================================== */
