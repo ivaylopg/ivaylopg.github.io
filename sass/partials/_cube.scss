@@ -13,7 +13,10 @@ $initialScale: 0.7;
     background: none;
     padding-top: 120px;
     height: 600px;
+    margin: 0em;
     margin-top: -8rem;
+
+    @include span-columns(12);
 
     @include media(max-width $tablet * 1.2) {
         @include transform(scale($initialScale * 0.8,$initialScale * 0.8));
@@ -24,16 +27,25 @@ $initialScale: 0.7;
     @include media(max-width $tablet) {
         @include transform(scale($initialScale * 0.7,$initialScale * 0.7));
         margin-top: -11rem;
-        margin-bottom: -7rem;
+        margin-bottom: -6rem;
     }
 
     @include media(max-width $mobile) {
-        @include transform(scale($initialScale * 0.6,$initialScale * 0.6));
+        @include transform(scale($initialScale * 0.8,$initialScale * 0.8));
         margin-top: -11rem;
         margin-bottom: -9rem;
-        @include shift(-0.5);
+        // @include shift(-0.25);
     }
 
+    margin-right: 0em !important;
+
+}
+
+
+p.belowCube {
+    @include media(max-width $mobile) {
+        padding-top: 300px; 
+    }
 }
 
 .cube {

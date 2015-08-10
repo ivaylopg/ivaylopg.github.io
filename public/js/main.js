@@ -10,11 +10,17 @@ var el = document.createElement('div'),
     transitionDurationProp = support(transitionDuration);
 
 var animId;
+var tinyCube = false;
 
 ////////////////////////
 // SETUP ON READY
 
 $(document).ready(function() {
+
+    if (window.innerWidth < 500) {
+        tinyCube = true;
+        Cube.resize(window.innerWidth);
+    };
 
     if (Modernizr.touch) {
         //console.log("touch enabled device");
@@ -46,11 +52,24 @@ $( window ).load(function() {
 
 on_resize(function() {
     //Throttled on-resize handler
+    var winWidth = window.innerWidth;
+    if (winWidth < 500) {
+        tinyCube = true;
+    } else {
+        if (tinyCube === true) {
+            tinyCube = false;
+            Cube.resize(0);
+        };
+        
+    }
 
     if (Cube != undefined) {
         Cube.viewCenter = {
-            x: window.innerWidth/2,
+            x: winWidth/2,
             y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
+        }
+        if (tinyCube) {
+            Cube.resize(winWidth);
         }
     };
 })();
@@ -163,6 +182,42 @@ Cube.viewport = {
     reset: function() {
         this.update({x: Cube.startX, y: Cube.startY});
     }
+}
+
+Cube.resize = function(winWidth){
+    // The CSS cube stops centering correctly at widths < ~400px.
+    // I'm sure there's a better way to do this in CSS, but this 
+    // way works without noticeable slowdown or overhead, so....yeah.
+
+    if (winWidth === 0) {
+        console.log("wooooo");
+        $(".cube").removeAttr("style");
+        $(".cube div").removeAttr("style");
+        $('.cube')[0].style[transformProp] = "rotateX("+Cube.viewport.posVector.x+"deg) rotateY("+Cube.viewport.posVector.y+"deg)";
+    } else {
+        var ratio = (winWidth/500);
+        ratio.clamp(0.75,1.0);
+
+        console.log(winWidth);
+
+        $(".cube").css({
+            "height": 400 * ratio + "px",
+            "width": 400 * ratio +"px"
+        });
+        $(".cube > div").css({
+            "height": 360 * ratio + "px",
+            "width": 360 * ratio +"px",
+            "padding": 20 * ratio +"px"
+        });
+
+        $(".cube > div:first-child")[0].style[transformProp] = "rotateX(90deg) translateZ("+200 * ratio+"px)";
+        $(".cube > div:nth-child(2)")[0].style[transformProp] = "translateZ("+200 * ratio+"px)";
+        $(".cube > div:nth-child(3)")[0].style[transformProp] = "rotateY(90deg) translateZ("+200 * ratio+"px)";
+        $(".cube > div:nth-child(4)")[0].style[transformProp] = "rotateY(180deg) translateZ("+200 * ratio+"px)";
+        $(".cube > div:nth-child(5)")[0].style[transformProp] = "rotateY(-90deg) translateZ("+200 * ratio+"px)";
+        $(".cube > div:nth-child(6)")[0].style[transformProp] = "rotateX(-90deg) rotate(180deg) translateZ("+200 * ratio+"px)";
+    }
+    
 }
 
 

@@ -150,7 +150,15 @@ a:hover {
   background: none;
   padding-top: 120px;
   height: 600px;
-  margin-top: -8rem; }
+  margin: 0em;
+  margin-top: -8rem;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0em !important; }
+#theBlackBox:last-child {
+  margin-right: 0; }
 @media screen and (max-width: 60rem) {
   #theBlackBox {
     -webkit-transform: scale(0.56, 0.56);
@@ -168,17 +176,20 @@ a:hover {
     -o-transform: scale(0.49, 0.49);
     transform: scale(0.49, 0.49);
     margin-top: -11rem;
-    margin-bottom: -7rem; } }
+    margin-bottom: -6rem; } }
 @media screen and (max-width: 31.25rem) {
   #theBlackBox {
-    -webkit-transform: scale(0.42, 0.42);
-    -moz-transform: scale(0.42, 0.42);
-    -ms-transform: scale(0.42, 0.42);
-    -o-transform: scale(0.42, 0.42);
-    transform: scale(0.42, 0.42);
+    -webkit-transform: scale(0.56, 0.56);
+    -moz-transform: scale(0.56, 0.56);
+    -ms-transform: scale(0.56, 0.56);
+    -o-transform: scale(0.56, 0.56);
+    transform: scale(0.56, 0.56);
     margin-top: -11rem;
-    margin-bottom: -9rem;
-    margin-left: -2.10761%; } }
+    margin-bottom: -9rem; } }
+
+@media screen and (max-width: 31.25rem) {
+  p.belowCube {
+    padding-top: 300px; } }
 
 .cube {
   position: relative;
