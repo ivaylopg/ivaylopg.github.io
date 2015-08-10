@@ -19,6 +19,7 @@ var sketch = function( nodesP5 ) {
   var fillColor2 = 230;
 
   var introFade = 255;
+  var fadeFloor = 0;
 
   var parentContainer = document.getElementById("nodeField");
   var parentDimensions;
@@ -27,7 +28,6 @@ var sketch = function( nodesP5 ) {
     parentDimensions = nodesP5.createVector(parentContainer.clientWidth,parentContainer.clientHeight);
     var theCanvas = nodesP5.createCanvas(parentDimensions.x, parentDimensions.y);
     theCanvas.parent(parentContainer);
-
     wind = nodesP5.createVector(nodesP5.random(-0.5,0.5),nodesP5.random(-0.5,0.5));
     reset();
     remake();
@@ -36,9 +36,13 @@ var sketch = function( nodesP5 ) {
   
   var reset = function(){    
     center = nodesP5.createVector(nodesP5.width/2, nodesP5.height/2);
+    if (nodesP5.width < 500) {
+      fadeFloor = 150;
+    } else {
+      fadeFloor = 0;
+    };
     maxDist = nodesP5.dist(0,0, center.x, center.y);
     mousePos = center.copy();
-
   }
 
   var remake = function(){
@@ -65,11 +69,16 @@ var sketch = function( nodesP5 ) {
 
     //drawMouseRange()
 
-    if (introFade > 0) {
-      nodesP5.fill(255,255,255,introFade);
-      nodesP5.rect(0,0,nodesP5.width,nodesP5.height);
+    if (introFade > fadeFloor+2) {
       introFade-=2;
-    };
+    } else if (introFade < fadeFloor-2) {
+      introFade-=2;
+    } else {
+      introFade = fadeFloor;
+    }
+
+    nodesP5.fill(255,255,255,introFade);
+    nodesP5.rect(0,0,nodesP5.width,nodesP5.height);
 
 
 
