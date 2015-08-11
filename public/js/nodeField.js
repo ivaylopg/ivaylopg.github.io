@@ -36,10 +36,12 @@ var sketch = function( nodesP5 ) {
   
   var reset = function(){    
     center = nodesP5.createVector(nodesP5.width/2, nodesP5.height/2);
-    if (nodesP5.width < 500) {
+    if (nodesP5.width < 570) {
       fadeFloor = 150;
+      maxSpeed = 0.1;
     } else {
       fadeFloor = 0;
+      maxSpeed = 0.2;
     };
     maxDist = nodesP5.dist(0,0, center.x, center.y);
     mousePos = center.copy();

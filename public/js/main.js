@@ -5,9 +5,10 @@ var isMobile = false;
 
 var el = document.createElement('div'),
     transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
-    transformProp = support(transformProps),
-    transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
-    transitionDurationProp = support(transitionDuration);
+    transformProp = support(transformProps);
+
+/* var transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
+    transitionDurationProp = support(transitionDuration); //*/
 
 var animId;
 var tinyCube = false;
@@ -20,7 +21,7 @@ $(document).ready(function() {
     if (window.innerWidth < 500) {
         tinyCube = true;
         Cube.resize(window.innerWidth);
-    };
+    }
 
     if (Modernizr.touch) {
         //console.log("touch enabled device");
@@ -30,13 +31,13 @@ $(document).ready(function() {
             if($(e.target).is('a, iframe')) {
                 return true;
             }
-            e.stopPropagation()
+            e.stopPropagation();
             el.addClass("pulse");
             setTimeout(function(){
                 el.removeClass("pulse");
             }, 2000);
         });
-    };
+    }
 
     function draw(){
         Cube.viewport.move();
@@ -50,15 +51,15 @@ $(document).ready(function() {
 // EVENTS
 
 $( window ).load(function() {
-    if (jQuery.browser.mobile == true) {
+    if (jQuery.browser.mobile === true) {
         isMobile = true;
         $("body").addClass("isMobile");
     } else {
         $("body").addClass("isNotMobile");
-    };
+    }
 
     if (!isMobile) {
-    };
+    }
 });
 
 on_resize(function() {
@@ -70,19 +71,20 @@ on_resize(function() {
         if (tinyCube === true) {
             tinyCube = false;
             Cube.resize(0);
-        };
+        }
         
     }
 
-    if (Cube != undefined) {
+    if (Cube !== undefined) {
         Cube.viewCenter = {
             x: winWidth/2,
             y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
-        }
+        };
+      
         if (tinyCube) {
             Cube.resize(winWidth);
         }
-    };
+    }
 })();
 
 $( window ).resize(function() {
@@ -92,8 +94,8 @@ $( window ).resize(function() {
 $(window).scroll(function(e) {
 });
 
-$(document).keydown(function(evt) {
-    switch(evt.keyCode)
+$(document).keydown(function(e) {
+    switch(e.keyCode)
     {
         case 27: //esc
             Cube.viewport.reset();
@@ -101,25 +103,25 @@ $(document).keydown(function(evt) {
 
         default:
             break;
-    };
-})
+    }
+});
 
-$("#theBlackBox").mouseenter(function(evt){
+$("#theBlackBox").mouseenter(function(e){
     $(document).on('mousemove', function(event) {
         event.preventDefault();
         $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
     });
 });
 
-$("#theBlackBox").mouseleave(function(evt){
+$("#theBlackBox").mouseleave(function(e){
     Cube.viewport.reset();
     $(document).off('mousemove');
 });
 
 
 
-$('#theBlackBox').on('move-viewport', function(evt, movedMouse) {
-    movementScaleFactor = 4;
+$('#theBlackBox').on('move-viewport', function(e, movedMouse) {
+    var movementScaleFactor = 4;
 
     Cube.viewport.update({
         x: Cube.viewport.posVector.x + parseInt((Cube.viewCenter.y - movedMouse.y)/movementScaleFactor),
@@ -159,7 +161,7 @@ var Cube = {
         x: window.innerWidth/2,
         y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
     }
-}
+};
 
 Cube.viewport = {
     posVector: new Vector2d(Cube.startX, Cube.startY),
@@ -187,13 +189,13 @@ Cube.viewport = {
 
         if (this.posVector.y >= Cube.startY+(36000)) {
             this.posVector.y = Cube.startY;
-        };
+        }
         this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
     },
     reset: function() {
         this.update({x: Cube.startX, y: Cube.startY});
     }
-}
+};
 
 Cube.resize = function(winWidth){
     // The CSS cube stops centering correctly at widths < ~400px.
@@ -226,14 +228,14 @@ Cube.resize = function(winWidth){
         $(".cube > div:nth-child(6)")[0].style[transformProp] = "rotateX(-90deg) rotate(180deg) translateZ("+200 * ratio+"px)";
     }
     
-}
+};
 
 
 ////////////////////////
 // UTILITIES
 
 // debulked onresize handler
-function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,250)};return c};
+function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,250);};return c;}
 
 
 // Avoid `console` errors in browsers that lack a console.
@@ -271,8 +273,8 @@ function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,250)}
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
-                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || 
+                                        window[vendors[x]+'CancelRequestAnimationFrame'];
     }
  
     if (!window.requestAnimationFrame)
@@ -304,9 +306,3 @@ function support(props) {
 Number.prototype.clamp = function(min, max) {
     return Math.min(Math.max(this, min), max);
 };
-
-
-
-
-
-
