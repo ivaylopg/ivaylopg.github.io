@@ -1,0 +1,17 @@
+{
+  "eslintConfig": {
+    "env": {
+      "node": false,
+      "browser": true
+    },
+    "globals": {
+      "jQuery": true,
+      "Modernizr": true,
+      "$": true,
+      "Vector2d": true,
+      "p5": true
+    },
+    "rules": {
+    }
+  }
+}

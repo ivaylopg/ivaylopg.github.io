@@ -8,5 +8,20 @@
   "dependencies": {
     "express": "^4.13.3",
     "serve-favicon": "^2.3.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "browser": false
+    },
+    "globals": {
+    },
+    "rules": {
+      "linebreak-style": [2, "unix"],
+      "no-unused-vars": 1,
+      "no-empty": 1,
+      "no-console": 1
+    }
   }
 }
