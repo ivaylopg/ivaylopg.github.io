@@ -10,8 +10,9 @@ var el = document.createElement('div'),
 /* var transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
     transitionDurationProp = support(transitionDuration); //*/
 
-var animId;
+var animId = 0;
 var tinyCube = false;
+var ooga;
 
 ////////////////////////
 // SETUP ON READY

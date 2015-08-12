@@ -42,7 +42,7 @@ var sketch = function( nodesP5 ) {
     } else {
       fadeFloor = 0;
       maxSpeed = 0.2;
-    };
+    }
     maxDist = nodesP5.dist(0,0, center.x, center.y);
     mousePos = center.copy();
   }
@@ -209,19 +209,19 @@ var sketch = function( nodesP5 ) {
     reset();
     if (dX > 0.2 || dY > 0.2) {
       remake();  
-    };
+    }
     
   }
 
   var drawMouseRange = function() {
-    push();
+    nodesP5.push();
     var windDraw = wind.copy();
     windDraw.mult(300);
-    translate(center.x, center.y);
-    stroke(0);
-    line(0,0,wind.x,wind.y);
-    noStroke();
-    pop();
+    nodesP5.translate(center.x, center.y);
+    nodesP5.stroke(0);
+    nodesP5.line(0,0,wind.x,wind.y);
+    nodesP5.noStroke();
+    nodesP5.pop();
   }
 
 };
