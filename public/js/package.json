@@ -7,7 +7,7 @@
     },
     "globals": {
       "Modernizr": true,
-      "$": true,
+      "p5": true,
       "Vector2d": true
     },
     "rules": {
