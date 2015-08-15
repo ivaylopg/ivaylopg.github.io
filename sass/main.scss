@@ -75,6 +75,7 @@ $textColor: 	#000;
 $fontStack1:	"fira-sans-2", "FiraSansUL", "helveticaLight", sans-serif;
 $fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
 
+$fadeOnLoad: "p, h1, .projects";
 //$defaultWeight: 200;
 $defaultWeight: 500;
 
@@ -152,11 +153,19 @@ a {
 	font-weight: $defaultWeight + 100;
 }
 
+.smaller {
+	font-size: 0.8em;
+}
+
+.muchSmaller {
+	font-size: 0.5em;
+}
+
+
 .spacer {
 	display: block;
 	min-height: 1rem;
 }
-
 
 .medSpacer {
 	display: block;
@@ -192,24 +201,35 @@ a {
 }
 
 .opacity.csstransitions .gridded {
-	p, h1 {
+	#{$fadeOnLoad} {
 		@include transition(opacity 1.5s linear);
 		opacity: 1.0;
 	}
 }
 
 .wf-loading .gridded {
-	p, h1 {
+	#{$fadeOnLoad} {
 		visibility: hidden;
 	}
 }
 
 .opacity.csstransitions.wf-loading .gridded {
-	p, h1 {
+	#{$fadeOnLoad} {
 		opacity: 0.0;
 	}
 }
 
+.noSpaceDown {
+	margin-bottom: 0em;
+}
+
+.noSpaceDown + * {
+	margin-top: 0em;
+}
+
+.noSpaceUp {
+	margin-top: 0em;
+}
 
 #nodeField {
 	position: fixed;
@@ -231,6 +251,7 @@ a {
 .projectEntry {
 	margin-bottom: $gutter/2;
 	@include bigThirds;
+	overflow: hidden;
 
 	div {
 		width: 100%;
@@ -239,7 +260,21 @@ a {
 			padding-bottom: 50%;
 		}
 		@include fullBg;
+
+		.label {
+			color: white;
+		}
 	}
+}
+
+.csstransitions.no-touch .projectEntry {
+	@include filter(grayscale(100%));
+	@include transition(0.5s linear);
+}
+
+.csstransitions.no-touch .projectEntry:hover {
+	@include filter(none);
+	cursor: pointer;
 }
 
 /* ========================================================================== */

@@ -151,6 +151,14 @@ a {
   font-weight: 600;
 }
 
+.smaller {
+  font-size: 0.8em;
+}
+
+.muchSmaller {
+  font-size: 0.5em;
+}
+
 .spacer {
   display: block;
   min-height: 1rem;
@@ -246,19 +254,31 @@ a {
   }
 }
 
-.opacity.csstransitions .gridded p, .opacity.csstransitions .gridded h1 {
+.opacity.csstransitions .gridded p, .opacity.csstransitions .gridded h1, .opacity.csstransitions .gridded .projects {
   -webkit-transition: opacity 1.5s linear;
   -moz-transition: opacity 1.5s linear;
   transition: opacity 1.5s linear;
   opacity: 1.0;
 }
 
-.wf-loading .gridded p, .wf-loading .gridded h1 {
+.wf-loading .gridded p, .wf-loading .gridded h1, .wf-loading .gridded .projects {
   visibility: hidden;
 }
 
-.opacity.csstransitions.wf-loading .gridded p, .opacity.csstransitions.wf-loading .gridded h1 {
+.opacity.csstransitions.wf-loading .gridded p, .opacity.csstransitions.wf-loading .gridded h1, .opacity.csstransitions.wf-loading .gridded .projects {
   opacity: 0.0;
+}
+
+.noSpaceDown {
+  margin-bottom: 0em;
+}
+
+.noSpaceDown + * {
+  margin-top: 0em;
+}
+
+.noSpaceUp {
+  margin-top: 0em;
 }
 
 #nodeField {
@@ -281,6 +301,7 @@ a {
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%;
+  overflow: hidden;
 }
 
 .projectEntry:last-child {
@@ -374,6 +395,24 @@ a {
   .projectEntry div {
     padding-bottom: 50%;
   }
+}
+
+.projectEntry div .label {
+  color: white;
+}
+
+.csstransitions.no-touch .projectEntry {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  transition: 0.5s linear;
+}
+
+.csstransitions.no-touch .projectEntry:hover {
+  -webkit-filter: none;
+  filter: none;
+  cursor: pointer;
 }
 
 /* ========================================================================== */
