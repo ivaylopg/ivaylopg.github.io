@@ -113,9 +113,38 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+a {
+	position: relative;
+	color: $textColor;
+	text-decoration: none;
+}
+
+//From http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+.no-touch a.linkAnim:hover {
 	text-decoration: underline;
 }
+.csstransforms.csstransitions a.linkAnim {
+	text-decoration: none;
+}
+
+.csstransforms.csstransitions a.linkAnim:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	visibility: hidden;
+	@include transform(scaleX(0));
+	@include transition(all 0.3s ease-out 0s);
+}
+
+.csstransforms.csstransitions.no-touch a.linkAnim:hover:before {
+	visibility: visible;
+	@include transform(scaleX(1));
+}
+//////
 
 
 .bolder {
@@ -185,6 +214,11 @@ a:hover {
 	height: 100%;
 	z-index: 0;
 	overflow: hidden;
+}
+
+.frontCover {
+	background: #ccc;
+	min-height: 100vh;
 }
 
 .introText {	
