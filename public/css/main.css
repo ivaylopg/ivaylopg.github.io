@@ -176,17 +176,24 @@ a {
 .bigSpacer {
   display: block;
   min-height: 14rem;
+  min-height: 5rem;
 }
 
-@media screen and (max-width: 50rem) {
+@media screen and (min-height: 46.875rem) {
   .bigSpacer {
     min-height: 8rem;
   }
 }
 
-@media screen and (max-width: 31.25rem) {
+@media screen and (min-height: 75rem) {
   .bigSpacer {
-    min-height: 5rem;
+    min-height: 11rem;
+  }
+}
+
+@media screen and (min-height: 102rem) {
+  .bigSpacer {
+    min-height: 14rem;
   }
 }
 
@@ -265,12 +272,10 @@ a {
 }
 
 .frontCover {
-  background: #ccc;
   min-height: 100vh;
 }
 
 .projectEntry {
-  background: #ccc;
   margin-bottom: 0.809em;
   float: left;
   display: block;

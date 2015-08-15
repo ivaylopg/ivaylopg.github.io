@@ -40,7 +40,7 @@ var sketch = function( nodesP5 ) {
       fadeFloor = 150;
       maxSpeed = 0.1;
     } else {
-      fadeFloor = 0;
+      fadeFloor = 150;
       maxSpeed = 0.2;
     }
     maxDist = nodesP5.dist(0,0, center.x, center.y);

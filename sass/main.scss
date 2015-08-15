@@ -172,11 +172,16 @@ a {
 .bigSpacer {
 	display: block;
 	min-height: 14rem;
-	@include media(max-width $tablet){
+
+	min-height: 5rem;
+	@include media(min-height $mobile*1.5){
 		min-height: 8rem;
 	}
-	@include media(max-width $mobile){
-		min-height: 5rem;
+	@include media(min-height $tablet*1.5){
+		min-height: 11rem;
+	}
+	@include media(min-height $max-width*1.5){
+		min-height: 14rem;
 	}
 }
 
@@ -217,7 +222,6 @@ a {
 }
 
 .frontCover {
-	background: #ccc;
 	min-height: 100vh;
 }
 
@@ -225,7 +229,6 @@ a {
 }
 
 .projectEntry {
-	background: #ccc;
 	margin-bottom: $gutter/2;
 	@include bigThirds;
 
