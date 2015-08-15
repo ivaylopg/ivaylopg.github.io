@@ -111,10 +111,6 @@ h1 {
 }
 
 a {
-	text-decoration: none;
-}
-
-a {
 	position: relative;
 	color: $textColor;
 	text-decoration: none;
@@ -169,18 +165,34 @@ a {
 
 .medSpacer {
 	display: block;
-	min-height: 7rem;
-	@include media(max-width $tablet){
+
+	min-height: 2.5rem;
+	@include media(min-height $mobile*1.5){
 		min-height: 4rem;
 	}
-	@include media(max-width $mobile){
-		min-height: 2.5rem;
+	@include media(min-height $tablet*1.5){
+		min-height: 6rem;
+	}
+	@include media(min-height $max-width*1.5){
+		min-height: 7rem;
+	}
+}
+
+.margBotMedSpacer {
+	padding-bottom: 2.5rem;
+	@include media(min-height $mobile*1.5){
+		padding-bottom: 4rem;
+	}
+	@include media(min-height $tablet*1.5){
+		padding-bottom: 6rem;
+	}
+	@include media(min-height $max-width*1.5){
+		padding-bottom: 7rem;
 	}
 }
 
 .bigSpacer {
 	display: block;
-	min-height: 14rem;
 
 	min-height: 5rem;
 	@include media(min-height $mobile*1.5){
@@ -193,6 +205,21 @@ a {
 		min-height: 14rem;
 	}
 }
+
+.margBotBigSpacer {
+	padding-bottom: 5rem;
+	@include media(min-height $mobile*1.5){
+		padding-bottom: 8rem;
+	}
+	@include media(min-height $tablet*1.5){
+		padding-bottom: 11rem;
+	}
+	@include media(min-height $max-width*1.5){
+		padding-bottom: 14rem;
+	}
+}
+
+
 
 .gridded {
 	@include outer-container;
@@ -254,27 +281,49 @@ a {
 	overflow: hidden;
 
 	div {
+		position: relative;
 		width: 100%;
 		padding-bottom: 100%;
-		@include media (max-width $mobile * 1.2) {
-			padding-bottom: 50%;
-		}
-		@include fullBg;
+		overflow: hidden;
 
-		.label {
+		.projName {
+			position: absolute;
+  			top: 0; bottom: 0; left: 0; right: 0;
+  			padding: 1rem;
+  			font-size: 0.8em;
+  			background: none;
+			background: rgba(0,0,0,0.75);
 			color: white;
 		}
+
+		@include media (max-width $mobile * 1.2) {
+			padding-bottom: 50%;
+			.projName {
+				font-size: 1.2em;
+				background: none;
+				background: rgba(0,0,0,0.5);
+			}
+		}
+		@include fullBg;
 	}
 }
 
 .csstransitions.no-touch .projectEntry {
 	@include filter(grayscale(100%));
-	@include transition(0.5s linear);
+	@include transition(0.3s ease-out);
+
+	div .projName {
+		top: 100%;
+		@include transition(top 0.4s ease-in-out);
+	}
 }
 
 .csstransitions.no-touch .projectEntry:hover {
 	@include filter(none);
-	cursor: pointer;
+	// cursor: pointer;
+	div .projName {
+		top: 0;
+	}
 }
 
 /* ========================================================================== */

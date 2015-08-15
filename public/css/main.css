@@ -101,10 +101,6 @@ h1 {
 }
 
 a {
-  text-decoration: none;
-}
-
-a {
   position: relative;
   color: #000;
   text-decoration: none;
@@ -166,24 +162,51 @@ a {
 
 .medSpacer {
   display: block;
-  min-height: 7rem;
+  min-height: 2.5rem;
 }
 
-@media screen and (max-width: 50rem) {
+@media screen and (min-height: 46.875rem) {
   .medSpacer {
     min-height: 4rem;
   }
 }
 
-@media screen and (max-width: 31.25rem) {
+@media screen and (min-height: 75rem) {
   .medSpacer {
-    min-height: 2.5rem;
+    min-height: 6rem;
+  }
+}
+
+@media screen and (min-height: 102rem) {
+  .medSpacer {
+    min-height: 7rem;
+  }
+}
+
+.margBotMedSpacer {
+  padding-bottom: 2.5rem;
+}
+
+@media screen and (min-height: 46.875rem) {
+  .margBotMedSpacer {
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (min-height: 75rem) {
+  .margBotMedSpacer {
+    padding-bottom: 6rem;
+  }
+}
+
+@media screen and (min-height: 102rem) {
+  .margBotMedSpacer {
+    padding-bottom: 7rem;
   }
 }
 
 .bigSpacer {
   display: block;
-  min-height: 14rem;
   min-height: 5rem;
 }
 
@@ -202,6 +225,28 @@ a {
 @media screen and (min-height: 102rem) {
   .bigSpacer {
     min-height: 14rem;
+  }
+}
+
+.margBotBigSpacer {
+  padding-bottom: 5rem;
+}
+
+@media screen and (min-height: 46.875rem) {
+  .margBotBigSpacer {
+    padding-bottom: 8rem;
+  }
+}
+
+@media screen and (min-height: 75rem) {
+  .margBotBigSpacer {
+    padding-bottom: 11rem;
+  }
+}
+
+@media screen and (min-height: 102rem) {
+  .margBotBigSpacer {
+    padding-bottom: 14rem;
   }
 }
 
@@ -383,36 +428,62 @@ a {
 }
 
 .projectEntry div {
+  position: relative;
   width: 100%;
   padding-bottom: 100%;
+  overflow: hidden;
   background-repeat: no-repeat !important;
   background-attachment: fixed;
   background-position: center center !important;
   background-size: cover !important;
 }
 
+.projectEntry div .projName {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 0.8em;
+  background: none;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+
 @media screen and (max-width: 37.5rem) {
   .projectEntry div {
     padding-bottom: 50%;
   }
-}
-
-.projectEntry div .label {
-  color: white;
+  .projectEntry div .projName {
+    font-size: 1.2em;
+    background: none;
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .csstransitions.no-touch .projectEntry {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  -webkit-transition: 0.5s linear;
-  -moz-transition: 0.5s linear;
-  transition: 0.5s linear;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.csstransitions.no-touch .projectEntry div .projName {
+  top: 100%;
+  -webkit-transition: top 0.4s ease-in-out;
+  -moz-transition: top 0.4s ease-in-out;
+  transition: top 0.4s ease-in-out;
 }
 
 .csstransitions.no-touch .projectEntry:hover {
   -webkit-filter: none;
   filter: none;
-  cursor: pointer;
+}
+
+.csstransitions.no-touch .projectEntry:hover div .projName {
+  top: 0;
 }
 
 /* ========================================================================== */
