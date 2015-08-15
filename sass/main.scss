@@ -8,7 +8,6 @@ $max-width: rem(1088);
 $tablet:	rem(800);
 $mobile:	rem(500);
 
-
 // Neat omega reset by www.joshfry.me
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
@@ -120,7 +119,6 @@ a:hover {
 	display: block;
 	min-height: 1rem;
 }
-
 
 
 .medSpacer {
