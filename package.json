@@ -15,13 +15,20 @@
       "node": true,
       "browser": false
     },
-    "globals": {
-    },
+    "globals": {},
     "rules": {
-      "linebreak-style": [2, "unix"],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
       "no-unused-vars": 1,
       "no-empty": 1,
       "no-console": 1
     }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4"
   }
 }
