@@ -228,7 +228,6 @@ a:hover {
 
 .projectEntry {
   background: #ccc;
-  min-height: 300px;
   margin-bottom: 0.809em;
   float: left;
   display: block;
@@ -311,6 +310,21 @@ a:hover {
   }
   .projectEntry:last-child {
     margin-right: 0;
+  }
+}
+
+.projectEntry div {
+  width: 100%;
+  padding-bottom: 100%;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+@media screen and (max-width: 37.5rem) {
+  .projectEntry div {
+    padding-bottom: 50%;
   }
 }
 
