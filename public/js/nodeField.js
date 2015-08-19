@@ -13,7 +13,7 @@ var sketch = function( nodesP5 ) {
   var maxEdges = 3;
   var maxEdgeLength = 200;
   var interactionStartFrames = 120;
-  var numNodes = nodesP5.int(100 * (window.innerWidth/2400));
+  var numNodes = nodesP5.int(90 * (window.innerWidth/2400));
   
   var fillColor1 = 200;
   var fillColor2 = 230;
@@ -28,6 +28,7 @@ var sketch = function( nodesP5 ) {
     parentDimensions = nodesP5.createVector(parentContainer.clientWidth,parentContainer.clientHeight);
     var theCanvas = nodesP5.createCanvas(parentDimensions.x, parentDimensions.y);
     theCanvas.parent(parentContainer);
+    nodesP5.frameRate(30);
     wind = nodesP5.createVector(nodesP5.random(-0.5,0.5),nodesP5.random(-0.5,0.5));
     reset();
     remake();
@@ -85,7 +86,7 @@ var sketch = function( nodesP5 ) {
 
 
 
-    // console.log(int(frameRate()));
+    //console.log(nodesP5.int(nodesP5.frameRate()));
   }
   
   
