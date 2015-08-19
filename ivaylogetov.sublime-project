@@ -1,19 +1,23 @@
 {
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"gulp",
+				"sass"
+			],
+			"name": "GulpSass",
+			"selector": "source.sass"
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "."
 		}
 	],
-	"build_systems":
-    [
-        {
-            "name": "GulpSass",
-            "cmd": ["gulp", "sass"],
-            "selector": "source.sass"
-        }
-    ],
-    "settings":
+	"settings":
 	{
 		"build_on_save": 1
 	}
