@@ -4,5 +4,17 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"build_systems":
+    [
+        {
+            "name": "GulpSass",
+            "cmd": ["gulp", "sass"],
+            "selector": "source.sass"
+        }
+    ],
+    "settings":
+	{
+		"build_on_save": 1
+	}
 }
