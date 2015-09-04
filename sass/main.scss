@@ -328,18 +328,14 @@ a {
 
 /* footer */
 
-.footer-2 {
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-  $footer-background: desaturate(darken($action-color, 20%), 30%);
+footer {
+  $footer-background: #0a0a0a;
   $footer-color: white;
   $footer-link-color: transparentize($footer-color, 0.6);
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
   background: $footer-background;
-  padding: $base-spacing;
+  padding: 1.4rem;
   width: 100%;
   display: inline-block;
 
@@ -349,7 +345,7 @@ a {
     margin-right: 1em;
     margin-bottom: 1em;
 
-    @include media($large-screen) {
+    @include media($tablet) {
       float: left;
       margin-bottom: 0;
     }
@@ -364,7 +360,7 @@ a {
     margin: 0 0 1em 0;
     padding: 0;
     
-    @include media($large-screen) {
+    @include media($tablet) {
       float: left;
       line-height: 1.8em;
       margin-left: 1em;
@@ -376,7 +372,7 @@ a {
     list-style: none;
     padding-right: 1em;
 
-    @include media($large-screen) {
+    @include media($tablet) {
       display: inline;
       text-align: left;
     }
@@ -393,7 +389,7 @@ a {
   }
 
   .footer-secondary-links {
-    @include media($large-screen) {
+    @include media($tablet) {
       float: right;
     }
 
@@ -402,9 +398,9 @@ a {
     }
 
     ul.footer-social {
-      margin: 1em 0 0 0;
+      margin: 0.5rem 0 0 0;
 
-      @include media($large-screen) {
+      @include media($tablet) {
         float: right;
         margin-top: 0;
       }
@@ -422,7 +418,7 @@ a {
       }
 
       img {
-        height: 1.6em;
+        height: 1.4em;
         opacity: 0.7;
         padding: 1px;
 
