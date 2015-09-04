@@ -9,6 +9,7 @@ $tablet:	rem(800);
 $mobile:	rem(500);
 
 
+
 // Neat omega reset by www.joshfry.me
 @mixin omega-reset($nth) {
   &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
@@ -78,6 +79,10 @@ $fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
 $fadeOnLoad: "p, h1, .projects";
 //$defaultWeight: 200;
 $defaultWeight: 500;
+
+$footer-background: $bgColor;
+$footer-color: $textColor;
+$footer-link-color: transparentize($footer-color, 0.6);
 
 @import "partials/bpDefaults";
 /* ========================================================================== */
@@ -329,106 +334,96 @@ a {
 /* footer */
 
 footer {
-  $footer-background: #0a0a0a;
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+    background: $footer-background;
+    padding: 1.8rem 0rem;
+    width: 100%;
+    display: inline-block;
 
-  background: $footer-background;
-  padding: 1.4rem;
-  width: 100%;
-  display: inline-block;
-
-  position: relative;
-
-  .footer-logo {
-    margin-right: 1em;
-    margin-bottom: 1em;
+    position: relative;
+    font-size: 1.0rem;
+    color: $footer-color;
 
     @include media($tablet) {
-      float: left;
-      margin-bottom: 0;
-    }
-  }
-
-  .footer-logo img {
-    height: 1.6em;
-  } 
-
-  ul {
-    line-height: 1.5em;
-    margin: 0 0 1em 0;
-    padding: 0;
-    
-    @include media($tablet) {
-      float: left;
-      line-height: 1.8em;
-      margin-left: 1em;
-      margin-bottom: 0;
-    }
-  }
-
-  ul li {
-    list-style: none;
-    padding-right: 1em;
-
-    @include media($tablet) {
-      display: inline;
-      text-align: left;
-    }
-  }
-
-  ul li a {
-    color: $footer-link-color;
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
-    }
-  }
-
-  .footer-secondary-links {
-    @include media($tablet) {
-      float: right;
+        font-size: 1.1rem;
     }
 
-    li {
-      font-size: 0.8em;
-    }
+    ul {
+        line-height: 1.5em;
+        // margin: 0 0 1em 0;
+        padding: 0;
 
-    ul.footer-social {
-      margin: 0.5rem 0 0 0;
-
-      @include media($tablet) {
-        float: right;
-        margin-top: 0;
-      }
-
-      li {
-        font-size: 1em;
-        float: left;
-        line-height: 0;
-        margin: 0;
-        padding-right: 0.7em;
-
-        &:last-child {
-          padding-right: 0;
+        a {
+            color: $footer-color
         }
-      }
 
-      img {
-        height: 1.4em;
-        opacity: 0.7;
-        padding: 1px;
+        @include media($tablet) {
+            float: left;
+            line-height: 1.8em;
+            // margin-left: 1em;
+            padding: 2rem 0rem 0.5rem 0rem;
+        }
+    }
 
-        &:focus,
+    ul li {
+        list-style: none;
+        padding-right: 1em;
+
+        @include media($tablet) {
+            display: inline;
+            text-align: left;
+        }
+    }
+
+    .footer-secondary-links {
+        @include media($tablet) {
+            float: right;
+        }
+
+        ul.footer-social {
+            margin: 0.5rem 0 4rem 0;
+            padding-top: 1em;
+
+            li {
+                font-size: 1.1em;
+                float: left;
+                line-height: 0;
+                margin: 0;
+                padding-right: 0.7em;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+
+            img {
+                height: 1.5em;
+                padding: 1px;
+            }
+
+            @include media($tablet) {
+                margin: 2rem 0 0 0;
+                float: right;
+                li {
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}
+
+.no-touch.opacity.csstransforms.csstransitions footer {
+    a.linkAnim:before {
+        background-color: $footer-color;
+    }
+
+    .socialLink {
+        opacity: 0.6;
+        @include transition(opacity 0.5s linear);
+
         &:hover {
-          opacity: 1;
+            opacity: 1.0;
         }
-      }
     }
-  }
 }
 
 

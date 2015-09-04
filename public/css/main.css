@@ -488,41 +488,35 @@ a {
 
 /* footer */
 footer {
-  background: #0a0a0a;
-  padding: 1.4rem;
+  background: #fff;
+  padding: 1.8rem 0rem;
   width: 100%;
   display: inline-block;
   position: relative;
-}
-
-footer .footer-logo {
-  margin-right: 1em;
-  margin-bottom: 1em;
+  font-size: 1.0rem;
+  color: #000;
 }
 
 @media screen and (min-width: 50rem) {
-  footer .footer-logo {
-    float: left;
-    margin-bottom: 0;
+  footer {
+    font-size: 1.1rem;
   }
-}
-
-footer .footer-logo img {
-  height: 1.6em;
 }
 
 footer ul {
   line-height: 1.5em;
-  margin: 0 0 1em 0;
   padding: 0;
+}
+
+footer ul a {
+  color: #000;
 }
 
 @media screen and (min-width: 50rem) {
   footer ul {
     float: left;
     line-height: 1.8em;
-    margin-left: 1em;
-    margin-bottom: 0;
+    padding: 2rem 0rem 0.5rem 0rem;
   }
 }
 
@@ -538,39 +532,19 @@ footer ul li {
   }
 }
 
-footer ul li a {
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-}
-
-footer ul li a:focus,
-footer ul li a:hover {
-  color: white;
-}
-
 @media screen and (min-width: 50rem) {
   footer .footer-secondary-links {
     float: right;
   }
 }
 
-footer .footer-secondary-links li {
-  font-size: 0.8em;
-}
-
 footer .footer-secondary-links ul.footer-social {
-  margin: 0.5rem 0 0 0;
-}
-
-@media screen and (min-width: 50rem) {
-  footer .footer-secondary-links ul.footer-social {
-    float: right;
-    margin-top: 0;
-  }
+  margin: 0.5rem 0 4rem 0;
+  padding-top: 1em;
 }
 
 footer .footer-secondary-links ul.footer-social li {
-  font-size: 1em;
+  font-size: 1.1em;
   float: left;
   line-height: 0;
   margin: 0;
@@ -582,14 +556,33 @@ footer .footer-secondary-links ul.footer-social li:last-child {
 }
 
 footer .footer-secondary-links ul.footer-social img {
-  height: 1.4em;
-  opacity: 0.7;
+  height: 1.5em;
   padding: 1px;
 }
 
-footer .footer-secondary-links ul.footer-social img:focus,
-footer .footer-secondary-links ul.footer-social img:hover {
-  opacity: 1;
+@media screen and (min-width: 50rem) {
+  footer .footer-secondary-links ul.footer-social {
+    margin: 2rem 0 0 0;
+    float: right;
+  }
+  footer .footer-secondary-links ul.footer-social li {
+    font-size: 1.3em;
+  }
+}
+
+.no-touch.opacity.csstransforms.csstransitions footer a.linkAnim:before {
+  background-color: #000;
+}
+
+.no-touch.opacity.csstransforms.csstransitions footer .socialLink {
+  opacity: 0.6;
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.no-touch.opacity.csstransforms.csstransitions footer .socialLink:hover {
+  opacity: 1.0;
 }
 
 /* ========================================================================== */

@@ -39,8 +39,8 @@ $(document).ready(function() {
         });
     }
 
-    $(".hiddenEmail").html(rot13rot5Encode('<n uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
-    $(".hiddenPhone").html(rot13rot5Encode('<n>+6.865.839.1837</n>'));
+    $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
+    $(".hiddenPhone").html(rot13rot5Encode('<n uers="gry:+68658391837" pynff="yvaxNavz">556.865.839.1837</n>'));
 
     function draw(){
         Cube.viewport.move();
