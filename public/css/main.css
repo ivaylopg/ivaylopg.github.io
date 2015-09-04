@@ -488,7 +488,7 @@ a {
 
 /* footer */
 footer {
-  background: #fff;
+  background: none;
   padding: 1.8rem 0rem;
   width: 100%;
   display: inline-block;
