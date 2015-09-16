@@ -60,6 +60,18 @@ $mobile:	rem(500);
     
 }
 
+@mixin projectTwoCols {
+
+    @include span-columns(6);
+    @include omega(2n);
+
+    @include media(max-width $tablet * 1.2) {
+        @include omega-reset(2n);
+        @include span-columns(12);
+    }
+    
+}
+
 @mixin fullBg {
 	background-repeat: no-repeat !important;
 	background-attachment: fixed; 
@@ -76,7 +88,7 @@ $textColor: 	#000;
 $fontStack1:	"fira-sans-2", "FiraSansUL", "helveticaLight", sans-serif;
 $fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
 
-$fadeOnLoad: "p, h1, .projects";
+$fadeOnLoad: "p, h1, .projects, .frontCover";
 //$defaultWeight: 200;
 $defaultWeight: 500;
 
@@ -330,6 +342,19 @@ a {
 		top: 0;
 	}
 }
+
+/* project page */
+
+img.projCover, img.projImage {
+    width: 100%;
+    margin-bottom: $gutter/2;
+}
+
+img.projColumns {
+    margin-bottom: $gutter/2;
+    @include projectTwoCols;
+}
+
 
 /* footer */
 
