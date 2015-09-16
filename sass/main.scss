@@ -127,6 +127,11 @@ h1 {
 	font-size: 1.3em;
 }
 
+h2 {
+    @extend .bolder;
+    font-size: 1em;
+}
+
 a {
 	position: relative;
 	color: $textColor;
@@ -343,6 +348,7 @@ a {
 	}
 }
 
+
 /* project page */
 
 img.projCover, img.projImage {
@@ -353,6 +359,61 @@ img.projCover, img.projImage {
 img.projColumns {
     margin-bottom: $gutter/2;
     @include projectTwoCols;
+}
+
+
+/* CV page */
+
+#cvBody {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+
+    ul {
+        padding: 0em;
+
+        li {
+            list-style: none;
+            padding-bottom: 0.2em;
+        }
+    }
+}
+
+a.cvLink:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+}
+
+.no-touch.opacity.csstransforms.csstransitions a.cvLink {
+    opacity: 1.0;
+    @include transition(opacity 0.5s linear);
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+ul.edu {
+    margin-top: 0.2em;
+    padding-left: 1.5em !important;
+
+    li {
+        // list-style: initial !important;
+        list-style-type: circle !important;
+    }
+}
+
+
+ul.pubs {
+
+}
+
+ul.projs {
+
 }
 
 
