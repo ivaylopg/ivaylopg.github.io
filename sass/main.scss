@@ -57,7 +57,7 @@ $mobile:	rem(500);
     	@include omega-reset(2n);
     	@include span-columns(12);
     }
-    
+
 }
 
 @mixin projectTwoCols {
@@ -69,12 +69,12 @@ $mobile:	rem(500);
         @include omega-reset(2n);
         @include span-columns(12);
     }
-    
+
 }
 
 @mixin fullBg {
 	background-repeat: no-repeat !important;
-	background-attachment: fixed; 
+	background-attachment: fixed;
 	background-position: center center !important;
 	background-size: cover !important;
 }
@@ -176,7 +176,10 @@ a {
 }
 
 .muchSmaller {
-	font-size: 0.5em;
+	font-size: 0.7em;
+    @include media(min-width $tablet){
+        font-size: 0.5em;
+    }
 }
 
 
@@ -294,7 +297,7 @@ a {
 	min-height: 100vh;
 }
 
-.introText {	
+.introText {
 }
 
 .projectEntry {
@@ -516,7 +519,7 @@ footer {
 
 
 /* ========================================================================== */
-/* THE CUBE */ 
+/* THE CUBE */
 
 @import "partials/cube";
 
