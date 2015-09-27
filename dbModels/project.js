@@ -7,9 +7,7 @@ var projectSchema = mongoose.Schema({
     thumb: String,
     shortDescription: String,
     longDescription: String,
-    video: [String],
-    images: [{src: String, priority: Number}],
-    imageGroups: [{src1: String, src2: String, priority: Number}],
+    media: [ {src: mongoose.Schema.Types.Mixed } ],
     projectDate: Date,
     updated: Date,
     priority: Number
