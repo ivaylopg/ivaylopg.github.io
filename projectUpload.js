@@ -49,16 +49,37 @@ var projectData = new Project({
     linkText: 'electricsheep'
 });
 
-
-
-
-
 projectData.save(function (err, projectData) {
   if (err) return console.error(err);
   console.log("success");
 });
 //*/
 
+/*
+var projectData = new Project({
+    title: 'Untitled(Triptych)',
+    tags: ['Video','Installation'],
+    coverImg: 'http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/03.jpg',
+    thumb: 'http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/triptych.jpg',
+    shortDescription: 'Computer visualizations of romantic connection.',
+    longDescription: 'Three-channel video installation.\n\nFive couples come together in a kiss, recorded by a 3D Scanner and custom software. Because of the limitations of the low-resolution technology, the computer has trouble separating each member of the pair when they come close to each other and thus frequently renders a physical connection between their two faces where one does not exist, presenting the two individuals as one connected mass.\n\nDue to this "mistake" the machine has actually visualized a connection that does exist, creating a visual representation of the desire for two people to come together or become one. The viewer, seeing the couples only through the machine\'s point of view in fact gets an actual sense of the closeness of the partners, enabling the viewer to understand and maybe feel the sense of emotional connection.\n\nThree videos show different modes of rendering the data, looping indefinitely and creating an infinite amount of relationships among the three displayed scenes.\n\nA hacked Xbox Kinect was used as the scanner, and the 3D data is combined with color data from a digital cinema camera using RGBD Toolkit.',
+    media: [
+        {src:'https://player.vimeo.com/video/58791794'},
+        {src:'http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/06.jpg'},
+        {src:['http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/01.jpg','http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/02.jpg']},
+        {src:'http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/07.png'},
+        {src:['http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/04.jpg','http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/05.jpg']}
+    ],
+    projectDate: new Date('November 11, 2012'),
+    priority: 0,
+    linkText: 'triptych'
+});
+
+projectData.save(function (err, projectData) {
+  if (err) return console.error(err);
+  console.log("success");
+});
+//*/
 
 
 /*
