@@ -40,15 +40,51 @@ app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', function(req, res){
-	res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/public/index.html');
 });
+
+app.get('/:data', function(req, res){
+    var query = req.params.data;
+    console.log("parameter entered: %s", query);
+    var displayProj;
+
+    Project.find(function (err, projects) {
+        if (err) return console.error(err);
+
+        for (var p = 0; p < projects.length; p++) {
+            if (projects[p].linkText == query) {
+                displayProj = projects[p]
+                break;
+            }
+        }
+
+        if (displayProj != undefined) {
+            console.log(displayProj);
+        } else {
+            console.log("no project!");
+        }
+        //console.log(projects);
+        //console.log(projects[0].longDescription);
+        //console.log(marked(projects[0].longDescription));
+        //console.log(projects.length);
+    })
+    res.sendFile(__dirname + '/public/index.html');
+  //res.render('index', {localTrackTerm: query});
+});
+
+
+
+
+
+
+
+
 
 var server = app.listen(8001, function () {
 	var host = server.address().address
 	var port = server.address().port
 	console.log('listening on http://%s:%s', host, port);
 });
-
 
 ///////////////////////////
 // Cleanup on Close
