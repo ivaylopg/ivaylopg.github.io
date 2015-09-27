@@ -75,35 +75,15 @@ app.get('/:data', function(req, res){
 });
 
 app.get('/tagged/:data', function(req, res){
-    var tag = req.params.data.toLowerCase();
+    var tag = req.params.data;
     console.log("tag parameter entered: %s", tag);
-    var displayProj = [];
-
-    Project.find(function (err, projects) {
-        if (err) return console.error(err);
-
-        for (var p = 0; p < projects.length; p++) {
-            var tagArray = projects[p].tags;
-
-            for (var i=0, l=tagArray.length; i<l; i++) {
-                if (tagArray[i].toLowerCase() == tag) {
-                    displayProj.push(projects[p]);
-                    break;
-                }
-            }
-        }
-
+    getTaggedProjects(tag,function(displayProj){
         if (displayProj.length > 0) {
             console.log(displayProj.length);
         } else {
             console.log("no projects!");
         }
-
-        //console.log(projects);
-        //console.log(projects[0].longDescription);
-        //console.log(marked(projects[0].longDescription));
-        //console.log(projects.length);
-    })
+    });
     res.sendFile(__dirname + '/public/index.html');
   //res.render('index', {localTrackTerm: query});
 });
@@ -113,13 +93,37 @@ app.get('/tagged/:data', function(req, res){
 
 
 
-
-
+///////////////////////////
+// Start server
 var server = app.listen(8001, function () {
 	var host = server.address().address
 	var port = server.address().port
 	console.log('listening on http://%s:%s', host, port);
 });
+
+///////////////////////////
+// Custom functions
+
+function getTaggedProjects (queryTag, callback) {
+    var taggedProjects = [];
+
+    Project.find(function (err, projects) {
+        if (err) return console.error(err);
+
+        for (var p = 0; p < projects.length; p++) {
+            var tagArray = projects[p].tags;
+
+            for (var i=0, l=tagArray.length; i<l; i++) {
+                if (tagArray[i].toLowerCase() == queryTag.toLowerCase()) {
+                    taggedProjects.push(projects[p]);
+                    break;
+                }
+            }
+        }
+        callback(taggedProjects);
+    });
+}
+
 
 ///////////////////////////
 // Cleanup on Close
