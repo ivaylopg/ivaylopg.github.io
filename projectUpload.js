@@ -19,7 +19,7 @@ db.once('open', function (callback) {
 });
 
 
-//*
+/*
 var projectData = new Project({
     title: 'Electric Sheep',
     tags: ['Prints','Video','Code'],
@@ -47,12 +47,13 @@ projectData.save(function (err, projectData) {
 });
 //*/
 
-/*
+//*
 Project.find(function (err, projects) {
   if (err) return console.error(err);
   console.log(projects);
+  //console.log(projects[0].longDescription);
 })
-*/
+//*/
 
 
 
