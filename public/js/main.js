@@ -11,7 +11,7 @@ var tinyCube = false;
 $(document).ready(function() {
 
     if ($("body").hasClass("showCube")) {
-        console.log("cube!");
+        //console.log("cube!");
 
         if (window.innerWidth < 500) {
             tinyCube = true;
@@ -40,6 +40,10 @@ $(document).ready(function() {
         }
         animId = requestAnimationFrame(draw);
 
+    }
+
+    if ($("body").hasClass("projectPage")) {
+        $(".vidContainer").fitVids();
     }
 
     $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
@@ -108,6 +112,21 @@ $(document).keydown(function(e) {
         default:
             break;
     }
+});
+
+$(".scrollLink").click(function(e){
+    e.preventDefault();
+    var dest = $(this).attr("href");
+    var target;
+    if (dest == "#" || dest == "") {
+        target=0;
+    } else {
+        target = Math.floor($(dest).offset().top);
+    }
+    var speed = Math.floor((target - $(window).scrollTop())/3);
+    $("body").animate({
+        scrollTop: target
+    }, Math.abs(speed));
 });
 
 
