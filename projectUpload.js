@@ -1,6 +1,8 @@
 /*eslint-disable */
 
 var mongoose = require('mongoose');
+var Project = require('./dbModels/project')
+
 var key = process.env.KEY;
 var mdbOptions = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }}
 mongoose.connect('mongodb://ivaylopg:'+ key + '@localhost/ivaylogetovsite',mdbOptions);
@@ -17,32 +19,7 @@ db.once('open', function (callback) {
 });
 
 
-
-
-var projectSchema = mongoose.Schema({
-    title: String,
-    tags: [String],
-    coverImg: String,
-    thumb: String,
-    shortDescription: String,
-    longDescription: String,
-    video: [String],
-    images: [{src: String, priority: Number}],
-    imageGroups: [{src1: String, src2: String, priiority: Number}],
-    projectDate: Date,
-    updated: Date
-});
-
-projectSchema.pre('save', function(next) {
-  var currentDate = new Date();
-  this.updated = currentDate;
-  next();
-});
-
-
 /*
-var Project = mongoose.model('Project', projectSchema);
-
 var projectData = new Project({
     title: ""
 });
@@ -51,7 +28,7 @@ projectData.save(function (err, projectData) {
   if (err) return console.error(err);
   console.log("success");
 });
-*/
+//*/
 
 /*
 Project.find(function (err, projects) {
