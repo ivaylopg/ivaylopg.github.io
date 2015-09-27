@@ -9,9 +9,10 @@ var projectSchema = mongoose.Schema({
     longDescription: String,
     video: [String],
     images: [{src: String, priority: Number}],
-    imageGroups: [{src1: String, src2: String, priiority: Number}],
+    imageGroups: [{src1: String, src2: String, priority: Number}],
     projectDate: Date,
-    updated: Date
+    updated: Date,
+    priority: Number
 });
 
 projectSchema.pre('save', function(next) {
