@@ -10,7 +10,8 @@ var projectSchema = mongoose.Schema({
     media: [ {src: mongoose.Schema.Types.Mixed } ],
     projectDate: Date,
     updated: Date,
-    priority: Number
+    priority: Number,
+    linkText: String
 });
 
 projectSchema.pre('save', function(next) {
