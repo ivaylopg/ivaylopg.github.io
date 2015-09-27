@@ -37,6 +37,7 @@ db.once('open', function (callback) {
 ///////////////////////////
 // Express Routes
 app.use(express.static(__dirname + '/public'));
+app.use('/tagged', express.static('public'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', function(req, res){
@@ -63,6 +64,7 @@ app.get('/:data', function(req, res){
         } else {
             console.log("no project!");
         }
+
         //console.log(projects);
         //console.log(projects[0].longDescription);
         //console.log(marked(projects[0].longDescription));
@@ -72,6 +74,39 @@ app.get('/:data', function(req, res){
   //res.render('index', {localTrackTerm: query});
 });
 
+app.get('/tagged/:data', function(req, res){
+    var tag = req.params.data.toLowerCase();
+    console.log("tag parameter entered: %s", tag);
+    var displayProj = [];
+
+    Project.find(function (err, projects) {
+        if (err) return console.error(err);
+
+        for (var p = 0; p < projects.length; p++) {
+            var tagArray = projects[p].tags;
+
+            for (var i=0, l=tagArray.length; i<l; i++) {
+                if (tagArray[i].toLowerCase() == tag) {
+                    displayProj.push(projects[p]);
+                    break;
+                }
+            }
+        }
+
+        if (displayProj.length > 0) {
+            console.log(displayProj.length);
+        } else {
+            console.log("no projects!");
+        }
+
+        //console.log(projects);
+        //console.log(projects[0].longDescription);
+        //console.log(marked(projects[0].longDescription));
+        //console.log(projects.length);
+    })
+    res.sendFile(__dirname + '/public/index.html');
+  //res.render('index', {localTrackTerm: query});
+});
 
 
 
