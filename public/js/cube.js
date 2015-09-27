@@ -8,6 +8,15 @@
       intead of WebGL is his too.
      * * * */
 
+var el = document.createElement('div'),
+    transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
+    transformProp = support(transformProps);
+
+/* var transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
+    transitionDurationProp = support(transitionDuration); //*/
+
+
+
 var Cube = {
     startX: -20.0,
     startY: 45.0,
@@ -114,3 +123,11 @@ $('#theBlackBox').on('move-viewport', function(e, movedMouse) {
 
     //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
 });
+
+function support(props) {
+    for(var i = 0, l = props.length; i < l; i++) {
+        if(typeof el.style[props[i]] !== "undefined") {
+            return props[i];
+        }
+    }
+}

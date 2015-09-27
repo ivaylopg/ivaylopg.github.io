@@ -8,7 +8,9 @@
     "globals": {
       "Modernizr": true,
       "p5": true,
-      "Vector2d": true
+      "Vector2d": true,
+      "rot13rot5Encode": true,
+      "Cube":true
     },
     "rules": {
     }

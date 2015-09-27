@@ -2,14 +2,6 @@
 // GLOBAL VARS
 
 var isMobile = false;
-
-var el = document.createElement('div'),
-    transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
-    transformProp = support(transformProps);
-
-/* var transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
-    transitionDurationProp = support(transitionDuration); //*/
-
 var animId;
 var tinyCube = false;
 
@@ -48,7 +40,7 @@ $(document).ready(function() {
         }
         animId = requestAnimationFrame(draw);
 
-    };
+    }
 
     $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
     $(".hiddenPhone").html(rot13rot5Encode('<n uers="gry:+68658391837" pynff="yvaxNavz">556.865.839.1837</n>'));
@@ -185,14 +177,6 @@ function on_resize(c,t){onresize=function(){clearTimeout(t);t=setTimeout(c,250);
             clearTimeout(id);
         };
 }());
-
-function support(props) {
-    for(var i = 0, l = props.length; i < l; i++) {
-        if(typeof el.style[props[i]] !== "undefined") {
-            return props[i];
-        }
-    }
-}
 
 
 //Extend JS with clamp function
