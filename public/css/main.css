@@ -540,6 +540,10 @@ img.projColumns:nth-child(2n+1) {
   }
 }
 
+.vidContainer {
+  margin-bottom: 0.809em;
+}
+
 /* CV page */
 #cvBody {
   font-size: 1.2rem;

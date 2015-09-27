@@ -364,6 +364,10 @@ img.projColumns {
     @include projectTwoCols;
 }
 
+.vidContainer {
+    margin-bottom: $gutter/2;
+}
+
 
 /* CV page */
 
