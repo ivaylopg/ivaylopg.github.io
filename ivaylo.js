@@ -53,7 +53,7 @@ var configured = markedSwig.configure({
 ///////////////////////////
 // Express Routes
 app.use(express.static(__dirname + '/public'));
-app.use('/tagged', express.static('public'));
+app.use('/tagged/', express.static('public'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', function(req, res){
