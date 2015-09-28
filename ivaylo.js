@@ -57,7 +57,30 @@ app.use('/tagged', express.static('public'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.get('/', function(req, res){
-	res.sendFile(__dirname + '/public/index.html');
+
+    Project.find(function (err, projects) {
+        if (err) {
+            //res.sendFile(__dirname + '/staticindex.html');
+            return console.error(err);
+        }
+
+        if (projects != undefined && projects.length > 0) {
+            var tags = [];
+            for (var i=0, il=projects.length; i<il; i++) {
+                 for (var j=0, jl=projects[i].tags.length; j<jl; j++) {
+                    tags.push(projects[i].tags[j]);
+                 }
+            }
+            console.log("index with %s projects",projects.length);
+            res.render('index', {allProjects: projects, allTags: tags});
+        } else {
+            console.log("static page");
+            //res.sendFile(__dirname + '/staticindex.html');
+        }
+    })
+
+
+	//res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/:data', function(req, res){
@@ -80,6 +103,7 @@ app.get('/:data', function(req, res){
             res.render('project', displayProj);
         } else {
             console.log("no project!");
+            res.render('index', projects);
         }
     })
 });

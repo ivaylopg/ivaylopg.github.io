@@ -33,7 +33,7 @@
                 <div class="spacer"></div>
 
                 <p>
-                    Take a look at some of the <a href="" class="bolder linkAnim">projects</a>. Or even better, go check out <a href="" class="bolder linkAnim">Luxloop</a>, which is where I’m putting most of my creative energy these days. If you're looking for my CV, that's <a href="" class="bolder linkAnim">here</a>. All my contact info and social media stuff is down at the <a href="" class="bolder linkAnim">bottom</a> of every page.
+                    Take a look at some of the <a href="#theProjects" class="bolder linkAnim scrollLink">projects</a>. Or even better, go check out <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, which is where I’m putting most of my creative energy these days. If you're looking for my CV, that's <a href="" class="bolder linkAnim">here</a>. All my contact info and social media stuff is down at the <a href="#theFooter" class="bolder linkAnim scrollLink">bottom</a> of every page.
                 </p>
                 <p>
                     This page is for my art projects, ramblings and personal experiments. That’s the vibe here. Fair warning. Scroll down! Take a look around...
@@ -89,7 +89,7 @@
                 </p>
 
                 <p>
-                    I know that’s still not a great answer to “what do you do?” but I’m confident that you are either somebody that totally gets it, or you stopped reading four paragraphs ago. If you’re the former, <a href="" class="bolder linkAnim">give me call</a>. I think we can make really cool things together.
+                    I know that’s still not a great answer to “what do you do?” but I’m confident that you are either somebody that totally gets it, or you stopped reading four paragraphs ago. If you’re the former, <a href="#theFooter" class="bolder linkAnim scrollLink">give me call</a>. I think we can make really cool things together.
                 </p>
 
                 <div class="spacer"></div>
@@ -99,75 +99,41 @@
                 </p>
                 <p>
                     Hi. I'm Ivaylo Getov.<br>
-                    I’m a cofounder and Creative Director at <a href="" class="bolder linkAnim">Luxloop</a>, a creative-technology studio.<br>
+                    I’m a cofounder and Creative Director at <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, a creative-technology studio.<br>
                     I make interactive art using technology, and often work as a freelance cinematographer. I’d love to talk to you.
                 </p>
                 <div class="medSpacer"></div>
 
             </div>
 
-            <div class="fullWidth">
+            {% if allProjects %}
+            <div class="fullWidth" id="theProjects">
                 <h1>Recent Work</h1>
             </div>
 
-            <div class="fullWidth projects margBotBigSpacer">
-                <div class="projectEntry">
-                    <a href="">
-                        <div style="background: url(img/thumbs/salon.jpg)">
-                            <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
+
+            <div class="fullWidth projects margBotMedSpacer">
+                {% for proj in allProjects %}
+                <div class="projectEntry{% for tag in proj.tags %} {{tag|lower}}{% endfor %}">
+                    <a href="{{proj.linkText}}">
+                    <div style="background: url({{proj.thumb}})">
+                        <div class="projName">
+                            {{proj.title}}<br>
+                            <span class="muchSmaller">{% for tag in proj.tags %}{{tag|upper}}{% if !loop.last %}&nbsp;//&nbsp;{% endif %}{% endfor %}</span>
                         </div>
-                    </a>
-                </div>
-
-                <div class="projectEntry">
-                    <a href="">
-                    <div style="background: url(img/thumbs/axion.jpg)">
-                        <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
                     </div>
                     </a>
                 </div>
-
-                <div class="projectEntry">
-                    <a href="">
-                    <div style="background: url(img/thumbs/framerates.jpg)">
-                        <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
-                    </div>
-                    </a>
-                </div>
-
-                <div class="projectEntry">
-                    <a href="">
-                    <div style="background: url(img/thumbs/steps.jpg)">
-                        <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
-                    </div>
-                    </a>
-                </div>
-
-                <div class="projectEntry">
-                    <a href="">
-                    <div style="background: url(img/thumbs/pose.jpg)">
-                        <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
-                    </div>
-                    </a>
-                </div>
-
-                <div class="projectEntry">
-                    <a href="">
-                    <div style="background: url(img/thumbs/triptych.jpg)">
-                        <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
-                    </div>
-                    </a>
-                </div>
-
-                <div class="projectEntry">
-                    <a href="">
-                    <div style="background: url(img/thumbs/axion.jpg)">
-                        <div class="projName">Project Title<br><span class="muchSmaller">SOME // TAGS // GO // HERE</span></div>
-                    </div>
-                    </a>
-                </div>
-
+                {% endfor %}
             </div>
+            <p class="muchSmaller projectTags margBotMedSpacer">
+                {% for tag in allTags|uniq %}
+                    <a href="/tagged/{{tag}}" class="linkAnim tagLink">{{tag|upper}}</a>&nbsp;//&nbsp;
+                {% endfor %}
+                <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a>
+            </p>
+            {% endif %}
+
 
 
         </section>
@@ -190,6 +156,6 @@
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script src="analytics.js"></script>
+        <script src="js/analytics.js"></script>
     </body>
 </html>
