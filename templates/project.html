@@ -31,7 +31,7 @@
                 <p>
                     <span class="muchSmaller">
                     {% for tag in tags %}
-                      <a href="/tagged/{{tag}}" class="linkAnim tagLink">{{tag|upper}}</a>
+                      <a href="/tagged/{{tag|lower}}" class="linkAnim tagLink">{{tag|upper}}</a>
                       {% if !loop.last %}&nbsp;//{% endif %}
                     {% endfor %}
                     <span>
