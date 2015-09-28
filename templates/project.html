@@ -10,34 +10,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 
-        <script>
-          (function(d) {
-            var timedOut = function(){
-                // console.log("timed out");
-                var fallBackFont = document.createElement('link');
-                fallBackFont.rel = "stylesheet";
-                fallBackFont.href = "fonts/firaSans.min.css";
-                document.head.appendChild(fallBackFont);
-            }
-            //nsg2nrd
-            var config = {
-              kitId: 'nsg2nrd',
-              scriptTimeout: 3000,
-              async: true,
-              loading: function() {
-                // console.log("loading");
-              },
-              active: function() {
-                // console.log("loaded");
-              },
-              inactive: function() {
-                // console.log("no-dice");
-                timedOut();
-              }
-            },
-            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";timedOut()},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){console.log()}};s.parentNode.insertBefore(tk,s)
-          })(document);
-        </script>
+        <script src="js/typekit.js"></script>
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -103,39 +76,7 @@
 
         </section>
 
-        <footer role="contentinfo">
-            <div class="gridded">
-                <div class="fullWidth">
-                    <ul>
-                      <li class="hiddenEmail"></li>
-                      <li class="hiddenPhone"></li>
-                    </ul>
-
-                    <div class="footer-secondary-links">
-                      <ul class="footer-social">
-                        <li><a href="//instagram.com/ivaylopg/" target="_blank">
-                          <img src="img/social/insta.svg" onerror="this.onerror=null; this.src='img/social/insta.png'" alt="insta" class="socialLink">
-                          </a></li>
-                        <li><a href="//github.com/ivaylopg" target="_blank">
-                          <img src="img/social/github.svg" onerror="this.onerror=null; this.src='img/social/github.png'" alt="github" class="socialLink">
-                          </a></li>
-                        <li><a href="//twitter.com/ivaylopg" target="_blank">
-                          <img src="img/social/twitter.svg" onerror="this.onerror=null; this.src='img/social/twitter.png'" alt="twitter" class="socialLink">
-                          </a></li>
-                        <li><a href="//blog.ivaylogetov.com/" target="_blank">
-                          <img src="img/social/tumblr.svg" onerror="this.onerror=null; this.src='img/social/tumblr.png'" alt="tumblr" class="socialLink">
-                        </a></li>
-                        <li><a href="//vimeo.com/ivaylogetov/" target="_blank">
-                          <img src="img/social/vimeo.svg" onerror="this.onerror=null; this.src='img/social/vimeo.png'" alt="vimeo" class="socialLink">
-                        </a></li>
-                      </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-
-
+        {% include "footer.html" %}
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -150,15 +91,7 @@
         <script src="js/main.js"></script>
 
 
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        <script src="analytics.js"></script>
     </body>
 </html>
