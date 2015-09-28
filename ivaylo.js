@@ -1,4 +1,5 @@
-// set variables for environment
+///////////////////////////
+// set up environment
 var express = require('express');
 var app = express();
 var favicon = require('serve-favicon');
@@ -7,11 +8,13 @@ var mongoose = require('mongoose');
 var marked = require('marked');
 var Project = require('./dbModels/project')
 
+var swig = require('swig');
+
 ///////////////////////////
 // MongoDB stuff
 var renderer = new marked.Renderer();
 renderer.link = function(href,title,text) {
-    return '<a href="' + href + '" class="linkAnim" target="_blank">' + text + '</a>';
+    return '<a href="' + href + '" class="bolder linkAnim" target="_blank">' + text + '</a>';
 }
 marked.setOptions({
     renderer: renderer,
@@ -33,6 +36,16 @@ db.on('disconnected', function () {
 db.once('open', function (callback) {
   console.log("Connected to MongoDB");
 });
+
+///////////////////////////
+// Templates
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/templates');
+app.set('view cache', true);
+//swig.setDefaults({ cache: false });
+
+// var projPageTemplate =
 
 ///////////////////////////
 // Express Routes
@@ -60,9 +73,12 @@ app.get('/:data', function(req, res){
         }
 
         if (displayProj != undefined) {
-            console.log(displayProj);
+            console.log(displayProj.title);
+            displayProj.longDescription = marked(displayProj.longDescription);
+            res.render('project', displayProj);
         } else {
             console.log("no project!");
+            // res.sendFile(__dirname + '/public/index.html');
         }
 
         //console.log(projects);
@@ -70,7 +86,7 @@ app.get('/:data', function(req, res){
         //console.log(marked(projects[0].longDescription));
         //console.log(projects.length);
     })
-    res.sendFile(__dirname + '/public/index.html');
+    //res.sendFile(__dirname + '/public/index.html');
   //res.render('index', {localTrackTerm: query});
 });
 
