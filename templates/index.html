@@ -128,7 +128,7 @@
             </div>
             <p class="muchSmaller projectTags margBotMedSpacer">
                 {% for tag in allTags|uniq %}
-                    <a href="/tagged/{{tag}}" class="linkAnim tagLink">{{tag|upper}}</a>&nbsp;//&nbsp;
+                    <a href="/tagged/{{tag|lower}}" class="linkAnim tagLink">{{tag|upper}}</a>&nbsp;//&nbsp;
                 {% endfor %}
                 <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a>
             </p>

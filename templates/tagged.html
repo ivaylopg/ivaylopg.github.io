@@ -16,64 +16,40 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body class="projectPage">
+    <body class="tagPage">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="nodeField"></div>
 
         <section class="gridded">
-            <div class="fullWidth projects">
-                <div class="bigSpacer"></div>
 
-                <h1>{{ title }}</h1>
+            <div class="medSpacer"></div>
 
-                <p>
-                    <span class="muchSmaller">
-                    {% for tag in tags %}
-                      <a href="/tagged/{{tag}}" class="linkAnim tagLink">{{tag|upper}}</a>
-                      {% if !loop.last %}&nbsp;//{% endif %}
-                    {% endfor %}
-                    <span>
-                </p>
-
-                <p>{{shortDescription}}</p>
-
-                <div class="spacer"></div>
-
-                <img src="{{coverImg}}" class="projCover">
-
-                <div class="spacer"></div>
-
-                {{longDescription|marked}}
-
-                <div class="spacer"></div>
-
-
-                {% for obj in media %}
-                    {% if obj.src.length == 2 %}
-                        <div class="fullWidth">
-                            <img src="{{obj.src[0]}}" class="projColumns">
-                            <img src="{{obj.src[1]}}" class="projColumns">
+            <div class="fullWidth projects margBotMedSpacer">
+                <div class="fullWidth" id="theProjects">
+                    <h1>Recent Work/{{tagged|upper}}</h1>
+                </div>
+                {% for proj in projects %}
+                <div class="projectEntry{% for tag in proj.tags %} {{tag|lower}}{% endfor %}">
+                    <a href="/{{proj.linkText}}">
+                    <div style="background: url({{proj.thumb}})">
+                        <div class="projName">
+                            {{proj.title}}<br>
+                            <span class="muchSmaller">{% for tag in proj.tags %}{{tag|upper}}{% if !loop.last %}&nbsp;//&nbsp;{% endif %}{% endfor %}</span>
                         </div>
-                    {% elif obj.src.indexOf('vimeo') !== -1 %}
-                        <div class="fullWidth vidContainer">
-                            <iframe src="{{obj.src}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                        </div>
-                    {% elif obj.src.indexOf('youtube') !== -1 %}
-                    {% else %}
-                        <img src="{{obj.src}}" class="projImage">
-                    {% endif %}
+                    </div>
+                    </a>
+                </div>
                 {% endfor %}
-
-                <p>
-                    <a href="#" class="linkAnim scrollLink">back to top</a><br />
-                    <a href="/" class="linkAnim">back to main</a>
-                </p>
-
-                <div class="medSpacer"></div>
-
             </div>
+
+            <p>
+                <a href="/" class="linkAnim">back to main</a>
+            </p>
+
+
+
 
         </section>
 

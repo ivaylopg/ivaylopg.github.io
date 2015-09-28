@@ -113,13 +113,12 @@ app.get('/tagged/:data', function(req, res){
     console.log("tag parameter entered: %s", tag);
     getTaggedProjects(tag,function(displayProj){
         if (displayProj.length > 0) {
-            console.log(displayProj.length);
+            res.render('tagged', {projects: displayProj, tagged: tag});
         } else {
-            console.log("no projects!");
+            console.log("static page");
+            //res.sendFile(__dirname + '/staticindex.html');
         }
     });
-    res.sendFile(__dirname + '/public/index.html');
-  //res.render('index', {localTrackTerm: query});
 });
 
 
