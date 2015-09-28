@@ -5,22 +5,14 @@ var app = express();
 var favicon = require('serve-favicon');
 
 var mongoose = require('mongoose');
-var marked = require('marked');
 var Project = require('./dbModels/project')
 
 var swig = require('swig');
+var marked = require('marked');
+var markedSwig = require('swig-marked')
 
 ///////////////////////////
 // MongoDB stuff
-var renderer = new marked.Renderer();
-renderer.link = function(href,title,text) {
-    return '<a href="' + href + '" class="bolder linkAnim" target="_blank">' + text + '</a>';
-}
-marked.setOptions({
-    renderer: renderer,
-    gfm: true,
-    breaks: true
-});
 
 var key = process.env.KEY;
 var mdbOptions = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }}
@@ -45,7 +37,26 @@ app.set('views', __dirname + '/templates');
 app.set('view cache', true);
 //swig.setDefaults({ cache: false });
 
-// var projPageTemplate =
+markedSwig.useFilter( swig );
+markedSwig.useTag( swig );
+
+var renderer = new marked.Renderer();
+renderer.link = function(href,title,text) {
+    return '<a href="' + href + '" class="bolder linkAnim" target="_blank">' + text + '</a>';
+}
+
+var configured = markedSwig.configure({
+    renderer: renderer,
+    gfm: true,
+    breaks: true
+});
+
+/*marked.setOptions({
+    renderer: renderer,
+    gfm: true,
+    breaks: true
+});*/
+
 
 ///////////////////////////
 // Express Routes
@@ -74,7 +85,7 @@ app.get('/:data', function(req, res){
 
         if (displayProj != undefined) {
             console.log(displayProj.title);
-            displayProj.longDescription = marked(displayProj.longDescription);
+            //displayProj.longDescription = marked(displayProj.longDescription);
             res.render('project', displayProj);
         } else {
             console.log("no project!");
