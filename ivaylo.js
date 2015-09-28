@@ -111,9 +111,10 @@ app.get('/:data', function(req, res){
 app.get('/tagged/:data', function(req, res){
     var tag = req.params.data;
     console.log("tag parameter entered: %s", tag);
-    getTaggedProjects(tag,function(displayProj){
+    getTaggedProjects(tag,function(displayProj,tags){
         if (displayProj.length > 0) {
-            res.render('tagged', {projects: displayProj, tagged: tag});
+            if (tag == 'allprojects') tag = undefined;
+            res.render('tagged', {projects: displayProj, tagged: tag, allTags: tags});
         } else {
             console.log("static page");
             //res.sendFile(__dirname + '/staticindex.html');
@@ -143,17 +144,22 @@ function getTaggedProjects (queryTag, callback) {
     Project.find(function (err, projects) {
         if (err) return console.error(err);
 
+        var allTags = [];
         for (var p = 0; p < projects.length; p++) {
             var tagArray = projects[p].tags;
 
             for (var i=0, l=tagArray.length; i<l; i++) {
+                allTags.push(tagArray[i])
                 if (tagArray[i].toLowerCase() == queryTag.toLowerCase()) {
                     taggedProjects.push(projects[p]);
-                    break;
                 }
             }
         }
-        callback(taggedProjects);
+        if (queryTag == 'allprojects') {
+            callback(projects,allTags);
+        } else {
+            callback(taggedProjects,allTags);
+        }
     });
 }
 

@@ -28,7 +28,7 @@
 
             <div class="fullWidth projects margBotMedSpacer">
                 <div class="fullWidth" id="theProjects">
-                    <h1>Recent Work/{{tagged|upper}}</h1>
+                    <h1>Recent Work{% if tagged %}/{{tagged|upper}}{% endif %}</h1>
                 </div>
                 {% for proj in projects %}
                 <div class="projectEntry{% for tag in proj.tags %} {{tag|lower}}{% endfor %}">
@@ -43,6 +43,12 @@
                 </div>
                 {% endfor %}
             </div>
+            <p class="muchSmaller projectTags margBotMedSpacer">
+                {% for tag in allTags|uniq %}
+                    <a href="/tagged/{{tag|lower}}" class="linkAnim tagLink">{{tag|upper}}</a>&nbsp;//&nbsp;
+                {% endfor %}
+                <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a>
+            </p>
 
             <p>
                 <a href="/" class="linkAnim">back to main</a>
