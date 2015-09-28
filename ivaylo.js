@@ -44,19 +44,11 @@ var renderer = new marked.Renderer();
 renderer.link = function(href,title,text) {
     return '<a href="' + href + '" class="bolder linkAnim" target="_blank">' + text + '</a>';
 }
-
 var configured = markedSwig.configure({
     renderer: renderer,
     gfm: true,
     breaks: true
 });
-
-/*marked.setOptions({
-    renderer: renderer,
-    gfm: true,
-    breaks: true
-});*/
-
 
 ///////////////////////////
 // Express Routes
@@ -85,20 +77,11 @@ app.get('/:data', function(req, res){
 
         if (displayProj != undefined) {
             console.log(displayProj.title);
-            //displayProj.longDescription = marked(displayProj.longDescription);
             res.render('project', displayProj);
         } else {
             console.log("no project!");
-            // res.sendFile(__dirname + '/public/index.html');
         }
-
-        //console.log(projects);
-        //console.log(projects[0].longDescription);
-        //console.log(marked(projects[0].longDescription));
-        //console.log(projects.length);
     })
-    //res.sendFile(__dirname + '/public/index.html');
-  //res.render('index', {localTrackTerm: query});
 });
 
 app.get('/tagged/:data', function(req, res){
