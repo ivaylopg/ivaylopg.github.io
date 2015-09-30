@@ -83,6 +83,23 @@ app.get('/', function(req, res){
 	//res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/edit', function(req, res){
+    Project.find(function (err, projects) {
+        if (err) {
+            //res.sendFile(__dirname + '/staticindex.html');
+            return console.error(err);
+        }
+
+        if (projects != undefined && projects.length > 0) {
+            console.log("edit page");
+            res.render('edit', {allProjects: projects});
+        } else {
+            console.log("static page");
+            //res.sendFile(__dirname + '/staticindex.html');
+        }
+    })
+});
+
 app.get('/:data', function(req, res){
     var query = req.params.data;
     console.log("parameter entered: %s", query);
