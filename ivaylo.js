@@ -1,8 +1,10 @@
 ///////////////////////////
 // set up environment
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var favicon = require('serve-favicon');
+var jsonParser = bodyParser.json()
 
 var mongoose = require('mongoose');
 var Project = require('./dbModels/project')
@@ -199,10 +201,10 @@ app.get('/tagged/:data', function(req, res){
     });
 });
 
-app.post('/getproject', function(req, res){
-   var query = req.body;
-   var result = {"hello": "world"};
-   console.log(query);
+app.post('/getproject', jsonParser, function(req, res){
+   var queryID = JSON.parse(req.body.id);
+   var result = {"id": JSON.parse(req.body.id)};
+   console.log(queryID);
    res.send(result);
 });
 
