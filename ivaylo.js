@@ -203,9 +203,15 @@ app.get('/tagged/:data', function(req, res){
 
 app.post('/getproject', jsonParser, function(req, res){
    var queryID = JSON.parse(req.body.id);
-   var result = {"id": JSON.parse(req.body.id)};
-   console.log(queryID);
-   res.send(result);
+
+    Project.findById(queryID, function(err, user) {
+      if (err) {
+        res.send({"error": "Could not load project!"});
+        throw err;
+      }
+      // show the one user
+      res.send(user);
+    });
 });
 
 

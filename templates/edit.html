@@ -81,7 +81,7 @@
             <div class="fullWidth projects" data-key="longDescription">
 
                 <div class="description">Long Description</div>
-                <div class="values"><textarea name="message" rows="10"></textarea></div>
+                <div class="values"><textarea name="longDescription" rows="10"></textarea></div>
             </div>
         </section>
 
@@ -90,7 +90,7 @@
 
                 <div class="description">
                     Media
-                    <a href="#plus" class="mediaModify"></a><div class="icon icon-plus"></div><a>
+                    <a href="#plus" class="mediaModify"></a><div class="icon icon-plus"></div></a>
                     <a href="#minus" class="mediaModify"><div class="icon icon-minus"></div></a>
                 </div>
                 <div class="values"><input type="text" name="media1" class="mediaEntry"></div>
@@ -109,15 +109,15 @@
             <div class="fullWidth projects" data-key="priority">
 
                 <div class="description">Priority</div>
-                <div class="values"><input type="number" name="priority" min="1" max="50"></div>
+                <div class="values"><input type="number" name="priority" min="0" max="50" value="0"></div>
             </div>
         </section>
 
         <section class="gridded infoSection">
-            <div class="fullWidth projects" data-key="linktext">
+            <div class="fullWidth projects" data-key="linkText">
 
                 <div class="description">Link Text</div>
-                <div class="values"><input type="text" name="linktext"></div>
+                <div class="values"><input type="text" name="linkText"></div>
             </div>
         </section>
 
@@ -125,7 +125,7 @@
         <section class="gridded">
             <div class="fullWidth projects">
 
-                <div class="medSpacer"></div>
+                <div class="bigSpacer"></div>
 
                 <p>
                     <a href="/" class="linkAnim">back to main</a>
@@ -136,8 +136,6 @@
             </div>
 
         </section>
-
-        {% include "footer.html" %}
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

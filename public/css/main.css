@@ -648,6 +648,10 @@ body.editPage div.values textarea {
   border-color: #ccc;
 }
 
+body.editPage div.values .mediaEntry {
+  margin-bottom: 0.5rem;
+}
+
 body.editPage section.infoSection {
   margin-top: 2rem;
 }
