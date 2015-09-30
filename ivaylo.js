@@ -199,6 +199,13 @@ app.get('/tagged/:data', function(req, res){
     });
 });
 
+app.post('/getproject', function(req, res){
+   var query = req.body;
+   var result = {"hello": "world"};
+   console.log(query);
+   res.send(result);
+});
+
 
 
 

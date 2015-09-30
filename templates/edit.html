@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="/css/main.css">
         <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body class="projectPage">
+    <body class="editPage">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -31,7 +31,105 @@
 
                 <h1> Edit Data </h1>
 
-                <p>test</p>
+                <select name="projectsList" onChange="loadData(this);">
+                  <option value="0" selected>Choose Project:</option>
+                  {% for proj in allProjects %}
+                  <option value='{{proj._id|json|}}'>{{proj.title}}</option>
+                  {% endfor %}
+                  <option value="1">Create new...</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="title">
+
+                <div class="description">Title</div>
+                <div class="values"><input type="text" name="title"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="tags">
+
+                <div class="description">Tags</div>
+                <div class="values"><input type="text" name="tags"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="coverImg">
+
+                <div class="description">Cover (Img or Vid)</div>
+                <div class="values"><input type="text" name="coverImg"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="thumb">
+
+                <div class="description">Thumbnail Image</div>
+                <div class="values"><input type="text" name="thumb"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="shortDescription">
+
+                <div class="description">Short Description</div>
+                <div class="values"><input type="text" name="shortDescription"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="longDescription">
+
+                <div class="description">Long Description</div>
+                <div class="values"><textarea name="message" rows="10"></textarea></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="media">
+
+                <div class="description">
+                    Media
+                    <a href="#plus" class="mediaModify"></a><div class="icon icon-plus"></div><a>
+                    <a href="#minus" class="mediaModify"><div class="icon icon-minus"></div></a>
+                </div>
+                <div class="values"><input type="text" name="media1" class="mediaEntry"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="projectDate">
+
+                <div class="description">Date</div>
+                <div class="values"><input type="date" name="projectDate"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="priority">
+
+                <div class="description">Priority</div>
+                <div class="values"><input type="number" name="priority" min="1" max="50"></div>
+            </div>
+        </section>
+
+        <section class="gridded infoSection">
+            <div class="fullWidth projects" data-key="linktext">
+
+                <div class="description">Link Text</div>
+                <div class="values"><input type="text" name="linktext"></div>
+            </div>
+        </section>
+
+
+        <section class="gridded">
+            <div class="fullWidth projects">
+
+                <div class="medSpacer"></div>
 
                 <p>
                     <a href="/" class="linkAnim">back to main</a>
@@ -59,6 +157,7 @@
 
         <script src="/js/nodeField.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/edit.js"></script>
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

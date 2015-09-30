@@ -544,6 +544,114 @@ img.projColumns:nth-child(2n+1) {
   margin-bottom: 0.809em;
 }
 
+/* edit page */
+body.editPage div.description {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+
+body.editPage div.description:last-child {
+  margin-right: 0;
+}
+
+body.editPage div.description .icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: 0px;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+body.editPage div.description .icon-minus {
+  background-color: #000;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+body.editPage div.description .icon-minus:after {
+  background-color: #fff;
+  width: 8px;
+  height: 2px;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  position: absolute;
+  top: 7px;
+  left: 3.5px;
+  z-index: 4;
+  content: "";
+}
+
+body.editPage div.description .icon-plus {
+  background-color: #000;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+body.editPage div.description .icon-plus:after {
+  background-color: #fff;
+  width: 8px;
+  height: 2px;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  content: "";
+}
+
+body.editPage div.description .icon-plus:before {
+  background-color: #fff;
+  width: 2px;
+  height: 8px;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  content: "";
+}
+
+body.editPage div.values {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+
+body.editPage div.values:last-child {
+  margin-right: 0;
+}
+
+body.editPage div.values input[type=text], body.editPage div.values textarea {
+  width: 100%;
+}
+
+body.editPage div.values textarea {
+  border-color: #ccc;
+}
+
+body.editPage section.infoSection {
+  margin-top: 2rem;
+}
+
 /* CV page */
 #cvBody {
   font-size: 1.2rem;

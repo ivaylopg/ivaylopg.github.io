@@ -41,7 +41,14 @@
 
                 <div class="spacer"></div>
 
-                <img src="{{coverImg}}" class="projCover">
+                {% if coverImg.indexOf('vimeo') !== -1 %}
+                    <div class="fullWidth vidContainer">
+                        <iframe src="{{coverImg}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                {% elif coverImg.indexOf('youtube') !== -1 %}
+                {% else %}
+                    <img src="{{coverImg}}" class="projCover">
+                {% endif %}
 
                 <div class="spacer"></div>
 
