@@ -1,10 +1,12 @@
+var projID = 0;
 function loadData (elem) {
   //console.log(JSON.parse(elem.value));
 
   if (elem.value == 0) {
     clearData();
   } else if (elem.value == 1) {
-
+    clearData();
+    $('input#update').attr('value','Add Project');
   } else {
     var value = JSON.stringify({id:elem.value});
 
@@ -23,6 +25,9 @@ function loadData (elem) {
 
 function fillData (project) {
   clearData();
+  projID = project._id;
+  //console.log(projID);
+  $('input#delete').removeClass('hidden');
   $('input[name="title"').val(project.title);
 
   var tagText="";
@@ -69,6 +74,8 @@ function mediaFill (project,index) {
 }
 
 function clearData () {
+  projID = 0;
+  $('input#delete').addClass('hidden');
   $('input[type="text"').val("");
   $('textarea').val("");
 
@@ -90,8 +97,121 @@ function setDate (date) {
 
 
 function processButton (elem) {
-  console.log(elem.id);
+  //console.log(elem.id);
+  if (elem.id === 'delete') {
+    var sure = confirm('Are you sure you want to delete the project ' + $('input[name="title"]').val() + '?');
+    if (sure) {
+      deleteProj(projID);
+    }
+  } else if (elem.value === 'Update Project') {
+    console.log("will update")
+    updateProject(createProjectObject(),projID);
+  } else if (elem.value === 'Add Project') {
+    console.log("will add")
+    addProject(createProjectObject());
+  }
 }
+
+function deleteProj (ID) {
+  var value = JSON.stringify({id:ID});
+  $.ajax( {
+    url: '/deleteproject',
+    type: 'POST',
+    contentType: 'application/json',
+    data: value,
+    success: function(result) {
+      console.log(result);
+      $('#projectsList').val(0);
+      $("option[value='\"" + ID + "\"']").remove();
+      clearData();
+    }
+  });
+}
+
+function updateProject (project,ID) {
+  projObjectComplete(project);
+}
+
+function addProject (project) {
+  projObjectComplete(project);
+}
+
+function createProjectObject () {
+  var aProject = {};
+
+  aProject.title = $('input[name="title"').val();
+
+  var tagText = $('input[name="tags"').val().split(",");
+  aProject.tags = tagText;
+
+  aProject.coverImg = $('input[name="coverImg"').val();
+  aProject.thumb = $('input[name="thumb"').val();
+  aProject.shortDescription = $('input[name="shortDescription"').val();
+  //aProject.longDescription = JSON.stringify($('textarea[name="longDescription"').val());
+  aProject.longDescription = $('textarea[name="longDescription"').val().replace(/(?:\r\n|\r|\n)/g, '\\n');
+
+  aProject.date = new Date($('input[type="date"').val());
+  aProject.priority = $('input[name="priority"').val();
+  aProject.linkText = $('input[name="linkText"').val();
+
+  var mediaEntries = [];
+
+  for (var i=0, l=$('.mediaEntry').length; i<l; i++) {
+      var urls = $('.mediaEntry').eq(i).val().split(",");
+      if (urls.length == 2) {
+        mediaEntries.push({'src':[urls[0],urls[1]]})
+      } else {
+        mediaEntries.push({'src':urls[0]})
+      }
+  }
+
+  aProject.media = mediaEntries;
+
+  console.log(aProject);
+  return aProject;
+}
+
+function projObjectComplete (project) {
+  var errors = ""
+  for (var key in project) {
+    if (project.hasOwnProperty(key)) {
+      if (key == 'media') {
+        for (var i=0, l=project[key].length; i<l; i++) {
+            if (project[key][i].src == "") {
+              errors += 'media[' + i +  "] is empty\n\n"
+            }
+        }
+      } else if (key == 'tags') {
+        for (var i=0, l=project[key].length; i<l; i++) {
+            if (project[key][i] == "") {
+              errors += 'tags[' + i +  "] is empty\n\n"
+            }
+        }
+      } else if (key == 'date') {
+        if ( Object.prototype.toString.call(project[key]) === "[object Date]" ) {
+          if ( isNaN( project[key].getTime() ) ) {
+            errors += key + " is not a vaild date\n\n";
+          }
+        }
+        else {
+          errors += key + " is not a vaild date\n\n";
+        }
+      } else if (project[key] == undefined) {
+        errors += key + " is undefined\n\n";
+      } else if (project[key] == "") {
+        errors += key + " is empty\n\n"
+      }
+    }
+  }
+  if (errors === "") {
+    return true;
+  } else {
+    alert(errors);
+    return false;
+  }
+}
+
+
 
 $(".mediaModify").click(function(e){
     e.preventDefault();

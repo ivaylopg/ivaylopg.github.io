@@ -215,6 +215,12 @@ app.post('/getproject', jsonParser, function(req, res){
     });
 });
 
+app.post('/deleteproject', jsonParser, function(req, res){
+   var queryID = req.body.id;
+
+   res.send({message:"Project Deleted"});
+});
+
 
 
 

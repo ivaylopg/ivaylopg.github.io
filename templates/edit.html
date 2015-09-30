@@ -25,7 +25,7 @@
 
                 <h1> Edit Data </h1>
 
-                <select name="projectsList" onChange="loadData(this);">
+                <select name="projectsList" onChange="loadData(this);" id="projectsList">
                   <option value="0" selected>Choose Project:</option>
                   {% for proj in allProjects %}
                   <option value='{{proj._id|json|}}'>{{proj.title}}</option>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="values">
                     <input type="button" value="Update Project" id="update" onmouseup="processButton(this);">
-                    <input type="button" value="Delete Project" id="delete" onmouseup="processButton(this);">
+                    <input type="button" value="Delete Project" id="delete" onmouseup="processButton(this);" class="hidden">
                 </div>
             </div>
         </section>
