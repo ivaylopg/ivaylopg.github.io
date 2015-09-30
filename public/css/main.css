@@ -656,6 +656,10 @@ body.editPage section.infoSection {
   margin-top: 2rem;
 }
 
+body.editPage input[type=button], body.editPage textarea {
+  margin-right: 1rem;
+}
+
 /* CV page */
 #cvBody {
   font-size: 1.2rem;

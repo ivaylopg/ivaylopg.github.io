@@ -88,6 +88,25 @@ function setDate (date) {
   $('input[type="date"').val(today);
 }
 
+
+function processButton (elem) {
+  console.log(elem.id);
+}
+
 $(".mediaModify").click(function(e){
     e.preventDefault();
+    var action = $(this).attr('href');
+
+    if (action == "#plus") {
+      var mediaBox = $('.mediaEntry').eq(0).parent();
+      mediaBox.append('<input type="text" name="media' + $('.mediaEntry').length + '" class="mediaEntry">')
+    } else if (action == "#minus") {
+        if ($('.mediaEntry').length == 1) {
+          $('.mediaEntry').val("");
+        } else {
+          $('.mediaEntry').last().remove();
+        }
+    }
 });
+
+

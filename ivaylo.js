@@ -115,7 +115,7 @@ app.get('/', function(req, res){
                     tags.push(projects[i].tags[j]);
                  }
             }
-            console.log("index with %s projects",projects.length);
+            //console.log("index with %s projects",projects.length);
             res.render('index', {allProjects: projects, allTags: tags});
         } else {
             console.log("static page");
@@ -128,19 +128,21 @@ app.get('/', function(req, res){
 });
 
 app.get('/edit', ensureAuthenticated, function(req, res){
-    console.log("user.id: " + req.user.id);
+    //console.log("user.id: " + req.user.id);
     Project.find(function (err, projects) {
         if (err) {
             //res.sendFile(__dirname + '/staticindex.html');
             return console.error(err);
         }
 
-        if (projects != undefined && projects.length > 0) {
-            console.log("edit page");
+        if (req.user.id == GITHUB_USER) {
+            if (projects != undefined && projects.length > 0) {
             res.render('edit', {allProjects: projects});
+            } else {
+
+            }
         } else {
-            console.log("static page");
-            //res.sendFile(__dirname + '/staticindex.html');
+            res.redirect('/');
         }
     })
 });
@@ -148,7 +150,7 @@ app.get('/edit', ensureAuthenticated, function(req, res){
 app.get('/login',
   passport.authenticate('github', { scope: [ 'user:email' ] }),
   function(req, res){
-    console.log("this should never get called")
+    console.error("this should never get called...")
 });
 
 app.get('/logout', function(req, res){
@@ -164,7 +166,7 @@ app.get('/auth/github',
 
 app.get('/:data', function(req, res){
     var query = req.params.data;
-    console.log("parameter entered: %s", query);
+    // console.log("parameter entered: %s", query);
     var displayProj;
 
     Project.find(function (err, projects) {
@@ -178,10 +180,9 @@ app.get('/:data', function(req, res){
         }
 
         if (displayProj != undefined) {
-            console.log(displayProj.title);
             res.render('project', displayProj);
         } else {
-            console.log("no project!");
+            console.error("Error: Attempted to retrieve project called %s", query);
             res.render('index', projects);
         }
     })
@@ -189,7 +190,7 @@ app.get('/:data', function(req, res){
 
 app.get('/tagged/:data', function(req, res){
     var tag = req.params.data;
-    console.log("tag parameter entered: %s", tag);
+    // console.log("tag parameter entered: %s", tag);
     getTaggedProjects(tag,function(displayProj,tags){
         if (displayProj.length > 0) {
             if (tag == 'allprojects') tag = undefined;
