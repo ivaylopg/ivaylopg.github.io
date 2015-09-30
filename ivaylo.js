@@ -11,6 +11,11 @@ var swig = require('swig');
 var marked = require('marked');
 var markedSwig = require('swig-marked')
 
+var passport = require('passport');
+var GitHubStrategy = require('passport-github2').Strategy;
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
 ///////////////////////////
 // MongoDB stuff
 
@@ -51,6 +56,43 @@ var configured = markedSwig.configure({
 });
 
 ///////////////////////////
+// Passport Stuff
+
+var GITHUB_CLIENT_ID = process.env.GHID;
+var GITHUB_CLIENT_SECRET = process.env.GHSECRET;
+var GITHUB_USER = process.env.GHUSER;
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
+
+passport.use(new GitHubStrategy({
+    clientID: GITHUB_CLIENT_ID,
+    clientSecret: GITHUB_CLIENT_SECRET,
+    callbackURL: "http://127.0.0.1:8001/auth/github"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    process.nextTick(function () {
+      return done(null, profile);
+    });
+  }
+));
+
+app.use(session({secret: 'ivaylogetov',
+                 saveUninitialized:false,
+                 resave:true,
+                 cookie: {maxAge: 1000 * 60 * 60 * 24},
+                 store: new MongoStore({mongooseConnection:db})
+                }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(__dirname + '/public'));
+
+///////////////////////////
 // Express Routes
 app.use(express.static(__dirname + '/public'));
 //app.use('/tagged/', express.static('public'));
@@ -83,7 +125,8 @@ app.get('/', function(req, res){
 	//res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/edit', function(req, res){
+app.get('/edit', ensureAuthenticated, function(req, res){
+    console.log("user.id: " + req.user.id);
     Project.find(function (err, projects) {
         if (err) {
             //res.sendFile(__dirname + '/staticindex.html');
@@ -98,6 +141,23 @@ app.get('/edit', function(req, res){
             //res.sendFile(__dirname + '/staticindex.html');
         }
     })
+});
+
+app.get('/login',
+  passport.authenticate('github', { scope: [ 'user:email' ] }),
+  function(req, res){
+    console.log("this should never get called")
+});
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
+app.get('/auth/github',
+  passport.authenticate('github', { failureRedirect: '/' }),
+  function(req, res) {
+    res.redirect('/edit');
 });
 
 app.get('/:data', function(req, res){
@@ -178,6 +238,11 @@ function getTaggedProjects (queryTag, callback) {
             callback(taggedProjects,allTags);
         }
     });
+}
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
 }
 
 

@@ -1,11 +1,13 @@
 ///////////////////////////
 // set up environment
-var session = require('express-session');
 var express = require('express');
 var app = express();
 
 var passport = require('passport');
 var GitHubStrategy = require('passport-github2').Strategy;
+var session = require('express-session');
+
+
 
 var GITHUB_CLIENT_ID = process.env.GHID;
 var GITHUB_CLIENT_SECRET = process.env.GHSECRET;
@@ -40,7 +42,7 @@ passport.use(new GitHubStrategy({
   }
 ));
 
-app.use(session({ secret: 'ivaylogetov' }));
+app.use(session({secret: 'ivaylogetov', saveUninitialized:false, resave:true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
