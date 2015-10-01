@@ -104,10 +104,10 @@ function processButton (elem) {
       deleteProj(projID);
     }
   } else if (elem.value === 'Update Project') {
-    console.log("will update")
+    //console.log("will update")
     updateProject(createProjectObject(),projID);
   } else if (elem.value === 'Add Project') {
-    console.log("will add")
+    //console.log("will add")
     addProject(createProjectObject());
   }
 }
@@ -128,12 +128,27 @@ function deleteProj (ID) {
   });
 }
 
-function updateProject (project,ID) {
-  projObjectComplete(project);
+function updateProject (aProject,ID) {
+  if (projObjectComplete(aProject)){
+    var value = JSON.stringify({id:ID,project:aProject});
+    $.ajax( {
+      url: '/updateproject',
+      type: 'POST',
+      contentType: 'application/json',
+      data: value,
+      success: function(result) {
+        console.log(result);
+        $('#projectsList').val(0);
+        clearData();
+      }
+    });
+  } else {
+    console.error("Project data incomplete!")
+  }
 }
 
-function addProject (project) {
-  projObjectComplete(project);
+function addProject (aProject) {
+  projObjectComplete(aProject);
 }
 
 function createProjectObject () {
@@ -148,7 +163,7 @@ function createProjectObject () {
   aProject.thumb = $('input[name="thumb"').val();
   aProject.shortDescription = $('input[name="shortDescription"').val();
   //aProject.longDescription = JSON.stringify($('textarea[name="longDescription"').val());
-  aProject.longDescription = $('textarea[name="longDescription"').val().replace(/(?:\r\n|\r|\n)/g, '\\n');
+  aProject.longDescription = $('textarea[name="longDescription"').val().replace(/(?:\r\n|\r|\n)/g, '\n');
 
   aProject.date = new Date($('input[type="date"').val());
   aProject.priority = $('input[name="priority"').val();
@@ -166,8 +181,6 @@ function createProjectObject () {
   }
 
   aProject.media = mediaEntries;
-
-  console.log(aProject);
   return aProject;
 }
 
@@ -182,9 +195,9 @@ function projObjectComplete (project) {
             }
         }
       } else if (key == 'tags') {
-        for (var i=0, l=project[key].length; i<l; i++) {
-            if (project[key][i] == "") {
-              errors += 'tags[' + i +  "] is empty\n\n"
+        for (var j=0, k=project[key].length; j<k; j++) {
+            if (project[key][j] == "") {
+              errors += 'tags[' + j +  "] is empty\n\n"
             }
         }
       } else if (key == 'date') {

@@ -203,25 +203,59 @@ app.get('/tagged/:data', function(req, res){
 });
 
 app.post('/getproject', jsonParser, function(req, res){
-   var queryID = JSON.parse(req.body.id);
+    var queryID = JSON.parse(req.body.id);
 
-    Project.findById(queryID, function(err, user) {
-      if (err) {
-        res.send({"error": "Could not load project!"});
-        throw err;
-      }
-      // show the one user
-      res.send(user);
+    Project.findById(queryID, function(err, project) {
+        if (err) {
+            res.send({"error": "Could not load project!"});
+            throw err;
+        }
+        res.send(project);
     });
 });
 
-app.post('/deleteproject', jsonParser, function(req, res){
+app.post('/deleteproject', ensureAuthenticated, jsonParser, function(req, res){
    var queryID = req.body.id;
 
    res.send({message:"Project Deleted"});
 });
 
+app.post('/updateproject', ensureAuthenticated, jsonParser, function(req, res){
+    var queryID = req.body.id;
+    var newProject = req.body.project;
+    //console.log(newProject);
 
+    Project.findById(queryID, function(err, project) {
+        if (err) {
+            res.send({"error": "Could not update project!"});
+            throw err;
+        }
+        var updates = "";
+        var updatesObject = {};
+
+        for (var key in project) {
+            if (newProject[key] != undefined && newProject[key] != project[key] && typeof newProject[key] !== 'function') {
+                project[key] = newProject[key];
+                updates += "Updated: " + key + " | ";
+                updatesObject[key] = {'old':project[key], 'new': newProject[key]}
+                console.log(updatesObject[key])
+            }
+        }
+
+        if (updates != "") {
+            project.save(function(err) {
+                if (err) {throw err;}
+                res.send(updatesObject);
+            });
+        }
+    });
+});
+
+app.post('/addproject', ensureAuthenticated, jsonParser, function(req, res){
+   var queryID = req.body.id;
+
+   res.send({message:"Project added"});
+});
 
 
 
