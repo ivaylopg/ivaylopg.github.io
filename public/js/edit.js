@@ -148,7 +148,23 @@ function updateProject (aProject,ID) {
 }
 
 function addProject (aProject) {
-  projObjectComplete(aProject);
+  if (projObjectComplete(aProject)){
+    var value = JSON.stringify({project:aProject});
+    $.ajax( {
+      url: '/addproject',
+      type: 'POST',
+      contentType: 'application/json',
+      data: value,
+      success: function(result) {
+        console.log(result);
+        $('#projectsList').append('<option value="&quot;' + result.project._id + '&quot;">' + result.project.title + '</option>');
+        $('#projectsList').val(0);
+        clearData();
+      }
+    });
+  } else {
+    console.error("Project data incomplete!")
+  }
 }
 
 function createProjectObject () {

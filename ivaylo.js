@@ -254,12 +254,13 @@ app.post('/updateproject', ensureAuthenticated, jsonParser, function(req, res){
 });
 
 app.post('/addproject', ensureAuthenticated, jsonParser, function(req, res){
-   var queryID = req.body.id;
+    var newProject = new Project(req.body.project);
 
-   res.send({message:"Project added"});
+    newProject.save(function (err, addedProject) {
+        if (err) return console.error(err);
+        res.send({message:"Project added", project: addedProject});
+    });
 });
-
-
 
 
 ///////////////////////////
