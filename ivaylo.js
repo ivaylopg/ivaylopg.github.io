@@ -215,9 +215,11 @@ app.post('/getproject', jsonParser, function(req, res){
 });
 
 app.post('/deleteproject', ensureAuthenticated, jsonParser, function(req, res){
-   var queryID = req.body.id;
-
-   res.send({message:"Project Deleted"});
+    var queryID = req.body.id;
+    Project.findByIdAndRemove(queryID, function(err) {
+        if (err) throw err;
+        res.send({message:"Project Deleted"});
+    });
 });
 
 app.post('/updateproject', ensureAuthenticated, jsonParser, function(req, res){
