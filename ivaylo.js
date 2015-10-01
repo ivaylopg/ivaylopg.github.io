@@ -115,6 +115,12 @@ app.get('/', function(req, res){
                     tags.push(projects[i].tags[j]);
                  }
             }
+
+            projects.sort(function(a,b) {
+              var x = b.priority - a.priority;
+              return x == 0? b.projectDate - a.projectDate : x;
+            });
+
             //console.log("index with %s projects",projects.length);
             res.render('index', {allProjects: projects, allTags: tags});
         } else {
