@@ -133,6 +133,10 @@ app.get('/', function(req, res){
 	//res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/cv', function(req, res){
+    res.render('cv',{title: "Curriculum Vitae"});
+});
+
 app.get('/edit', ensureAuthenticated, function(req, res){
     //console.log("user.id: " + req.user.id);
     Project.find(function (err, projects) {
