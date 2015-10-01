@@ -139,7 +139,7 @@ app.get('/edit', ensureAuthenticated, function(req, res){
             if (projects != undefined && projects.length > 0) {
             res.render('edit', {allProjects: projects});
             } else {
-
+                res.redirect('/');
             }
         } else {
             res.redirect('/');
@@ -237,10 +237,10 @@ app.post('/updateproject', ensureAuthenticated, jsonParser, function(req, res){
 
         for (var key in project) {
             if (newProject[key] != undefined && newProject[key] != project[key] && typeof newProject[key] !== 'function') {
+                updatesObject[key] = {'old':project[key], 'new': newProject[key]}
                 project[key] = newProject[key];
                 updates += "Updated: " + key + " | ";
-                updatesObject[key] = {'old':project[key], 'new': newProject[key]}
-                console.log(updatesObject[key])
+                //console.log(updatesObject[key])
             }
         }
 

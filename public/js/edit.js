@@ -27,6 +27,7 @@ function fillData (project) {
   clearData();
   projID = project._id;
   //console.log(projID);
+  console.log(project);
   $('input#delete').removeClass('hidden');
   $('input[name="title"').val(project.title);
 
@@ -35,7 +36,7 @@ function fillData (project) {
       tagText += project.tags[i];
       if (i != l-1) {
         tagText += ","
-      };
+      }
   }
   $('input[name="tags"').val(tagText);
 
@@ -46,6 +47,7 @@ function fillData (project) {
   $('textarea[name="longDescription"').val(project.longDescription);
   //console.log(JSON.stringify($('textarea[name="longDescription"').val()));
 
+  //console.log(project.projectDate)
   setDate(new Date(project.projectDate));
 
   $('input[name="priority"').val(project.priority);
@@ -54,9 +56,9 @@ function fillData (project) {
   if (project.media.length > 1) {
     mediaFill(project,0);
     var mediaBox = $('.mediaEntry').parent();
-    for (var i=1, l=project.media.length; i<l; i++) {
-      mediaBox.append('<input type="text" name="media'+i+'" class="mediaEntry">')
-      mediaFill(project,i);
+    for (var j=1, k=project.media.length; j<k; j++) {
+      mediaBox.append('<input type="text" name="media'+j+'" class="mediaEntry">')
+      mediaFill(project,j);
     }
   } else {
     mediaFill(project,0);
@@ -66,7 +68,7 @@ function fillData (project) {
 function mediaFill (project,index) {
   var mediaItem;
     if (project.media[index].src.length == 2) {
-      mediaItem = project.media[index].src[0] + "," + project.media[index].src[0];
+      mediaItem = project.media[index].src[0] + "," + project.media[index].src[1];
     } else {
       mediaItem = project.media[index].src;
     }
@@ -181,7 +183,7 @@ function createProjectObject () {
   //aProject.longDescription = JSON.stringify($('textarea[name="longDescription"').val());
   aProject.longDescription = $('textarea[name="longDescription"').val().replace(/(?:\r\n|\r|\n)/g, '\n');
 
-  aProject.date = new Date($('input[type="date"').val());
+  aProject.projectDate = new Date($('input[type="date"').val());
   aProject.priority = $('input[name="priority"').val();
   aProject.linkText = $('input[name="linkText"').val();
 
@@ -216,7 +218,7 @@ function projObjectComplete (project) {
               errors += 'tags[' + j +  "] is empty\n\n"
             }
         }
-      } else if (key == 'date') {
+      } else if (key == 'projectDate') {
         if ( Object.prototype.toString.call(project[key]) === "[object Date]" ) {
           if ( isNaN( project[key].getTime() ) ) {
             errors += key + " is not a vaild date\n\n";
