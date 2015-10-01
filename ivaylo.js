@@ -200,6 +200,10 @@ app.get('/tagged/:data', function(req, res){
     getTaggedProjects(tag,function(displayProj,tags){
         if (displayProj.length > 0) {
             if (tag == 'allprojects') tag = undefined;
+            displayProj.sort(function(a,b) {
+              var x = b.priority - a.priority;
+              return x == 0? b.projectDate - a.projectDate : x;
+            });
             res.render('tagged', {projects: displayProj, tagged: tag, allTags: tags});
         } else {
             console.log("static page");
