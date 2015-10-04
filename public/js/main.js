@@ -46,6 +46,13 @@ $(document).ready(function() {
         $(".vidContainer").fitVids();
     }
 
+    $('#cvBody .cvLink').each(function(){
+        var link = $(this)
+        if(link.attr('href') == ""){
+            link.addClass('noPoint');
+        }
+    });
+
     $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
     $(".hiddenPhone").html(rot13rot5Encode('<n uers="gry:+68658391837" pynff="yvaxNavz">556.865.839.1837</n>'));
 

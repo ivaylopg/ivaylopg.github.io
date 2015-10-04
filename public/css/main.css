@@ -672,7 +672,23 @@ body.editPage input[type=button], body.editPage textarea {
 
 #cvBody ul li {
   list-style: none;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.5em;
+}
+
+#cvBody ul.pubs li, #cvBody ul.projs li {
+  margin-left: 3rem;
+  text-indent: -3rem;
+}
+
+@media screen and (min-width: 50rem) {
+  #cvBody ul.pubs li, #cvBody ul.projs li {
+    margin-left: 8rem;
+    text-indent: -8rem;
+  }
+}
+
+#cvBody .noPoint:hover {
+  cursor: default;
 }
 
 a.cvLink:before {

@@ -481,12 +481,28 @@ body.editPage {
     line-height: 1.5em;
 
     ul {
-        padding: 0em;
+      padding: 0em;
 
-        li {
-            list-style: none;
-            padding-bottom: 0.3em;
+      li {
+        list-style: none;
+        padding-bottom: 0.5em;
+      }
+    }
+
+    ul.pubs, ul.projs {
+      li {
+        margin-left: 3rem;
+        text-indent: -3rem;
+        @include media($tablet) {
+          margin-left: 8rem;
+          text-indent: -8rem;
         }
+      }
+
+    }
+
+    .noPoint:hover {
+      cursor: default;
     }
 }
 
