@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Happy Holidays</title>
+
+		<style type="text/css">
+
+			body {	color: black; 
+					font-family: Helvetica, Arial, sans-serif; 
+					background-color: #FFFFFF;
+					text-align: center;
+					margin: 0px;
+					padding: 0px;
+					}
+			table {border: none; padding: none;}
+			
+			
+			#theCard {; width: 98%; border: solid;
+						border-width:10px;
+						border-bottom-width: 20px;
+						border-color:#000;}
+			
+			.woodWall {
+				z-index: -1;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url(img/wood.jpg) no-repeat center center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}
+			
+			.corkBoard {
+				z-index: 0;
+				margin-top: 100px;
+				width: 1000px;
+				height: 800px;
+				margin-left:auto;
+				margin-right:auto;
+				background: url(img/board3.jpg) repeat center center;
+				border: solid;
+				border-width:10px;
+				border-color:#000;
+			}
+			
+			.cardFront {
+				z-index: 10;
+				position: relative;
+				top: 10px;
+				left: 300px;
+				width: 800px;
+				
+				transform:rotate(7deg);
+				-ms-transform:rotate(7deg); /* IE 9 */
+				-webkit-transform:rotate(7deg); /* Safari and Chrome */
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.cardBack {
+				z-index: 9;
+				position: relative;
+				top: -325px;
+				left: 0px;
+				width: 800px;
+				
+				transform:rotate(-4deg);
+				-ms-transform:rotate(-4deg); /* IE 9 */
+				-webkit-transform:rotate(-4deg); /* Safari and Chrome */
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			
+			.news {
+				z-index: 8;
+				position: relative;
+				top: -1020px;
+				left: -280px;
+				width: 800px;
+				
+				transform:rotate(2deg);
+				-ms-transform:rotate(2deg); /* IE 9 */
+				-webkit-transform:rotate(2deg); /* Safari and Chrome */
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.card1 {
+				z-index: 6;
+				position: relative;
+				top: -750px;
+				left: 400px;
+				width: 800px;
+				
+				transform:rotate(-8deg);
+				-ms-transform:rotate(-8deg); /* IE 9 */
+				-webkit-transform:rotate(-8deg); /* Safari and Chrome */
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.card2 {
+				z-index: 7;
+				position: relative;
+				top: -950px;
+				left: 0px;
+				width: 800px;
+				
+				transform:rotate(10deg);
+				-ms-transform:rotate(10deg); /* IE 9 */
+				-webkit-transform:rotate(10deg); /* Safari and Chrome */
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.card3 {
+				z-index: 5;
+				position: relative;
+				top: -1650px;
+				left: -80px;
+				width: 800px;
+				
+				transform:rotate(-10deg);
+				-ms-transform:rotate(-10deg); /* IE 9 */
+				-webkit-transform:rotate(-10deg); /* Safari and Chrome */
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.pin {
+				z-index: 12;
+				position: inherit;
+				top: -485px;
+				left: 0px;
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.pin1 {
+				z-index: 12;
+				position: inherit;
+				top: -485px;
+				left: -105px;
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.pin2 {
+				z-index: 12;
+				position: inherit;
+				top: -185px;
+				left: 30px;
+				
+				/*border: solid;
+				border-width:2px;
+				border-color:#F00;*/
+			}
+			
+			.caption {
+				z-index: 0;
+				margin-top: 20px;
+				width: 800px;
+				height:50px;
+				margin-left:auto;
+				margin-right:auto;
+				background: url(img/plaque.png) no-repeat center center;
+				/*border: solid;
+				border-width:5px;
+				border-color:#000;*/
+			}
+			
+			a:link {text-decoration: none; color:red;}
+		    a:active {text-decoration: none; color:red;}
+		    a:visited {text-decoration: none; color:red;}
+		    a:hover {text-decoration: none; color:red;}
+			
+			
+			
+		</style>
+		
+	</head>
+
+<body>
+<div class="woodWall"></div>
+<div class="corkBoard">
+	<div class="cardFront"><a href="cardfrontbig.jpg"><img src="img/cardfront.jpg" width="800" height="auto"/></a><div class="pin"><img src="img/pin2.png" width="50" height="auto" /></div></div>
+    <div class="cardBack"><img src="img/cardback.jpg" width="800" height="auto"/><div class="pin1"><img src="img/pin3.png" width="50" height="auto" /></div></div>
+	<div class="news"><img src="img/news.png" width="200" height="auto"/><div class="pin2"><img src="img/pin3.png" width="50" height="auto" /></div></div>
+    <div class="card1"><img src="img/misccard2.jpg" width="350" height="auto"/></div>
+	<div class="card2"><img src="img/misccard3.jpg" width="400" height="auto"/></div>
+    <div class="card3"><img src="img/misccard1.jpg" width="400" height="auto"/></div>
+</div>
+
+<center>
+<br />
+<div class="caption"><br />Download image <a href="cardfrontbig.jpg">here</a> (right-click and select "save-as") • Watch a time lapse of the card getting made <a href="http://vimeo.com/ivaylogetov/holidaycard2013" target="_blank">here</a></div>
+
+
+
+
+</center>
+
+	</body>
+
+</html>
