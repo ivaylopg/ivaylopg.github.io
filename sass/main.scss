@@ -18,16 +18,16 @@ $mobile:	rem(500);
 /////
 
 @mixin gridMargin($rem) {
-	@include media(max-width $rem * 1.2, 12) {
-		@include shift(1);
-    	@include span-columns(10 of 12);
+  @include media(max-width $rem * 1.2, 12) {
+    @include shift(1);
+      @include span-columns(10 of 12);
     }
 }
 
 @mixin tinyGridMargin($rem) {
 	@include media(max-width $rem * 1.2, 24) {
 		@include shift-in-context(1 of 24);
-    	@include span-columns(22);
+      @include span-columns(22);
     }
 }
 
@@ -43,19 +43,19 @@ $mobile:	rem(500);
 
 	@include media(max-width $max-width * 1.2) {
 		@include omega-reset(4n);
-    	@include span-columns(4);
-    	@include omega(3n);
+      @include span-columns(4);
+      @include omega(3n);
     }
 
 	@include media(max-width $tablet * 1.2) {
 		@include omega-reset(3n);
-    	@include span-columns(6);
-    	@include omega(2n);
+      @include span-columns(6);
+      @include omega(2n);
     }
 
     @include media(max-width $mobile * 1.2) {
-    	@include omega-reset(2n);
-    	@include span-columns(12);
+      @include omega-reset(2n);
+      @include span-columns(12);
     }
 
 }
@@ -82,9 +82,9 @@ $mobile:	rem(500);
 @font-face {font-family: 'helveticaLight'; src: local('Helvetica'); font-weight: 100;}
 @font-face {font-family: 'helveticaRegular'; src: local('Helvetica'); font-weight: 500;}
 
-$hiliteColor: 	#b3d4fc;
-$bgColor : 		#fff;
-$textColor: 	#000;
+$hiliteColor: #b3d4fc;
+$bgColor : #fff;
+$textColor: #000;
 $fontStack1:	"fira-sans-2", "FiraSansUL", "helveticaLight", sans-serif;
 $fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
 
@@ -313,10 +313,10 @@ a {
 
 		.projName {
 			position: absolute;
-  			top: 0; bottom: 0; left: 0; right: 0;
-  			padding: 1rem;
-  			font-size: 0.8em;
-  			background: none;
+        top: 0; bottom: 0; left: 0; right: 0;
+        padding: 1rem;
+        font-size: 0.8em;
+        background: none;
 			background: rgba(0,0,0,0.75);
 			color: white;
 		}
