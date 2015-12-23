@@ -1,0 +1,459 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* ========================================================================== */
+/* HTML5 Boilerplate: opinionated defaults */
+/* ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*, *:before, *:after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ========================================================================== */
+body, html {
+  font-size: 100%;
+}
+
+body {
+  color: #d51f26;
+  font-family: "museo-slab", "MuseoSlab-300", serif;
+}
+
+section {
+  position: relative;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+a {
+  position: relative;
+  color: #d51f26;
+  text-decoration: none;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+.muchSmaller {
+  font-size: 0.7em;
+}
+
+@media screen and (min-width: 43.75rem) {
+  .muchSmaller {
+    font-size: 0.5em;
+  }
+}
+
+.spacer {
+  display: block;
+  min-height: 1rem;
+}
+
+.medSpacer {
+  display: block;
+  min-height: 2.5rem;
+}
+
+@media screen and (min-height: 46.875rem) {
+  .medSpacer {
+    min-height: 4rem;
+  }
+}
+
+@media screen and (min-height: 65.625rem) {
+  .medSpacer {
+    min-height: 6rem;
+  }
+}
+
+@media screen and (min-height: 90rem) {
+  .medSpacer {
+    min-height: 7rem;
+  }
+}
+
+.margBotMedSpacer {
+  padding-bottom: 2.5rem;
+}
+
+@media screen and (min-height: 46.875rem) {
+  .margBotMedSpacer {
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (min-height: 65.625rem) {
+  .margBotMedSpacer {
+    padding-bottom: 6rem;
+  }
+}
+
+@media screen and (min-height: 90rem) {
+  .margBotMedSpacer {
+    padding-bottom: 7rem;
+  }
+}
+
+.bigSpacer {
+  display: block;
+  min-height: 5rem;
+}
+
+@media screen and (min-height: 46.875rem) {
+  .bigSpacer {
+    min-height: 8rem;
+  }
+}
+
+@media screen and (min-height: 65.625rem) {
+  .bigSpacer {
+    min-height: 11rem;
+  }
+}
+
+@media screen and (min-height: 90rem) {
+  .bigSpacer {
+    min-height: 14rem;
+  }
+}
+
+.margBotBigSpacer {
+  padding-bottom: 5rem;
+}
+
+@media screen and (min-height: 46.875rem) {
+  .margBotBigSpacer {
+    padding-bottom: 8rem;
+  }
+}
+
+@media screen and (min-height: 65.625rem) {
+  .margBotBigSpacer {
+    padding-bottom: 11rem;
+  }
+}
+
+@media screen and (min-height: 90rem) {
+  .margBotBigSpacer {
+    padding-bottom: 14rem;
+  }
+}
+
+.gridded {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gridded::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.gridded .fullWidth {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+}
+
+.gridded .fullWidth:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 72rem) {
+  .gridded {
+    margin-left: 8.5298%;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+  }
+  .gridded:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 37.5rem) {
+  .gridded {
+    margin-left: 4.21521%;
+    float: left;
+    display: block;
+    margin-right: 1.16509%;
+    width: 91.56958%;
+  }
+  .gridded:last-child {
+    margin-right: 0;
+  }
+}
+
+.opacity.csstransitions .gridded p, .opacity.csstransitions .gridded h1, .opacity.csstransitions .gridded .mainContent, .opacity.csstransitions .gridded .frontCover {
+  -webkit-transition: opacity 1.5s linear;
+  -moz-transition: opacity 1.5s linear;
+  transition: opacity 1.5s linear;
+  opacity: 1.0;
+}
+
+.wf-loading .gridded p, .wf-loading .gridded h1, .wf-loading .gridded .mainContent, .wf-loading .gridded .frontCover {
+  visibility: hidden;
+}
+
+.opacity.csstransitions.wf-loading .gridded p, .opacity.csstransitions.wf-loading .gridded h1, .opacity.csstransitions.wf-loading .gridded .mainContent, .opacity.csstransitions.wf-loading .gridded .frontCover {
+  opacity: 0.0;
+}
+
+.industry {
+  font-family: "industry", "Industry-Demi", sans-serif;
+}
+
+.gradientBg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #353962;
+  background-image: -webkit-linear-gradient(-120deg, #353962, #131436);
+  background-image: linear-gradient(-150deg,#353962, #131436);
+  text-align: center;
+}
+
+.gradientBg img {
+  height: 100vh;
+  width: auto;
+}
+
+.mainContent {
+  text-align: center;
+}
+
+.mainContent p {
+  color: white;
+}
+
+.mainContent .cover {
+  min-height: 100vh;
+}
+
+.mainContent img {
+  width: 100%;
+  height: auto;
+}
+
+.mainContent h1 {
+  font-size: 4rem;
+  color: #d51f26;
+}
+
+.mainContent h2 {
+  font-size: 1.8rem;
+  margin: 0rem;
+}
+
+.mainContent h1.industry {
+  margin: 8rem 0rem 0rem 0rem;
+  font-size: 6rem;
+  color: white;
+}
+
+.mainContent .subtitle {
+  color: white;
+  margin: 0rem;
+}
+
+.mainContent div.image {
+  margin-bottom: 3rem;
+  background: none;
+}
+
+.mainContent div.image p {
+  margin-top: 0rem;
+  font-size: 1.4rem;
+}
+
+.noMarg {
+  margin: 0rem !important;
+}
+
+.js-fade-element-hide {
+  visibility: hidden;
+}
+
+.opacity .js-fade-element-hide {
+  opacity: 0;
+}
+
+.js-fade-element-show {
+  visibility: visible;
+}
+
+.opacity .js-fade-element-show {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+}
+
+/* ========================================================================== */
+/* HTML5 Helper classes */
+/* ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* Print Styles  */
+/* ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
