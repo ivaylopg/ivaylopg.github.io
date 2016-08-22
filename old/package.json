@@ -1,0 +1,47 @@
+{
+  "name": "ivaylogetov.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ivaylo Getov Website",
+  "main": "ivaylo.js",
+  "author": "Ivaylo Getov",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "connect-mongo": "^0.8.2",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "gulp-sass": "^2.1.1",
+    "marked": "^0.3.5",
+    "mongoose": "^4.1.8",
+    "passport": "^0.3.0",
+    "passport-github2": "^0.1.9",
+    "serve-favicon": "^2.3.0",
+    "swig": "^1.4.2",
+    "swig-marked": "0.0.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "browser": false
+    },
+    "globals": {},
+    "rules": {
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "no-unused-vars": 1,
+      "no-empty": 1,
+      "no-console": 1
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node ivaylo.js"
+  }
+}
