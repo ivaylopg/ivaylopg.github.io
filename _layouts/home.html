@@ -111,9 +111,9 @@ layout: default
 
         <p class="muchSmaller projectTags margBotMedSpacer">
           {% for tag in site.tags | uniq | sort %}
-          <a href="/tagged/{{tag | first | downcase}}" class="linkAnim tagLink">{{tag | first | upcase}}</a>&nbsp;//&nbsp;
+          <a href="/tagged/{{tag | first | downcase}}" class="linkAnim tagLink">{{tag | first | upcase}}</a>{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}
           {% endfor %}
-          <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a>
+          <!-- <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a> -->
         </p>
 
         {% endif %}
