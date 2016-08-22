@@ -19,6 +19,9 @@ exclude:
 - package.json
 - Gemfile
 - Gemfile.lock
+- ivaylogetov.sublime-project
+- ivaylogetov.sublime-workspace
+- old
 
 # Build settings
 markdown: kramdown

@@ -1,16 +1,4 @@
 {
-	"build_systems":
-	[
-		{
-			"cmd":
-			[
-				"gulp",
-				"sass"
-			],
-			"name": "GulpSass",
-			"selector": "source.sass"
-		}
-	],
 	"folders":
 	[
 		{
