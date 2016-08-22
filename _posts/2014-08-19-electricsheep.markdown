@@ -7,11 +7,11 @@ headline: A digital cloud built from an algorithm. The daydreams of an android l
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/sheep.jpg
 cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/main.jpg
 media:
+  - https://player.vimeo.com/video/103482209
   - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/05.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/07.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/04.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/07.png#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/04.png#split
   - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/02.png
-
 ---
 
 I developed a recursive algorithm that grows each cloud based on two inputs: the number of recursions and the shape of each "droplet." As the program recurses, it mutates, resulting in a unique cloud formation each time.

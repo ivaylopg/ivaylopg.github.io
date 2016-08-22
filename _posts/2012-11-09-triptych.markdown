@@ -2,14 +2,20 @@
 layout: project
 title:  "Untitled (Triptych)"
 tags: Video Installation
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/triptych.jpg
 priority: 0
+headline: Computer visualizations of romantic connection.
+thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/triptych.jpg
+cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/03.jpg
+media:
+  - https://player.vimeo.com/video/58791794
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/06.jpg
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/01.jpg#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/02.jpg#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/07.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/04.jpg#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/05.jpg#split
+
 ---
-
-Computer visualizations of romantic connection.
-
-![cover](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/03.jpg)
-
 Three-channel video installation.
 
 Five couples come together in a kiss, recorded by a 3D Scanner and custom software. Because of the limitations of the low-resolution technology, the computer has trouble separating each member of the pair when they come close to each other and thus frequently renders a physical connection between their two faces where one does not exist, presenting the two individuals as one connected mass.
@@ -19,11 +25,3 @@ Due to this "mistake" the machine has actually visualized a connection that does
 Three videos show different modes of rendering the data, looping indefinitely and creating an infinite amount of relationships among the three displayed scenes.
 
 A hacked Xbox Kinect was used as the scanner, and the 3D data is combined with color data from a digital cinema camera using RGBD Toolkit.
-
-![image1](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/06.jpg)
-![image2](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/01.jpg)
-![image3](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/02.jpg)
-![image4](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/07.png)
-![image5](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/04.jpg)
-![image6](http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/05.jpg)
-

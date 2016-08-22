@@ -10,7 +10,7 @@ twitter_username: ivaylopg
 github_username:  ivaylopg
 sass:
   style: compressed
-permalinks: pretty
+permalink: /:slug
 google_analytics: 15828180-1
 exclude:
 - node_modules

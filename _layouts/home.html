@@ -83,6 +83,41 @@ layout: default
         </p>
         <div class="medSpacer"></div>
 
+        {% assign allProjects = site.posts %}
+
+        {% if allProjects %}
+        <div class="fullWidth" id="theProjects">
+            <h1>Recent Work</h1>
+        </div>
+
+        <div class="fullWidth projects margBotMedSpacer">
+        {% for proj in allProjects %}
+
+        {% assign projTags = proj.tags | uniq %}
+
+        <div class="projectEntry{% for tag in proj.tags %} {{tag | downcase}}{% endfor %}">
+          <a href="{{proj.url}}">
+          <div style="background: url({{proj.thumbnail}})">
+            <div class="projName">
+                {{proj.title}}<br>
+                <span class="muchSmaller">{% for tag in proj.tags %}{{tag | upcase}}{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}{% endfor %}</span>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        {% endfor %}
+        </div>
+
+        <p class="muchSmaller projectTags margBotMedSpacer">
+          {% for tag in site.tags | uniq | sort %}
+          <a href="/tagged/{{tag | first | downcase}}" class="linkAnim tagLink">{{tag | first | upcase}}</a>&nbsp;//&nbsp;
+          {% endfor %}
+          <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a>
+        </p>
+
+        {% endif %}
+
     </div>
 
 </section>
