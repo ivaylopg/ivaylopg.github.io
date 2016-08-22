@@ -9,11 +9,9 @@ cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/tript
 media:
   - https://player.vimeo.com/video/58791794
   - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/06.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/01.jpg#split
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/02.jpg#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/01.jpg,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/02.jpg
   - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/07.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/04.jpg#split
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/05.jpg#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/04.jpg,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/05.jpg
 
 ---
 Three-channel video installation.

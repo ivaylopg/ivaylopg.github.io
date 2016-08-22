@@ -9,8 +9,7 @@ cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep
 media:
   - https://player.vimeo.com/video/103482209
   - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/05.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/07.png#split
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/04.png#split
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/04.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/07.png
   - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/02.png
 ---
 

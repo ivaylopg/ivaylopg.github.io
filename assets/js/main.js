@@ -44,6 +44,10 @@ $(document).ready(function() {
 
     if ($("body").hasClass("projectPage")) {
         $(".vidContainer").fitVids();
+        $(".projPageContent a").each(function(){
+          $(this).addClass("bolder linkAnim").attr("target", "_blank");
+        });
+
     }
 
     $('#cvBody .cvLink').each(function(){

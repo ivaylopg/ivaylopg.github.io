@@ -5,5 +5,66 @@ layout: default
 <section class="gridded">
   <div class="fullWidth projects">
 
+  <div class="bigSpacer"></div>
+
+    <h1>{{ page.title }}</h1>
+
+    <p>
+        <span class="muchSmaller">
+        {% for tag in page.tags | uniq %}
+          <a href="/tagged/{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>
+          {% unless forloop.last %}&nbsp;//{% endunless %}
+        {% endfor %}
+        <span>
+    </p>
+
+    <p>{{page.headline}}</p>
+
+    <div class="spacer"></div>
+
+    {% if page.cover contains 'vimeo' %}
+        <div class="fullWidth vidContainer">
+            <iframe src="{{page.cover}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    {% elsif page.cover contains 'youtube' %}
+    {% else %}
+        <img src="{{page.cover}}" class="projCover">
+    {% endif %}
+
+    <div class="spacer"></div>
+
+    <div class="projPageContent">
+    {{content}}
+    </div>
+
+    <div class="spacer"></div>
+
+    {% for media in page.media %}
+
+        {% if media contains ',' %}
+            {% assign pair = media | split: ',' %}
+            <div class="fullWidth">
+                {% for member in pair %}
+                  <img src="{{member}}" class="projColumns">
+                {% endfor %}
+            </div>
+        {% elsif media contains 'vimeo' %}
+        <div class="fullWidth vidContainer">
+            <iframe src="{{media}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        {% elsif media contains 'youtube' %}
+        {% else %}
+            <img src="{{media}}" class="projImage">
+        {% endif %}
+    {% endfor %}
+
+
+    <p>
+        <a href="#" class="linkAnim scrollLink">back to top</a><br />
+        <a href="/" class="linkAnim">back to main</a>
+    </p>
+
+    <div class="medSpacer"></div>
+
   </div>
 </section>
