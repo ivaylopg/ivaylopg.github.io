@@ -4,7 +4,15 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
 {% include head.html %}
+
+{% if page.collection == "posts" %}
+<body class="projectPage">
+{% else %}
 <body class="showCube">
+{% endif %}
+
+  {% include prompt.html %}
+  <div id="nodeField"></div>
 
   {{ content }}
 
@@ -21,7 +29,13 @@
   <script src="/assets/js/vector2d.min.js"></script>
 
   <script src="/assets/js/nodeField.js"></script>
+
+  {% if page.collection == "posts" %}
+  <script src="/assets/js/vendor/jquery.fitvids.js"></script>
+  {% else %}
   <script src="/assets/js/cube.js"></script>
+  {% endif %}
+
   <script src="/assets/js/main.js"></script>
 
   <script>
