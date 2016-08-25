@@ -1,0 +1,25 @@
+---
+layout: project
+title:  "Pigments"
+tags: Interactive Music Code Web
+priority: 0
+headline: Interactive Music Video
+thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/pigments/bg.jpg
+cover: https://player.vimeo.com/video/171225364
+media:
+  - https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/pigments/pigments.gif
+---
+Luxloop developed an interactive music video for LA-based artist Elohim that asks users actively keep it alive by tapping a heartbeat on their mobile device. Their interactions change the pigments within the piece.
+
+[icantmakeuloveu.com](http://icantmakeuloveu.com/)
+
+Co-Creator/Writer: Sebastian Lyman
+Co-Creator/Designer: Natalie Seitz
+Director: Chase O'Black
+Video Synthesis: Alex Beauregard
+Creative Technologist/Developer: Ivaylo Getov
+Produced by: Luxloop
+
+Featured on:
+[Nerdist](http://nerdist.com/las-elohim-shares-pigments-website-allows-users-to-control-her-heartbeat-premiere/)
+[Chrome Experiments](https://www.chromeexperiments.com/experiment/pigments)

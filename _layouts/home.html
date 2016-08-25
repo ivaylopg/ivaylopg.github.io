@@ -1,0 +1,129 @@
+---
+layout: default
+---
+
+<section class="gridded">
+    <div class="introText fullWidth frontCover">
+        <div class="bigSpacer"></div>
+
+        <h1>Hello.</h1>
+        <p>I’m Ivaylo Getov. You’ve found my webpage. </p>
+
+        <div class="spacer"></div>
+
+        <p>
+            Take a look at some of the <a href="#theProjects" class="bolder linkAnim scrollLink">projects</a>. Or even better, go check out <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, which is where I’m putting most of my creative energy these days. If you're looking for my CV, that's <a href="/cv" class="bolder linkAnim">here</a>. All my contact info and social media stuff is down at the <a href="#theFooter" class="bolder linkAnim scrollLink">bottom</a> of every page.
+        </p>
+        <p>
+            I try to keep this page up to date and link to projects I contribute to, but this is also where my art projects, ramblings and personal experiments end up. That’s the vibe here. Fair warning. Scroll down! Take a look around...
+        </p>
+
+    </div>
+    <div class="introText fullWidth">
+
+        <div class="spacer"></div>
+
+        <h1>What I Do.</h1>
+        <p>
+            Lately I’ve had a hard time coming up with a short answer for “what do you do?” The following is what I’d like to tell people, but most of the time I just give them the logline (If you want that answer, feel free to scroll to the bottom). I’m good at meeting deadlines. I’m good at making fun weird art projects. I’m bad at elevator pitches.
+        </p>
+        <p>
+            If you google me, my IMDB page is up near the top. That makes sense. I went to film school at NYU. I learned to be a cinematographer, and I exclusively did that until about 2013. I put all that work on a separate website, which you can visit <a href="http://ivaylogetovdp.com" target="_blank" class="bolder linkAnim">here</a> if you want. I love working on film sets. I still do it a lot, mostly because I live in Los Angeles and I like paying my rent, and also often because one of my friends will have a really amazing idea and ask me to help make it real.
+        </p>
+        <p>
+            But that’s not really what I do any more. At least not exclusively. I think I first got excited about pursuing film because I was attracted to the concept of telling visual stories, but there are so many other mediums through which to tell stories that I recently couldn’t shake this feeling of being penned-in. And I couldn’t get over how much separation there was between the process of creating a film and the moment an audience finally got to experience it.
+        </p>
+        <p>
+            Like a lot of kids that grew up in the 80s and 90s, I spent a lot of time in front of a computer. There was this pervasive cyberpunk dream that the future might finally be coming, and everyone would be a part of this awesome 8-bit metaverse. My family had a Mac, which made me think I was cooler than all the other nerds (relatively speaking). I learned some HyperTalk, then some C, sold some TI-83+ programs to my middle school friends and learned some HTML and JS once the internet became a thing, but I was never interested in being a professional Computer Scientist. Even as a kid I was pretty sure I wanted to spend my energy doing something that had to do with stories and images, and back then CS just seemed like the opposite of that to me.
+        </p>
+        <p>
+            As I made my way through college, and my horizons broadened, I kept seeing more and more intersections between these two worlds. The overlapping area of the venn-diagram was getting bigger and bigger. I began coming across art, made with computers, that was actually really emotionally compelling. I started to research code as a tool for interactive storytelling and installation art. I was captivated by how the ethos of the open-source software community nurtured a thriving tech-art community all over the world. I got involved in art/tech or art/science hackathons, usually as a filmmaker or visual artist, while teaching myself Processing (the gateway drug of many, many artists way cooler than me).
+        </p>
+        <p>
+            I was part of a hackathon a few years ago where we had to apply as a specific member of a team. I wasn’t sure if I should apply as a Storyteller or a Technologist. At the bottom of the list they had another option, which seemed to be an unusually comfortable fit - The Blackbox.
+        </p>
+
+        <div id="theBlackBox">
+            <!--
+              This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com),
+              and uses a good amout of his code. I made some changes, specifically to the interactivity in
+              the JS, but the CSS is all his, and the idea of doing an interactive cube with CSS transforms
+              intead of WebGL is his too.
+            -->
+            <section class="cube">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+        </div>
+
+        <p class="belowCube">
+            I've come to realize since then that that’s the best distillation of what I <i>actually</i> do. I shape-shift to solve a problem. I learn a new skill or forget an old habit in service of a project. I feel just as comfortable loading 35mm film into a Panaflex as I do soldering a fresh circuit board or debugging some hastily-written C++. I figure out what I need to learn or get better at so I can make what I want to make.
+        </p>
+        <p>
+            I think the best answer to “what do you do?” should be describing my current project, not trying to come up with a way that all the projects fit together.
+        </p>
+
+        <p>
+            I know that’s still not a great answer to “what do you do?” but I’m confident that you are either somebody that totally gets it, or you stopped reading four paragraphs ago. If you’re the former, <a href="#theFooter" class="bolder linkAnim scrollLink">give me call</a>. I think we can make really cool things together.
+        </p>
+
+        <div class="spacer"></div>
+
+        <p>
+            <h1>TL;DR</h1>
+        </p>
+        <p>
+            Hi. I'm Ivaylo Getov.<br>
+            I’m a cofounder and Creative Director at <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, a creative-technology studio.<br>
+            I make interactive art using technology, and often work as a freelance cinematographer. I’d love to talk to you.
+        </p>
+        <div class="medSpacer"></div>
+
+        {% assign allProjects = site.posts %}
+
+        {% if allProjects %}
+        <div class="fullWidth" id="theProjects">
+           <h1>Recent Work<span class="tagHeading"></span></h1>
+        </div>
+
+        <div class="fullWidth projects margBotMedSpacer">
+        {% for proj in allProjects %}
+
+        {% assign projTags = proj.tags | uniq %}
+
+        <div class="projectEntry{% for tag in proj.tags %} {{tag | downcase}}{% endfor %}">
+          <a href="{{proj.url}}">
+          <div style="background: url({{proj.thumbnail}})">
+            <div class="projName">
+                {{proj.title}}<br>
+                <span class="muchSmaller">{% for tag in proj.tags %}{{tag | upcase}}{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}{% endfor %}</span>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        {% endfor %}
+        </div>
+
+        <div class="tagHider"></div>
+
+        <p class="muchSmaller projectTags margBotMedSpacer">
+          {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+          {% assign tag_words = site_tags | split:',' | sort %}
+
+          {% for tag in tag_words | uniq %}
+          <a href="http://ivaylogetov.com/tagged#{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}
+          {% endfor %}
+          &nbsp;////&nbsp;<a href="http://ivaylogetov.com/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
+        </p>
+
+        {% endif %}
+
+
+    </div>
+
+</section>

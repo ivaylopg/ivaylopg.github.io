@@ -1,12 +1,4 @@
-_site/
-
-# osx noise
-.DS_Store
-profile
-*.swp
-*~.nib
-
-# Thumbnails
-._*
-
-/unused/*
+_site
+.sass-cache
+.jekyll-metadata
+node_modules

@@ -1,0 +1,568 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "lib/bourbon/bourbon";
+@import "lib/neat/neat";
+
+
+/* ========================================================================== */
+
+$max-width: rem(1088);
+$tablet:	rem(800);
+$mobile:	rem(500);
+
+
+
+// Neat omega reset by www.joshfry.me
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+/////
+
+@mixin gridMargin($rem) {
+  @include media(max-width $rem * 1.2, 12) {
+    @include shift(1);
+      @include span-columns(10 of 12);
+    }
+}
+
+@mixin tinyGridMargin($rem) {
+	@include media(max-width $rem * 1.2, 24) {
+		@include shift-in-context(1 of 24);
+      @include span-columns(22);
+    }
+}
+
+@mixin threeWidthGrid {
+	@include gridMargin($max-width);
+	@include tinyGridMargin($mobile);
+}
+
+@mixin bigThirds {
+
+	@include span-columns(3);
+	@include omega(4n);
+
+	@include media(max-width $max-width * 1.2) {
+		@include omega-reset(4n);
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
+	@include media(max-width $tablet * 1.2) {
+		@include omega-reset(3n);
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media(max-width $mobile * 1.2) {
+      @include omega-reset(2n);
+      @include span-columns(12);
+    }
+
+}
+
+@mixin projectTwoCols {
+
+    @include span-columns(6);
+    @include omega(2n);
+
+    @include media(max-width $tablet * 1.2) {
+        @include omega-reset(2n);
+        @include span-columns(12);
+    }
+
+}
+
+@mixin fullBg {
+	background-repeat: no-repeat !important;
+	background-attachment: fixed;
+	background-position: center center !important;
+	background-size: cover !important;
+}
+
+@font-face {font-family: 'helveticaLight'; src: local('Helvetica'); font-weight: 100;}
+@font-face {font-family: 'helveticaRegular'; src: local('Helvetica'); font-weight: 500;}
+
+$hiliteColor: #b3d4fc;
+$bgColor : #fff;
+$textColor: #000;
+$fontStack1:	"fira-sans-2", "FiraSansUL", "helveticaLight", sans-serif;
+$fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
+
+$fadeOnLoad: "p, h1, .projects, .frontCover";
+//$defaultWeight: 200;
+$defaultWeight: 500;
+
+$footer-background: $bgColor;
+$footer-color: $textColor;
+$footer-link-color: transparentize($footer-color, 0.6);
+
+@import "partials/bpDefaults";
+/* ========================================================================== */
+
+body, html {
+	font-size: 100%;
+	background: $bgColor;
+}
+
+body {
+	color: $textColor;
+	font-family: $fontStack1;
+	font-weight: $defaultWeight;
+	font-size: 1.75rem;
+
+	@include media (max-width $max-width * 1.2) {
+		font-size: 1.5rem;
+	}
+	@include media (max-width $tablet) {
+		font-size: 1.2rem;
+	}
+}
+
+section {
+	position: relative;
+}
+
+h1 {
+	@extend .bolder;
+	font-size: 1.3em;
+}
+
+h2 {
+    @extend .bolder;
+    font-size: 1em;
+}
+
+a {
+	position: relative;
+	color: $textColor;
+	text-decoration: none;
+}
+
+//From http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+.no-touch a.linkAnim:hover {
+	text-decoration: underline;
+}
+.csstransforms.csstransitions a.linkAnim {
+	text-decoration: none;
+}
+
+.csstransforms.csstransitions a.linkAnim:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	visibility: hidden;
+	@include transform(scaleX(0));
+	@include transition(all 0.3s ease-out 0s);
+}
+
+.csstransforms.csstransitions.no-touch a.linkAnim:hover:before {
+	visibility: visible;
+	@include transform(scaleX(1));
+}
+//////
+
+
+.bolder {
+	font-family: $fontStack2;
+	font-weight: $defaultWeight + 100;
+}
+
+.smaller {
+	font-size: 0.8em;
+}
+
+.muchSmaller {
+	font-size: 0.7em;
+    @include media(min-width $tablet){
+        font-size: 0.5em;
+    }
+}
+
+
+.spacer {
+	display: block;
+	min-height: 1rem;
+}
+
+.medSpacer {
+	display: block;
+
+	min-height: 2.5rem;
+	@include media(min-height $mobile*1.5){
+		min-height: 4rem;
+	}
+	@include media(min-height $tablet*1.5){
+		min-height: 6rem;
+	}
+	@include media(min-height $max-width*1.5){
+		min-height: 7rem;
+	}
+}
+
+.margBotMedSpacer {
+	padding-bottom: 2.5rem;
+	@include media(min-height $mobile*1.5){
+		padding-bottom: 4rem;
+	}
+	@include media(min-height $tablet*1.5){
+		padding-bottom: 6rem;
+	}
+	@include media(min-height $max-width*1.5){
+		padding-bottom: 7rem;
+	}
+}
+
+.bigSpacer {
+	display: block;
+
+	min-height: 5rem;
+	@include media(min-height $mobile*1.5){
+		min-height: 8rem;
+	}
+	@include media(min-height $tablet*1.5){
+		min-height: 11rem;
+	}
+	@include media(min-height $max-width*1.5){
+		min-height: 14rem;
+	}
+}
+
+.margBotBigSpacer {
+	padding-bottom: 5rem;
+	@include media(min-height $mobile*1.5){
+		padding-bottom: 8rem;
+	}
+	@include media(min-height $tablet*1.5){
+		padding-bottom: 11rem;
+	}
+	@include media(min-height $max-width*1.5){
+		padding-bottom: 14rem;
+	}
+}
+
+
+
+.gridded {
+	@include outer-container;
+	.fullWidth { @include span-columns(12); }
+	@include threeWidthGrid;
+}
+
+.opacity.csstransitions .gridded {
+	#{$fadeOnLoad} {
+		@include transition(opacity 1.5s linear);
+		opacity: 1.0;
+	}
+}
+
+.wf-loading .gridded {
+	#{$fadeOnLoad} {
+		visibility: hidden;
+	}
+}
+
+.opacity.csstransitions.wf-loading .gridded {
+	#{$fadeOnLoad} {
+		opacity: 0.0;
+	}
+}
+
+.noSpaceDown {
+	margin-bottom: 0em;
+}
+
+.noSpaceDown + * {
+	margin-top: 0em;
+}
+
+.noSpaceUp {
+	margin-top: 0em;
+}
+
+#nodeField {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.frontCover {
+	min-height: 100vh;
+}
+
+.introText {
+}
+
+.projectEntry {
+	margin-bottom: $gutter/2;
+	@include bigThirds;
+	overflow: hidden;
+
+	div {
+		position: relative;
+		width: 100%;
+		padding-bottom: 100%;
+		overflow: hidden;
+
+		.projName {
+			position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        padding: 1rem;
+        font-size: 0.8em;
+        background: none;
+			background: rgba(0,0,0,0.75);
+			color: white;
+		}
+
+		@include media (max-width $mobile * 1.2) {
+			padding-bottom: 50%;
+			.projName {
+				font-size: 1.4em;
+				background: none;
+				background: rgba(0,0,0,0.5);
+			}
+		}
+		@include fullBg;
+	}
+}
+
+.csstransitions.no-touch .projectEntry {
+	@include filter(grayscale(100%));
+	@include transition(0.3s ease-out);
+
+	div .projName {
+		top: 100%;
+		@include transition(top 0.4s ease-in-out);
+	}
+}
+
+.csstransitions.no-touch .projectEntry:hover {
+	@include filter(none);
+	// cursor: pointer;
+	div .projName {
+		top: 0;
+	}
+}
+
+
+/* project page */
+
+img.projCover, img.projImage {
+    width: 100%;
+    margin-bottom: $gutter/2;
+}
+
+img.projColumns {
+    margin-bottom: $gutter/2;
+    @include projectTwoCols;
+}
+
+.vidContainer {
+    margin-bottom: $gutter/2;
+}
+
+/* Tag Filtering Stuff */
+.tagHider {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* CV page */
+
+#cvBody {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+
+    ul {
+      padding: 0em;
+
+      li {
+        list-style: none;
+        padding-bottom: 0.5em;
+      }
+    }
+
+    ul.pubs, ul.projs {
+      li {
+        margin-left: 3rem;
+        text-indent: -3rem;
+        @include media($tablet) {
+          margin-left: 8rem;
+          text-indent: -8rem;
+        }
+      }
+
+    }
+
+    .noPoint:hover {
+      cursor: default;
+    }
+}
+
+a.cvLink:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+}
+
+.no-touch.opacity.csstransforms.csstransitions a.cvLink {
+    opacity: 1.0;
+    @include transition(opacity 0.5s linear);
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+ul.edu {
+    margin-top: 0.2em;
+    padding-left: 1.5em !important;
+
+    li {
+        // list-style: initial !important;
+        list-style-type: circle !important;
+    }
+}
+
+
+ul.pubs {
+
+}
+
+ul.projs {
+
+}
+
+
+/* footer */
+
+footer {
+    background: none;
+    padding: 1.8rem 0rem;
+    width: 100%;
+    display: inline-block;
+
+    position: relative;
+    font-size: 1.0rem;
+    color: $footer-color;
+
+    @include media($tablet) {
+        font-size: 1.1rem;
+    }
+
+    ul {
+        line-height: 1.5em;
+        // margin: 0 0 1em 0;
+        padding: 0;
+
+        a {
+            color: $footer-color
+        }
+
+        @include media($tablet) {
+            float: left;
+            line-height: 1.8em;
+            // margin-left: 1em;
+            padding: 2rem 0rem 0.5rem 0rem;
+        }
+    }
+
+    ul li {
+        list-style: none;
+        padding-right: 1em;
+
+        @include media($tablet) {
+            display: inline;
+            text-align: left;
+        }
+    }
+
+    .footer-secondary-links {
+        @include media($tablet) {
+            float: right;
+        }
+
+        ul.footer-social {
+            margin: 0.5rem 0 4rem 0;
+            padding-top: 1em;
+
+            li {
+                font-size: 1.1em;
+                float: left;
+                line-height: 0;
+                margin: 0;
+                padding-right: 0.7em;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+
+            img {
+                height: 1.5em;
+                padding: 1px;
+            }
+
+            @include media($tablet) {
+                margin: 2rem 0 0 0;
+                float: right;
+                li {
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}
+
+.no-touch.opacity.csstransforms.csstransitions footer {
+    a.linkAnim:before {
+        background-color: $footer-color;
+    }
+
+    .socialLink {
+        opacity: 0.6;
+        @include transition(opacity 0.5s linear);
+
+        &:hover {
+            opacity: 1.0;
+        }
+    }
+}
+
+
+
+
+/* ========================================================================== */
+/* THE CUBE */
+
+@import "partials/cube";
+
+/* ========================================================================== */
+
+
+
+
+
+
+
+
+
+/* ========================================================================== */
+@import "partials/helpers";
+@import "partials/print";
