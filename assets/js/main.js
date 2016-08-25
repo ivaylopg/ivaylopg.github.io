@@ -11,50 +11,59 @@ var tinyCube = false;
 $(document).ready(function() {
 
     if ($("body").hasClass("showCube")) {
-        //console.log("cube!");
+      //console.log("cube!");
 
-        if (window.innerWidth < 500) {
-            tinyCube = true;
-            Cube.resize(window.innerWidth);
-        }
+      if (window.innerWidth < 500) {
+          tinyCube = true;
+          Cube.resize(window.innerWidth);
+      }
 
-        if (Modernizr.touch) {
-            //console.log("touch enabled device");
-            Cube.autoRotate = true;
-            var el = $(".cube");
-            el.on("touchstart", function(e){
-                if($(e.target).is('a, iframe')) {
-                    return true;
-                }
-                e.stopPropagation();
-                el.addClass("pulse");
-                setTimeout(function(){
-                    el.removeClass("pulse");
-                }, 2000);
-            });
-        }
+      if (Modernizr.touch) {
+        //console.log("touch enabled device");
+        Cube.autoRotate = true;
+        var el = $(".cube");
+        el.on("touchstart", function(e){
+          if($(e.target).is('a, iframe')) {
+              return true;
+          }
+          e.stopPropagation();
+          el.addClass("pulse");
+          setTimeout(function(){
+              el.removeClass("pulse");
+          }, 2000);
+        });
+      }
 
-        function draw(){
-            Cube.viewport.move();
-            animId = requestAnimationFrame(draw);
-        }
+      function draw(){
+        Cube.viewport.move();
         animId = requestAnimationFrame(draw);
+      }
+      animId = requestAnimationFrame(draw);
 
     }
 
     if ($("body").hasClass("projectPage")) {
-        $(".vidContainer").fitVids();
-        $(".projPageContent a").each(function(){
-          $(this).addClass("bolder linkAnim").attr("target", "_blank");
-        });
+      $(".vidContainer").fitVids();
+      $(".projPageContent a").each(function(){
+        $(this).addClass("bolder linkAnim").attr("target", "_blank");
+      });
+    }
 
+    if ($("section").first().hasClass("tagPage")) {
+      var tag = ""
+      setTagHeading("");
+      var url = window.location.hash;
+      if (url.indexOf("#") != -1) {
+        tag = url.substring(url.indexOf("#")+1);
+        filterTags(tag);
+      }
     }
 
     $('#cvBody .cvLink').each(function(){
-        var link = $(this)
-        if(link.attr('href') == ""){
-            link.addClass('noPoint');
-        }
+      var link = $(this)
+      if(link.attr('href') == ""){
+        link.addClass('noPoint');
+      }
     });
 
     $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
@@ -140,10 +149,70 @@ $(".scrollLink").click(function(e){
     }, Math.abs(speed));
 });
 
+$(".tagLink").click(function(e){
+  e.preventDefault();
+  var url = $(this).attr("href");
+  var tag = "";
+  if (url.indexOf("#") !== -1) {
+    tag = url.substring(url.indexOf("#")+1);
+  }
+  filterTags(tag);
+});
+
 
 ////////////////////////
 // CUSTOM FUNCTIONS
 
+function filterTags(tag) {
+  if (tag === undefined || tag === null || tag === "") {
+    setTagHeading(tag);
+    restoreAllTags();
+  } else {
+    if ($(".tagHider").html() === "") {
+      $(".tagHider").html($(".projects").html())
+    }
+    $(".projects").html("");
+    setTagHeading(tag);
+    setHash(tag)
+    $(".tagHider .projectEntry").each(function(){
+      if ($(this).hasClass(tag)) {
+        $(this).clone().appendTo(".projects");
+      }
+    });
+  }
+}
+
+function restoreAllTags(){
+  if ($(".tagHider").html() !== "") {
+    $(".projects").html($(".tagHider").html())
+  }
+  removeHash();
+}
+
+function setHash(tag) {
+  if (window.location.href.indexOf("tagged") !== -1) {
+    window.location.hash = tag;
+  }
+}
+
+function removeHash () {
+  if (window.location.href.indexOf("tagged") !== -1) {
+    var loc = window.location;
+    if ("pushState" in history)
+      history.pushState("", document.title, loc.pathname + loc.search);
+    else {
+      loc.hash = "";
+    }
+  }
+}
+
+function setTagHeading(tag) {
+  if (tag === undefined || tag === null || tag === "") {
+    $(".tagHeading").text("")
+  } else {
+    $(".tagHeading").text("/"+tag.toUpperCase())
+  }
+}
 
 
 ////////////////////////

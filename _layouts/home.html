@@ -87,7 +87,7 @@ layout: default
 
         {% if allProjects %}
         <div class="fullWidth" id="theProjects">
-            <h1>Recent Work</h1>
+           <h1>Recent Work<span class="tagHeading"></span></h1>
         </div>
 
         <div class="fullWidth projects margBotMedSpacer">
@@ -109,14 +109,20 @@ layout: default
         {% endfor %}
         </div>
 
+        <div class="tagHider"></div>
+
         <p class="muchSmaller projectTags margBotMedSpacer">
-          {% for tag in site.tags | uniq | sort %}
-          <a href="/tagged/{{tag | first | downcase}}" class="linkAnim tagLink">{{tag | first | upcase}}</a>{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}
+          {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+          {% assign tag_words = site_tags | split:',' | sort %}
+
+          {% for tag in tag_words | uniq %}
+          <a href="http://ivaylogetov.com/tagged#{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}
           {% endfor %}
-          <!-- <a href="/tagged/allprojects" class="linkAnim tagLink">ALL PROJECTS</a> -->
+          &nbsp;////&nbsp;<a href="http://ivaylogetov.com/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
         </p>
 
         {% endif %}
+
 
     </div>
 
