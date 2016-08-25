@@ -7,8 +7,10 @@
 
 {% if page.collection == "posts" %}
 <body class="projectPage">
-{% else %}
+{% elsif page.layout == "home" %}
 <body class="showCube">
+{% else %}
+<body>
 {% endif %}
 
   {% include prompt.html %}
@@ -32,7 +34,7 @@
 
   {% if page.collection == "posts" %}
   <script src="/assets/js/vendor/jquery.fitvids.js"></script>
-  {% else %}
+  {% elsif page.layout == "home" %}
   <script src="/assets/js/cube.js"></script>
   {% endif %}
 

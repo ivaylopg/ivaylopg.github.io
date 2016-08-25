@@ -1,0 +1,4 @@
+---
+layout: tagged
+permalink: /tagged
+---
