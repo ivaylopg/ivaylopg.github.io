@@ -1,0 +1,24 @@
+---
+layout: project
+title:  "&quot;Love Machine&quot; Interactivity Salon"
+tags: Interactive Theatre Hardware
+priority: 0
+headline: Theatre technology workshop and performance.
+thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/salon.jpg
+cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/04.png
+media:
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/05.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/02.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/03.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/01.png
+---
+3LD Salon Series Event - INTERACTIVITY
+Curated & Produced by James Scruggs
+Directed by Andrew J. Scoville
+Produced & Managed by Karina Martins and Future Action Science Theater
+
+The Interactivity Salon brought together designers from all different backgrounds with the goal of expanding the conception of how reactive technologies can be used theatrically to tell a story. How much agency can interactive storytelling give to the audience? How aware of their involvement should they be? What is the relationship between interactivity and immersion?
+
+PARTICIPATING DESIGNERS:
+David Tennent, Daniel Belquer, Mike Donaghey, Ivaylo Getov, Greg St. Pierre, Izzi Ramkissoon, Bob Wuss, Kate Freer, Joe Cantalupo, Chloe Lee Kernaghan, Santiago Peraza Eraso
+
+I developed a wireless [inertial arm tracker](http://luxloop.com/motion) allowing an actor to manipulate projected images in real-time using natural interactions such as *grabbing* and *moving* in space. I was also responsible for developing a 360° interactive flock simulation that reacted to dancers and audience members as they approached the walls of the space.

@@ -1,0 +1,20 @@
+---
+layout: project
+title:  "Amplified Self"
+tags: Interactive Documentary App Biofeedback
+priority: 0
+headline: Interactive Documentary
+thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/axion.jpg
+cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/01.png
+media:
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/02.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/03.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/04.jpg
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/vidThumb.jpg
+---
+A meditative exploration of the scientific method and human nature, Axion is an unconventional app-based and online interactive documentary. By allowing a player the freedom to navigate and discover an evolving virtual environment, the project suggests a consonance between the process of scientific discovery and a personal, emotive confrontation with the unknown.
+
+Featuring original interviews with diverse scientists and researchers working in the fields of dark matter and dark energy, each player’s experience is uniquely molded by the conscious and unconscious decisions they make throughout their journey. As players navigate their virtual world, they gradually discover intimate but scientifically rigorous conversations with scientists and researchers working in cosmology and particle physics, while experiencing abstract, multi-sensory content that reacts to and informs these interviews. Using biometric feedback such as EEG data and heart-rate, Axion can further customize each individual’s experience, dynamically affecting the direction of the documentary content as well as the visual environment. Using this process, Axion draws a parallel between visual poetry and scientific concepts, illuminating a creative and expressive side of the discourse that is often not showcased, and thus sharing a facet of scientific life that most people outside the scientific community have not experienced.
+
+Axion is still under development.
+More info on the project [website](http://axion.is) and at [Luxloop](http://luxloop.com/axion).

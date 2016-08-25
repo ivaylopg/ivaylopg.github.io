@@ -1,0 +1,26 @@
+---
+layout: project
+title:  "OBEM"
+tags: Film Hardware
+priority: 0
+headline: An ongoing exploration of capturing space and movement as data, combining the language of traditional film with new media, technology, and DIY low-fi motion capture.
+thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/obem/dance.jpg
+cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/obem/01.png
+media:
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/obem/03.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/obem/02.png
+  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/obem/06.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/obem/04.png
+---
+An ongoing exploration of capturing space and movement as data, and transforming this data into visual information to be seamlessly composited into a filmed scene. It is an experiment in combining the language of traditional film with new media, technology, and DIY low-fi motion capture.
+
+The final product will be a short film of an original choreographed dance duet. Over the course of the dance, the two partners leave "artifacts" of their motion behind in their environment - solid, gestural forms that take up real space. Over time, the forms occupy more and more volume as each dancer is either trying to trap the other into a cage of gestures, or else push them into a certain space. In the end, the forms left in the room create a structure that is as much a final product of the work as the choreography and the film itself.
+
+The dance was filmed with both a conventional digital cinema camera and a depth-scanning camera. The dancers also wore custom [inertial motion capture](http://en.wikipedia.org/wiki/Motion_capture#Inertial_systems) sensors developed especially for this project that wirelessly fed basic skeletal position info to a computer in real time. The data will not only help guide an animator creating the dancers’ left-behind motions, but will also be used to algorithmically generate parts of the animation. This will ensure that the animation retains elements of the dancers’ performance as it was recorded in the captured data.
+
+Find more info on the motion-capture hardware [here](http://www.luxloop.com/motion).
+Early prototypes of the sensors can be seen [here](http://blog.ivaylogetov.com/post/58100092807/working-hard-at-becoming-a-cyborg-test-for-an), [here](http://blog.ivaylogetov.com/post/58110856627/first-test-of-a-low-cost-mostly-accurate-inertial), and [here](http://blog.ivaylogetov.com/post/63339897815/second-prototype-i-dont-have-to-tape-it-to).
+
+Choreographer: Anna Martinez
+Dancers: Anna Martinez and Russell Janzen
+Camera: Ivaylo Getov and Zack Kuperstein
+Produced by Anu Valia and [Luxloop](http://luxloop.com)
