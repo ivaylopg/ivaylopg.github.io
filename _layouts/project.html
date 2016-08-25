@@ -12,7 +12,7 @@ layout: default
     <p>
         <span class="muchSmaller">
         {% for tag in page.tags | uniq %}
-          <a href="/tagged#{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>
+          <a href="/tagged#{{tag | downcase}}" class="linkAnim">{{tag | upcase}}</a>
           {% unless forloop.last %}&nbsp;//{% endunless %}
         {% endfor %}
         <span>
