@@ -1,4 +1,5 @@
 {
+  "name": "IvayloGetovDotCom",
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
@@ -10,7 +11,7 @@
       "p5": true,
       "Vector2d": true,
       "rot13rot5Encode": true,
-      "Cube":true
+      "Cube": true
     },
     "rules": {
       "linebreak-style": [
@@ -21,5 +22,11 @@
       "no-empty": 1,
       "no-console": 1
     }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
   }
 }

@@ -21,7 +21,7 @@
   {% include footer.html %}
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.7/p5.min.js"></script>
   <script>window.p5 || document.write('<script src="/assets/js/vendor/p5.min.js"><\/script>')</script>
@@ -32,9 +32,7 @@
 
   <script src="/assets/js/nodeField.js"></script>
 
-  {% if page.collection == "posts" %}
-  <script src="/assets/js/vendor/jquery.fitvids.js"></script>
-  {% elsif page.layout == "home" %}
+  {% if page.layout == "home" %}
   <script src="/assets/js/cube.js"></script>
   {% endif %}
 
