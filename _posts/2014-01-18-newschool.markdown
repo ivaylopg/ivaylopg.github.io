@@ -1,9 +1,9 @@
 ---
 layout: project
-title:  "OBEM"
+title:  "University Center Launch Event"
 tags: Interactive Installation
 priority: 0
-headline: Interactive projection-mapped installation.
+headline: Interactive projection-mapped installation
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/newschool/steps.jpg
 cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/newschool/01.png
 media:
