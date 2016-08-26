@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  "Amplified Self"
+title:  "Axion"
 tags: Interactive Documentary App Biofeedback
 priority: 0
 headline: Interactive Documentary
