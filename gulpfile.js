@@ -3,19 +3,24 @@ var gulp = require('gulp')
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
 
-gulp.task('customJS', function() {
-  return gulp.src(['_js/nodeField.js','./_js/main.js'])
+gulp.task('compileCustom', function() {
+  return gulp.src(['./_js/custom/nodeField.js','./_js/custom/main.js'])
     .pipe(concat('ivaylogetov.min.js'))
-    .pipe(uglify({
-      mangle: true,
-      preserveComments: 'license'
-    }))
+    .pipe(uglify({mangle: true}))
     .pipe(gulp.dest('./assets/js/'))
 });
 
-gulp.task('concatjs', function() {
-  return gulp.src(['./_js/*.js'])
-    .pipe(concat('vendor.min.js'))
+gulp.task('compileTools', function() {
+  return gulp.src(['./_js/tools/*.js'])
+    .pipe(concat('tools.min.js'))
+    .pipe(uglify({mangle: true}))
+    .pipe(gulp.dest('./assets/js/'))
+});
+
+gulp.task('minifyCube', function() {
+  return gulp.src(['./_js/cube.js'])
+    .pipe(uglify({mangle: true}))
+    .pipe(rename(function (path) {path.extname = ".min.js"}))
     .pipe(gulp.dest('./assets/js/'))
 });
 
