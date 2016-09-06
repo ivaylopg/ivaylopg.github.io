@@ -324,6 +324,10 @@ a {
         background: none;
 			background: rgba(0,0,0,0.75);
 			color: white;
+
+      span {
+        display: inline-block;
+      }
 		}
 
 		@include media (max-width $mobile * 1.2) {

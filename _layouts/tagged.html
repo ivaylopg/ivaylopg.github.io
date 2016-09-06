@@ -24,7 +24,7 @@ layout: default
       <div style="background: url({{proj.thumbnail}})">
         <div class="projName">
             {{proj.title}}<br>
-            <span class="muchSmaller">{% for tag in proj.tags %}{{tag | upcase}}{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}{% endfor %}</span>
+            <span class="muchSmaller">{% for tag in proj.tags %}{{tag | upcase}}{% unless forloop.last %} // {% endunless %}{% endfor %}</span>
         </div>
       </div>
       </a>
@@ -42,9 +42,8 @@ layout: default
 
     {% for tag in tag_words | uniq %}
 
-    <a href="http://ivaylogetov.com/tagged#{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>{% unless forloop.last %}&nbsp;//&nbsp;{% endunless %}
-    {% endfor %}
-    &nbsp;////&nbsp;<a href="http://ivaylogetov.com/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
+    <a href="http://ivaylogetov.com/tagged#{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>{% unless forloop.last %} // {% endunless %}
+    {% endfor %} //// <a href="http://ivaylogetov.com/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
   </p>
 
   {% endif %}
