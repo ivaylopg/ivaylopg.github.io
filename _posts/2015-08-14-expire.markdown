@@ -4,6 +4,7 @@ title:  "ofxExpire"
 tags:
   - Open Source
   - Installation
+  - Luxloop
 priority: 0
 headline: OpenFrameworks addon to "expire" an app
 thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/expire/12088474_10104363810730119_5534989760372970350_n.jpg

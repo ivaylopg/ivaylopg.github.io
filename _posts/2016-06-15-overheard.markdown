@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Overheard"
-tags: Installation App Audio Story
+tags: Installation App Audio Story Luxloop
 priority: 0
 headline: Immersive audio-narrative iOS app
 thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/overheard/oh.jpg

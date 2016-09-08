@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Pigments"
-tags: Interactive Music Code Web
+tags: Interactive Music Code Web Luxloop
 priority: 0
 headline: Interactive Music Video
 thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/pigments/bg.jpg

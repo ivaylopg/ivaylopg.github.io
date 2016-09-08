@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Social Sound"
-tags: Performance Social Tool Web
+tags: Performance Social Tool Web Luxloop
 priority: 0
 headline: A Tool for Live Performance of the Social Sphere
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/socialsound/thumb.jpg

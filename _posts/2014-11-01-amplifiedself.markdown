@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Amplified Self"
-tags: Interactive Code Installation
+tags: Interactive Code Installation Luxloop
 priority: 0
 headline: Sound-reactive Video Installation.
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/amplifiedself/mirror.jpg

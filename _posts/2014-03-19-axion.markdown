@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Axion"
-tags: Interactive Documentary App Biofeedback
+tags: Interactive Documentary App Biofeedback Luxloop
 priority: 0
 headline: Interactive Documentary
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/axion.jpg
