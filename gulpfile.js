@@ -24,8 +24,4 @@ gulp.task('minifyCube', function() {
     .pipe(gulp.dest('./assets/js/'))
 });
 
-gulp.task('watch', function() {
-    gulp.watch('./sass/*.scss', ['sass']);
-});
-
-gulp.task('default', ['sass']);
+gulp.task('js', ['compileCustom','compileTools','minifyCube']);

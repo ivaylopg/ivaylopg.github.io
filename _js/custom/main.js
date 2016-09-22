@@ -2,72 +2,39 @@
 // GLOBAL VARS
 
 var isMobile = false;
-var animId;
-var tinyCube = false;
+var localResizers = []
 
 ////////////////////////
 // SETUP ON READY
 
 $(document).ready(function() {
 
-    if ($("body").hasClass("showCube")) {
-      //console.log("cube!");
-
-      if (window.innerWidth < 500) {
-          tinyCube = true;
-          Cube.resize(window.innerWidth);
-      }
-
-      if (Modernizr.touch) {
-        //console.log("touch enabled device");
-        Cube.autoRotate = true;
-        var el = $(".cube");
-        el.on("touchstart", function(e){
-          if($(e.target).is('a, iframe')) {
-              return true;
-          }
-          e.stopPropagation();
-          el.addClass("pulse");
-          setTimeout(function(){
-              el.removeClass("pulse");
-          }, 2000);
-        });
-      }
-
-      function draw(){
-        Cube.viewport.move();
-        animId = requestAnimationFrame(draw);
-      }
-      animId = requestAnimationFrame(draw);
-
-    }
-
-    if ($("body").hasClass("projectPage")) {
-      $(".vidContainer").fitVids();
-      $(".projPageContent a").each(function(){
-        $(this).addClass("bolder linkAnim").attr("target", "_blank");
-      });
-    }
-
-    if ($("section").first().hasClass("tagPage")) {
-      var tag = ""
-      setTagHeading("");
-      var url = window.location.hash;
-      if (url.indexOf("#") != -1) {
-        tag = url.substring(url.indexOf("#")+1);
-        filterTags(tag);
-      }
-    }
-
-    $('#cvBody .cvLink').each(function(){
-      var link = $(this)
-      if(link.attr('href') == ""){
-        link.addClass('noPoint');
-      }
+  if ($("body").hasClass("projectPage")) {
+    $(".vidContainer").fitVids();
+    $(".projPageContent a").each(function(){
+      $(this).addClass("bolder linkAnim").attr("target", "_blank");
     });
+  }
 
-    $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
-    $(".hiddenPhone").html(rot13rot5Encode('<n uers="gry:+68658391837" pynff="yvaxNavz">556.865.839.1837</n>'));
+  if ($("section").first().hasClass("tagPage")) {
+    var tag = ""
+    setTagHeading("");
+    var url = window.location.hash;
+    if (url.indexOf("#") != -1) {
+      tag = url.substring(url.indexOf("#")+1);
+      filterTags(tag);
+    }
+  }
+
+  $('#cvBody .cvLink').each(function(){
+    var link = $(this)
+    if(link.attr('href') == ""){
+      link.addClass('noPoint');
+    }
+  });
+
+  $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
+  $(".hiddenPhone").html(rot13rot5Encode('<n uers="gry:+68658391837" pynff="yvaxNavz">556.865.839.1837</n>'));
 
 });
 
@@ -88,31 +55,12 @@ $( window ).load(function() {
 
 on_resize(function() {
     //Throttled on-resize handler
+    for (var i = localResizers.length - 1; i >= 0; i--) {
 
-    if ($("body").hasClass("showCube")) {
-        var winWidth = window.innerWidth;
-        if (winWidth < 500) {
-            tinyCube = true;
-        } else {
-            if (tinyCube === true) {
-                tinyCube = false;
-                Cube.resize(0);
-            }
-
-        }
-
-        if (Cube !== undefined) {
-            Cube.viewCenter = {
-                x: winWidth/2,
-                y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
-            };
-
-            if (tinyCube) {
-                Cube.resize(winWidth);
-            }
-        }
+      if (typeof localResizers[i] === 'function') {
+        localResizers[i]()
+      }
     }
-
 })();
 
 $( window ).resize(function() {
@@ -126,7 +74,6 @@ $(document).keydown(function(e) {
     switch(e.keyCode)
     {
         case 27: //esc
-            //Cube.viewport.reset();
             break;
 
         default:

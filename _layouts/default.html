@@ -29,10 +29,14 @@
   <script src="/assets/js/tools.min.js"></script>
 
   {% if page.layout == "home" %}
-  <script src="/assets/js/cube.min.js"></script>
+  <!-- Add home page specific stuff here -->
   {% endif %}
 
   <script src="/assets/js/ivaylogetov.min.js"></script>
+
+  {% if page.customjs %}
+      <script src="/assets/js/{{page.customjs}}"></script>
+  {% endif %}
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

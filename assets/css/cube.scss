@@ -1,6 +1,10 @@
+---
+---
+@charset "utf-8";
+@import "partials/global";
+
 $initialScale: 0.7;
 $opacity: 0.75;
-
 
 // ANIMATE THE COLOR WHEN ACTIVE
 
@@ -34,19 +38,11 @@ $opacity: 0.75;
     @include media(max-width $mobile) {
         @include transform(scale($initialScale * 0.8,$initialScale * 0.8));
         margin-top: -11rem;
-        margin-bottom: -9rem;
+        //margin-bottom: -9rem;
         // @include shift(-0.25);
     }
 
     margin-right: 0em !important;
-
-}
-
-
-p.belowCube {
-    @include media(max-width $mobile) {
-        padding-top: 300px; 
-    }
 }
 
 .cube {
@@ -70,35 +66,35 @@ p.belowCube {
     border-radius: 8px;
 }
 
-.no-touch.opacity .cube {
-    opacity: $opacity;
-    @include transition(opacity 1.0s ease-out);
+.no-touch.opacity .cube > div {
+  opacity: $opacity;
+  @include transition(opacity 1.0s ease-out);
 }
 
-.no-touch.opacity #theBlackBox:hover .cube {
-    opacity: 1.0;
+.no-touch.opacity #theBlackBox:hover .cube > div {
+  opacity: 1.0;
 }
 
-.touch.opacity .cube {
-    opacity: $opacity;
-    @include keyframes(pulse) {
-      from {
-        opacity: $opacity;
-      }
-      20% {
-        opacity: 1.0;
-      }
-      30% {
-        opacity: 1.0;
-      }
-      to {
-        opacity: $opacity;
-      }
+.touch.opacity .cube > div {
+  opacity: $opacity;
+   @include keyframes(pulse) {
+    from {
+      opacity: $opacity;
     }
+    20% {
+      opacity: 1.0;
+    }
+    30% {
+      opacity: 1.0;
+    }
+    to {
+      opacity: $opacity;
+    }
+  }
 }
 
-.touch.opacity .cube.pulse {
-    @include animation(pulse 2.0s linear 1);
+.touch.opacity .cube.pulse > div {
+  @include animation(pulse 2.0s linear 1);
 }
 
 .cube > div:first-child {

@@ -8,10 +8,12 @@
 
   <link rel="SHORTCUT ICON" href="/assets/img/favicon.ico" />
 
-
   {% include typekit.html %}
 
   <link rel="stylesheet" href="/assets/css/normalize.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
+  {% if page.customcss %}
+    <link rel="stylesheet" href="/assets/css/{{page.customcss}}">
+  {% endif %}
   <script src="/assets/js/modernizr.min.js"></script>
 </head>

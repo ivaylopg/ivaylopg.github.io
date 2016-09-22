@@ -1,12 +1,77 @@
 ////////////////////////
 // THE CUBE
 
-    /* * * *
-      This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com),
-      and uses a good amout of his code. I made some changes, specifically to the interactivity in
-      the JS, but the CSS is all his, and the idea of doing an interactive cube with CSS transforms
-      intead of WebGL is his too.
-     * * * */
+/* global localResizers */
+
+var animId;
+var tinyCube = false;
+
+$(document).ready(function() {
+  if ($("#theBlackBox").length) {
+
+    if (window.innerWidth < 500) {
+        tinyCube = true;
+        Cube.resize(window.innerWidth);
+    }
+
+    if (Modernizr.touch) {
+      //console.log("touch enabled device");
+      Cube.autoRotate = true;
+      var el = $(".cube");
+      el.on("touchstart", function(e){
+        if($(e.target).is('a, iframe')) {
+            return true;
+        }
+        e.stopPropagation();
+        el.addClass("pulse");
+        setTimeout(function(){
+          el.removeClass("pulse");
+        }, 2000);
+      });
+    }
+
+    function draw(){
+      Cube.viewport.move();
+      animId = requestAnimationFrame(draw);
+    }
+    animId = requestAnimationFrame(draw);
+
+  }
+});
+
+localResizers.push(function() {
+  if ($("#theBlackBox").length) {
+    var winWidth = window.innerWidth;
+    if (winWidth < 500) {
+      tinyCube = true;
+    } else {
+      if (tinyCube === true) {
+        tinyCube = false;
+        Cube.resize(0);
+      }
+    }
+    if (Cube !== undefined) {
+      Cube.viewCenter = {
+        x: winWidth/2,
+        y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
+      };
+
+      if (tinyCube) {
+        Cube.resize(winWidth);
+      }
+    }
+  }
+
+});
+
+
+
+/* * * *
+  This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com),
+  and uses a good amout of his code. I made some changes, specifically to the interactivity in
+  the JS, but the CSS is all his, and the idea of doing an interactive cube with CSS transforms
+  intead of WebGL is his too.
+ * * * */
 
 var el = document.createElement('div'),
     transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),

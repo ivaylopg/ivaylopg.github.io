@@ -1,18 +1,7 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
-@import "lib/bourbon/bourbon";
-@import "lib/neat/neat";
-
-
-/* ========================================================================== */
-
-$max-width: rem(1088);
-$tablet:	rem(800);
-$mobile:	rem(500);
-
+@import "partials/global";
 
 
 // Neat omega reset by www.joshfry.me
@@ -155,7 +144,7 @@ a {
 	content: "";
 	position: absolute;
 	width: 100%;
-	height: 2px;
+	height: 2px !important;
 	bottom: 0;
 	left: 0;
 	background-color: #000;
@@ -187,6 +176,16 @@ a {
     }
 }
 
+.italic {
+  font-style: italic;
+}
+
+hr {
+  width: 50%;
+  margin: 50px auto;
+  background: black;
+  height: 1px;
+}
 
 .spacer {
 	display: block;
@@ -548,23 +547,6 @@ footer {
         }
     }
 }
-
-
-
-
-/* ========================================================================== */
-/* THE CUBE */
-
-@import "partials/cube";
-
-/* ========================================================================== */
-
-
-
-
-
-
-
 
 
 /* ========================================================================== */
