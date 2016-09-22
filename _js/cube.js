@@ -6,7 +6,7 @@
 var animId;
 var tinyCube = false;
 
-$(document).ready(function() {
+// $(document).ready(function() {
   if ($("#theBlackBox").length) {
 
     if (window.innerWidth < 500) {
@@ -37,7 +37,7 @@ $(document).ready(function() {
     animId = requestAnimationFrame(draw);
 
   }
-});
+// });
 
 localResizers.push(function() {
   if ($("#theBlackBox").length) {
