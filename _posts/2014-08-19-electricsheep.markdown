@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Electric Sheep"
-tags: Prints Video Code
+tags: Prints Video Code Art
 priority: 0
 headline: A digital cloud built from an algorithm. The daydreams of an android lying in a virtual field of grass.
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/sheep.jpg

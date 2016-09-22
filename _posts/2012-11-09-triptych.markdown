@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Untitled (Triptych)"
-tags: Video Installation
+tags: Video Installation Art
 priority: 0
 headline: Computer visualizations of romantic connection.
 thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/triptych.jpg
