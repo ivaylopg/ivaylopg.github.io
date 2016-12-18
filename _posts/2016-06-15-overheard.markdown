@@ -33,4 +33,5 @@ Presented By: 3M
 Generous support provided by Accenture.
 
 [project page](http://overheard.luxloop.com)
+Featured on: [New York Times](http://www.nytimes.com/2016/10/30/arts/design/technology-invites-a-deep-dive-into-art.html)
 [press release](http://new.artsmia.org/press/mmia-unveils-innovative-new-digital-initiatives-to-personalize-visitor-experience/)
