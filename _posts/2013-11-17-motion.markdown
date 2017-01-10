@@ -1,0 +1,29 @@
+---
+layout: project
+title:  "Motion"
+tags:
+  - Physical Computing
+  - Dance
+  - Fabrication
+  - Research
+priority: 0
+headline: An exploration of DIY low-fi motion capture for live performance
+thumbnail: /assets/projects/motion/thumb.jpg
+cover: /assets/projects/motion/1.png
+media:
+  - /assets/projects/motion/demov2.gif
+  - /assets/projects/motion/2.png
+  - /assets/projects/motion/4.jpg
+  - /assets/projects/motion/3.jpg
+  - /assets/projects/motion/5.jpg
+  - https://player.vimeo.com/video/72226949
+---
+
+Interested in developing live controllers for performance and data control, I began exploring DIY low-fi motion capture using scalable off-the-shelf components.
+
+Using custom [inertial motion capture](http://en.wikipedia.org/wiki/Motion_capture#Inertial_systems) algorithms and inverse kinematics, the incoming sensor data controls basic skeletal position info in real time.
+
+While initially developed for the dance project [OBEM](obem), the technology was adapted for [The Interactivity Salon](salon) into a wireless controller allowing an actor to manipulate projected images in real-time using natural interactions such as *grabbing* and *moving* in space.
+
+Early prototypes of the sensors can be seen [here](http://blog.ivaylogetov.com/post/58100092807/working-hard-at-becoming-a-cyborg-test-for-an), [here](http://blog.ivaylogetov.com/post/58110856627/first-test-of-a-low-cost-mostly-accurate-inertial), and [here](http://blog.ivaylogetov.com/post/63339897815/second-prototype-i-dont-have-to-tape-it-to).
+
