@@ -4,13 +4,13 @@ title:  "Debutante"
 tags: Projection Theatre Simulation
 priority: 0
 headline: Projection design and mapping for theatre production.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/debutante/deb.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/debutante/deb01.png
+thumbnail: /assets/projects/debutante/deb.jpg
+cover: /assets/projects/debutante/deb01.png
 media:
   - http://player.vimeo.com/video/68782005
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/debutante/deb02.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/debutante/disco.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/debutante/disco2.gif
+  - /assets/projects/debutante/deb02.jpg
+  - /assets/projects/debutante/disco.jpg
+  - /assets/projects/debutante/disco2.gif
 ---
 2013 - Featured at Ars Nova Ant Fest
 2014 - Theatrical run at Goddard Riverside Bernie Wohl Center

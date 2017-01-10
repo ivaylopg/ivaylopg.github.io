@@ -4,11 +4,11 @@ title:  "University Center Launch Event"
 tags: Interactive Installation
 priority: 0
 headline: Interactive projection-mapped installation
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/newschool/steps.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/newschool/01.png
+thumbnail: /assets/projects/newschool/steps.jpg
+cover: /assets/projects/newschool/01.png
 media:
   - https://player.vimeo.com/video/86762193
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/newschool/02.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/newschool/03.png
+  - /assets/projects/newschool/02.png,/assets/projects/newschool/03.png
   - https://player.vimeo.com/video/140755964
 ---
 An interactive projection-mapped installation for the grand opening of the University Center at The New School, NY. In collaboration with [Imaginary Media](http://www.imaginary.media/) (Role: Interactive Developer)

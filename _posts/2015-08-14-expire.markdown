@@ -7,10 +7,10 @@ tags:
   - Luxloop
 priority: 0
 headline: OpenFrameworks addon to "expire" an app
-thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/expire/12088474_10104363810730119_5534989760372970350_n.jpg
-cover: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/expire/12088474_10104363810730119_5534989760372970350_n.jpg
+thumbnail: /assets/projects/expire/12088474_10104363810730119_5534989760372970350_n.jpg
+cover: /assets/projects/expire/12088474_10104363810730119_5534989760372970350_n.jpg
 media:
-  - https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/expire/ezgif-491305695.gif
+  - /assets/projects/expire/ezgif-491305695.gif
 ---
 Sometimes you have to send your app over the internets. Or maybe it's an art installation for a show but you won't be there during teardown. Most of the time, we trust people to be decent and not re-use your app or project without your consent. Most of the time, the people we trust actually are decent and would never do that.
 

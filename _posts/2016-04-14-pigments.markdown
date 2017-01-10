@@ -4,10 +4,10 @@ title:  "Pigments"
 tags: Interactive Music Code Web Luxloop
 priority: 0
 headline: Interactive Music Video
-thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/pigments/bg.jpg
+thumbnail: /assets/projects/pigments/bg.jpg
 cover: https://player.vimeo.com/video/171225364
 media:
-  - https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/pigments/pigments.gif
+  - /assets/projects/pigments/pigments.gif
 ---
 Luxloop developed an interactive music video for LA-based artist Elohim that asks users actively keep it alive by tapping a heartbeat on their mobile device. Their interactions change the pigments within the piece.
 

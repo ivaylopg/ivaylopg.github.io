@@ -4,16 +4,16 @@ title:  "Framerates"
 tags: Interactive Film Art Show
 priority: 0
 headline: A showcase of video art, experimental film, and other perversions of the moving image.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/framerates.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/03.jpg
+thumbnail: /assets/projects/framerates/framerates.jpg
+cover: /assets/projects/framerates/03.jpg
 media:
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/10.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/05.jpg,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/06.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/12.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/13.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/07.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/09.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/04.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/framerates/11.jpg
+  - /assets/projects/framerates/10.jpg
+  - /assets/projects/framerates/05.jpg,/assets/projects/framerates/06.jpg
+  - /assets/projects/framerates/12.jpg
+  - /assets/projects/framerates/13.jpg
+  - /assets/projects/framerates/07.png,/assets/projects/framerates/09.png
+  - /assets/projects/framerates/04.jpg
+  - /assets/projects/framerates/11.jpg
 ---
 FRAMERATES was a group show of video art and interactive art held for one weekend at the Brewery Arts Complex in downtown Los Angeles in November 2012.
 

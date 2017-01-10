@@ -4,10 +4,10 @@ title:  "Overheard"
 tags: Installation App Audio Story Luxloop
 priority: 0
 headline: Immersive audio-narrative iOS app
-thumbnail: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/overheard/oh.jpg
-cover: https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/overheard/app_inhand.jpg
+thumbnail: /assets/projects/overheard/oh.jpg
+cover: /assets/projects/overheard/app_inhand.jpg
 media:
-  - https://s3-us-west-2.amazonaws.com/ivaylogetov.bucket/ivaylogetov.com/projects/overheard/oh.jpg
+  - /assets/projects/overheard/oh.jpg
 ---
 Overheard is a site-specific audio narrative woven into the Minneapolis Institute of Art. Similar to immersive theatre, it allows you to explore stories in your own way, at your own pace as you journey through the museum.
 

@@ -4,13 +4,13 @@ title:  "Axion"
 tags: Interactive Documentary App Biofeedback Luxloop
 priority: 0
 headline: Interactive Documentary
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/axion.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/01.png
+thumbnail: /assets/projects/axion/axion.jpg
+cover: /assets/projects/axion/01.png
 media:
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/02.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/03.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/04.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/axion/vidThumb.jpg
+  - /assets/projects/axion/02.png
+  - /assets/projects/axion/03.png
+  - /assets/projects/axion/04.jpg
+  - /assets/projects/axion/vidThumb.jpg
 ---
 A meditative exploration of the scientific method and human nature, Axion is an unconventional app-based and online interactive documentary. By allowing a player the freedom to navigate and discover an evolving virtual environment, the project suggests a consonance between the process of scientific discovery and a personal, emotive confrontation with the unknown.
 

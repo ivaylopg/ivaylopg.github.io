@@ -4,14 +4,14 @@ title:  "Untitled (Triptych)"
 tags: Video Installation Art
 priority: 0
 headline: Computer visualizations of romantic connection.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/triptych.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/03.jpg
+thumbnail: /assets/projects/triptych/triptych.jpg
+cover: /assets/projects/triptych/03.jpg
 media:
   - https://player.vimeo.com/video/58791794
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/06.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/01.jpg,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/02.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/07.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/04.jpg,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/triptych/05.jpg
+  - /assets/projects/triptych/06.jpg
+  - /assets/projects/triptych/01.jpg,/assets/projects/triptych/02.jpg
+  - /assets/projects/triptych/07.png
+  - /assets/projects/triptych/04.jpg,/assets/projects/triptych/05.jpg
 
 ---
 Three-channel video installation.

@@ -4,12 +4,12 @@ title:  "&quot;Love Machine&quot; Interactivity Salon"
 tags: Interactive Theatre Hardware
 priority: 0
 headline: Theatre technology workshop and performance.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/salon.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/04.png
+thumbnail: /assets/projects/salon/salon.jpg
+cover: /assets/projects/salon/04.png
 media:
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/05.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/02.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/03.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/salon/01.png
+  - /assets/projects/salon/05.png
+  - /assets/projects/salon/02.png,/assets/projects/salon/03.png
+  - /assets/projects/salon/01.png
 ---
 3LD Salon Series Event - INTERACTIVITY
 Curated & Produced by James Scruggs
@@ -21,4 +21,4 @@ The Interactivity Salon brought together designers from all different background
 PARTICIPATING DESIGNERS:
 David Tennent, Daniel Belquer, Mike Donaghey, Ivaylo Getov, Greg St. Pierre, Izzi Ramkissoon, Bob Wuss, Kate Freer, Joe Cantalupo, Chloe Lee Kernaghan, Santiago Peraza Eraso
 
-I developed a wireless [inertial arm tracker](http://luxloop.com/motion) allowing an actor to manipulate projected images in real-time using natural interactions such as *grabbing* and *moving* in space. I was also responsible for developing a 360° interactive flock simulation that reacted to dancers and audience members as they approached the walls of the space.
+I developed a wireless [inertial arm tracker](motion) allowing an actor to manipulate projected images in real-time using natural interactions such as *grabbing* and *moving* in space. I was also responsible for developing a 360° interactive flock simulation that reacted to dancers and audience members as they approached the walls of the space.

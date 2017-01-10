@@ -4,19 +4,19 @@ title:  "Pose"
 tags: Film Installation
 priority: 0
 headline: Short film and two-channel installation.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/pose.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/cover.jpg
+thumbnail: /assets/projects/pose/pose.jpg
+cover: /assets/projects/pose/cover.jpg
 media:
   - https://player.vimeo.com/video/58432618
   - https://player.vimeo.com/video/58430562
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/01.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/02.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/04.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/05.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/06.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/07.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/08.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/09.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/10.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/11.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/pose/12.png
+  - /assets/projects/pose/01.png
+  - /assets/projects/pose/02.png,/assets/projects/pose/04.png
+  - /assets/projects/pose/05.png,/assets/projects/pose/06.png
+  - /assets/projects/pose/07.png,/assets/projects/pose/08.png
+  - /assets/projects/pose/09.png
+  - /assets/projects/pose/10.png
+  - /assets/projects/pose/11.png
+  - /assets/projects/pose/12.png
 ---
 Fascinated by finding beauty in the detritus and refuse of the city around her, a young woman wanders late at night looking in junk piles for items that captivate her. She meets Lawrence, an uprooted man who spends his life drifting, stopping to create mysterious sculptures made of light bulbs that few people see before they are destroyed. Meanwhile, a mysterious man wakes up in an unfamiliar surreal landscape and must travel a great distance to an uncertain end.
 

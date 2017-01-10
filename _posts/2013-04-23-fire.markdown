@@ -4,11 +4,11 @@ title:  "Touched With Fire"
 tags: Projection Film
 priority: 0
 headline: Projection-mapped visual effects for film.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/fire/fire.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/fire/1.jpg
+thumbnail: /assets/projects/fire/fire.jpg
+cover: /assets/projects/fire/1.jpg
 media:
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/fire/2.jpg
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/fire/3.jpg
+  - /assets/projects/fire/2.jpg
+  - /assets/projects/fire/3.jpg
 ---
 For the film [Touched With Fire](http://www.imdb.com/title/tt2848324/), director Paul Dalio wanted to use practical effects to create a space in the real world that actors could see and react to, as opposed to waiting until post-production.
 

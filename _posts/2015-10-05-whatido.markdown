@@ -3,7 +3,7 @@ layout: project
 title:  "What I Do"
 tags: Writing
 priority: 0
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/writing/blackbox.png
+thumbnail: /assets/projects/writing/blackbox.png
 customjs: cube.min.js
 customcss: cube.css
 ---

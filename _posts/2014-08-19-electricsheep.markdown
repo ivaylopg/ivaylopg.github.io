@@ -4,13 +4,13 @@ title:  "Electric Sheep"
 tags: Prints Video Code Art
 priority: 0
 headline: A digital cloud built from an algorithm. The daydreams of an android lying in a virtual field of grass.
-thumbnail: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/sheep.jpg
-cover: http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/main.jpg
+thumbnail: /assets/projects/sheep/sheep.jpg
+cover: /assets/projects/sheep/main.jpg
 media:
   - https://player.vimeo.com/video/103482209
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/05.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/04.png,http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/07.png
-  - http://ivaylogetov.bucket.s3.amazonaws.com/ivaylogetov.com/projects/sheep/02.png
+  - /assets/projects/sheep/05.png
+  - /assets/projects/sheep/04.png,/assets/projects/sheep/07.png
+  - /assets/projects/sheep/02.png
 ---
 
 I developed a recursive algorithm that grows each cloud based on two inputs: the number of recursions and the shape of each "droplet." As the program recurses, it mutates, resulting in a unique cloud formation each time.
