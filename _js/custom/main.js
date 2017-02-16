@@ -12,7 +12,8 @@ $(document).ready(function() {
   if ($("body").hasClass("projectPage")) {
     $(".vidContainer").fitVids();
     $(".projPageContent a").each(function(){
-      $(this).addClass("bolder linkAnim").attr("target", "_blank");
+      $(this).attr("target", "_blank");
+      $(this).not(":has(img)").addClass("bolder linkAnim");
     });
   }
 
