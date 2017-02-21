@@ -1,0 +1,10 @@
+---
+layout: project
+title:  "(Git) Push It"
+tags: Fabrication Video Code
+priority: 0
+headline: Git Push Interface 
+thumbnail: /assets/projects/halfbaked/pushit.jpg
+cover: https://player.vimeo.com/video/204970096
+---
+This happens in my head every time anyway, so here it is in real life.
