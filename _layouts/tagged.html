@@ -38,9 +38,9 @@ layout: default
   <p class="muchSmaller projectTags margBotMedSpacer">
 
     {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-    {% assign tag_words = site_tags | split:',' | sort %}
+    {% assign tag_words = site_tags | split:',' | uniq | sort%}
 
-    {% for tag in tag_words | uniq %}
+    {% for tag in tag_words %}
 
     <a href="http://ivaylogetov.com/tagged#{{tag | downcase}}" class="linkAnim tagLink">{{tag | upcase}}</a>{% unless forloop.last %} // {% endunless %}
     {% endfor %} //// <a href="http://ivaylogetov.com/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
