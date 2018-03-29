@@ -5,6 +5,7 @@ tags: Interactive Music Code Web Luxloop
 priority: 0
 headline: Interactive Music Video
 thumbnail: /assets/projects/pigments/bg.jpg
+thumbnailGif: /assets/projects/pigments/pigmentsThumb.gif
 cover: https://player.vimeo.com/video/171225364
 media:
   - /assets/projects/pigments/pigments.gif
