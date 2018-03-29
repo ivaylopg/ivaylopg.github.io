@@ -165,6 +165,8 @@ function setTagHeading(tag) {
 }
 
 function showGifThumbnails() {
+  if ($("body").hasClass("isMobile")) { return; }
+
   $('.projEntryBackground').each(function(){
     var gifThumb = $(this).attr('data-thumbnailgif');
     if (gifThumb !== undefined) {

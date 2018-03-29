@@ -5,7 +5,7 @@ tags: Installation Art Luxloop
 priority: 0
 headline: Immersive Video Environment for Pop-up Dinner by Michelin-Star Chef
 thumbnail: /assets/projects/blackcloak/screen1Offset.png
-thumbnailGif: /assets/projects/blackcloak/cloak2.gif
+thumbnailGif: /assets/projects/blackcloak/cloakThumb.gif
 cover: /assets/projects/blackcloak/screen1Offset.png
 media:
   - /assets/projects/blackcloak/bc5.png
