@@ -15,6 +15,8 @@ $(document).ready(function() {
       $(this).attr("target", "_blank");
       $(this).not(":has(img)").addClass("bolder linkAnim");
     });
+  } else if ($("body").hasClass("homePage")) {
+    showGifThumbnails();
   }
 
   if ($("section").first().hasClass("tagPage")) {
@@ -160,6 +162,30 @@ function setTagHeading(tag) {
   } else {
     $(".tagHeading").text("/"+tag.toUpperCase())
   }
+}
+
+function showGifThumbnails() {
+  $('.projEntryBackground').each(function(){
+    var gifThumb = $(this).attr('data-thumbnailgif');
+    if (gifThumb !== undefined) {
+      preloadAndReplace(gifThumb, this);
+      // console.log(gifThumb);
+    }
+  });
+  //
+}
+
+function preloadAndReplace(imgSrc, imgDest) {
+  var image = new Image();
+  image.onload = function() {
+    // console.log("Loaded " + imgSrc );
+    imgDest.style.background = 'url(' + imgSrc + ')';
+  };
+
+  image.onerror = function(){
+    console.log("Could not load " + imgSrc);
+  };
+  image.src = imgSrc;
 }
 
 

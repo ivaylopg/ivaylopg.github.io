@@ -41,7 +41,6 @@ layout: default
     <div class="spacer"></div>
 
     {% for media in page.media %}
-
         {% if media contains ',' %}
             {% assign pair = media | split: ',' %}
             <div class="fullWidth">
@@ -58,6 +57,43 @@ layout: default
             <img src="{{media}}" class="projImage">
         {% endif %}
     {% endfor %}
+
+    {% if page.sections %}
+      {% for section in page.sections %}
+        <div class="medSpacer"></div>
+        {% if section.heading %}
+          <h2>{{ section.heading }}</h2>
+        {% endif %}
+
+        {% if section.text %}
+          <div class="projPageContent">
+          {{section.text}}
+          </div>
+          <div class="spacer"></div>
+        {% endif %}
+
+        {% if section.media %}
+          {% for media in section.media %}
+            {% if media contains ',' %}
+              {% assign pair = media | split: ',' %}
+              <div class="fullWidth">
+                {% for member in pair %}
+                  <img src="{{member}}" class="projColumns">
+                {% endfor %}
+              </div>
+            {% elsif media contains 'vimeo' %}
+              <div class="fullWidth vidContainer">
+                <iframe src="{{media}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
+            {% elsif media contains 'youtube' %}
+            {% else %}
+              <img src="{{media}}" class="projImage">
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+      {% endfor %}
+    {% endif %}
 
 
     <p>
