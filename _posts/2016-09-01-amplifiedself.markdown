@@ -5,6 +5,7 @@ tags: Interactive Code Installation Luxloop Art
 priority: 0
 headline: Sound-reactive Video Installation.
 thumbnail: /assets/projects/amplifiedself/mirror.jpg
+thumbnailGif: /assets/projects/amplifiedself/gifSmall2.gif
 cover: /assets/projects/amplifiedself/Layer17.png
 media:
   - /assets/projects/amplifiedself/4.png
