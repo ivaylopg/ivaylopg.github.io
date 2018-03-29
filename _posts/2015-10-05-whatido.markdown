@@ -56,7 +56,7 @@ I know that’s still not a great answer to “what do you do?” but I’m conf
 # TL;DR
 Hi. I'm Ivaylo Getov.
 I’m a cofounder and Creative Director at <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, a creative-technology studio.
-I make interactive art using technology, and often work as a freelance cinematographer. I’d love to talk to you.
+I make interactive art using technology. I’d love to talk to you.
 
 
 <!-- <script src="/assets/js/cube.min.js"></script> -->
