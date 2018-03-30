@@ -24,8 +24,8 @@
     }
   },
   "scripts": {
-    "serve": "bundle exec jekyll serve --incremental",
-    "rebuildserve": "bundle exec jekyll serve"
+    "serve": "bundle exec jekyll serve",
+    "serveinc": "bundle exec jekyll serve --incremental"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
