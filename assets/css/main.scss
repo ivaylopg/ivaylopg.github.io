@@ -382,6 +382,45 @@ img.projColumns {
   visibility: hidden !important;
 }
 
+.imageWithCaption {
+
+  .captionElement {
+    &, &.captionIn, &.captionRight, &.captionDark {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 6px;
+      color: #111;
+      z-index: 2;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    &.captionLeft {
+      right: initial;
+      left: 4px;
+    }
+
+    &.captionCenter {
+      right: initial;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.captionOut {
+      bottom: 0px;
+      &.captionRight {
+        right: 4px;
+      }
+    }
+
+    &.captionLight {
+      color: #777;
+    }
+  }
+
+  margin-bottom: 3rem;
+}
+
 /* CV page */
 
 #cvBody {

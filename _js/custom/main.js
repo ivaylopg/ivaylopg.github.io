@@ -15,6 +15,7 @@ $(document).ready(function() {
       $(this).attr("target", "_blank");
       $(this).not(":has(img)").addClass("bolder linkAnim");
     });
+    createCaptions();
   } else if ($("body").hasClass("homePage")) {
     showGifThumbnails();
   }
@@ -188,6 +189,18 @@ function preloadAndReplace(imgSrc, imgDest) {
     console.log("Could not load " + imgSrc);
   };
   image.src = imgSrc;
+}
+
+function createCaptions() {
+  $('img.captioned').each(function() {
+    var el = $(this);
+    var elSource = el.attr('src');
+    var classes = el.attr('class');
+    var captionClasses = el.attr('data-captionClasses');
+    var caption = el.attr('data-caption');
+    // console.log(elSource);
+    el.replaceWith('<div class="imageWithCaption" style="position:relative"><img src="' + elSource + '" class="' + classes + '"><div class="captionElement ' + captionClasses + '">' + caption + '</div></div>');
+  });
 }
 
 
