@@ -25,10 +25,11 @@ layout: default
     {% if page.cover.first.img %}
       <img src="{{page.cover.first.img}}" class="projCover captioned" {% if page.cover.first.captionClasses %}data-captionClasses="{{ page.cover.first.captionClasses }}"{% endif %} {% if page.cover.first.caption %}data-caption="{{ page.cover.first.caption }}"{% endif %}>
     {% elsif page.cover contains 'vimeo' %}
-        <div class="fullWidth vidContainer">
-            <iframe src="{{page.cover}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-    {% elsif page.cover contains 'youtube' %}
+      <div class="fullWidth vidContainer">
+        <iframe src="{{page.cover}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    {% elsif page.cover.first.video contains 'mp4' %}
+      <img src="{{page.cover.first.cover}}" class="projCover makeVid" data-vid="{{page.cover.first.video}}">
     {% else %}
         <img src="{{page.cover}}" class="projCover">
     {% endif %}
@@ -55,7 +56,8 @@ layout: default
         <div class="fullWidth vidContainer">
           <iframe src="{{media}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
-      {% elsif media contains 'youtube' %}
+      {% elsif media.video contains 'mp4' %}
+        <img src="{{media.cover}}" class="projCover makeVid" data-vid="{{media.video}}">
       {% else %}
         <img src="{{media}}" class="projImage">
       {% endif %}
@@ -91,7 +93,8 @@ layout: default
               <div class="fullWidth vidContainer">
                 <iframe src="{{media}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
-            {% elsif media contains 'youtube' %}
+            {% elsif media.video contains 'mp4' %}
+              <img src="{{media.cover}}" class="projCover makeVid" data-vid="{{media.video}}">
             {% else %}
               <img src="{{media}}" class="projImage">
             {% endif %}

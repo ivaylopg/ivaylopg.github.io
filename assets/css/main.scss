@@ -374,6 +374,10 @@ img.projColumns {
 
 .vidContainer {
     margin-bottom: $gutter/2;
+
+    video {
+      width: 100%;
+    }
 }
 
 /* Tag Filtering Stuff */

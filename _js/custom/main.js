@@ -10,12 +10,13 @@ var localResizers = []
 $(document).ready(function() {
 
   if ($("body").hasClass("projectPage")) {
-    $(".vidContainer").fitVids();
     $(".projPageContent a").each(function(){
       $(this).attr("target", "_blank");
       $(this).not(":has(img)").addClass("bolder linkAnim");
     });
     createCaptions();
+    createVids();
+    $(".vidContainer").fitVids();
   } else if ($("body").hasClass("homePage")) {
     showGifThumbnails();
   }
@@ -200,6 +201,28 @@ function createCaptions() {
     var caption = el.attr('data-caption');
     // console.log(elSource);
     el.replaceWith('<div class="imageWithCaption" style="position:relative"><img src="' + elSource + '" class="' + classes + '"><div class="captionElement ' + captionClasses + '">' + caption + '</div></div>');
+  });
+}
+
+function createVids() {
+  if ($("body").hasClass("isMobile")) { return; }
+
+  $('.makeVid').each(function() {
+    var videoSource = $(this);
+    var vidSrc = videoSource.attr('data-vid');
+    var imgSrc = videoSource.attr('src');
+
+    var container = $("<div>", {"class": "fullWidth vidContainer"});
+
+    var video = $('<video />', {
+      src: vidSrc,
+      poster: imgSrc,
+      type: 'video/mp4',
+      controls: false
+    });
+
+    container.html('<video src="' + vidSrc + '" poster="' + imgSrc + '" type="video/mp4" loop="true" autoplay></video>');
+    videoSource.replaceWith(container);
   });
 }
 

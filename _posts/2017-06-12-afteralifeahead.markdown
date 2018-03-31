@@ -6,9 +6,8 @@ priority: 0
 headline: Real-Time Responsive Mobile Augmented Reality
 thumbnail: /assets/projects/afteralifeahead/phar1.png
 cover: 
-  - img: /assets/projects/afteralifeahead/phar.gif
-    caption: "Photo: Ola Rindal"
-    captionClasses: "captionLight captionIn"
+  - video: /assets/projects/afteralifeahead/phar.mp4
+    cover: /assets/projects/afteralifeahead/pharcover.png
 media:
   - img: /assets/projects/afteralifeahead/phar1.png
     caption: "Photo: Ola Rindal"
