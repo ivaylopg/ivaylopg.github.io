@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "After ALife Ahead"
-tags: Installation Art AR
+tags: Installation Art AR Luxloop
 priority: 0
 headline: Real-Time Responsive Mobile Augmented Reality
 thumbnail: /assets/projects/afteralifeahead/phar1.png

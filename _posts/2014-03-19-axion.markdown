@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Axion"
-tags: Interactive Documentary App Biofeedback Luxloop
+tags: Interactive Documentary App Biofeedback
 priority: 0
 headline: Interactive Documentary
 thumbnail: /assets/projects/axion/axion.jpg
