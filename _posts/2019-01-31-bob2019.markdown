@@ -1,0 +1,83 @@
+---
+layout: project
+title:  "Ian Cheng: BOB (2019)"
+tags:
+  - Installation
+  - Art
+  - Technical Director
+priority: 0
+headline: Infrastructure for Parenting an AI Creature
+thumbnail: /assets/projects/bob2/bobCover.jpg
+cover: /assets/projects/bob2/bobCover.jpg
+sections:
+    - heading: Automated Offerings
+      text: Using the <a href="https://bobs.ai">BOB Shrine app</a> available on the iOS App Store and Google Play, viewers could craft "offerings" to BOB that would impact the way that BOB learns and grows. Once an offering is created, a viewer's app would continue to produce these offerings in the hopes of earning blessings from BOB.
+      media:
+        - img: /assets/projects/bob2/bob1.jpg
+          caption: "Photo © 2019 Ian Cheng Studio"
+          captionClasses: "captionDark captionIn"
+    - text: Once a user has downloaded and opened the BOB Shrine app, their shrine appears as a star floating in a constelation in BOB's world. Based on BOB's current mood, desires, curiosity, and prior experiences, BOB may or may not choose your star, opening up a portal and collecting the offerings you have produced.
+    - media:
+        - img: /assets/projects/bob2/bob2.jpg
+          caption: "Photo © 2019 Ian Cheng Studio"
+          captionClasses: "captionDark captionIn"
+    - pullquote:
+        - text: BOB then interacts with its new collection of mushrooms, starfish, and orbs, snarfing them down or batting them around the floor. Sometimes BOB will be blown apart by one of the more lethal offerings and “die,” only to respawn.
+          source: ArtNet
+    - media:
+        - img: /assets/projects/bob2/Offerings.png
+          caption: Some of the offerings viewers can create via the BOB Shrine App.
+          captionClasses: "captionDark captionOut"
+        - img: /assets/projects/bob2/bobApp.png
+          caption: Main view of the BOB Shrine App.
+          captionClasses: "captionDark captionOut"
+    - pullquote:
+        - text: "Gladstone Gallery is the place where a conflicted childlike creature is waiting to receive gifts provided by us, its doting parents, but it’s also the temple where a moody deity resides. The icons of traditional religion are not placed in consecrated buildings to be on display; they are the vehicles of a transcendent gaze. ... At night, at home, I opened the application. I received a notification: BOB had accepted my offerings. I was relieved. I imagined my starfish silently falling on the platform where the creature moved, ominous, beautiful, puerile."
+          source: 4Columns
+
+---
+<i>Ian Cheng - BOB - 2019<br><br>
+BOB advances Cheng’s use of simulation to focus on an individual agent's capacity to deal with surprise: the subjective difference between expectations and perception. Over the course of its lifetime, BOB's body, mind, and personality evolve to better confront the continuous stream of life's surprises, and metabolize them into familiar routines. Crucially, BOB incorporates the tutoring influence of the viewer to help offset BOB's temptation to only satisfy its immediate impulses and childhood biases. As BOB dies many deaths – whether through failures of personality, bad parenting, random accident, or a life well lived – BOB may become synonymous with a reoccurring pattern of behavior, common across all BOB lifetimes, thereby manifesting the undying eternal characteristic of a god.</i>
+
+Further developing his [earlier work](bob2018) with BOB, Cheng sought to give viewers a more meaningful agency in dictating BOB's development and mental evolution over time. As BOB would be showing worldwide, from Gladstone Gallery in NYC to the Venice Biennale and beyond, Cheng sought a less gallery-specific and more accessible approach. Forgoeing the motion-tracked hardware from the Serpentine show, instead he sought to develop an widely available mobile app.
+
+I acted as Technical Director coordinating a growing team of technologists and developers, as well as being responsible for implementing a server infrastructure that would allow viewers to interact with BOB via the free mobile app.
+
+Featured on:
+[Art News](http://www.artnews.com/2019/02/04/ian-cheng-gladstone-bob-artificial-intelligence/)
+[ArtNet](https://news.artnet.com/exhibitions/ian-cheng-bob-gladstone-1488823)
+[The New Yorker](https://www.newyorker.com/goings-on-about-town/art/ian-cheng)
+[4Columns](http://4columns.org/laddaga-reinaldo/ian-cheng)
+[Cultured Mag](https://www.culturedmag.com/ian-cheng/)
+
+<div class="medSpacer"></div>
+
+<h1>Production Credits</h1>
+<div class='creditsTable'>
+<span class='creditsRow'><span class='left'>Created by</span>
+<span class='right'>Ian Cheng</span></span>
+<span class='creditsRow'><span class='left'>Producer</span>
+<span class='right'>Veronica So</span></span>
+<span class='creditsRow'><span class='left'>Technical Director</span>
+<span class='right'>Ivaylo Getov</span></span>
+<span class='creditsRow'><span class='left'>Unity Director</span>
+<span class='right'>Samuel Eng</span></span>
+<span class='creditsRow'><span class='left'>AI Developer</span>
+<span class='right'>Francis Tseng</span></span>
+<span class='creditsRow'><span class='left'>Unity Developer</span>
+<span class='right'>Yang Wang</span></span>
+<span class='creditsRow'><span class='left'>Sound Designer</span>
+<span class='right'>Jeremy Yang</span></span>
+<span class='creditsRow'><span class='left'>Graphics Programmer</span>
+<span class='right'>Nick Shelton</span></span>
+<span class='creditsRow'><span class='left'>Unity Optimization</span>
+<span class='right'>Porrith Suong</span></span>
+<span class='creditsRow'><span class='left'>3D Modeler</span>
+<span class='right'>Joshua Planz</span></span>
+<span class='creditsRow'><span class='left'>Production Assistant</span>
+<span class='right'>Claire Sammut</span></span>
+<span class='creditsRow'><span class='left'>Technical Assistant</span>
+<span class='right'>Sixing Xu</span></span>
+<span class='creditsRow'><span class='left'>Published by</span>
+<span class='right'>Metis Suns</span></span>
+</div>

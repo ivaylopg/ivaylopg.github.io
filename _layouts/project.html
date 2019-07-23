@@ -78,6 +78,24 @@ layout: default
           <div class="medSpacer"></div>
         {% endif %}
 
+        {% if section.pullquote %}
+          <!-- <div class="">
+            {{section.pullquote.text}}
+          </div>
+          <div class="">
+            {{section.pullquote.source}}
+          </div> -->
+          {% for part in section.pullquote %}
+            <div class="pullQuote">
+              {{part.text}}
+            </div>
+            <div class="pullQuoteSource">
+              {{part.source}}
+            </div>
+          {% endfor %}
+          <div class="medSpacer"></div>
+        {% endif %}
+
         {% if section.media %}
           {% for media in section.media %}
             {% if media.img %}

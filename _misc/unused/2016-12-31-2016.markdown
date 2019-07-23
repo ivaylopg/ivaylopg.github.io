@@ -1,0 +1,100 @@
+---
+layout: recap
+title:  "2016"
+tags: Writing Recap
+priority: 0
+thumbnail: /assets/projects/writing/2016/blackcloak.jpg
+customcss: recap.css
+---
+
+### Yearly-recap idea inspired by (i.e. stolen from) [Kyle McDonald - Memory](http://kylemcdonald.net/memory/).
+
+---
+
+
+**40,521** Miles Flown
+**499** hours and **11** mins [logged](https://github.com/ivaylopg/wakaToToggl) writing code
+**7** Awards for [Soy Cubana](http://soycubanamovie.com/)
+
+
+<!-- January -->
+
+* [<img src="/assets/projects/writing/2016/snow.jpg">](https://www.instagram.com/p/BAdic6mAy1Z/)
+* Started work on [Overheard](http://overheard.luxloop.com) with research trip to Minneapolis at the height of winter
+
+
+<!-- February -->
+* [<img src="/assets/projects/writing/2016/soycubana.jpg">](http://sbiff.org/soy-cubana/)
+* Soy Cubana premieres at [SBIFF](http://sbiff.org/soy-cubana/)
+
+
+<!-- March -->
+
+
+<!-- April -->
+
+* Finished working on and launched [Pigments](http://icantmakeuloveu.com).
+* [<img src="/assets/projects/gs/cover.png">](http://www.thefader.com/2016/04/19/jaden-willow-smith-soundtrack-gypsy-sport-video)
+* Gypsy Sport [Video](/gypsysport) launches
+
+
+<!-- May -->
+
+* [<img src="/assets/projects/writing/2016/anniversary.jpg">](https://www.instagram.com/p/BFsCbmJgy8j/)
+* I had to work on our first wedding anniversary so Amelia came out to Minneapolis.
+* <img src="/assets/projects/writing/2016/nytech.jpg">
+* Presented at [NY Tech Meetup](https://nytm.org/monthly-meetup/may-2016-ny-tech-meetup-and-afterpary).
+
+
+<!-- June -->
+
+* Overheard opens to the public at Mia!
+* <img src="/assets/projects/writing/2016/eyeo.jpg">
+* Went to my first [eyeo](http://eyeofestival.com/) and gave an [Ignite talk](https://vimeo.com/180077715) with Mandy that was described as "very high energy."
+* <img src="/assets/projects/writing/2016/bday.jpg">
+* Working birthday as usual, but came home to a surpise grilled-cheese party.
+
+
+<!-- July -->
+
+* <img src="/assets/projects/writing/2016/miami.jpg">
+* First time in Miami (besides coming/going from Cuba) - location scout for [Black Cloak](http://luxloop.com/casestudies/blackcloak).
+
+
+<!-- August -->
+
+* First time in Portland to the wedding of my first friend in the world.
+* [Social Sound](/socialsound) featured in Blindside festival, Melbourne.
+
+
+<!-- September -->
+* Rebooted [Amplified self](/amplifiedself) for [Next Art Night](https://nextart.persona.co/).
+* [<img src="/assets/projects/writing/2016/ferry.jpg">](https://www.instagram.com/p/BKA-ymEgbJ4/)
+* Two weeks back in NY for a design workshop. First time commuting by boat!
+* Went to a watching party for the first debate and everything looked like it would be [fiiiiiine](https://www.instagram.com/p/BK12xMygLAG/).
+
+
+<!-- October -->
+
+* [<img src="/assets/projects/writing/2016/jump.jpg">](http://sbiff.org/soy-cubana/)
+* Late fall trip to Sequoia and Yosemite parks for project research and a much needed digital detox.
+* First time in Savannah, GA for Savannah Film Festival at SCAD
+* [<img src="/assets/projects/writing/2016/nyt.jpg">](https://www.instagram.com/p/BMMjB8FDGXA/)
+* First time [mentioned](http://www.nytimes.com/2016/10/30/arts/design/technology-invites-a-deep-dive-into-art.html) in NY Times!
+
+
+
+<!-- November -->
+
+* I Voted
+* [Axion](/axion) in [ICIDS Exhibition](http://icids2016.ict.usc.edu/exhibition/)
+* First time in Detroit for the [Tribeca Interactive Co/Lab](https://tribecafilminstitute.org/events/detail/interactive_storytelling_lab)
+* [<img src="/assets/projects/writing/2016/blackcloak.jpg">](https://www.instagram.com/p/BNe7rthABVg/)
+* [Black Cloak](http://luxloop.com/casestudies/blackcloak) in Miami.
+
+
+<!-- December -->
+
+
+
+

@@ -380,6 +380,48 @@ img.projColumns {
     }
 }
 
+.creditsTable {
+  span {
+    display: inline-block;
+
+    &.creditsRow {
+      display: block;
+      padding-top: .2em;
+    }
+
+    &.left {
+      @extend .bolder;
+      width: 250px;
+      // background: red;
+    }
+
+    &.right {
+      // background: blue;
+    }
+  }
+}
+
+.pullQuote {
+  @extend .italic;
+  padding-left: 1rem;
+  border-left: .5rem solid #ccc;
+  margin-left: 3rem;
+  text-align: justify;
+}
+
+.pullQuoteSource {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  margin-top: 3rem;
+  margin-right: 3rem;
+  @extend .bolder;
+
+  &::before {
+    content: "\2014";
+  }
+}
+
 /* Tag Filtering Stuff */
 .tagHider {
   display: none !important;

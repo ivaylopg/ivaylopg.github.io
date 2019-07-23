@@ -1,0 +1,49 @@
+---
+layout: project
+title:  "Ian Cheng: BOB (2018)"
+tags: Installation Art AR
+priority: 0
+headline: Real-Time Tracking and Emotional Interaction
+thumbnail: /assets/projects/bob/bob1.png
+cover: /assets/projects/bob/bobCover.png
+media:
+  - img: /assets/projects/bob/bob2.png
+    caption: "Photo © 2018 Hugo Glendinning"
+    captionClasses: "captionLight captionIn"
+sections:
+    - heading: Creating Presence in BOB's World
+      text: To bridge BOB's virtual space to the viewer's physical one, I led the implementation of a custom tracking system that would allow visitors to move through the space of the gallery and see their movements reflected in the virtual space. Taking control by "possessing" one of BOB's heads, viewers could have a physical connection to BOB which would forever imprint on BOB's memories and affect future interactions.<br /><br />This physical presence is further reinforced through the POV inside BOB's enclosure that is streamed back to the iPhone X in realtime. Luxloop developed a custom solution for compressing and streaming the virtual camera feed in BOB's world to the connected smartphone, as well as sending information back to BOB.
+      media:
+        - img: /assets/projects/bob/bob1.png
+          caption: "Photo © 2018 Hugo Glendinning"
+          captionClasses: "captionDark captionIn"
+    - heading: Understanding Emotional Cues
+      text: In addition to interacting through physical movement, BOB can perceive the viewer's outward emotional state, which in turn has an impact on whether BOB's memory of this interaction is positive or negative and may lead BOB to become agitated or calm. Using the iPhoneX depth camera, the custom app processes a detailed model of each viewer's face in realtime to infer emotion state, as well as mapping onto an <i>animoji</i> representing the way BOB sees each user.
+    - media:
+        - img: /assets/projects/bob/bobEmotions.gif
+          caption: Using iPhoneX Depth Camera
+          captionClasses: "captionDark captionOut"
+    - pullquote:
+        - text: Developing over a lifetime, each BOB can interact and learn from visitors—if it feels amenable—via a linked handheld device. As I made faces at the smartphone screen connecting me to a BOB, as if entertaining a small child, it grimaced back but soon cut me off—perhaps so it could metabolize all the fascinating data it had harvested, or perhaps, sadly, because it considered me of limited interest. BOB is not an entertaining performer, or much good for self-validation.
+          source: Vice Garage
+    - media:
+        - img: /assets/projects/bob/bob7.png
+          caption: ""
+        - img: /assets/projects/bob/bob3.png
+          caption: "Photo © 2018 Hugo Glendinning"
+          captionClasses: "captionLight captionIn"
+        - img: /assets/projects/bob/bob8.png
+          caption: ""
+---
+<i>Ian Cheng - BOB - 2018<br>
+BOB stands for Bag of Beliefs. BOB is an artificial lifeform who enjoys the thrill of making his own path, and the growing pains of developing a generative attitude towards living. BOB's experiences solidify into personality traits and patterns of growth. The life story of BOB is persistent, irreversible, aging, and consequential. Yet, when conditions are ripe, BOB may engage in activities powerful enough to change its mind and reshape its body.</i>
+
+Ian Cheng’s work explores mutation, the history of human consciousness and our capacity as a species to relate to change. Drawing on principles of video game design, improvisation and cognitive science, Cheng develops live simulations – virtual ecosystems of infinite duration, populated with agents who are programmed with behavioral drives but left to self-evolve without authorial intent. Cheng was interested in exploring ways in which these simulations could become interactive and open to the influence of the viewers themselves.
+
+Luxloop was approached by Cheng to develop the tracking and interaction systems for his show at The Serpenine Gallery in London. The intent was to develop a system that would enable visitor to interact with affect BOB's AI.
+
+Featured on:
+[The Telegraph](https://www.telegraph.co.uk/art/what-to-see/ian-cheng-sondra-perry-review-serpentine-gallery-digital-art/)
+[Vice](https://garage.vice.com/en_us/article/xw5e5k/ian-chengs-killer-bob-has-come-to-seduce-you)
+[Londonist](https://londonist.com/london/art-and-photography/meet-bob-an-artificial-intelligence-life-form-at-serpentine-gallery)
+
