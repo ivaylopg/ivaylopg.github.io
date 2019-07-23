@@ -10,6 +10,7 @@ headline: Spatially Aware Data Visualization
 thumbnail: /assets/projects/linkedin/linkedinThumb.png
 cover: /assets/projects/linkedin/linkedinCover.png
 media:
+  - img: /assets/projects/linkedin/linkedin5.png
   - img: /assets/projects/linkedin/linkedin3.png
   - img: /assets/projects/linkedin/linkedin2.png
   - img: /assets/projects/linkedin/linkedin1.png
