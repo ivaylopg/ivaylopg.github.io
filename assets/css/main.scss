@@ -422,6 +422,36 @@ img.projColumns {
   }
 }
 
+.creditsAlt {
+  width: 84%;
+  margin: 0 auto;
+
+  .credit {
+    display: inline-block;
+    width: 49.5%;
+    text-align: center;
+
+    @include media (max-width $mobile * 1.2) {
+      width: 100%;
+    }
+
+    .role, .personnel {
+      width: 100%;
+    }
+
+    .role {
+      @extend .bolder;
+    }
+
+    .personnel {
+      p {
+        margin: 0;
+      }
+      margin-bottom: 2rem;
+    }
+  }
+}
+
 /* Tag Filtering Stuff */
 .tagHider {
   display: none !important;

@@ -1,0 +1,103 @@
+---
+layout: project
+title:  "LinkedIn Talent Intelligence Experience"
+tags:
+  - Installation
+  - Interaction Design
+  - Dandelion+Burdock
+priority: 0
+headline: Spatially Aware Data Visualization
+thumbnail: /assets/projects/linkedin/linkedinThumb.png
+cover: /assets/projects/linkedin/linkedinCover.png
+media:
+  - img: /assets/projects/linkedin/linkedin3.png
+  - img: /assets/projects/linkedin/linkedin2.png
+  - img: /assets/projects/linkedin/linkedin1.png
+  - img: /assets/projects/linkedin/linkedin4.png
+    caption: "Intel Realsense depth cameras for tracking movement in the exhibition space"
+    captionClasses: "captionDark captionOut"
+sections:
+  - text: "<div class='creditsAlt'><div class='columns' style='margin: 0 auto; width: 100%'><div class='credit'><div class='role'>Client</div><div class='personnel'><p>LinkedIn</p></div></div><div class='credit'><div class='role'>Agency</div><div class='personnel'><p>Unit9</p></div></div><div class='credit'><div class='role'>Creative Director</div><div class='personnel'><p>James Medcraft</p></div></div><div class='credit'><div class='role'>Production Company</div><div class='personnel'><p>dandelion + burdock</p></div></div><div class='credit'><div class='role'>Interactive Designer</div><div class='personnel'><p>Ivaylo Getov</p></div></div><div class='credit'><div class='role'>Technical Workflow</div><div class='personnel'><p>Nils Porrmann</p></div></div><div class='credit'><div class='role'>Technical Production</div><div class='personnel'><p>Louis Mustill</p></div></div><div class='credit'><div class='role'>Lead Animator</div><div class='personnel'><p>Dickon Knowles</p></div></div><div class='credit'><div class='role'>Senior Animator</div><div class='personnel'><p>James Pykett</p></div></div><div class='credit'><div class='role'>Senior Animator</div><div class='personnel'><p>Will Davys</p></div></div><div class='credit'><div class='role'>Front End Design</div><div class='personnel'><p>Jonathan Melville</p></div></div><div class='credit'><div class='role'>Back End Development</div><div class='personnel'><p>Andrew Welch</p></div></div><div class='credit'><div class='role'>Producer</div><div class='personnel'><p>Megan Zaitz</p></div></div><div class='credit'><div class='role'>Producer</div><div class='personnel'><p>Rania Hattar</p></div></div><div class='credit'><div class='role'>Sound Design</div><div class='personnel'><p>Richard Pike</p></div></div></div></div>"
+
+
+---
+The Talent Intelligent Experience was a one-day immersive gathering for today’s brightest, most forward-thinking talent leaders and serial innovators to build relationships, learn, strategize, and share best practices around using data-driven insights to power talent decisions and make people your competitive advantage.
+
+Attended by over 300 talent leaders in both New York City and Paris, the events featured a number of talks by key industry leaders. To accompany the event, together with Unit9, Dandelion + Burdock created a <span class="bolder">Museum of Data</span>. This multi-walled projected and interactive installation allowed visitors to explore the talent landscape.
+
+Set across three different experiences, each story displayed data insights based around local talent.
+
+I was primarily responsible for designing and implementing a spatially-interactive projection that would react to a visitor's presence and display key data statistics.
+
+
+
+
+
+<!-- <section class="creditsAlt">
+  <div class="columns" style="margin: 0 auto; width: 100%">
+    <div class="credit">
+      <div class="role">Client</div>
+      <div class="personnel"><p>LinkedIn</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Agency</div>
+      <div class="personnel"><p>Unit9</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Creative Director</div>
+      <div class="personnel"><p>James Medcraft</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Production Company</div>
+      <div class="personnel"><p>dandelion + burdock</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Interactive Designer</div>
+      <div class="personnel"><p>Ivaylo Getov</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Technical Workflow</div>
+      <div class="personnel"><p>Nils Porrmann</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Technical Production</div>
+      <div class="personnel"><p>Louis Mustill</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Lead Animator</div>
+      <div class="personnel"><p>Dickon Knowles</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Senior Animator</div>
+      <div class="personnel"><p>James Pykett</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Senior Animator</div>
+      <div class="personnel"><p>Will Davys</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Front End Design</div>
+      <div class="personnel"><p>Jonathan Melville</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Back End Development</div>
+      <div class="personnel"><p>Andrew Welch</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Producer</div>
+      <div class="personnel"><p>Megan Zaitz</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Producer</div>
+      <div class="personnel"><p>Rania Hattar</p></div>
+    </div>
+    <div class="credit">
+      <div class="role">Sound Design</div>
+      <div class="personnel"><p>Richard Pike</p></div>
+    </div>
+  </div>
+</section>
+
+ -->
+
+
