@@ -68,11 +68,11 @@ function onError(error) {
 ////////////////////
 // Shortcuts
 
-gulp.task('js', ['compileCustom','compileTools','minifyCube']);
+// gulp.task('js', ['compileCustom','compileTools','minifyCube']);
 
 
 gulp.task('watchjs', function() {
   gulp.watch(['./_js/custom/nodeField.js','./_js/custom/main.js'], ['compileCustom']);
 });
 
-gulp.task('watch', ['watchjs']);
+// gulp.task('watch', ['watchjs']);

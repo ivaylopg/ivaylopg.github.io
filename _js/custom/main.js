@@ -41,6 +41,24 @@ $(document).ready(function() {
   $(".hiddenEmail").html(rot13rot5Encode('<n pynff="yvaxNavz" uers="znvygb:pbagnpg@vinlybtrgbi.pbz">pbagnpg@vinlybtrgbi.pbz</n>'));
   $(".hiddenPhone").html(rot13rot5Encode('<n uers="gry:+68658391837" pynff="yvaxNavz">556.865.839.1837</n>'));
 
+  // console.log("fooo");
+  var credWidth = 0;
+  $(".creditsRow .left").each(function(elements){
+    if (this.clientWidth > credWidth) {
+      credWidth = this.clientWidth;
+    }
+  })
+
+  $(".creditsRow .left").css('width', credWidth + 10);
+
+  var nameWidth = 0;
+  $(".creditsRow .right").each(function(elements){
+    if (this.clientWidth > nameWidth) {
+      nameWidth = this.clientWidth;
+    }
+  })
+  $(".creditsRow .right").css('width', nameWidth + 10);
+
 });
 
 ////////////////////////
