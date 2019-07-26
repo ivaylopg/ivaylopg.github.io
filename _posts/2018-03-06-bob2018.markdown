@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Ian Cheng: BOB (2018)"
-tags: Installation Art AR
+tags: Installation Art AR Serpenine
 priority: 0
 headline: Real-Time Tracking and Emotional Interaction
 thumbnail: /assets/projects/bob/bob1.png

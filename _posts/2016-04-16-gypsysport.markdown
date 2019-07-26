@@ -6,8 +6,6 @@ priority: 0
 headline: Interactive Fashion Video for Gypsy Sport F/W 2016 Collection
 thumbnail: /assets/projects/gs/thumb.png
 cover: /assets/projects/gs/cover.png
-media:
-  - /assets/projects/gs/1.png
 ---
 <div id="frameSizer" style="position:relative;width:100%;height:0;padding-top:55%;">
   <iframe id="vidFrame" src="http://www.luxloop.com/demo/gs/gsembed.html" style="border:none;position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%"></iframe>

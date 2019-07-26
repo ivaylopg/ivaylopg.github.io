@@ -6,6 +6,7 @@ tags:
   - Art
   - Augmented Reality
   - Technical Director
+  - Serpentine
 priority: 0
 headline: Augmented Reality Commission
 thumbnail: /assets/projects/deeplistener/dl1.png
