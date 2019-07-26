@@ -25,7 +25,7 @@ sections:
 <div class="medSpacer"></div>
 
 
-Building on previous digital collaborations with The Serpentine Galleries, I was asked to be a part of realizing their inaugural Augmented Architecture commision. I worked with the digital curatorial team there to help shepherd this project all the way from being on the selection committee to acting as the technical director with an amazing artist and team.
+Building on previous digital collaborations with The Serpentine Galleries, I was asked to be a part of realizing their inaugural Augmented Architecture commission. I worked with the digital curatorial team there to help shepherd this project all the way from being on the selection committee to acting as the technical director with an amazing artist and team.
 
 Drawing from a pool of over 300 entries, we selected [Jakob Kudsk Steensen](http://www.jakobsteensen.com/) and his work <i>The Deep Listener</i> as the inaugural  commissioned work. In collaboration with Google Arts and Culture and Sir David Adjaye OBE, this commission is available to be experienced in augmented reality for free over the summer months, alongside the 2019 Serpentine Pavilion.
 
@@ -55,7 +55,7 @@ Featured on:
 <img src="/assets/projects/deeplistener/dl2.png" class="projImage">
 
 
-Serpentine Augmented Architecture is commisioned in collaboration with Google Arts & Culture and Sir David Adjaye OBE. <br>
+Serpentine Augmented Architecture is commissioned in collaboration with Google Arts & Culture and Sir David Adjaye OBE. <br>
 App production and development by The Serpentine Galleries with:
 
 <div class='creditsTable'>

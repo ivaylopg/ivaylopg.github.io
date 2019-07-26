@@ -16,7 +16,7 @@ sections:
         - img: /assets/projects/bob2/bob1.jpg
           caption: "Photo © 2019 Ian Cheng Studio"
           captionClasses: "captionDark captionIn"
-    - text: Once a user has downloaded and opened the BOB Shrine app, their shrine appears as a star floating in a constelation in BOB's world. Based on BOB's current mood, desires, curiosity, and prior experiences, BOB may or may not choose your star, opening up a portal and collecting the offerings you have produced.
+    - text: Once a user has downloaded and opened the BOB Shrine app, their shrine appears as a star floating in a constellation in BOB's world. Based on BOB's current mood, desires, curiosity, and prior experiences, BOB may or may not choose your star, opening up a portal and collecting the offerings you have produced.
     - media:
         - img: /assets/projects/bob2/bob2.jpg
           caption: "Photo © 2019 Ian Cheng Studio"
