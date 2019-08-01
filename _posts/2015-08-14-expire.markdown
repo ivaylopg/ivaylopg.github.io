@@ -5,6 +5,7 @@ tags:
   - Open Source
   - Installation
   - Luxloop
+  - Tool
 priority: 0
 headline: OpenFrameworks addon to "expire" an app
 thumbnail: /assets/projects/expire/12088474_10104363810730119_5534989760372970350_n.jpg

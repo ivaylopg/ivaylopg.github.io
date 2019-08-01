@@ -4,9 +4,12 @@ title:  "Serpentine Augmented Architecture"
 tags:
   - Installation
   - Art
-  - Augmented Reality
+  - AR
+  - App
   - Technical Director
   - Serpentine
+  - Interactive
+  - Audio
 priority: 0
 headline: Augmented Reality Commission
 thumbnail: /assets/projects/deeplistener/dl1.png

@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Black Cloak"
-tags: Installation Art Luxloop
+tags: Installation Art Luxloop Projection
 priority: 0
 headline: Immersive Video Environment for Pop-up Dinner by Michelin-Star Chef
 thumbnail: /assets/projects/blackcloak/screen1Offset.png

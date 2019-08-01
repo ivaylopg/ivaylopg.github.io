@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Framerates"
-tags: Interactive Film Art Show
+tags: Interactive Film Art Show Projection
 priority: 0
 headline: A showcase of video art, experimental film, and other perversions of the moving image.
 thumbnail: /assets/projects/framerates/framerates.jpg

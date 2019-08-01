@@ -3,8 +3,10 @@ layout: project
 title:  "LinkedIn Talent Intelligence Experience"
 tags:
   - Installation
+  - Interactive
   - Interaction Design
   - Dandelion+Burdock
+  - Projection
 priority: 0
 headline: Spatially Aware Data Visualization
 thumbnail: /assets/projects/linkedin/linkedinThumb.png

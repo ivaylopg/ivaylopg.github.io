@@ -5,6 +5,7 @@ tags:
   - Installation
   - Art
   - Technical Director
+  - Interactive
 priority: 0
 headline: Infrastructure for Parenting an AI Creature
 thumbnail: /assets/projects/bob2/bobCover.jpg

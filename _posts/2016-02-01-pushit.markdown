@@ -1,9 +1,14 @@
 ---
 layout: project
 title:  "(Git) Push It"
-tags: Fabrication Video Code
+tags:
+  - Fabrication
+  - Video
+  - Code
+  - Physical Computing
+  - Tool
 priority: 0
-headline: Git Push Interface 
+headline: Git Push Interface
 thumbnail: /assets/projects/halfbaked/pushit.jpg
 cover: https://player.vimeo.com/video/204970096
 ---

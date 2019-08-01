@@ -5,7 +5,9 @@ tags:
   - Physical Computing
   - Dance
   - Fabrication
+  - Hardware
   - Research
+  - Tool
 priority: 0
 headline: An exploration of DIY low-fi motion capture for live performance
 thumbnail: /assets/projects/motion/thumb.jpg
