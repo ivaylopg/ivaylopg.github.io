@@ -1,11 +1,11 @@
 ---
 layout: project
-title:  "After ALife Ahead"
+title:  "Pierre Huyghe: After ALife Ahead"
 tags: Installation Art AR Luxloop
 priority: 0
 headline: Real-Time Responsive Mobile Augmented Reality
 thumbnail: /assets/projects/afteralifeahead/phar1.png
-cover: 
+cover:
   - video: /assets/projects/afteralifeahead/phar.mp4
     cover: /assets/projects/afteralifeahead/pharcover.png
 media:
