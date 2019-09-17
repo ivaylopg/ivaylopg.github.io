@@ -1,0 +1,89 @@
+---
+layout: project
+title:  "Hito Steyerl: Actual Reality OS"
+tags:
+  - Art
+  - AR
+  - App
+  - Technical Director
+  - Serpentine
+  - Interactive
+priority: 0
+headline: Augmented Reality Data Visualization
+thumbnail: /assets/projects/aros/arosCover.jpg
+cover: /assets/projects/aros/arosCover.jpg
+sections:
+    - media:
+        - https://player.vimeo.com/video/360585466
+        - https://player.vimeo.com/video/360585485
+
+---
+
+<div class="medSpacer"></div>
+
+Using data about wealth, social housing and austerity collected with local research partners and community groups the app shows the Serpentine Galleries shaped and abstracted by the actual forces of its social environment, charting real-life inequality through virtual means. This warped simulacrum of the physical building is designed to restore a social vision to an often unseen stark class reality, demanding the visitor leave their comfort zone and question their surroundings.
+
+<div class="medSpacer"></div>
+<img src="/assets/projects/aros/aros1.png" class="projImage">
+<div class="medSpacer"></div>
+
+Actual RealityOS is an open source digital tool for data visualisation that brings together augmented reality, immersive audio and strategies of data collection and mapping for mobile devices. The app considers the symbiotic relationship between technology and power. Nowhere is this relationship more clear than in the decision making power imbued within technologies like artificial intelligence and predictive modelling now used to ascertain access to services like insurance, housing and social benefits.
+
+Core to these technologies is their use of data and machine learning as a, perceived, neutral means of assessment when data, in its mediation and representation, is political and often reflects the inherent biases of societal power structures. Actual RealityOS uses the potential of augmented reality to create a tool for visualising otherwise unseen information: the nascent immersive technology allows users to see a real-time composite of virtual imagery against their physical environment through the camera of a phone or tablet. Focusing on the UK and, more specifically, the Serpentine’s location in the Royal Borough of Kensington and Chelsea, the app exposes inequality data – modelled, sonified and as testimonial – concerning wealth, income, social housing, domestic and hospitality workers’ rights, and the impact of austerity measures.
+
+<div class="medSpacer"></div>
+<img src="/assets/projects/aros/aros2.png" class="projImage">
+<div class="medSpacer"></div>
+
+The architecture of the Serpentine Sackler Gallery becomes the base metric onto which the data is mapped to the external facade of the building by overlaying, in augmented reality, a warped virtual simulacra that charts the stark reality of inequality at 1:1 scale. The building is surrounded by a digital perimeter of personal testimony in contrast to the abstraction of statistical representation while a data-driven soundtrack guides you. The audio is produced through a process of data sonification in which statistics are represented as sound.
+
+Created by Jules Laplace and Bethany Barrett using an automated tool that maps data points to harmonic scales which are then played through a Behringer DeepMind synthesiser, the inclusion of sound augments reality in another, non-visual, form that presents another perspective of both data analysis and social experience
+
+Featured on:
+[The Guardian](https://www.theguardian.com/artanddesign/2019/apr/10/hito-steyerl-review-serpentine-sackler-gallery-london)
+[Art Net](https://news.artnet.com/art-world/hito-steyerl-sackler-1513042)
+[Plinth](https://plinth.uk.com/blogs/magazine/hito-steyerls-actual-reality-os)
+
+<div class="spacer"></div>
+
+<span class="bolder">Graphic Design, Typography, AR Design and Production:</span>
+Ayham Ghraowi with Matt Wolff, Hrefna Sigurðardóttir, and Ben Ganz
+
+<div class="spacer"></div>
+
+<span class="bolder">AR development and modelling:</span>
+Ivaylo Getov (Luxloop) with Caco Peguero (United Futures) and Werkflow
+
+<div class="spacer"></div>
+
+<span class="bolder">Production and data set collection:</span>
+Serpentine Galleries
+
+<div class="spacer"></div>
+
+<span class="bolder">Music</span>
+Jules Laplace, Bethany Barrett
+
+<div class="spacer"></div>
+
+<span class="bolder">Production coordinator:</span>
+Hanna Mattes
+
+<div class="spacer"></div>
+
+<span class="bolder">Commissioned by the Serpentine Galleries</span>
+Kay Watson, Digital Curator
+
+<div class="spacer"></div>
+
+<span class="bolder">Research Partners</span>
+Architects for Social Housing
+Disabled People Against Cuts
+The Voice of Domestic Workers
+Constantine Gras.
+
+<div class="spacer"></div>
+
+Hito Steyerl project is supported by the Luma Foundation. Additional support by Yanghyun Foundation, In Between Art Film, The Reuben Foundation, and Goethe Institut.
+
+Digital engagement supported by Bloomberg Philanthropies. The Serpentine Galleries is supported using public funding by Arts Council England.
