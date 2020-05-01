@@ -19,7 +19,7 @@ media:
 Amplified Self is a mirror in which viewers can only see their own reflection if they are willing to call attention to themselves. By yelling, the viewer causes the sound waves rendered on screen to coalesce into an image. The louder the noise, the clearer the image in the audio waveforms, therefore prompting the viewer to balance their desire to see themselves with their aversion to drawing attention to this desire.
 
 Featured at:
-[Next Art Night 2016](http://nextart.tech/) (Amplified Self v2.0)
+[Next Art Night 2016](https://nextart.tech/portfolio/next-art-night/) (Amplified Self v2.0)
 [CultureHub Refest 2014](http://lamama.org/culturehub/)
 
 
