@@ -72,6 +72,7 @@ $(window).on('load', function() {
     } else {
         $("body").addClass("isNotMobile");
     }
+    document.documentElement.classList.remove('page-loading');
 });
 
 on_resize(function() {

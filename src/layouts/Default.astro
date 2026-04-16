@@ -1,5 +1,4 @@
 ---
-import Typekit from '../components/Typekit.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/main.scss';
 
@@ -27,8 +26,8 @@ const GA_ID = 'UA-15828180-1';
 
   <link rel="SHORTCUT ICON" href="/assets/img/favicon.ico" />
 
-  <Typekit />
-
+  <script is:inline>document.documentElement.classList.add('page-loading');</script>
+  <link rel="stylesheet" href="/assets/fonts/firaSans.css" />
   <link rel="stylesheet" href="/assets/css/normalize.min.css" />
   {customcss && <link rel="stylesheet" href={`/assets/css/${customcss}`} />}
   <script is:inline src="/assets/js/modernizr.min.js"></script>

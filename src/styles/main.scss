@@ -77,10 +77,9 @@
 $hiliteColor: #b3d4fc;
 $bgColor : #fff;
 $textColor: #000;
-$fontStack1:	"fira-sans-2", "FiraSansUL", "helveticaLight", sans-serif;
-$fontStack2:	"fira-sans-2", "FiraSansB", "helveticaRegular", sans-serif;
+$fontStack1:	"FiraSansUL", "helveticaLight", sans-serif;
+$fontStack2:	"FiraSansB", "helveticaRegular", sans-serif;
 
-$fadeOnLoad: "p, h1, .projects, .frontCover";
 //$defaultWeight: 200;
 $defaultWeight: 500;
 
@@ -94,6 +93,14 @@ $footer-link-color: transparentize($footer-color, 0.6);
 body, html {
 	font-size: 100%;
 	background: $bgColor;
+}
+
+html.page-loading body {
+	opacity: 0;
+}
+
+body {
+	@include transition(opacity 1.5s linear);
 }
 
 body {
@@ -254,24 +261,6 @@ hr {
 	@include threeWidthGrid;
 }
 
-.opacity.csstransitions .gridded {
-	#{$fadeOnLoad} {
-		@include transition(opacity 1.5s linear);
-		opacity: 1.0;
-	}
-}
-
-.wf-loading .gridded {
-	#{$fadeOnLoad} {
-		visibility: hidden;
-	}
-}
-
-.opacity.csstransitions.wf-loading .gridded {
-	#{$fadeOnLoad} {
-		opacity: 0.0;
-	}
-}
 
 .noSpaceDown {
 	margin-bottom: 0em;
