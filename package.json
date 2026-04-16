@@ -1,5 +1,13 @@
 {
   "name": "IvayloGetovDotCom",
+  "scripts": {
+    "dev": "npm run build:vendors && npm run build:js && npm run build:css && astro dev",
+    "build": "npm run build:vendors && npm run build:js && npm run build:css && astro build",
+    "preview": "astro preview",
+    "build:vendors": "cp node_modules/jquery/dist/jquery.min.js public/assets/js/jquery.min.js && cp node_modules/p5/lib/p5.min.js public/assets/js/p5.min.js",
+    "build:js": "cat _js/tools/encode.min.js _js/tools/jquery.detectmobile.min.js _js/tools/jquery.fitvids.min.js _js/tools/vector2d.min.js > public/assets/js/tools.min.js && cat src/scripts/main.js src/scripts/nodeField.js > public/assets/js/ivaylogetov.min.js && cp src/scripts/cube.js public/assets/js/cube.min.js",
+    "build:css": "sass --load-path src/styles --style compressed src/styles/cube.scss:public/assets/css/cube.css src/styles/recap.scss:public/assets/css/recap.css"
+  },
   "eslintConfig": {
     "extends": "eslint:recommended",
     "env": {
@@ -23,15 +31,10 @@
       "no-console": 1
     }
   },
-  "scripts": {
-    "serve": "bundle exec jekyll serve",
-    "serveinc": "bundle exec jekyll serve --incremental"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-notify": "^3.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.2"
+  "dependencies": {
+    "astro": "^6.1.7",
+    "jquery": "^4.0.0",
+    "p5": "^2.2.3",
+    "sass": "^1.99.0"
   }
 }

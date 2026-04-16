@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../layouts/Default.astro';
+
+function idToSlug(id: string): string {
+  return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+}
+
+const allProjects = await getCollection('projects');
+allProjects.sort((a, b) => b.id.localeCompare(a.id));
+
+const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort();
+---
+
+<Default title="Tagged">
+  <section class="gridded tagPage">
+    <div class="medSpacer"></div>
+
+    <div class="fullWidth">
+      <h1>Recent Work<span class="tagHeading"></span></h1>
+    </div>
+
+    <div class="fullWidth projects margBotMedSpacer">
+      {allProjects.map(proj => (
+        <div class={`projectEntry${(proj.data.tags ?? []).map((t: string) => ` ${t.toLowerCase()}`).join('')}`}>
+          <a href={`/${idToSlug(proj.id)}`}>
+            <div style={`background: url(${proj.data.thumbnail})`}>
+              <div class="projName">
+                {proj.data.title}<br />
+                <span class="muchSmaller">
+                  {(proj.data.tags ?? []).map((tag: string, i: number, arr: string[]) => (
+                    <>{tag.toUpperCase()}{i < arr.length - 1 ? ' // ' : ''}</>
+                  ))}
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="tagHider"></div>
+
+    <p class="muchSmaller projectTags margBotMedSpacer">
+      {allTags.map((tag, i) => (
+        <>
+          <a href={`/tagged#${tag.toLowerCase()}`} class="linkAnim tagLink">{tag.toUpperCase()}</a>
+          {' // '}
+        </>
+      ))}
+      //// <a href="/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
+    </p>
+
+    <p>
+      <a href="/" class="linkAnim">back to main</a>
+    </p>
+  </section>
+</Default>

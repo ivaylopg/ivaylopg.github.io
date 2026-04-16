@@ -1,0 +1,64 @@
+---
+interface Props {
+  item: any;
+  isCover?: boolean;
+}
+
+const { item, isCover = false } = Astro.props;
+const mainClass = isCover ? 'projCover' : 'projImage';
+
+// Normalize: if cover is passed as an array, unwrap the first element for
+// the captioned-image and video cases (mirrors Jekyll's .first filter).
+const first = Array.isArray(item) ? item[0] : item;
+
+let type = 'unknown';
+let d: any = {};
+
+if (first && typeof first === 'object' && first.img) {
+  type = 'captioned-image';
+  d = first;
+} else if (typeof first === 'string' && first.includes('vimeo')) {
+  type = 'vimeo';
+  d = { src: first };
+} else if (first && typeof first === 'object' && typeof first.video === 'string' && first.video.includes('mp4')) {
+  type = 'video';
+  d = first;
+} else if (typeof first === 'string' && !isCover && first.includes(',')) {
+  type = 'columns';
+  d = { items: first.split(',').map((s: string) => s.trim()) };
+} else if (typeof first === 'string') {
+  type = 'image';
+  d = { src: first };
+}
+---
+
+{type === 'captioned-image' && (
+  <img
+    src={d.img}
+    class={`${mainClass} captioned`}
+    data-captionClasses={d.captionClasses}
+    data-caption={d.caption}
+  />
+)}
+
+{type === 'image' && (
+  <img src={d.src} class={mainClass} />
+)}
+
+{type === 'vimeo' && (
+  <div class="fullWidth vidContainer">
+    <iframe src={d.src} width="500" height="281" frameborder="0" allowfullscreen></iframe>
+  </div>
+)}
+
+{type === 'video' && (
+  <img src={d.cover} class={`${mainClass} makeVid`} data-vid={d.video} />
+)}
+
+{type === 'columns' && (
+  <div class="fullWidth">
+    {d.items.map((src: string) => (
+      <img src={src} class="projColumns" />
+    ))}
+  </div>
+)}

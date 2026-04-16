@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '../layouts/Default.astro';
+
+function idToSlug(id: string): string {
+  return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+}
+
+const allProjects = await getCollection('projects');
+// Sort by date descending — id starts with YYYY-MM-DD
+allProjects.sort((a, b) => b.id.localeCompare(a.id));
+
+// Collect all unique tags across all projects
+const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort();
+---
+
+<Default bodyClass="homePage">
+  <section class="gridded">
+    <div class="introText fullWidth frontCover">
+      <div class="bigSpacer"></div>
+
+      <h1>Hello.</h1>
+
+      <p>I'm <span class="bolder">Ivaylo Getov</span>.</p>
+
+      <p>
+        I'm an <span class="">Interactive Producer/Director</span> and Media Artist. I Specialize in <span class="">Technical Direction</span>, <span class="">Interaction Design</span>, and <span class="">Software Development</span> for public experiences that <span class="">use technology to bring people together</span> and have a good time.
+      </p>
+
+      <p>
+        In 2015 I co-founded <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, a creative technology studio based in NY and LA where we brought our background as filmmakers to developing interactive stories with artists, museums, and brands.
+      </p>
+
+      <p>
+        Currently I'm Head of Interactive at <a href="https://dandelion-burdock.com/" class="bolder linkAnim" target="_blank">Dandelion + Burdock</a> and a wandering Technical Director for Fine Art projects
+      </p>
+
+      <p>
+        I was born in Sofia, Bulgaria and I have lived in Brooklyn, NY; Port Elizabeth, South Africa; and Havana, Cuba. I'm mostly based in Los Angeles. I am a US and EU Citizen, which comes in handy. I struggle with finding the best description or title for <a href="whatido" class="bolder linkAnim" target="_blank">what I do</a> because I don't think the perfect word exists yet. Some adjectives that have been used to describe me include: Director, Coder, Artist, Professor, Technical Director, Photographer, Designer, Programmer, Technologist, Producer, Game Master, Consultant, and Karaoke Superstar.
+      </p>
+
+      <p>
+        This is my personal page. Take a look at some of the <a href="#theProjects" class="bolder linkAnim scrollLink">projects</a>. If you'd rather be formal, you can take a look at <a href="/ivaylogetovcv.pdf" class="bolder linkAnim">my CV</a>. All my contact info and social media stuff is down at the <a href="#theFooter" class="bolder linkAnim scrollLink">bottom</a> of every page.
+      </p>
+
+      <p>
+        I try to keep this page up to date and link to projects I contribute to, but this is also where my art projects, ramblings and personal experiments end up. That's the vibe here. Fair warning. Take a look around...
+      </p>
+    </div>
+
+    <div class="introText fullWidth">
+      <div class="medSpacer"></div>
+
+      <div class="fullWidth" id="theProjects">
+        <h1>Recent Work<span class="tagHeading"></span></h1>
+      </div>
+
+      <p class="muchSmaller projectTags margBotMedSpacer">
+        {allTags.map((tag, i) => (
+          <>
+            <a href={`/tagged#${tag.toLowerCase()}`} class="linkAnim tagLink">{tag.toUpperCase()}</a>
+            {' // '}
+          </>
+        ))}
+        //// <a href="/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
+      </p>
+
+      <div class="fullWidth projects margBotMedSpacer">
+        {allProjects.map(proj => (
+          <div class={`projectEntry${(proj.data.tags ?? []).map((t: string) => ` ${t.toLowerCase()}`).join('')}`}>
+            <a href={`/${idToSlug(proj.id)}`}>
+              <div
+                class="projEntryBackground"
+                style={`background: url(${proj.data.thumbnail})`}
+                data-thumbnailgif={proj.data.thumbnailGif}
+              >
+                <div class="projName">
+                  {proj.data.title}<br />
+                  <span class="muchSmaller">
+                    {(proj.data.tags ?? []).map((tag: string, i: number, arr: string[]) => (
+                      <>{tag.toUpperCase()}{i < arr.length - 1 ? ' // ' : ''}</>
+                    ))}
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="tagHider"></div>
+    </div>
+  </section>
+</Default>
