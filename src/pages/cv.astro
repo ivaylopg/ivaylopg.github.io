@@ -1,7 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
 import Default from '../layouts/Default.astro';
-import '../styles/cv.scss';
 
 const entry = await getEntry('cv', 'cv');
 let html: string = (entry as any)?.rendered?.html ?? '';
@@ -55,7 +54,7 @@ if (skillsIdx !== -1) {
 }
 ---
 
-<Default title="CV">
+<Default title="CV" customcss="cv.css">
   <div id="cvBody">
     <section class="gridded">
       <div class="fullWidth projects">

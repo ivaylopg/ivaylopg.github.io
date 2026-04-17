@@ -1,6 +1,5 @@
 ---
 import Footer from '../components/Footer.astro';
-import '../styles/main.scss';
 
 interface Props {
   title?: string;
@@ -29,6 +28,7 @@ const GA_ID = 'UA-15828180-1';
   <script is:inline>document.documentElement.classList.add('page-loading');</script>
   <link rel="stylesheet" href="/assets/fonts/firaSans.css" />
   <link rel="stylesheet" href="/assets/css/normalize.min.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
   {customcss && <link rel="stylesheet" href={`/assets/css/${customcss}`} />}
   <script is:inline src="/assets/js/modernizr.min.js"></script>
 </head>
