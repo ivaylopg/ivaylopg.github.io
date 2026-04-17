@@ -6,6 +6,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   site: 'https://ivaylogetov.com',
+  markdown: {
+    smartypants: false,
+  },
   vite: {
     css: {
       preprocessorOptions: {

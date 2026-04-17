@@ -1,6 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Default from '../layouts/Default.astro';
+
+const introEntry = await getEntry('intro', 'intro');
+let introHtml: string = (introEntry as any)?.rendered?.html ?? '';
+
+// First paragraph "Hello." → <h1>
+introHtml = introHtml.replace('<p>Hello.</p>', '<h1>Hello.</h1>');
+// External links: add target="_blank"
+introHtml = introHtml.replace(
+  /<a href="http/g,
+  '<a target="_blank" href="http'
+);
+// Add linkAnim to all links
+introHtml = introHtml.replace(/<a /g, '<a class="bolder linkAnim" ');
+// scrollLink for anchor links
+introHtml = introHtml.replace(
+  /class="bolder linkAnim" href="#/g,
+  'class="bolder linkAnim scrollLink" href="#'
+);
 
 function idToSlug(id: string): string {
   return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
@@ -18,34 +36,7 @@ const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort()
   <section class="gridded">
     <div class="introText fullWidth frontCover">
       <div class="bigSpacer"></div>
-
-      <h1>Hello.</h1>
-
-      <p>I'm <span class="bolder">Ivaylo Getov</span>.</p>
-
-      <p>
-        I'm an <span class="">Interactive Producer/Director</span> and Media Artist. I Specialize in <span class="">Technical Direction</span>, <span class="">Interaction Design</span>, and <span class="">Software Development</span> for public experiences that <span class="">use technology to bring people together</span> and have a good time.
-      </p>
-
-      <p>
-        In 2015 I co-founded <a href="http://luxloop.com" class="bolder linkAnim" target="_blank">Luxloop</a>, a creative technology studio based in NY and LA where we brought our background as filmmakers to developing interactive stories with artists, museums, and brands.
-      </p>
-
-      <p>
-        Currently I'm Head of Interactive at <a href="https://dandelion-burdock.com/" class="bolder linkAnim" target="_blank">Dandelion + Burdock</a> and a wandering Technical Director for Fine Art projects
-      </p>
-
-      <p>
-        I was born in Sofia, Bulgaria and I have lived in Brooklyn, NY; Port Elizabeth, South Africa; and Havana, Cuba. I'm mostly based in Los Angeles. I am a US and EU Citizen, which comes in handy. I struggle with finding the best description or title for <a href="whatido" class="bolder linkAnim" target="_blank">what I do</a> because I don't think the perfect word exists yet. Some adjectives that have been used to describe me include: Director, Coder, Artist, Professor, Technical Director, Photographer, Designer, Programmer, Technologist, Producer, Game Master, Consultant, and Karaoke Superstar.
-      </p>
-
-      <p>
-        This is my personal page. Take a look at some of the <a href="#theProjects" class="bolder linkAnim scrollLink">projects</a>. If you'd rather be formal, you can take a look at <a href="/cv" class="bolder linkAnim">my CV</a>. All my contact info and social media stuff is down at the <a href="#theFooter" class="bolder linkAnim scrollLink">bottom</a> of every page.
-      </p>
-
-      <p>
-        I try to keep this page up to date and link to projects I contribute to, but this is also where my art projects, ramblings and personal experiments end up. That's the vibe here. Fair warning. Take a look around...
-      </p>
+      <Fragment set:html={introHtml} />
     </div>
 
     <div class="introText fullWidth">

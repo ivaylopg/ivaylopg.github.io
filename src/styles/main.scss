@@ -165,7 +165,7 @@ a {
 //////
 
 
-.bolder {
+.bolder, strong {
 	font-family: $fontStack2;
 	font-weight: $defaultWeight + 100;
 }
