@@ -1,6 +1,10 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import Default from '../layouts/Default.astro';
+import { execSync } from 'child_process';
+
+const lastCommitDate = execSync('git log -1 --format="%ai"').toString().trim();
+const lastUpdated = new Date(lastCommitDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
 
 const introEntry = await getEntry('intro', 'intro');
 let introHtml: string = (introEntry as any)?.rendered?.html ?? '';
@@ -37,6 +41,7 @@ const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort()
     <div class="introText fullWidth frontCover">
       <div class="bigSpacer"></div>
       <Fragment set:html={introHtml} />
+      <p class="muchSmaller"><em>last updated {lastUpdated}</em></p>
     </div>
 
     <div class="introText fullWidth">
