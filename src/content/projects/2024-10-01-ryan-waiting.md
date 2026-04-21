@@ -9,10 +9,17 @@ tags:
 priority: 0
 headline: Real-Time Interactive VR Installation
 thumbnail: /assets/projects/ryan-waiting/thumbnail.jpg
-cover: /assets/projects/ryan-waiting/cover.jpg
+cover:
+  img: /assets/projects/ryan-waiting/cover.jpg
+  caption: "Photo © Andrea Rossetti © The artist / VG Bild-Kunst, Bonn 2024"
+  captionClasses: "captionLight captionOut"
 media:
-  - /assets/projects/ryan-waiting/01.jpg
-  - /assets/projects/ryan-waiting/02.jpg
+  - img: /assets/projects/ryan-waiting/01.jpg
+    caption: "Photo © Andrea Rossetti © The artist / VG Bild-Kunst, Bonn 2024"
+    captionClasses: "captionLight captionOut"
+  - img: /assets/projects/ryan-waiting/02.jpg
+    caption: "Photo © Andrea Rossetti © The artist / VG Bild-Kunst, Bonn 2024"
+    captionClasses: "captionLight captionOut"
   - /assets/projects/ryan-waiting/03.jpg
   - https://www.youtube.com/embed/EQMrFqfbIhQ
 ---
