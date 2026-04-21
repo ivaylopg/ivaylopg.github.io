@@ -17,6 +17,12 @@ let d: any = {};
 if (first && typeof first === 'object' && first.img) {
   type = 'captioned-image';
   d = first;
+} else if (typeof first === 'string' && first.includes('.m3u8')) {
+  type = 'hls';
+  d = { src: first };
+} else if (typeof first === 'string' && first.includes('youtube.com/embed')) {
+  type = 'youtube';
+  d = { src: first };
 } else if (typeof first === 'string' && first.includes('vimeo')) {
   type = 'vimeo';
   d = { src: first };
@@ -43,6 +49,36 @@ if (first && typeof first === 'object' && first.img) {
 
 {type === 'image' && (
   <img src={d.src} class={mainClass} />
+)}
+
+{type === 'hls' && (
+  <div class="fullWidth vidContainer">
+    <video class="hlsVideo" controls src={d.src} data-hls-src={d.src}>
+      <source src={d.src} type="application/x-mpegURL" />
+    </video>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+    <script is:inline>
+      (function() {
+        var videos = document.querySelectorAll('.hlsVideo');
+        videos.forEach(function(video) {
+          var src = video.getAttribute('data-hls-src');
+          if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(src);
+            hls.attachMedia(video);
+          } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = src;
+          }
+        });
+      })();
+    </script>
+  </div>
+)}
+
+{type === 'youtube' && (
+  <div class="fullWidth vidContainer">
+    <iframe src={d.src} width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 )}
 
 {type === 'vimeo' && (
