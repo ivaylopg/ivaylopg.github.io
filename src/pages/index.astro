@@ -28,7 +28,7 @@ function idToSlug(id: string): string {
   return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
 }
 
-const allProjects = await getCollection('projects');
+const allProjects = (await getCollection('projects')).filter(p => !p.data.hidden);
 // Sort by date descending — id starts with YYYY-MM-DD
 allProjects.sort((a, b) => b.id.localeCompare(a.id));
 

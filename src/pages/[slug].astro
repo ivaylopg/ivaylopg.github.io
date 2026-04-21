@@ -4,7 +4,7 @@ import Default from '../layouts/Default.astro';
 import MediaItem from '../components/MediaItem.astro';
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
+  const projects = (await getCollection('projects')).filter(p => !p.data.hidden);
   return projects.map(entry => ({
     params: { slug: entry.id.replace(/^\d{4}-\d{2}-\d{2}-/, '') },
     props: { entry },

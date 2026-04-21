@@ -24,6 +24,7 @@ const projects = defineCollection({
     customjs: z.string().optional(),
     customcss: z.string().optional(),
     priority: z.number().optional(),
+    hidden: z.boolean().optional().default(false),
   }),
 });
 

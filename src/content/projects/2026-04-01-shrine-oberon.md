@@ -8,6 +8,7 @@ tags:
   - AI
   - LED
 priority: 0
+hidden: true
 headline: Permanent AI-Driven Interactive Installation
 thumbnail: /assets/projects/shrine-oberon/thumbnail.jpg
 cover: /assets/projects/shrine-oberon/cover.jpg
