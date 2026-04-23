@@ -4,37 +4,41 @@
 $initialScale: 0.7;
 $opacity: 0.75;
 
+@keyframes pulse {
+    from { opacity: $opacity; }
+    20% { opacity: 1.0; }
+    30% { opacity: 1.0; }
+    to { opacity: $opacity; }
+}
+
 // ANIMATE THE COLOR WHEN ACTIVE
 
 #theBlackBox {
     width: 100%;
-    height: 400px;
     background-color: #ccc;
-    @include perspective(1500px);
-    @include perspective-origin(50% 200px);
-    @include transform(scale($initialScale,$initialScale));
+    perspective: 1500px;
+    perspective-origin: 50% 200px;
+    transform: scale($initialScale, $initialScale);
     background: none;
     padding-top: 120px;
     height: 600px;
     margin: 0em;
     margin-top: -8rem;
 
-    @include span-columns(12);
-
-    @include media(max-width $tablet * 1.2) {
-        @include transform(scale($initialScale * 0.8,$initialScale * 0.8));
+    @media (max-width: #{$tablet * 1.2}) {
+        transform: scale($initialScale * 0.8, $initialScale * 0.8);
         margin-top: -9rem;
         margin-bottom: -5rem;
     }
 
-    @include media(max-width $tablet) {
-        @include transform(scale($initialScale * 0.7,$initialScale * 0.7));
+    @media (max-width: #{$tablet}) {
+        transform: scale($initialScale * 0.7, $initialScale * 0.7);
         margin-top: -11rem;
         margin-bottom: -6rem;
     }
 
-    @include media(max-width $mobile) {
-        @include transform(scale($initialScale * 0.8,$initialScale * 0.8));
+    @media (max-width: #{$mobile}) {
+        transform: scale($initialScale * 0.8, $initialScale * 0.8);
         margin-top: -11rem;
     }
 
@@ -44,8 +48,8 @@ $opacity: 0.75;
 .cube {
     position: relative;
     margin: 0 auto 100px;
-    @include transform-style(preserve-3d);
-    @include transform(rotateX(-15deg) rotateY(45deg));
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(45deg);
     height: 400px;
     width: 400px;
 }
@@ -63,7 +67,7 @@ $opacity: 0.75;
 
 .no-touch.opacity .cube > div {
   opacity: $opacity;
-  @include transition(opacity 1.0s ease-out);
+  transition: opacity 1.0s ease-out;
 }
 
 .no-touch.opacity #theBlackBox:hover .cube > div {
@@ -72,46 +76,32 @@ $opacity: 0.75;
 
 .touch.opacity .cube > div {
   opacity: $opacity;
-   @include keyframes(pulse) {
-    from {
-      opacity: $opacity;
-    }
-    20% {
-      opacity: 1.0;
-    }
-    30% {
-      opacity: 1.0;
-    }
-    to {
-      opacity: $opacity;
-    }
-  }
 }
 
 .touch.opacity .cube.pulse > div {
-  @include animation(pulse 2.0s linear 1);
+  animation: pulse 2.0s linear 1;
 }
 
 .cube > div:first-child {
-    @include transform(rotateX(90deg) translateZ(200px));
+    transform: rotateX(90deg) translateZ(200px);
 }
 
 .cube > div:nth-child(2) {
-    @include transform(translateZ(200px));
+    transform: translateZ(200px);
 }
 
 .cube > div:nth-child(3) {
-    @include transform(rotateY(90deg) translateZ(200px));
+    transform: rotateY(90deg) translateZ(200px);
 }
 
 .cube > div:nth-child(4) {
-    @include transform(rotateY(180deg) translateZ(200px));
+    transform: rotateY(180deg) translateZ(200px);
 }
 
 .cube > div:nth-child(5) {
-    @include transform(rotateY(-90deg) translateZ(200px));
+    transform: rotateY(-90deg) translateZ(200px);
 }
 
 .cube > div:nth-child(6) {
-    @include transform(rotateX(-90deg) rotate(180deg) translateZ(200px));
+    transform: rotateX(-90deg) rotate(180deg) translateZ(200px);
 }

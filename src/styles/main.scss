@@ -2,68 +2,6 @@
 @import "partials/global";
 
 
-// Neat omega reset by www.joshfry.me
-@mixin omega-reset($nth) {
-  &:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
-  &:nth-child(#{$nth}+1) { clear: none }
-}
-/////
-
-@mixin gridMargin($rem) {
-  @include media(max-width $rem * 1.2, 12) {
-    @include shift(1);
-      @include span-columns(10 of 12);
-    }
-}
-
-@mixin tinyGridMargin($rem) {
-	@include media(max-width $rem * 1.2, 24) {
-		@include shift-in-context(1 of 24);
-      @include span-columns(22);
-    }
-}
-
-@mixin threeWidthGrid {
-	@include gridMargin($max-width);
-	@include tinyGridMargin($mobile);
-}
-
-@mixin bigThirds {
-
-	@include span-columns(3);
-	@include omega(4n);
-
-	@include media(max-width $max-width * 1.2) {
-		@include omega-reset(4n);
-      @include span-columns(4);
-      @include omega(3n);
-    }
-
-	@include media(max-width $tablet * 1.2) {
-		@include omega-reset(3n);
-      @include span-columns(6);
-      @include omega(2n);
-    }
-
-    @include media(max-width $mobile * 1.2) {
-      @include omega-reset(2n);
-      @include span-columns(12);
-    }
-
-}
-
-@mixin projectTwoCols {
-
-    @include span-columns(6);
-    @include omega(2n);
-
-    @include media(max-width $tablet * 1.2) {
-        @include omega-reset(2n);
-        @include span-columns(12);
-    }
-
-}
-
 @mixin fullBg {
 	background-repeat: no-repeat !important;
 	background-attachment: fixed;
@@ -80,12 +18,11 @@ $textColor: #000;
 $fontStack1:	"FiraSansUL", "helveticaLight", sans-serif;
 $fontStack2:	"FiraSansB", "helveticaRegular", sans-serif;
 
-//$defaultWeight: 200;
 $defaultWeight: 500;
 
 $footer-background: $bgColor;
 $footer-color: $textColor;
-$footer-link-color: transparentize($footer-color, 0.6);
+$footer-link-color: rgba($footer-color, 0.4);
 
 @import "partials/bpDefaults";
 /* ========================================================================== */
@@ -100,7 +37,7 @@ html.page-loading body {
 }
 
 body {
-	@include transition(opacity 1.5s linear);
+	transition: opacity 1.5s linear;
 }
 
 body {
@@ -109,10 +46,10 @@ body {
 	font-weight: $defaultWeight;
 	font-size: 1.75rem;
 
-	@include media (max-width $max-width * 1.2) {
+	@media (max-width: #{$max-width * 1.2}) {
 		font-size: 1.5rem;
 	}
-	@include media (max-width $tablet) {
+	@media (max-width: #{$tablet}) {
 		font-size: 1.2rem;
 	}
 }
@@ -154,13 +91,13 @@ a {
 	left: 0;
 	background-color: #000;
 	visibility: hidden;
-	@include transform(scaleX(0));
-	@include transition(all 0.3s ease-out 0s);
+	transform: scaleX(0);
+	transition: all 0.3s ease-out 0s;
 }
 
 .csstransforms.csstransitions.no-touch a.linkAnim:hover:before {
 	visibility: visible;
-	@include transform(scaleX(1));
+	transform: scaleX(1);
 }
 //////
 
@@ -176,7 +113,7 @@ a {
 
 .muchSmaller {
 	font-size: 0.7em;
-    @include media(min-width $tablet){
+    @media (min-width: #{$tablet}) {
         font-size: 0.5em;
     }
 }
@@ -199,66 +136,69 @@ hr {
 
 .medSpacer {
 	display: block;
-
 	min-height: 2.5rem;
-	@include media(min-height $mobile*1.5){
+	@media (min-height: #{$mobile * 1.5}) {
 		min-height: 4rem;
 	}
-	@include media(min-height $tablet*1.5){
+	@media (min-height: #{$tablet * 1.5}) {
 		min-height: 6rem;
 	}
-	@include media(min-height $max-width*1.5){
+	@media (min-height: #{$max-width * 1.5}) {
 		min-height: 7rem;
 	}
 }
 
 .margBotMedSpacer {
 	padding-bottom: 2.5rem;
-	@include media(min-height $mobile*1.5){
+	@media (min-height: #{$mobile * 1.5}) {
 		padding-bottom: 4rem;
 	}
-	@include media(min-height $tablet*1.5){
+	@media (min-height: #{$tablet * 1.5}) {
 		padding-bottom: 6rem;
 	}
-	@include media(min-height $max-width*1.5){
+	@media (min-height: #{$max-width * 1.5}) {
 		padding-bottom: 7rem;
 	}
 }
 
 .bigSpacer {
 	display: block;
-
 	min-height: 5rem;
-	@include media(min-height $mobile*1.5){
+	@media (min-height: #{$mobile * 1.5}) {
 		min-height: 8rem;
 	}
-	@include media(min-height $tablet*1.5){
+	@media (min-height: #{$tablet * 1.5}) {
 		min-height: 11rem;
 	}
-	@include media(min-height $max-width*1.5){
+	@media (min-height: #{$max-width * 1.5}) {
 		min-height: 14rem;
 	}
 }
 
 .margBotBigSpacer {
 	padding-bottom: 5rem;
-	@include media(min-height $mobile*1.5){
+	@media (min-height: #{$mobile * 1.5}) {
 		padding-bottom: 8rem;
 	}
-	@include media(min-height $tablet*1.5){
+	@media (min-height: #{$tablet * 1.5}) {
 		padding-bottom: 11rem;
 	}
-	@include media(min-height $max-width*1.5){
+	@media (min-height: #{$max-width * 1.5}) {
 		padding-bottom: 14rem;
 	}
 }
 
 
-
 .gridded {
-	@include outer-container;
-	.fullWidth { @include span-columns(12); }
-	@include threeWidthGrid;
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+
+	@media (max-width: #{$mobile * 1.2}) {
+		padding: 0 1rem;
+	}
+
+	.fullWidth { width: 100%; }
 }
 
 
@@ -291,10 +231,29 @@ hr {
 .introText {
 }
 
+/* Project thumbnail grid */
+
+.projects {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $spacing;
+}
+
 .projectEntry {
-	margin-bottom: $gutter/2;
-	@include bigThirds;
+	flex: 0 0 calc(25% - 0.75rem);   /* 4 columns: (100% - 3*1rem) / 4 */
 	overflow: hidden;
+
+	@media (max-width: #{$max-width * 1.2}) {
+		flex: 0 0 calc(33.333% - 0.667rem);   /* 3 columns */
+	}
+
+	@media (max-width: #{$tablet * 1.2}) {
+		flex: 0 0 calc(50% - 0.5rem);   /* 2 columns */
+	}
+
+	@media (max-width: #{$mobile * 1.2}) {
+		flex: 0 0 100%;   /* 1 column */
+	}
 
 	div {
 		position: relative;
@@ -304,10 +263,10 @@ hr {
 
 		.projName {
 			position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
-        padding: 1rem;
-        font-size: 0.8em;
-        background: none;
+            top: 0; bottom: 0; left: 0; right: 0;
+            padding: 1rem;
+            font-size: 0.8em;
+            background: none;
 			background: rgba(0,0,0,0.75);
 			color: white;
 
@@ -316,7 +275,7 @@ hr {
       }
 		}
 
-		@include media (max-width $mobile * 1.2) {
+		@media (max-width: #{$mobile * 1.2}) {
 			padding-bottom: 50%;
 			.projName {
 				font-size: 1.4em;
@@ -329,18 +288,17 @@ hr {
 }
 
 .csstransitions.no-touch .projectEntry {
-	@include filter(grayscale(100%));
-	@include transition(0.3s ease-out);
+	filter: grayscale(100%);
+	transition: 0.3s ease-out;
 
 	div .projName {
 		top: 100%;
-		@include transition(top 0.4s ease-in-out);
+		transition: top 0.4s ease-in-out;
 	}
 }
 
 .csstransitions.no-touch .projectEntry:hover {
-	@include filter(none);
-	// cursor: pointer;
+	filter: none;
 	div .projName {
 		top: 0;
 	}
@@ -351,16 +309,26 @@ hr {
 
 img.projCover, img.projImage {
     width: 100%;
-    margin-bottom: $gutter/2;
+    margin-bottom: $spacing;
+}
+
+.columnsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing;
+    margin-bottom: $spacing;
 }
 
 img.projColumns {
-    margin-bottom: $gutter/2;
-    @include projectTwoCols;
+    flex: 0 0 calc(50% - 0.5rem);   /* 2 columns: (100% - 1*1rem) / 2 */
+
+    @media (max-width: #{$tablet * 1.2}) {
+        flex: 0 0 100%;
+    }
 }
 
 .vidContainer {
-    margin-bottom: $gutter/2;
+    margin-bottom: $spacing;
 
     video {
       width: 100%;
@@ -413,7 +381,7 @@ img.projColumns {
     width: 49.5%;
     text-align: center;
 
-    @include media (max-width $mobile * 1.2) {
+    @media (max-width: #{$mobile * 1.2}) {
       width: 100%;
     }
 
@@ -523,7 +491,7 @@ img.projColumns {
 
 .no-touch.opacity.csstransforms.csstransitions #cvBody a {
     opacity: 1.0;
-    @include transition(opacity 0.5s linear);
+    transition: opacity 0.5s linear;
 
     &:hover {
         opacity: 0.5;
@@ -543,7 +511,7 @@ footer {
     font-size: 1.0rem;
     color: $footer-color;
 
-    @include media($tablet) {
+    @media (min-width: #{$tablet}) {
         font-size: 1.1rem;
     }
 
@@ -555,7 +523,7 @@ footer {
             color: $footer-color
         }
 
-        @include media($tablet) {
+        @media (min-width: #{$tablet}) {
             float: left;
             line-height: 1.8em;
             padding: 2rem 0rem 0.5rem 0rem;
@@ -566,14 +534,14 @@ footer {
         list-style: none;
         padding-right: 1em;
 
-        @include media($tablet) {
+        @media (min-width: #{$tablet}) {
             display: inline;
             text-align: left;
         }
     }
 
     .footer-secondary-links {
-        @include media($tablet) {
+        @media (min-width: #{$tablet}) {
             float: right;
         }
 
@@ -598,7 +566,7 @@ footer {
                 padding: 1px;
             }
 
-            @include media($tablet) {
+            @media (min-width: #{$tablet}) {
                 margin: 2rem 0 0 0;
                 float: right;
                 li {
@@ -616,7 +584,7 @@ footer {
 
     .socialLink {
         opacity: 0.6;
-        @include transition(opacity 0.5s linear);
+        transition: opacity 0.5s linear;
 
         &:hover {
             opacity: 1.0;
