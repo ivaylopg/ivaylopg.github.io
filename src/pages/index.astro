@@ -61,7 +61,7 @@ const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort()
         //// <a href="/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
       </p>
 
-      <div class="fullWidth projects margBotMedSpacer">
+      <div class="fullWidth projectGrid margBotMedSpacer">
         {allProjects.map(proj => (
           <div class={`projectEntry${(proj.data.tags ?? []).map((t: string) => ` ${t.toLowerCase()}`).join('')}`}>
             <a href={`/${idToSlug(proj.id)}`}>

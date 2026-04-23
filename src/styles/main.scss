@@ -233,15 +233,14 @@ hr {
 
 /* Project thumbnail grid */
 
-.projects {
+.projectGrid {
 	display: flex;
 	flex-wrap: wrap;
 	gap: $spacing;
 }
 
-.projectEntry {
+.projectGrid .projectEntry {
 	flex: 0 0 calc(25% - 0.75rem);   /* 4 columns: (100% - 3*1rem) / 4 */
-	overflow: hidden;
 
 	@media (max-width: #{$max-width * 1.2}) {
 		flex: 0 0 calc(33.333% - 0.667rem);   /* 3 columns */
@@ -254,6 +253,10 @@ hr {
 	@media (max-width: #{$mobile * 1.2}) {
 		flex: 0 0 100%;   /* 1 column */
 	}
+}
+
+.projectEntry {
+	overflow: hidden;
 
 	div {
 		position: relative;
