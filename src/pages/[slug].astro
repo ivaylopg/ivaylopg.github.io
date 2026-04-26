@@ -94,6 +94,20 @@ const isRecap = layout === 'recap';
               ))}
 
               {section.media && section.media.map((item: any) => <MediaItem item={item} />)}
+
+              {section.credits && (
+                <>
+                  <div class="medSpacer"></div>
+                  <div class='creditsTable'>
+                    {section.credits.map((credit: any) => (
+                      <span class='creditsRow'>
+                        <span class='left'>{credit.role}</span>
+                        <span class='right'>{credit.name}</span>
+                      </span>
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           ))}
         </>
