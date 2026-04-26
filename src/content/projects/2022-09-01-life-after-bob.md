@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Ian Cheng: Life After Bob"
+thumbnailTitle: "Ian Cheng: Life&nbsp;After&nbsp;Bob"
 tags:
   - Technical Director
   - Producer

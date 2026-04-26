@@ -18,6 +18,7 @@ const projects = defineCollection({
     headline: z.string().optional(),
     thumbnail: z.string().optional(),
     thumbnailGif: z.string().optional(),
+    thumbnailTitle: z.string().optional(),
     cover: z.any().optional(),
     media: z.array(z.any()).optional().default([]),
     sections: z.array(z.any()).optional().default([]),

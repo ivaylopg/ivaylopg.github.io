@@ -71,7 +71,7 @@ const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort()
                 data-thumbnailgif={proj.data.thumbnailGif}
               >
                 <div class="projName">
-                  {proj.data.title}<br />
+                  <span set:html={proj.data.thumbnailTitle ?? proj.data.title} /><br />
                   <span class="muchSmaller">
                     {(proj.data.tags ?? []).map((tag: string, i: number, arr: string[]) => (
                       <>{tag.toUpperCase()}{i < arr.length - 1 ? ' // ' : ''}</>
