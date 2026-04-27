@@ -331,6 +331,53 @@ img.projColumns {
     }
 }
 
+.twoUp {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    aspect-ratio: 16/9;
+    width: 100%;
+    margin-bottom: $spacing;
+
+    // Direct children: plain img or .imageWithCaption wrapper (added by caption JS)
+    > img,
+    > .imageWithCaption {
+        height: 100%;
+        width: auto;
+        flex: 0 0 auto;
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    // Portrait viewport: collapse to stacked
+    @media (orientation: portrait) {
+        flex-direction: column;
+        aspect-ratio: auto;
+
+        > img,
+        > .imageWithCaption {
+            width: 100%;
+            height: auto;
+
+            &:not(:last-child) {
+                margin-bottom: $spacing;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
 .vidContainer {
     margin-bottom: $spacing;
 

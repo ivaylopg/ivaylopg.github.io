@@ -14,7 +14,10 @@ const first = Array.isArray(item) ? item[0] : item;
 let type = 'unknown';
 let d: any = {};
 
-if (first && typeof first === 'object' && first.img) {
+if (first && typeof first === 'object' && first['two-up']) {
+  type = 'two-up';
+  d = { items: first['two-up'] };
+} else if (first && typeof first === 'object' && first.img) {
   type = 'captioned-image';
   d = first;
 } else if (typeof first === 'string' && first.includes('.m3u8')) {
@@ -96,5 +99,23 @@ if (first && typeof first === 'object' && first.img) {
     {d.items.map((src: string) => (
       <img src={src} class="projColumns" />
     ))}
+  </div>
+)}
+
+{type === 'two-up' && (
+  <div class="twoUp">
+    {d.items.map((subItem: any) => {
+      if (subItem && typeof subItem === 'object' && subItem.img) {
+        return (
+          <img
+            src={subItem.img}
+            class="twoUpImg captioned"
+            data-captionClasses={subItem.captionClasses}
+            data-caption={subItem.caption}
+          />
+        );
+      }
+      return <img src={subItem} class="twoUpImg" />;
+    })}
   </div>
 )}
