@@ -37,7 +37,7 @@ Drawing from a pool of over 300 entries, we selected [Jakob Kudsk Steensen](http
 ---
 
 
-<i>Danish artist Jakob Kudsk Steensen has been selected from over 350 entrants following a global open call to creative practitioners to propose new architectures and complex or unbuildable structures which imagine new futures of the city and possibilities of the urban landscape. This inaugural Serpentine commission, in collaboration with Google Arts & Culture will be available to be experienced in augmented reality at the Serpentine Galleries over the summer months, alongside the 2019 annual architecture Pavilion.</i>
+<i>Danish artist Jakob Kudsk Steensen has been selected from over 350 entrants following a global open call to creative practitioners to propose new architectures and complex or un-buildable structures which imagine new futures of the city and possibilities of the urban landscape. This inaugural Serpentine commission, in collaboration with Google Arts & Culture will be available to be experienced in augmented reality at the Serpentine Galleries over the summer months, alongside the 2019 annual architecture Pavilion.</i>
 
 <i>Kudsk Steensen’s commission, The Deep Listener, explores themes of extinction, preservation, and the emergence of new ecological realities. It takes as a starting point the ecosystems and the life in Kensington Gardens and Hyde Park, the areas surrounding the Serpentine Galleries – and some of London’s greenest spaces. Kudsk Steensen’s spatial exploration in augmented reality will take as its foundation the exploration of contemporary links between air pollutants, trees and declining bird and insect populations within parks and further afield across London.</i>
 

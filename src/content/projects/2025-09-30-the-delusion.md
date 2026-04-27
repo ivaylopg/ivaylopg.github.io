@@ -40,7 +40,7 @@ media:
   - /assets/projects/the-delusion/09.png
 ---
 
-*The Delusion* is an immersive video game installation by Danielle Brathwaite-Shirley, presented at the Serpentine Gallery in London from September 2025 to January 2026. Set in a fractured future called "Peace by Isolation," visitors play cooperatively using a set of bespoke physical controllers — navigating questions of polarisation, censorship, and social reconnection through participatory gameplay.
+*The Delusion* is an immersive video game installation by Danielle Brathwaite-Shirley, presented at the Serpentine Gallery in London from September 2025 to January 2026. Set in a fractured future called "Peace by Isolation," visitors play cooperatively using a set of bespoke physical controllers — navigating questions of polarization, censorship, and social reconnection through participatory gameplay.
 
 As part of my ongoing relationship with The Serpentine Galleries Arts Technologies team, I was asked to help research and prototype a number of custom game controllers across three games. Working from initial conceptual designs, I developed the electronics and firmware for three controller types: a **tilting table controller**, a controller built around the physical action of **opening and closing a door**, and four working **floor lamps** that functioned as joysticks. Each went through iterative prototyping before I delivered the final production electronics and mechanical components, which were then incorporated into their finished forms by **The White Wall Company.**
 
