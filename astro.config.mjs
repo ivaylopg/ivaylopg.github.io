@@ -6,9 +6,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   site: 'https://ivaylogetov.com',
+  server: {
+    host: true
+  },
   compressHTML: false,
   markdown: {
-    smartypants: false,
+    smartypants: false
   },
   vite: {
     css: {
