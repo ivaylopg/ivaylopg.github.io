@@ -416,13 +416,18 @@ img.projColumns {
     display: inline-block;
 
     &.creditsRow {
-      display: block;
-      padding-top: .2em;
+      display: flex;
+      align-items: baseline;
+      padding-top: .4em;
     }
 
     &.left {
       @extend .bolder;
-      width: auto;
+      flex: 0 0 auto;
+    }
+
+    &.right {
+      flex: 1;
     }
   }
 }

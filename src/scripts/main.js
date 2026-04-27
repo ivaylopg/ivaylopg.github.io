@@ -43,13 +43,6 @@ $(document).ready(function() {
 
   $(".creditsRow .left").css('width', credWidth + 10);
 
-  var nameWidth = 0;
-  $(".creditsRow .right").each(function(elements){
-    if (this.clientWidth > nameWidth) {
-      nameWidth = this.clientWidth;
-    }
-  })
-  $(".creditsRow .right").css('width', nameWidth + 10);
 
 });
 

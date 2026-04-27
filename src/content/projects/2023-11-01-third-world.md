@@ -22,6 +22,20 @@ media:
   - img: /assets/projects/third-world/02.jpg
     caption: "Hugo Glendinning. © Serpentine, London"
     captionClasses: "captionLight captionOut"
+sections:
+  - credits:
+      - role: Production Manager
+        name: Halime Özdemir
+      - role: Assistant Production Manager
+        name: Zsuzsa Benke
+      - role: Technical Director
+        name: Ivaylo Getov with on-site support from Gabriel Stones
+      - role: Set Design and Tech Biota
+        name: Furmaan Ahmed
+      - role: Set Design Assistants
+        name: Max Critchlow, Flint James Mcdonald, Ricardo Monteiro, Marta Stok, Hara Spyrou, Inga Tilda, and Sophie-Mai
+      - role: Technicians
+        name: Michael Ditchburn, Luca George, Eóin Keeley, Giacomo Layet, Anthony Silvester and Andy Wyatt
 ---
 
 *Third World — The Bottom Dimension* is a large-scale interactive installation by Gabriel Massan and collaborators, presented at Serpentine North Gallery in London from June to November 2023. Visitors entered an immersive multi-channel environment where a custom video game — displayed across a constellation of vertical screens and playable at sculptural controller stations — served as the primary vehicle for exploring themes of decoloniality, queerness, and Afro-diasporic experience.
@@ -30,18 +44,3 @@ As Technical Director, I oversaw all technical infrastructure for the exhibition
 
 The installation combined real-time game software, custom sculptural playstation enclosures, multi-channel audio, and a web3 component on the Tezos blockchain that allowed visitors to mint records of their gameplay as on-chain tokens — bridging the physical gallery experience with a persistent digital ledger.
 
----
-
-<div class='creditsTable'>
-<span class='creditsRow'><span class='left'>Production Manager</span><span class='right'>Halime Özdemir</span></span>
-
-<span class='creditsRow'><span class='left'>Assistant Production Manager</span><span class='right'>Zsuzsa Benke</span></span>
-
-<span class='creditsRow'><span class='left'>Technical Director</span><span class='right'>Ivaylo Getov with on-site support from Gabriel Stones</span></span>
-
-<span class='creditsRow'><span class='left'>Set Design and Tech Biota</span><span class='right'>Furmaan Ahmed</span></span>
-
-<span class='creditsRow'><span class='left'>Set Design Assistants</span><span class='right'>Max Critchlow, Flint James Mcdonald, Ricardo Monteiro, Marta Stok, Hara Spyrou, Inga Tilda, and Sophie-Mai</span></span>
-
-<span class='creditsRow'><span class='left'>Technicians</span><span class='right'>Michael Ditchburn, Luca George, Eóin Keeley, Giacomo Layet, Anthony Silvester and Andy Wyatt</span></span>
-</div>

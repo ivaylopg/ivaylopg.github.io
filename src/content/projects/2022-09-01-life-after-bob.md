@@ -8,58 +8,62 @@ tags:
   - Interactive
   - Real-Time
 priority: 0
-headline: Real-Time Animated Film with Interactive Worldwatching Mode
+headline: Real-Time Animated Film with Interactive "Worldwatching" Mode
 thumbnail: /assets/projects/life-after-bob/thumbnail.jpg
 cover: /assets/projects/life-after-bob/cover.jpg
 media:
-  - /assets/projects/life-after-bob/01.jpg
-  - /assets/projects/life-after-bob/02.jpg
-  - /assets/projects/life-after-bob/03.jpg
-  - /assets/projects/life-after-bob/04.jpg
+  - img: /assets/projects/life-after-bob/01.jpg
+    caption: "© Andrea Rossetti"
+    captionClasses: "captionLight captionOut"
+  - img: /assets/projects/life-after-bob/02.jpg
+    caption: "© Andrea Rossetti"
+    captionClasses: "captionLight captionOut"
+  - img: /assets/projects/life-after-bob/09.jpg
+    caption: "© Andrea Rossetti"
+    captionClasses: "captionLight captionOut"
+  - img: /assets/projects/life-after-bob/03.jpg
+    caption: "© Andrea Rossetti"
+    captionClasses: "captionLight captionOut"
+  - img: /assets/projects/life-after-bob/04.jpg
+    caption: "© Andrea Rossetti"
+    captionClasses: "captionLight captionOut"
   - https://www.youtube.com/embed/vCc2djR25hg
   - https://stream.mux.com/8d00pBmKsyQ6L008r026UpICmVhezPPfH015XymFeAzmpUU.m3u8
   - /assets/projects/life-after-bob/05.jpg
   - /assets/projects/life-after-bob/06.jpg
   - /assets/projects/life-after-bob/07.jpg
   - /assets/projects/life-after-bob/08.jpg
+sections:
+  - credits:
+      - role: Written & Directed by
+        name: Ian Cheng
+      - role: Produced by
+        name: Veronica So
+      - role: Technical Producer
+        name: Ivaylo Getov
+      - role: Animation Producer
+        name: Nick Sung
+      - role: Director of Photography
+        name: Eric Yue
+      - role: Editor
+        name: Jess Fulton
+      - role: Animation Supervisor
+        name: Valerie Scheiber
+      - role: Sound Design
+        name: Akritchalerm Kalayanamitr
+      - role: Music by
+        name: Brian Reitzell
+      - role:
+        name:
+      - role: '<a href="https://lifeafterbob.io/#credits" target="_blank" class="linkAnim">Full Credits</a>'
+        name:
 ---
 
-Life After Bob: The Chalice Study is an animated film by Ian Cheng, playing as a real-time simulation rather than a fixed recording. At the heart of the work is a "worldwatching" mode: visitors can pause any scene and tap on any character, artifact, or entity in the frame to explore its lore and mythology. The film premiered at The Shed in New York and subsequently showed at Light Art Space in Berlin and the Luma Foundation in Arles.
+Life After Bob: The Chalice Study is an animated film by Ian Cheng, playing as a real-time simulation rather than a fixed recording. Combining traditional keyframed animation with programmatic elements, the film uses the Unity Game engine in place of a static renderer, allowing the film to remain live and at times unpredictable while still being authored with the intentionality of a directed work.
 
-I served as Producer and Technical Director across the full production — from early development in early 2020 through the final installations in late 2022. The project ran almost entirely through the pandemic, which required building remote production pipelines capable of coordinating and sustaining a team of over eighty people across distributed locations without interruption.
+Complimenting the linear film, which is screened on a strict time schedule, there is also an open-ended "worldwatching" mode: visitors can use their own devices to pause any scene and tap on any character, artifact, or entity in the frame to explore its lore and mythology. The film premiered at the Luma Foundation in Arles and subsequently showed at The Shed in New York and Light Art Space in Berlin.
 
-On the technical side, I directly oversaw a twelve-person team working in Unity, integrating keyframe animation, procedural animation, live interaction, and performance capture workflows into a single coherent system. I designed hybrid pipelines that combined traditional animation production with real-time game engine simulation — allowing the film to remain live and nonlinear while still being authored with the intentionality of a directed work.
+I served as Producer and Technical Director across the full production — from early development in early 2020 through the final installations in late 2022. The project ran almost entirely through the pandemic, which required building remote production pipelines capable of coordinating and sustaining a team of over eighty people across the world without interruption. At one point our team covered a time-zone spread of 17 hours.
 
----
+On the technical side, I directly oversaw a twelve-person team working in Unity, integrating keyframe animation, procedural animation, live interaction, and performance capture workflows into a single coherent system.
 
-<div class='creditsTable'>
-<span class='creditsRow'><span class='left'>Written & Directed by</span>
-<span class='right'>Ian Cheng</span></span>
-
-<span class='creditsRow'><span class='left'>Produced by</span>
-<span class='right'>Veronica So</span></span>
-
-<span class='creditsRow'><span class='left'>Technical Producer</span>
-<span class='right'>Ivaylo Getov</span></span>
-
-<span class='creditsRow'><span class='left'>Animation Producer</span>
-<span class='right'>Nick Sung</span></span>
-
-<span class='creditsRow'><span class='left'>Director of Photography</span>
-<span class='right'>Eric Yue</span></span>
-
-<span class='creditsRow'><span class='left'>Editor</span>
-<span class='right'>Jess Fulton</span></span>
-
-<span class='creditsRow'><span class='left'>Animation Supervisor</span>
-<span class='right'>Valerie Scheiber</span></span>
-
-<span class='creditsRow'><span class='left'>Sound Design</span>
-<span class='right'>Akritchalerm Kalayanamitr</span></span>
-
-<span class='creditsRow'><span class='left'>Music by</span>
-<span class='right'>Brian Reitzell</span></span>
-
-<span class='creditsRow'><span class='left'></span>
-<span class='right'><a href="https://lifeafterbob.io/#credits" target="_blank" class="linkAnim">Full Credits</a></span></span>
-</div>

@@ -101,8 +101,8 @@ const isRecap = layout === 'recap';
                   <div class='creditsTable'>
                     {section.credits.map((credit: any) => (
                       <span class='creditsRow'>
-                        <span class='left'>{credit.role}</span>
-                        <span class='right'>{credit.name}</span>
+                        <span class='left' set:html={credit.role ?? ''} />
+                        <span class='right' set:html={credit.name ?? ''} />
                       </span>
                     ))}
                   </div>
