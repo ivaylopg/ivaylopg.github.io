@@ -16,7 +16,13 @@ let d: any = {};
 
 if (first && typeof first === 'object' && first['two-up']) {
   type = 'two-up';
-  d = { items: first['two-up'] };
+  const twoUp = first['two-up'];
+  // Array → current format; object with items/ratio → new format
+  if (Array.isArray(twoUp)) {
+    d = { items: twoUp, ratio: null };
+  } else {
+    d = { items: twoUp.items, ratio: twoUp.ratio ?? null };
+  }
 } else if (first && typeof first === 'object' && first.img) {
   type = 'captioned-image';
   d = first;
@@ -103,7 +109,7 @@ if (first && typeof first === 'object' && first['two-up']) {
 )}
 
 {type === 'two-up' && (
-  <div class="twoUp">
+  <div class="twoUp" style={d.ratio ? `aspect-ratio: ${d.ratio}` : undefined}>
     {d.items.map((subItem: any) => {
       if (subItem && typeof subItem === 'object' && subItem.img) {
         return (
