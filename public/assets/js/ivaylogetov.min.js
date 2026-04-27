@@ -132,14 +132,15 @@ function filterTags(tag) {
     restoreAllTags();
   } else {
     if ($(".tagHider").html() === "") {
-      $(".tagHider").html($(".projects").html())
+      $(".tagHider").html($(".projectGrid").html())
     }
-    $(".projects").html("");
+    $(".projectGrid").html("");
     setTagHeading(tag);
     setHash(tag)
     $(".tagHider .projectEntry").each(function(){
-      if ($(this).hasClass(tag)) {
-        $(this).clone().appendTo(".projects");
+      var tags = ($(this).attr('data-tags') || '').split(',');
+      if (tags.indexOf(tag) !== -1) {
+        $(this).clone().appendTo(".projectGrid");
       }
     });
   }
@@ -147,7 +148,7 @@ function filterTags(tag) {
 
 function restoreAllTags(){
   if ($(".tagHider").html() !== "") {
-    $(".projects").html($(".tagHider").html())
+    $(".projectGrid").html($(".tagHider").html())
   }
   removeHash();
 }

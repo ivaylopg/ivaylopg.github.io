@@ -22,7 +22,7 @@ const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort()
 
     <div class="fullWidth projectGrid margBotMedSpacer">
       {allProjects.map(proj => (
-        <div class={`projectEntry${(proj.data.tags ?? []).map((t: string) => ` ${t.toLowerCase()}`).join('')}`}>
+        <div class="projectEntry" data-tags={(proj.data.tags ?? []).map((t: string) => t.toLowerCase()).join(',')}>
           <a href={`/${idToSlug(proj.id)}`}>
             <div style={`background: url(${proj.data.thumbnail})`}>
               <div class="projName">
