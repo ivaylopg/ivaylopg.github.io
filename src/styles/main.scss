@@ -311,6 +311,31 @@ hr {
 
 /* project page */
 
+.projPageContent {
+    ul {
+        padding: 0;
+        padding-left: 1.5em;
+
+        li {
+            list-style: none;
+            padding-bottom: 0.4em;
+            position: relative;
+
+            &::before {
+                content: '\00B7';
+                position: absolute;
+                left: -.3em;
+                font-size: 3em;
+                line-height: .45;
+            }
+        }
+    }
+
+    p + ul {
+        margin-top: 0;
+    }
+}
+
 img.projCover, img.projImage {
     width: 100%;
     margin-bottom: $spacing;
