@@ -19,7 +19,15 @@ sections:
         source: Ryan Gander
   - media:
       - https://www.youtube.com/embed/EQMrFqfbIhQ
-      - /assets/projects/ryan-waiting/04.png
+      - two-up:
+            ratio: "16/9.7"
+            items:
+              - img: /assets/projects/ryan-waiting/04.jpg
+                caption: "© Ryan Gander"
+                captionClasses: "captionLight captionOut"
+              - img: /assets/projects/ryan-waiting/05.jpg
+                caption: "© Ryan Gander"
+                captionClasses: "captionLight captionOut"
   - heading: Performance Capture
     text: To make the avatar recognizably *Ryan*, the I set up an ad-hoc capture volume in the artist's studio in England, where the production spent five days in performance capture, filming Gander's every mannerism and idiosyncrasy. The goal was to capture the subtle aliveness of someone with nothing to do in the specific language of Ryan's own behavior.
   - pullquote:
