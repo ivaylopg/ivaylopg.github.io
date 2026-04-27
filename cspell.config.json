@@ -1,0 +1,58 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "files": ["src/content/**/*.md"],
+  "overrides": [
+    {
+      "filename": "**/*.md",
+      "ignoreRegExpList": [
+        "^---[\\s\\S]+?\\n---\\n",
+        "/assets/[^\\s\"']+",
+        "https?://[^\\s\"']+"
+      ]
+    }
+  ],
+  "words": [
+    "Abloh", "Adjaye", "Agencia", "Agustín", "Akritchalerm", "Amira", "Amit", "Andrés",
+    "animoji", "Apoyo", "Araujo", "Arder", "Arquitectura", "Axion", "Ayham",
+    "Baneham", "Behringer", "Belquer", "Benke", "Biagi", "Biennale", "Blackbox",
+    "Bobrowsky", "Boyes", "Brandan", "Brathwaite", "Bryson", "Burnell",
+    "Caco", "Cantalupo", "CATRIN", "Chvyakina", "Christo", "Clarys", "cofounder",
+    "Conceptualised", "Confidencial", "Corckle", "Creacíon", "Critchlow", "Cultura",
+    "Dalio", "DANI", "Dasha", "Davys", "decoloniality", "Deitch", "Dervisoglu",
+    "designboom", "diasporic", "Dickon", "Ditchburn", "Donaghey", "Donohue", "Duguid",
+    "École", "electricsheep", "Emre", "Eóin", "Eraso", "ERTÉ", "Eyeo",
+    "Fédérale", "Filmteractive", "FRAMERATES", "FRID", "Furmaan",
+    "Ganz", "GARCES", "Getov", "Ghraowi", "Giacomo", "geolocated", "Glendinning",
+    "GOELLER", "Grassi",
+    "hackathon", "hackathons", "Halime", "Hammoudi", "Hattar", "HAUSWIRTH",
+    "HEDSTROM", "HEMPEL", "Hiestand", "Hito", "Hoekstra", "Holmsen", "Hrefna", "Huyghe",
+    "icantmakeuloveu", "Ichi", "Imhof", "IMDB", "Inga", "Insta", "Institut", "Ivaylo", "Izzi",
+    "Jaden", "Jager", "Jakob", "Janzen", "Jazia",
+    "Kalayanamitr", "Keeley", "Kensington", "Kernaghan", "Keta", "keyframed",
+    "kickass", "Kinect", "Kittredge", "Koopman", "Kudsk", "Kunst", "Kuperstein",
+    "Laughlin", "Layet", "Lewin", "Lexx", "lifeform", "Litvin", "logline",
+    "Londonist", "Luca", "Luma", "luxloop", "Luxloop",
+    "Mandelstein", "markerless", "Martín", "Massan", "Medcraft", "MISHA",
+    "metahuman", "metaverse", "Miwa", "Moana", "Monteiro", "Moulinet", "Mustill",
+    "NDPC", "Nelder", "Netchaef", "Nerdist",
+    "OBEM", "Obrist", "Oxana", "Özdemir",
+    "Panaflex", "Peguero", "Peraza", "Perego", "photospheres", "phreatic", "Pinault",
+    "plantalogue", "Planz", "playthrough", "polarisation", "Polytechnique",
+    "Porrith", "Porrmann", "Projkete", "PSFK", "Pykett",
+    "Rafiee", "Ramkissoon", "Rania", "Realsense", "Rebecca", "Recio", "Refest",
+    "Reitzell", "respawn", "Rexach", "RGBD", "Rindal", "Rindon", "Robertis", "ROSSI",
+    "Sackler", "Sammut", "Scarpaci", "Scheiber", "Schipper", "Schümudde",
+    "SCORCA", "Scoville", "Seely", "Seitz", "Sempere", "Serafini", "Sigurðardóttir",
+    "Skulptur", "socialsound", "sonification", "sonified", "Sood", "soycubanamovie",
+    "Spyrou", "Steensen", "Steyerl", "Stisser", "Stok", "subwoofer", "Suhair",
+    "Suong", "SWINDOL", "synthesiser",
+    "Tanirgan", "Tennent", "Tezos", "throughline", "Tilda", "Tisch",
+    "TOONKEL", "trendhunter", "Tribeca", "Tseng",
+    "Ulrich", "unbuildable", "Ungar",
+    "Valia", "Vickers", "Vidas", "visualisation", "visualising", "Vizcaino",
+    "Weng", "Werkflow", "Witten", "Woodbury", "workstreams", "worldwatching",
+    "Yami", "Yana", "Yanghyun", "Yonca",
+    "Zack", "Zaitz", "Zeig", "Zsuzsa"
+  ]
+}

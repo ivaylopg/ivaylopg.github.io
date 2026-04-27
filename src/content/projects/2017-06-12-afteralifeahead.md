@@ -29,7 +29,7 @@ sections:
           captionClasses: "captionDark captionOut"
 ---
 <i>Pierre Huyghe - After ALife Ahead - 2017<br>
-Ice rink concrete floor; Sand, clay, phreatic water; Bacteria, algea, bee, chimera peacock; Aquarium, black switchable glass, conus textile; Incubator, human cancer cells; Genetic algorithm; Augemented reality; Automated ceiling structure; Rain; Ammoniac; Logic game.</i>
+Ice rink concrete floor; Sand, clay, phreatic water; Bacteria, algae, bee, chimera peacock; Aquarium, black switchable glass, conus textile; Incubator, human cancer cells; Genetic algorithm; Augmented reality; Automated ceiling structure; Rain; Ammoniac; Logic game.</i>
 
 Luxloop was approached to work with artist Pierre Huyghe on After ALife Ahead, the time-based bio-technical system he created for Skulptur Projkete Munster, an arts event that occurs every 10 years in Munster, Germany.
 

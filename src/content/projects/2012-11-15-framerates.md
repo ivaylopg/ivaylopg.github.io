@@ -17,7 +17,7 @@ media:
 ---
 FRAMERATES was a group show of video art and interactive art held for one weekend at the Brewery Arts Complex in downtown Los Angeles in November 2012.
 
-Frustrated by a lack of venues for experimental and interactive art, curators Ivaylo Getov and Jeremy Ungar decided to host their own event, free to the public, as a celebration of experiementation in screen-based media.
+Frustrated by a lack of venues for experimental and interactive art, curators Ivaylo Getov and Jeremy Ungar decided to host their own event, free to the public, as a celebration of experimentation in screen-based media.
 
 
 FEATURING WORK BY:
