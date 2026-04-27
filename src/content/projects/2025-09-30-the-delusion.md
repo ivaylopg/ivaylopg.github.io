@@ -33,6 +33,7 @@ media:
   - img: /assets/projects/the-delusion/06.jpg
     caption: "© Danielle Brathwaite-Shirley, photography: Hugo Glendinning"
     captionClasses: "captionLight captionOut"
+  - /assets/projects/the-delusion/12.png
   - /assets/projects/the-delusion/10.png
   - /assets/projects/the-delusion/11.png
   - /assets/projects/the-delusion/07.png

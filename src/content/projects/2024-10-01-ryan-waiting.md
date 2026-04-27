@@ -31,6 +31,8 @@ sections:
                 captionClasses: "captionLight captionOut"
   - heading: Performance Capture
     text: To make the avatar recognizably *Ryan*, the I set up an ad-hoc capture volume in the artist's studio in England, where the production spent five days in performance capture, filming Gander's every mannerism and idiosyncrasy. The goal was to capture the subtle aliveness of someone with nothing to do in the specific language of Ryan's own behavior.
+  - media:
+      - /assets/projects/ryan-waiting/07.jpg
   - pullquote:
       - text: "[The work] is a version of me. My Essence. Waiting for 100 years in an empty white landscape."
         source: Ryan Gander
@@ -87,4 +89,4 @@ sections:
 
 _Ryan Waiting_ is a work by artist Ryan Gander in which a digital avatar of the artist is designed to wait alone in a white void for one hundred years of real time. Accessible through a VR headset or installed in a surrounding halo of monitor screens, the avatar simply exists: idle, present, alive. At its core is an AI brain that self-writes in real time, choosing each movement, sigh, shift of weight, or glance into the distance. Doing so continuously and without interruption, whether or not anyone is watching.
 
-I served as Technical Producer on the project, commissioned by VIVE Arts in collaboration with Gander's studio. My role was to translate Gander's precise creative vision into a workable production structure — coordinating animators, modellers, riggers, and pipeline engineers working in parallel, and serving as the primary point of contact between the production team and the broader exhibition infrastructure. The brief from VIVE was to find someone who could ask the right questions at the intersection of artistic ambition and long-term technical complexity; that framing became the throughline of my involvement from early R&D through to final delivery.
+I served as Technical Producer on the project, commissioned by VIVE Arts in collaboration with Gander's studio. My role was to translate Gander's precise creative vision into a workable production structure — coordinating animators, modellers, riggers, and pipeline engineers working in parallel, and serving as the primary point of contact between the production team and the broader exhibition infrastructure. The brief from VIVE was to find someone who could ask the right questions at the intersection of artistic ambition and long-term technical complexity; that framing became the through  line of my involvement from early R&D through to final delivery.
