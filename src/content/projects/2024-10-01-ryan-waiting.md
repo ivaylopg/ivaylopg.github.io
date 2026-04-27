@@ -8,6 +8,7 @@ tags:
   - Interactive
   - VR
 priority: 0
+featured: true
 headline: Hundred-Year Real Time Simulation
 thumbnail: /assets/projects/ryan-waiting/thumbnail.jpg
 cover:

@@ -5,7 +5,7 @@
 @mixin fullBg {
 	background-repeat: no-repeat !important;
 	background-attachment: fixed;
-	background-position: center center !important;
+	background-position: var(--thumb-pos, center center) !important;
 	background-size: cover !important;
 }
 
@@ -288,6 +288,26 @@ hr {
 			}
 		}
 		@include fullBg;
+	}
+}
+
+.projectGrid .projectEntry.featuredEntry {
+	flex: 0 0 100%;
+
+	div {
+		padding-bottom: 25%;   /* matches 4-column height */
+
+		@media (max-width: #{$max-width * 1.2}) {
+			padding-bottom: 33.333%;   /* matches 3-column height */
+		}
+
+		@media (max-width: #{$tablet * 1.2}) {
+			padding-bottom: 50%;   /* matches 2-column height */
+		}
+
+		@media (max-width: #{$mobile * 1.2}) {
+			padding-bottom: 50%;   /* matches 1-column mobile height */
+		}
 	}
 }
 

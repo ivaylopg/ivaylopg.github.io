@@ -8,6 +8,7 @@ tags:
   - Interactive
   - Real-Time
 priority: 0
+featured: true
 headline: Real-Time Animated Film with Interactive "Worldwatching" Mode
 thumbnail: /assets/projects/life-after-bob/thumbnail.jpg
 cover: /assets/projects/life-after-bob/cover.jpg

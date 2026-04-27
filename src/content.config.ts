@@ -19,6 +19,7 @@ const projects = defineCollection({
     thumbnail: z.string().optional(),
     thumbnailGif: z.string().optional(),
     thumbnailTitle: z.string().optional(),
+    thumbnailPosition: z.string().optional(),
     cover: z.any().optional(),
     media: z.array(z.any()).optional().default([]),
     sections: z.array(z.any()).optional().default([]),
@@ -26,6 +27,7 @@ const projects = defineCollection({
     customcss: z.string().optional(),
     priority: z.number().optional(),
     hidden: z.boolean().optional().default(false),
+    featured: z.boolean().optional().default(false),
   }),
 });
 

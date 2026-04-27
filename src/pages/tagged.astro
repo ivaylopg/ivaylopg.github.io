@@ -7,7 +7,12 @@ function idToSlug(id: string): string {
 }
 
 const allProjects = (await getCollection('projects')).filter(p => !p.data.hidden);
-allProjects.sort((a, b) => b.id.localeCompare(a.id));
+allProjects.sort((a, b) => {
+  const fa = a.data.featured ? 1 : 0;
+  const fb = b.data.featured ? 1 : 0;
+  if (fb !== fa) return fb - fa;
+  return b.id.localeCompare(a.id);
+});
 
 const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort();
 ---
@@ -22,9 +27,9 @@ const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort()
 
     <div class="fullWidth projectGrid margBotMedSpacer">
       {allProjects.map(proj => (
-        <div class="projectEntry" data-tags={(proj.data.tags ?? []).map((t: string) => t.toLowerCase()).join(',')}>
+        <div class={`projectEntry${proj.data.featured ? ' featuredEntry' : ''}`} data-tags={(proj.data.tags ?? []).map((t: string) => t.toLowerCase()).join(',')}>
           <a href={`/${idToSlug(proj.id)}`}>
-            <div style={`background: url(${proj.data.thumbnail})`}>
+            <div style={`background: url(${proj.data.thumbnail})${proj.data.thumbnailPosition ? `; --thumb-pos: ${proj.data.thumbnailPosition}` : ''}`}>
               <div class="projName">
                 {proj.data.title}<br />
                 <span class="muchSmaller">
