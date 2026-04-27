@@ -1,13 +1,15 @@
 ---
 layout: project
-title: "Gabriel Massan & Collaborators: Third World — The Bottom Dimension"
+title: "Gabriel Massan: Third World — The Bottom Dimension"
+thumbnailTitle: "Gabriel Massan: Third&nbsp;World&nbsp;— The&nbsp;Bottom Dimension"
 tags:
   - Technical Director
   - Interactive
   - Installation
   - Real-Time
+  - Video Game
 priority: 0
-headline: Multi-Channel Interactive Installation, Serpentine North Gallery, London
+headline: Multi-Channel Interactive Installation
 thumbnail: /assets/projects/third-world/thumbnail.jpg
 cover:
   img: /assets/projects/third-world/cover.jpg

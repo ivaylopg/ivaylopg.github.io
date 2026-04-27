@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Ryan Gander: Ryan Waiting"
+thumbnailTitle: "Ryan Gander: Ryan&nbsp;Waiting"
 tags:
   - Producer
   - PixelsPixels

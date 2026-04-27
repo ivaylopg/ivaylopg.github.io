@@ -6,6 +6,7 @@ tags:
   - Installation
   - Hardware
   - Fabrication
+  - Video Game
 priority: 0
 headline: Custom Game Controllers
 thumbnail: /assets/projects/the-delusion/thumbnail.jpg
