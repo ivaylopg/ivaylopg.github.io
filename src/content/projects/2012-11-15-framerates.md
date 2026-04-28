@@ -8,10 +8,16 @@ thumbnail: /assets/projects/framerates/framerates.jpg
 cover: /assets/projects/framerates/03.jpg
 media:
   - /assets/projects/framerates/10.jpg
-  - /assets/projects/framerates/05.jpg,/assets/projects/framerates/06.jpg
+  - two-up:
+      items:
+        - /assets/projects/framerates/05.jpg
+        - /assets/projects/framerates/06.jpg
   - /assets/projects/framerates/12.jpg
   - /assets/projects/framerates/13.jpg
-  - /assets/projects/framerates/07.png,/assets/projects/framerates/09.png
+  - two-up:
+      items:
+        - /assets/projects/framerates/07.png
+        - /assets/projects/framerates/09.png
   - /assets/projects/framerates/04.jpg
   - /assets/projects/framerates/11.jpg
 ---

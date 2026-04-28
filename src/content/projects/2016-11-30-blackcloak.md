@@ -16,7 +16,10 @@ sections:
     - heading: Technical Direction
       text: As <i>Technology Director of Creative</i> at Luxloop, I was responsible for leading pre-visualization, implementing the projection mapping installation, developing a custom real-time media management and queueing solution, and creating some of the 3D graphics for the final run.
       media:
-        - /assets/projects/blackcloak/bcInsta1.jpg,/assets/projects/blackcloak/bcInsta2.jpg
+        - two-up:
+            items:
+              - /assets/projects/blackcloak/bcInsta1.jpg
+              - /assets/projects/blackcloak/bcInsta2.jpg
         - https://player.vimeo.com/video/262297780
         - /assets/projects/blackcloak/touch.png
         - /assets/projects/blackcloak/TempleShortSmall.gif

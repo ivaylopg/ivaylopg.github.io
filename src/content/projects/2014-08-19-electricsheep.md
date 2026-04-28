@@ -8,7 +8,10 @@ thumbnail: /assets/projects/sheep/sheep.jpg
 cover: /assets/projects/sheep/main.jpg
 media:
   - /assets/projects/sheep/05.png
-  - /assets/projects/sheep/04.png,/assets/projects/sheep/07.png
+  - two-up:
+      items:
+        - /assets/projects/sheep/04.png
+        - /assets/projects/sheep/07.png
   - /assets/projects/sheep/02.png
 ---
 

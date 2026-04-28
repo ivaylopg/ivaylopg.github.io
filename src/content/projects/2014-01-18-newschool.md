@@ -8,7 +8,10 @@ thumbnail: /assets/projects/newschool/steps.jpg
 cover: /assets/projects/newschool/01.png
 media:
   - https://player.vimeo.com/video/86762193
-  - /assets/projects/newschool/02.png,/assets/projects/newschool/03.png
+  - two-up:
+      items:
+        - /assets/projects/newschool/02.png
+        - /assets/projects/newschool/03.png
   - https://player.vimeo.com/video/140755964
 ---
 An interactive projection-mapped installation for the grand opening of the University Center at The New School, NY. In collaboration with [Imaginary Media](http://www.imaginary.media/) (Role: Interactive Developer)
