@@ -6,3 +6,20 @@ dist
 _site
 .claude
 .opencode
+
+# Generated JS (built from src/scripts/ or node_modules)
+public/assets/js/cube.min.js
+public/assets/js/ivaylogetov.min.js
+public/assets/js/tools.min.js
+public/assets/js/jquery.min.js
+public/assets/js/p5.min.js
+
+# Generated CSS (compiled from src/styles/)
+public/assets/css/main.css
+public/assets/css/main.css.map
+public/assets/css/cv.css
+public/assets/css/cv.css.map
+public/assets/css/cube.css
+public/assets/css/cube.css.map
+public/assets/css/recap.css
+public/assets/css/recap.css.map
