@@ -369,10 +369,11 @@ img.projCover, img.projImage {
 }
 
 img.projColumns {
-    flex: 0 0 calc(50% - 0.5rem);   /* 2 columns: (100% - 1*1rem) / 2 */
+    width: calc(50% - 0.5rem);
+    height: auto;
 
     @media (max-width: #{$tablet * 1.2}) {
-        flex: 0 0 100%;
+        width: 100%;
     }
 }
 
