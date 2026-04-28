@@ -7,6 +7,7 @@ tags:
   - Hardware
   - Fabrication
   - Video Game
+  - Serpentine
 priority: 0
 headline: Custom Game Controllers
 thumbnail: /assets/projects/the-delusion/thumbnail.jpg

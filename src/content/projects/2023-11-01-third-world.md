@@ -8,6 +8,7 @@ tags:
   - Installation
   - Real-Time
   - Video Game
+  - Serpentine
 priority: 0
 headline: Multi-Channel Interactive Installation
 thumbnail: /assets/projects/third-world/thumbnail.jpg
