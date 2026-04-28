@@ -9,6 +9,7 @@ cover: /assets/projects/sheep/main.jpg
 media:
   - /assets/projects/sheep/05.png
   - two-up:
+      ratio: "16/5.25"
       items:
         - /assets/projects/sheep/04.png
         - /assets/projects/sheep/07.png

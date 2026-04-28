@@ -9,12 +9,14 @@ cover: /assets/projects/framerates/03.jpg
 media:
   - /assets/projects/framerates/10.jpg
   - two-up:
+      ratio: "16/5.25"
       items:
         - /assets/projects/framerates/05.jpg
         - /assets/projects/framerates/06.jpg
   - /assets/projects/framerates/12.jpg
   - /assets/projects/framerates/13.jpg
   - two-up:
+      ratio: "16/11.8"
       items:
         - /assets/projects/framerates/07.png
         - /assets/projects/framerates/09.png

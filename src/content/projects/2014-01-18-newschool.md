@@ -9,6 +9,7 @@ cover: /assets/projects/newschool/01.png
 media:
   - https://player.vimeo.com/video/86762193
   - two-up:
+      ratio: "16/10.4"
       items:
         - /assets/projects/newschool/02.png
         - /assets/projects/newschool/03.png
