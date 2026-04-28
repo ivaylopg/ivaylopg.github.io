@@ -9,71 +9,6 @@ var mousePrevTime;
 var tinyCube = false;
 var transformProp = 'transform';
 
-// $(document).ready(function() {
-  if ($("#theBlackBox").length) {
-
-    if (window.innerWidth < 500) {
-        tinyCube = true;
-        Cube.resize(window.innerWidth);
-    }
-
-    if (Modernizr.touch) {
-      Cube.autoRotate = true;
-      // Disable CSS transition for RAF-driven auto-rotate
-      $('.cube')[0].style.transition = 'none';
-
-      var touchEl = $(".cube");
-      touchEl.on("touchstart", function(e){
-        if($(e.target).is('a, iframe')) {
-            return true;
-        }
-        e.stopPropagation();
-        touchEl.addClass("pulse");
-        setTimeout(function(){
-          touchEl.removeClass("pulse");
-        }, 2000);
-      });
-
-      var drawPrevTime;
-      function draw(timestamp){
-        if (!drawPrevTime) drawPrevTime = timestamp;
-        var deltaTime = timestamp - drawPrevTime;
-        drawPrevTime = timestamp;
-        Cube.viewport.move(deltaTime);
-        animId = requestAnimationFrame(draw);
-      }
-      animId = requestAnimationFrame(draw);
-    }
-
-  }
-// });
-
-localResizers.push(function() {
-  if ($("#theBlackBox").length) {
-    var winWidth = window.innerWidth;
-    if (winWidth < 500) {
-      tinyCube = true;
-    } else {
-      if (tinyCube === true) {
-        tinyCube = false;
-        Cube.resize(0);
-      }
-    }
-    if (Cube !== undefined) {
-      Cube.viewCenter = {
-        x: winWidth/2,
-        y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
-      };
-
-      if (tinyCube) {
-        Cube.resize(winWidth);
-      }
-    }
-  }
-
-});
-
-
 
 /* * * *
   This kickass css/js rotating cube is inspired by a post by Paul Hayes (http://paulrhayes.com),
@@ -101,17 +36,7 @@ var Cube = {
 };
 
 Cube.viewport = {
-    posVector: new Vector2d(Cube.startX, Cube.startY),
-    el: $('.cube')[0],
-    move: function(deltaTime) {
-        // Used for touch auto-rotate only
-        var dt = Math.min(deltaTime || 16.67, 50) / 16.67;
-        this.posVector.y += (Cube.spinSpeed/2) * dt;
-        if (this.posVector.y >= Cube.startY+(36000)) {
-            this.posVector.y = Cube.startY;
-        }
-        this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
-    }
+    el: $('.cube')[0]
 };
 
 Cube.resize = function(winWidth){
@@ -122,7 +47,7 @@ Cube.resize = function(winWidth){
     if (winWidth === 0) {
         $(".cube").removeAttr("style");
         $(".cube div").removeAttr("style");
-        $('.cube')[0].style[transformProp] = "rotateX("+Cube.viewport.posVector.x+"deg) rotateY("+Cube.viewport.posVector.y+"deg)";
+        $('.cube')[0].style[transformProp] = "rotateX("+Cube.currentX+"deg) rotateY("+Cube.currentY+"deg)";
     } else {
         var ratio = (winWidth/500);
         ratio = ratio.clamp(0.75,1.0);
@@ -177,6 +102,65 @@ function mouseLerpLoop(timestamp) {
 
     mouseAnimId = requestAnimationFrame(mouseLerpLoop);
 }
+
+
+// $(document).ready(function() {
+  if ($("#theBlackBox").length) {
+
+    if (window.innerWidth < 500) {
+        tinyCube = true;
+        Cube.resize(window.innerWidth);
+    }
+
+    if (Modernizr.touch) {
+      Cube.autoRotate = true;
+
+      var drawPrevTime;
+      function touchLoop(timestamp) {
+        if (!drawPrevTime) drawPrevTime = timestamp;
+        var deltaTime = timestamp - drawPrevTime;
+        drawPrevTime = timestamp;
+        var dt = Math.min(deltaTime || 16.67, 50) / 16.67;
+
+        Cube.currentY += (Cube.spinSpeed / 2) * dt;
+        if (Cube.currentY >= Cube.startY + 36000) {
+          Cube.currentY = Cube.startY;
+        }
+
+        Cube.viewport.el.style[transformProp] = "rotateX("+Cube.currentX+"deg) rotateY("+Cube.currentY+"deg)";
+        animId = requestAnimationFrame(touchLoop);
+      }
+      animId = requestAnimationFrame(touchLoop);
+    }
+
+  }
+// });
+
+localResizers.push(function() {
+  if ($("#theBlackBox").length) {
+    var winWidth = window.innerWidth;
+    if (winWidth < 500) {
+      tinyCube = true;
+    } else {
+      if (tinyCube === true) {
+        tinyCube = false;
+        Cube.resize(0);
+      }
+    }
+    if (Cube !== undefined) {
+      Cube.viewCenter = {
+        x: winWidth/2,
+        y: $("#theBlackBox").offset().top + ($("#theBlackBox").height()/2)
+      };
+
+      if (tinyCube) {
+        Cube.resize(winWidth);
+      }
+    }
+  }
+
+});
+
 
 $("#theBlackBox").mouseenter(function(e){
     $(document).on('mousemove.cube', function(event) {
