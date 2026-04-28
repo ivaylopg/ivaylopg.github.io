@@ -1,0 +1,76 @@
+---
+import { getEntry } from 'astro:content';
+import Default from '../layouts/Default.astro';
+
+const entry = await getEntry('cv', 'cv');
+let html: string = (entry as any)?.rendered?.html ?? '';
+
+// Greeting
+html = html.replace(
+  /<p>(<strong>Hello\.<\/strong>)<\/p>/,
+  '<p class="greeting">$1</p>'
+);
+
+// Project headers: <p><strong>Title — Venue</strong>\nRole (dates)</p>
+// Remark renders soft line breaks as \n in the HTML source; inject <br>
+html = html.replace(
+  /<p>(<strong>[^<]+<\/strong>)\n([^\n<])/g,
+  '<p class="project-header">$1<br>\n$2'
+);
+
+// Project descriptions: <p><em>...</em></p>
+html = html.replace(
+  /<p>(<em>[\s\S]+?<\/em>)<\/p>/g,
+  '<p class="project-desc">$1</p>'
+);
+
+// Skills section: extract rows and build a table
+const SKILLS_HEADING = '<p><strong>Skills</strong></p>';
+const skillsIdx = html.indexOf(SKILLS_HEADING);
+if (skillsIdx !== -1) {
+  const before = html.slice(0, skillsIdx);
+  const rest = html.slice(skillsIdx + SKILLS_HEADING.length);
+
+  // Skills block ends at the next <hr> or <h2>
+  const endMatch = rest.search(/<hr|<h2/);
+  const skillsContent = endMatch !== -1 ? rest.slice(0, endMatch) : rest;
+  const after = endMatch !== -1 ? rest.slice(endMatch) : '';
+
+  const rows: string[] = [];
+  const rowRegex = /<p><strong>([^<]+)<\/strong>\s*[—–-]+\s*([\s\S]+?)<\/p>/g;
+  let m: RegExpExecArray | null;
+  while ((m = rowRegex.exec(skillsContent)) !== null) {
+    rows.push(`<tr><td class="sk-label">${m[1]}</td><td class="sk-value">${m[2]}</td></tr>`);
+  }
+
+  const table = `<div class="skills-section">
+  <table class="skills-table"><tbody>
+    <tr class="skills-heading"><td class="sk-label">Skills</td><td></td></tr>
+    ${rows.join('\n    ')}
+  </tbody></table>
+</div>`;
+
+  html = before + table + after;
+}
+---
+
+<Default title="CV" customcss="cv.css">
+  <div id="cvBody">
+    <section class="gridded">
+      <div class="fullWidth projects">
+        <div class="bigSpacer"></div>
+
+        <Fragment set:html={html} />
+
+        <div class="bigSpacer"></div>
+
+        <p>
+          <a href="#" class="linkAnim scrollLink">back to top</a><br />
+          <a href="/" class="linkAnim">back to main</a>
+        </p>
+
+        <div class="medSpacer"></div>
+      </div>
+    </section>
+  </div>
+</Default>

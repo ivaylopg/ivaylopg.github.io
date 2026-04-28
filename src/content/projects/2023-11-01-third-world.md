@@ -1,0 +1,47 @@
+---
+layout: project
+title: "Gabriel Massan: Third World — The Bottom Dimension"
+thumbnailTitle: "Gabriel Massan: Third&nbsp;World&nbsp;— The&nbsp;Bottom Dimension"
+tags:
+  - Technical Director
+  - Interactive
+  - Installation
+  - Real-Time
+  - Video Game
+  - Serpentine
+priority: 0
+headline: Multi-Channel Interactive Installation
+thumbnail: /assets/projects/third-world/thumbnail.jpg
+cover:
+  img: /assets/projects/third-world/cover.jpg
+  caption: "Hugo Glendinning. © Serpentine, London"
+  captionClasses: "captionLight captionOut"
+media:
+  - img: /assets/projects/third-world/01.jpg
+    caption: "Hugo Glendinning. © Serpentine, London"
+    captionClasses: "captionLight captionOut"
+  - img: /assets/projects/third-world/02.jpg
+    caption: "Hugo Glendinning. © Serpentine, London"
+    captionClasses: "captionLight captionOut"
+sections:
+  - credits:
+      - role: Production Manager
+        name: Halime Özdemir
+      - role: Assistant Production Manager
+        name: Zsuzsa Benke
+      - role: Technical Director
+        name: Ivaylo Getov with on-site support from Gabriel Stones
+      - role: Set Design and Tech Biota
+        name: Furmaan Ahmed
+      - role: Set Design Assistants
+        name: Max Critchlow, Flint James Mcdonald, Ricardo Monteiro, Marta Stok, Hara Spyrou, Inga Tilda, and Sophie-Mai
+      - role: Technicians
+        name: Michael Ditchburn, Luca George, Eóin Keeley, Giacomo Layet, Anthony Silvester and Andy Wyatt
+---
+
+*Third World — The Bottom Dimension* is a large-scale interactive installation by Gabriel Massan and collaborators, presented at Serpentine North Gallery in London from June to November 2023. Visitors entered an immersive multi-channel environment where a custom video game — displayed across a constellation of vertical screens and playable at sculptural controller stations — served as the primary vehicle for exploring themes of decoloniality, queerness, and Afro-diasporic experience.
+
+As Technical Director, I oversaw all technical infrastructure for the exhibition, coordinating with the production team, AV vendors, and on-site technicians across the installation's full run. I was responsible for the integration of multiple display systems and the game hardware into a cohesive physical environment, working closely with the set designers to embed the technology within the organic, entangled aesthetic of the space.
+
+The installation combined real-time game software, custom sculptural playstation enclosures, multi-channel audio, and a web3 component on the Tezos blockchain that allowed visitors to mint records of their gameplay as on-chain tokens — bridging the physical gallery experience with a persistent digital ledger.
+

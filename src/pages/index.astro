@@ -1,0 +1,95 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Default from '../layouts/Default.astro';
+import { execSync } from 'child_process';
+
+const lastCommitDate = execSync('git log -1 --format="%ai"').toString().trim();
+const lastUpdated = new Date(lastCommitDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+
+const introEntry = await getEntry('intro', 'intro');
+let introHtml: string = (introEntry as any)?.rendered?.html ?? '';
+
+// First paragraph "Hello." → <h1>
+introHtml = introHtml.replace('<p>Hello.</p>', '<h1>Hello.</h1>');
+// External links: add target="_blank"
+introHtml = introHtml.replace(
+  /<a href="http/g,
+  '<a target="_blank" href="http'
+);
+// Add linkAnim to all links
+introHtml = introHtml.replace(/<a /g, '<a class="bolder linkAnim" ');
+// scrollLink for anchor links
+introHtml = introHtml.replace(
+  /class="bolder linkAnim" href="#/g,
+  'class="bolder linkAnim scrollLink" href="#'
+);
+
+function idToSlug(id: string): string {
+  return id.replace(/^\d{4}-\d{2}-\d{2}-/, '');
+}
+
+const allProjects = (await getCollection('projects')).filter(p => !p.data.hidden);
+// Sort by date descending — id starts with YYYY-MM-DD
+allProjects.sort((a, b) => {
+  const fa = a.data.featured ? 1 : 0;
+  const fb = b.data.featured ? 1 : 0;
+  if (fb !== fa) return fb - fa;
+  return b.id.localeCompare(a.id);
+});
+
+// Collect all unique tags across all projects
+const allTags = [...new Set(allProjects.flatMap(p => p.data.tags ?? []))].sort();
+---
+
+<Default bodyClass="homePage">
+  <section class="gridded">
+    <div class="introText fullWidth frontCover">
+      <div class="bigSpacer"></div>
+      <Fragment set:html={introHtml} />
+      <p class="muchSmaller"><em>last updated {lastUpdated}</em></p>
+    </div>
+
+    <div class="introText fullWidth">
+      <div class="medSpacer"></div>
+
+      <div class="fullWidth" id="theProjects">
+        <h1>Recent Work<span class="tagHeading"></span></h1>
+      </div>
+
+      <p class="muchSmaller projectTags margBotMedSpacer">
+        {allTags.map((tag, i) => (
+          <>
+            <a href={`/tagged#${tag.toLowerCase()}`} class="linkAnim tagLink">{tag.toUpperCase()}</a>
+            {' // '}
+          </>
+        ))}
+        //// <a href="/tagged" class="linkAnim tagLink">ALL PROJECTS</a>
+      </p>
+
+      <div class="fullWidth projectGrid margBotMedSpacer">
+        {allProjects.map(proj => (
+          <div class={`projectEntry${proj.data.featured ? ' featuredEntry' : ''}`} data-tags={(proj.data.tags ?? []).map((t: string) => t.toLowerCase()).join(',')}>
+            <a href={`/${idToSlug(proj.id)}`}>
+              <div
+                class="projEntryBackground"
+                style={`background: url(${proj.data.thumbnail})${proj.data.thumbnailPosition ? `; --thumb-pos: ${proj.data.thumbnailPosition}` : ''}`}
+                data-thumbnailgif={proj.data.thumbnailGif}
+              >
+                <div class="projName">
+                  <span set:html={proj.data.thumbnailTitle ?? proj.data.title} /><br />
+                  <span class="muchSmaller">
+                    {(proj.data.tags ?? []).map((tag: string, i: number, arr: string[]) => (
+                      <>{tag.toUpperCase()}{i < arr.length - 1 ? ' // ' : ''}</>
+                    ))}
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="tagHider"></div>
+    </div>
+  </section>
+</Default>

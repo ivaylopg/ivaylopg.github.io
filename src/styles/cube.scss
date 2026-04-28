@@ -1,0 +1,107 @@
+@charset "utf-8";
+@import "partials/global";
+
+$initialScale: 0.7;
+$opacity: 0.75;
+
+@keyframes pulse {
+    from { opacity: $opacity; }
+    20% { opacity: 1.0; }
+    30% { opacity: 1.0; }
+    to { opacity: $opacity; }
+}
+
+// ANIMATE THE COLOR WHEN ACTIVE
+
+#theBlackBox {
+    width: 100%;
+    background-color: #ccc;
+    perspective: 1500px;
+    perspective-origin: 50% 200px;
+    transform: scale($initialScale, $initialScale);
+    background: none;
+    padding-top: 120px;
+    height: 600px;
+    margin: 0em;
+    margin-top: -8rem;
+
+    @media (max-width: #{$tablet * 1.2}) {
+        transform: scale($initialScale * 0.8, $initialScale * 0.8);
+        margin-top: -9rem;
+        margin-bottom: -5rem;
+    }
+
+    @media (max-width: #{$tablet}) {
+        transform: scale($initialScale * 0.7, $initialScale * 0.7);
+        margin-top: -11rem;
+        margin-bottom: -6rem;
+    }
+
+    @media (max-width: #{$mobile}) {
+        transform: scale($initialScale * 0.8, $initialScale * 0.8);
+        margin-top: -11rem;
+    }
+
+    margin-right: 0em !important;
+}
+
+.cube {
+    position: relative;
+    margin: 0 auto 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(45deg);
+    height: 400px;
+    width: 400px;
+}
+
+.cube > div {
+    position: absolute;
+    height: 360px;
+    width: 360px;
+    padding: 20px;
+    box-sizing: content-box !important;
+    background-color: #0a0a0a;
+    border: 4px solid #333;
+    border-radius: 8px;
+}
+
+.no-touch.opacity .cube > div {
+  opacity: $opacity;
+  transition: opacity 1.0s ease-out;
+}
+
+.no-touch.opacity #theBlackBox:hover .cube > div {
+  opacity: 1.0;
+}
+
+.touch.opacity .cube > div {
+  opacity: $opacity;
+}
+
+.touch.opacity .cube.pulse > div {
+  animation: pulse 2.0s linear 1;
+}
+
+.cube > div:first-child {
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.cube > div:nth-child(2) {
+    transform: translateZ(200px);
+}
+
+.cube > div:nth-child(3) {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.cube > div:nth-child(4) {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.cube > div:nth-child(5) {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.cube > div:nth-child(6) {
+    transform: rotateX(-90deg) rotate(180deg) translateZ(200px);
+}

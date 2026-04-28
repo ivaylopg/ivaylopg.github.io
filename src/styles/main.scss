@@ -1,0 +1,699 @@
+@charset "utf-8";
+@import "partials/global";
+
+
+@mixin fullBg {
+	background-repeat: no-repeat !important;
+	background-attachment: fixed;
+	background-position: var(--thumb-pos, center center) !important;
+	background-size: cover !important;
+}
+
+@font-face {font-family: 'helveticaLight'; src: local('Helvetica'); font-weight: 100;}
+@font-face {font-family: 'helveticaRegular'; src: local('Helvetica'); font-weight: 500;}
+
+$hiliteColor: #b3d4fc;
+$bgColor : #fff;
+$textColor: #000;
+$fontStack1:	"FiraSansUL", "helveticaLight", sans-serif;
+$fontStack2:	"FiraSansB", "helveticaRegular", sans-serif;
+
+$defaultWeight: 500;
+
+$footer-background: $bgColor;
+$footer-color: $textColor;
+$footer-link-color: rgba($footer-color, 0.4);
+
+@import "partials/bpDefaults";
+/* ========================================================================== */
+
+body, html {
+	font-size: 100%;
+	background: $bgColor;
+}
+
+html.page-loading body {
+	opacity: 0;
+}
+
+body {
+	transition: opacity 1.5s linear;
+}
+
+body {
+	color: $textColor;
+	font-family: $fontStack1;
+	font-weight: $defaultWeight;
+	font-size: 1.75rem;
+
+	@media (max-width: #{$max-width * 1.2}) {
+		font-size: 1.5rem;
+	}
+	@media (max-width: #{$tablet}) {
+		font-size: 1.2rem;
+	}
+}
+
+section {
+	position: relative;
+}
+
+h1 {
+	@extend .bolder;
+	font-size: 1.3em;
+}
+
+h2 {
+    @extend .bolder;
+    font-size: 1em;
+}
+
+a {
+	position: relative;
+	color: $textColor;
+	text-decoration: none;
+}
+
+//From http://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+.no-touch a.linkAnim:hover {
+	text-decoration: underline;
+}
+.csstransforms.csstransitions a.linkAnim {
+	text-decoration: none;
+}
+
+.csstransforms.csstransitions a.linkAnim:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px !important;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all 0.3s ease-out 0s;
+}
+
+.csstransforms.csstransitions.no-touch a.linkAnim:hover:before {
+	visibility: visible;
+	transform: scaleX(1);
+}
+//////
+
+
+.bolder, strong {
+	font-family: $fontStack2;
+	font-weight: $defaultWeight + 100;
+}
+
+.smaller {
+	font-size: 0.8em;
+}
+
+.muchSmaller {
+	font-size: 0.7em;
+    @media (min-width: #{$tablet}) {
+        font-size: 0.5em;
+    }
+}
+
+.italic {
+  font-style: italic;
+}
+
+hr {
+  width: 50%;
+  margin: 50px auto;
+  background: black;
+  height: 1px;
+}
+
+.spacer {
+	display: block;
+	min-height: 1rem;
+}
+
+.medSpacer {
+	display: block;
+	min-height: 2.5rem;
+	@media (min-height: #{$mobile * 1.5}) {
+		min-height: 4rem;
+	}
+	@media (min-height: #{$tablet * 1.5}) {
+		min-height: 6rem;
+	}
+	@media (min-height: #{$max-width * 1.5}) {
+		min-height: 7rem;
+	}
+}
+
+.margBotMedSpacer {
+	padding-bottom: 2.5rem;
+	@media (min-height: #{$mobile * 1.5}) {
+		padding-bottom: 4rem;
+	}
+	@media (min-height: #{$tablet * 1.5}) {
+		padding-bottom: 6rem;
+	}
+	@media (min-height: #{$max-width * 1.5}) {
+		padding-bottom: 7rem;
+	}
+}
+
+.bigSpacer {
+	display: block;
+	min-height: 5rem;
+	@media (min-height: #{$mobile * 1.5}) {
+		min-height: 8rem;
+	}
+	@media (min-height: #{$tablet * 1.5}) {
+		min-height: 11rem;
+	}
+	@media (min-height: #{$max-width * 1.5}) {
+		min-height: 14rem;
+	}
+}
+
+.margBotBigSpacer {
+	padding-bottom: 5rem;
+	@media (min-height: #{$mobile * 1.5}) {
+		padding-bottom: 8rem;
+	}
+	@media (min-height: #{$tablet * 1.5}) {
+		padding-bottom: 11rem;
+	}
+	@media (min-height: #{$max-width * 1.5}) {
+		padding-bottom: 14rem;
+	}
+}
+
+
+.gridded {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+
+	@media (max-width: #{$mobile * 1.2}) {
+		padding: 0 1rem;
+	}
+
+	.fullWidth { width: 100%; }
+}
+
+
+.noSpaceDown {
+	margin-bottom: 0em;
+}
+
+.noSpaceDown + * {
+	margin-top: 0em;
+}
+
+.noSpaceUp {
+	margin-top: 0em;
+}
+
+#nodeField {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.frontCover {
+	min-height: 100vh;
+}
+
+.introText {
+}
+
+/* Project thumbnail grid */
+
+.projectGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $spacing;
+}
+
+.projectGrid .projectEntry {
+	flex: 0 0 calc(25% - 0.75rem);   /* 4 columns: (100% - 3*1rem) / 4 */
+
+	@media (max-width: #{$max-width * 1.2}) {
+		flex: 0 0 calc(33.333% - 0.667rem);   /* 3 columns */
+	}
+
+	@media (max-width: #{$tablet * 1.2}) {
+		flex: 0 0 calc(50% - 0.5rem);   /* 2 columns */
+	}
+
+	@media (max-width: #{$mobile * 1.2}) {
+		flex: 0 0 100%;   /* 1 column */
+	}
+}
+
+.projectEntry {
+	overflow: hidden;
+
+	div {
+		position: relative;
+		width: 100%;
+		padding-bottom: 100%;
+		overflow: hidden;
+
+		.projName {
+			position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+            font-size: 0.8em;
+            background: none;
+			background: rgba(0,0,0,0.75);
+			color: white;
+
+      span {
+        display: block;
+      }
+		}
+
+		@media (max-width: #{$mobile * 1.2}) {
+			padding-bottom: 50%;
+			.projName {
+				font-size: 1.4em;
+				background: none;
+				background: rgba(0,0,0,0.5);
+			}
+		}
+		@include fullBg;
+	}
+}
+
+.projectGrid .projectEntry.featuredEntry {
+	flex: 0 0 100%;
+
+	div {
+		padding-bottom: 25%;   /* matches 4-column height */
+
+		@media (max-width: #{$max-width * 1.2}) {
+			padding-bottom: 33.333%;   /* matches 3-column height */
+		}
+
+		@media (max-width: #{$tablet * 1.2}) {
+			padding-bottom: 50%;   /* matches 2-column height */
+		}
+
+		@media (max-width: #{$mobile * 1.2}) {
+			padding-bottom: 50%;   /* matches 1-column mobile height */
+		}
+	}
+}
+
+.csstransitions.no-touch .projectEntry {
+	filter: grayscale(100%);
+	transition: 0.3s ease-out;
+
+	div .projName {
+		top: 100%;
+		transition: top 0.4s ease-in-out;
+	}
+}
+
+.csstransitions.no-touch .projectEntry:hover {
+	filter: none;
+	div .projName {
+		top: 0;
+	}
+}
+
+
+/* project page */
+
+.projPageContent {
+    ul {
+        padding: 0;
+        padding-left: 1.5em;
+
+        li {
+            list-style: none;
+            padding-bottom: 0.4em;
+            position: relative;
+
+            &::before {
+                content: '\00B7';
+                position: absolute;
+                left: -.3em;
+                font-size: 3em;
+                line-height: .45;
+            }
+        }
+    }
+
+    p + ul {
+        margin-top: 0;
+    }
+}
+
+img.projCover, img.projImage {
+    width: 100%;
+    margin-bottom: $spacing;
+}
+
+.columnsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing;
+    margin-bottom: $spacing;
+}
+
+img.projColumns {
+    flex: 0 0 calc(50% - 0.5rem);   /* 2 columns: (100% - 1*1rem) / 2 */
+
+    @media (max-width: #{$tablet * 1.2}) {
+        flex: 0 0 100%;
+    }
+}
+
+.twoUp {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    aspect-ratio: 16/9;
+    width: 100%;
+    margin-bottom: $spacing;
+
+    // Direct children: plain img or .imageWithCaption wrapper (added by caption JS)
+    > img,
+    > .imageWithCaption {
+        height: 100%;
+        width: auto;
+        flex: 0 0 auto;
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    // Portrait viewport: collapse to stacked
+    @media (orientation: portrait) {
+        flex-direction: column;
+        aspect-ratio: auto;
+
+        > img,
+        > .imageWithCaption {
+            width: 100%;
+            height: auto;
+
+            &:not(:last-child) {
+                margin-bottom: $spacing;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.vidContainer {
+    margin-bottom: $spacing;
+
+    video {
+      width: 100%;
+    }
+}
+
+.creditsTable {
+  span {
+    display: inline-block;
+
+    &.creditsRow {
+      display: flex;
+      align-items: baseline;
+      padding-top: .4em;
+    }
+
+    &.left {
+      @extend .bolder;
+      flex: 0 0 auto;
+    }
+
+    &.right {
+      flex: 1;
+    }
+  }
+}
+
+.pullQuote {
+  @extend .italic;
+  padding-left: 1rem;
+  border-left: .5rem solid #ccc;
+  margin-left: 3rem;
+  text-align: justify;
+}
+
+.pullQuoteSource {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  margin-top: 3rem;
+  margin-right: 3rem;
+  @extend .bolder;
+
+  &::before {
+    content: "\2014";
+  }
+}
+
+.creditsAlt {
+  width: 84%;
+  margin: 0 auto;
+
+  .credit {
+    display: inline-block;
+    width: 49.5%;
+    text-align: center;
+
+    @media (max-width: #{$mobile * 1.2}) {
+      width: 100%;
+    }
+
+    .role, .personnel {
+      width: 100%;
+    }
+
+    .role {
+      @extend .bolder;
+    }
+
+    .personnel {
+      p {
+        margin: 0;
+      }
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* Tag Filtering Stuff */
+.tagHider {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.imageWithCaption {
+
+  .captionElement {
+    &, &.captionIn, &.captionRight, &.captionDark {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 6px;
+      color: #111;
+      z-index: 2;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    &.captionLeft {
+      right: initial;
+      left: 4px;
+    }
+
+    &.captionCenter {
+      right: initial;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.captionOut {
+      bottom: 0px;
+      &.captionRight {
+        right: 4px;
+      }
+    }
+
+    &.captionLight {
+      color: #777;
+    }
+  }
+
+  margin-bottom: 3rem;
+}
+
+/* CV page */
+
+#cvBody {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+
+    ul {
+      padding: 0;
+      padding-left: 1.5em;
+
+      li {
+        list-style: none;
+        padding-bottom: 0.5em;
+        position: relative;
+
+        &::before {
+          content: '\2022';
+          position: absolute;
+          left: -1em;
+        }
+      }
+    }
+
+    p + ul {
+      margin-top: 0;
+    }
+}
+
+#cvBody a {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+    }
+}
+
+.no-touch.opacity.csstransforms.csstransitions #cvBody a {
+    opacity: 1.0;
+    transition: opacity 0.5s linear;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+
+/* footer */
+
+footer {
+    background: none;
+    padding: 1.8rem 0rem;
+    width: 100%;
+    display: inline-block;
+
+    position: relative;
+    font-size: 1.0rem;
+    color: $footer-color;
+
+    @media (min-width: #{$tablet}) {
+        font-size: 1.1rem;
+    }
+
+    ul {
+        line-height: 1.5em;
+        padding: 0;
+
+        a {
+            color: $footer-color
+        }
+
+        @media (min-width: #{$tablet}) {
+            float: left;
+            line-height: 1.8em;
+            padding: 2rem 0rem 0.5rem 0rem;
+        }
+    }
+
+    ul li {
+        list-style: none;
+        padding-right: 1em;
+
+        @media (min-width: #{$tablet}) {
+            display: inline;
+            text-align: left;
+        }
+    }
+
+    .footer-secondary-links {
+        @media (min-width: #{$tablet}) {
+            float: right;
+        }
+
+        ul.footer-social {
+            margin: 0.5rem 0 4rem 0;
+            padding-top: 1em;
+
+            li {
+                font-size: 1.1em;
+                float: left;
+                line-height: 0;
+                margin: 0;
+                padding-right: 0.7em;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+
+            img {
+                height: 1.5em;
+                padding: 1px;
+            }
+
+            @media (min-width: #{$tablet}) {
+                margin: 2rem 0 0 0;
+                float: right;
+                li {
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}
+
+.no-touch.opacity.csstransforms.csstransitions footer {
+    a.linkAnim:before {
+        background-color: $footer-color;
+    }
+
+    .socialLink {
+        opacity: 0.6;
+        transition: opacity 0.5s linear;
+
+        &:hover {
+            opacity: 1.0;
+        }
+    }
+}
+
+
+/* ========================================================================== */
+@import "partials/helpers";
+@import "partials/print";

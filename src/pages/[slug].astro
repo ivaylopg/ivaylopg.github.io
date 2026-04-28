@@ -1,0 +1,124 @@
+---
+import { getCollection, render } from 'astro:content';
+import Default from '../layouts/Default.astro';
+import MediaItem from '../components/MediaItem.astro';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projects')).filter(p => !p.data.hidden);
+  return projects.map(entry => ({
+    params: { slug: entry.id.replace(/^\d{4}-\d{2}-\d{2}-/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const {
+  title,
+  tags = [],
+  headline,
+  cover,
+  media = [],
+  sections = [],
+  customjs,
+  customcss,
+  layout,
+} = entry.data;
+
+const uniqueTags = [...new Set(tags)];
+const isRecap = layout === 'recap';
+---
+
+<Default title={title} bodyClass="projectPage" customcss={customcss} customjs={customjs}>
+  <section class="gridded">
+    <div class={`fullWidth projects${isRecap ? ' recap' : ''}`}>
+      <div class="bigSpacer"></div>
+
+      <h1>{title}</h1>
+
+      <p>
+        <span class="muchSmaller">
+          {uniqueTags.map((tag: string, i: number, arr: string[]) => (
+            <>
+              <a href={`/tagged#${tag.toLowerCase()}`} class="linkAnim">{tag.toUpperCase()}</a>
+              {i < arr.length - 1 && ' //'}
+            </>
+          ))}
+        </span>
+      </p>
+
+      <p>{headline}</p>
+
+      {!isRecap && (
+        <>
+          <div class="spacer"></div>
+
+          {cover && <MediaItem item={cover} isCover={true} />}
+
+          <div class="spacer"></div>
+        </>
+      )}
+
+      <div class="projPageContent">
+        <Content />
+      </div>
+
+      {!isRecap && (
+        <>
+          <div class="spacer"></div>
+
+          {media.map((item: any) => <MediaItem item={item} />)}
+
+          {sections.map((section: any) => (
+            <>
+              {section.heading && (
+                <>
+                  <div class="medSpacer"></div>
+                  <h2>{section.heading}</h2>
+                </>
+              )}
+
+              {section.text && (
+                <>
+                  <div class="projPageContent" set:html={section.text} />
+                  <div class="medSpacer"></div>
+                </>
+              )}
+
+              {section.pullquote && section.pullquote.map((part: any) => (
+                <>
+                  <div class="pullQuote" set:html={part.text} />
+                  <div class="pullQuoteSource" set:html={part.source} />
+                  <div class="medSpacer"></div>
+                </>
+              ))}
+
+              {section.media && section.media.map((item: any) => <MediaItem item={item} />)}
+
+              {section.credits && (
+                <>
+                  <div class="medSpacer"></div>
+                  <div class='creditsTable'>
+                    {section.credits.map((credit: any) => (
+                      <span class='creditsRow'>
+                        <span class='left' set:html={credit.role ?? ''} />
+                        <span class='right' set:html={credit.name ?? ''} />
+                      </span>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          ))}
+        </>
+      )}
+
+      <p>
+        <a href="#" class="linkAnim scrollLink">back to top</a><br />
+        <a href="/" class="linkAnim">back to main</a>
+      </p>
+
+      <div class="medSpacer"></div>
+    </div>
+  </section>
+</Default>

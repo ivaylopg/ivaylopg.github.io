@@ -1,0 +1,127 @@
+---
+interface Props {
+  item: any;
+  isCover?: boolean;
+}
+
+const { item, isCover = false } = Astro.props;
+const mainClass = isCover ? 'projCover' : 'projImage';
+
+// Normalize: if cover is passed as an array, unwrap the first element for
+// the captioned-image and video cases (mirrors Jekyll's .first filter).
+const first = Array.isArray(item) ? item[0] : item;
+
+let type = 'unknown';
+let d: any = {};
+
+if (first && typeof first === 'object' && first['two-up']) {
+  type = 'two-up';
+  const twoUp = first['two-up'];
+  // Array → current format; object with items/ratio → new format
+  if (Array.isArray(twoUp)) {
+    d = { items: twoUp, ratio: null };
+  } else {
+    d = { items: twoUp.items, ratio: twoUp.ratio ?? null };
+  }
+} else if (first && typeof first === 'object' && first.img) {
+  type = 'captioned-image';
+  d = first;
+} else if (typeof first === 'string' && first.includes('.m3u8')) {
+  type = 'hls';
+  d = { src: first };
+} else if (typeof first === 'string' && first.includes('youtube.com/embed')) {
+  type = 'youtube';
+  d = { src: first };
+} else if (typeof first === 'string' && first.includes('vimeo')) {
+  type = 'vimeo';
+  d = { src: first };
+} else if (first && typeof first === 'object' && typeof first.video === 'string' && first.video.includes('mp4')) {
+  type = 'video';
+  d = first;
+} else if (typeof first === 'string' && !isCover && first.includes(',')) {
+  type = 'columns';
+  d = { items: first.split(',').map((s: string) => s.trim()) };
+} else if (typeof first === 'string') {
+  type = 'image';
+  d = { src: first };
+}
+---
+
+{type === 'captioned-image' && (
+  <img
+    src={d.img}
+    class={`${mainClass} captioned`}
+    data-captionClasses={d.captionClasses}
+    data-caption={d.caption}
+  />
+)}
+
+{type === 'image' && (
+  <img src={d.src} class={mainClass} />
+)}
+
+{type === 'hls' && (
+  <div class="fullWidth vidContainer">
+    <video class="hlsVideo" controls src={d.src} data-hls-src={d.src}>
+      <source src={d.src} type="application/x-mpegURL" />
+    </video>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+    <script is:inline>
+      (function() {
+        var videos = document.querySelectorAll('.hlsVideo');
+        videos.forEach(function(video) {
+          var src = video.getAttribute('data-hls-src');
+          if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(src);
+            hls.attachMedia(video);
+          } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = src;
+          }
+        });
+      })();
+    </script>
+  </div>
+)}
+
+{type === 'youtube' && (
+  <div class="fullWidth vidContainer">
+    <iframe src={d.src} width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+)}
+
+{type === 'vimeo' && (
+  <div class="fullWidth vidContainer">
+    <iframe src={d.src} width="500" height="281" frameborder="0" allowfullscreen></iframe>
+  </div>
+)}
+
+{type === 'video' && (
+  <img src={d.cover} class={`${mainClass} makeVid`} data-vid={d.video} />
+)}
+
+{type === 'columns' && (
+  <div class="columnsContainer">
+    {d.items.map((src: string) => (
+      <img src={src} class="projColumns" />
+    ))}
+  </div>
+)}
+
+{type === 'two-up' && (
+  <div class="twoUp" style={d.ratio ? `aspect-ratio: ${d.ratio}` : undefined}>
+    {d.items.map((subItem: any) => {
+      if (subItem && typeof subItem === 'object' && subItem.img) {
+        return (
+          <img
+            src={subItem.img}
+            class="twoUpImg captioned"
+            data-captionClasses={subItem.captionClasses}
+            data-caption={subItem.caption}
+          />
+        );
+      }
+      return <img src={subItem} class="twoUpImg" />;
+    })}
+  </div>
+)}
