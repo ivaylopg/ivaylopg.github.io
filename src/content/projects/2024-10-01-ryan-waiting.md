@@ -38,7 +38,7 @@ sections:
       - text: "[The work] is a version of me. My Essence. Waiting for 100 years in an empty white landscape."
         source: Ryan Gander
   - heading: Hundred-Year Ambition
-    text: While capturing Ryan's essence in performance was a core challenge, it was ultimately a problem with a known solution. Much less certain was how to guarntee a hundred-year continuity. Much of the early R&D centered not just on believability but on the project's ability to survive unknown technological developments. I favored foundational internet infrastructure (JavaScript and WebSockets) over complex frameworks, minimizing dependencies, in the hope that the architecture would still be reliable decades from now. Questions of digital preservation and long-term stewardship shaped every decision about how the work was built.
+    text: While capturing Ryan's essence in performance was a core challenge, it was ultimately a problem with a known solution. Much less certain was how to guarantee a hundred-year continuity. Much of the early R&D centered not just on believability but on the project's ability to survive unknown technological developments. I favored foundational internet infrastructure (JavaScript and WebSockets) over complex frameworks, minimizing dependencies, in the hope that the architecture would still be reliable decades from now. Questions of digital preservation and long-term stewardship shaped every decision about how the work was built.
   - media:
       - /assets/projects/ryan-waiting/thumbnail.jpg
       - /assets/projects/ryan-waiting/03.jpg

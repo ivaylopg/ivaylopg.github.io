@@ -4,7 +4,10 @@
 /* global localResizers */
 
 var animId;
+var mouseAnimId;
+var mousePrevTime;
 var tinyCube = false;
+var transformProp = 'transform';
 
 // $(document).ready(function() {
   if ($("#theBlackBox").length) {
@@ -15,26 +18,32 @@ var tinyCube = false;
     }
 
     if (Modernizr.touch) {
-      //console.log("touch enabled device");
       Cube.autoRotate = true;
-      var el = $(".cube");
-      el.on("touchstart", function(e){
+      // Disable CSS transition for RAF-driven auto-rotate
+      $('.cube')[0].style.transition = 'none';
+
+      var touchEl = $(".cube");
+      touchEl.on("touchstart", function(e){
         if($(e.target).is('a, iframe')) {
             return true;
         }
         e.stopPropagation();
-        el.addClass("pulse");
+        touchEl.addClass("pulse");
         setTimeout(function(){
-          el.removeClass("pulse");
+          touchEl.removeClass("pulse");
         }, 2000);
       });
-    }
 
-    function draw(){
-      Cube.viewport.move();
+      var drawPrevTime;
+      function draw(timestamp){
+        if (!drawPrevTime) drawPrevTime = timestamp;
+        var deltaTime = timestamp - drawPrevTime;
+        drawPrevTime = timestamp;
+        Cube.viewport.move(deltaTime);
+        animId = requestAnimationFrame(draw);
+      }
       animId = requestAnimationFrame(draw);
     }
-    animId = requestAnimationFrame(draw);
 
   }
 // });
@@ -73,15 +82,6 @@ localResizers.push(function() {
   intead of WebGL is his too.
  * * * */
 
-var el = document.createElement('div'),
-    transformProps = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
-    transformProp = support(transformProps);
-
-/* var transitionDuration = 'transitionDuration WebkitTransitionDuration MozTransitionDuration OTransitionDuration msTransitionDuration'.split(' '),
-    transitionDurationProp = support(transitionDuration); //*/
-
-
-
 var Cube = {
     startX: -20.0,
     startY: 45.0,
@@ -89,6 +89,10 @@ var Cube = {
     yRange: 35.0,
     spinSpeed: 0.2,
     autoRotate: false,
+    currentX: -20.0,
+    currentY: 45.0,
+    targetX: -20.0,
+    targetY: 45.0,
     viewport: {},
     viewCenter: {
         x: window.innerWidth/2,
@@ -98,35 +102,15 @@ var Cube = {
 
 Cube.viewport = {
     posVector: new Vector2d(Cube.startX, Cube.startY),
-    targVector: new Vector2d(Cube.startX, Cube.startY),
-    speed: Cube.spinSpeed,
     el: $('.cube')[0],
-    update: function(coords) {
-        if(coords && (typeof coords.x === "number" && typeof coords.y === "number")) {
-            this.targVector.x = coords.x.clamp(Cube.startX-Cube.xRange, Cube.startX+Cube.xRange);
-            this.targVector.y = coords.y.clamp(Cube.startY-Cube.yRange, Cube.startY+Cube.yRange);
-        }
-        //console.log(Math.floor(coords.x),Math.floor(coords.y));
-    },
-    move: function() {
-        if (!Cube.autoRotate){
-            var dirVector = new Vector2d(this.targVector.x - this.posVector.x, this.targVector.y - this.posVector.y);
-            if (dirVector.mag() > this.speed) {
-                 dirVector.setMag(this.speed);
-            }
-            this.posVector.add(dirVector);
-        } else {
-            this.posVector.y += Cube.spinSpeed/2;
-        }
-
-
+    move: function(deltaTime) {
+        // Used for touch auto-rotate only
+        var dt = Math.min(deltaTime || 16.67, 50) / 16.67;
+        this.posVector.y += (Cube.spinSpeed/2) * dt;
         if (this.posVector.y >= Cube.startY+(36000)) {
             this.posVector.y = Cube.startY;
         }
         this.el.style[transformProp] = "rotateX("+this.posVector.x+"deg) rotateY("+this.posVector.y+"deg)";
-    },
-    reset: function() {
-        this.update({x: Cube.startX, y: Cube.startY});
     }
 };
 
@@ -141,7 +125,7 @@ Cube.resize = function(winWidth){
         $('.cube')[0].style[transformProp] = "rotateX("+Cube.viewport.posVector.x+"deg) rotateY("+Cube.viewport.posVector.y+"deg)";
     } else {
         var ratio = (winWidth/500);
-        ratio.clamp(0.75,1.0);
+        ratio = ratio.clamp(0.75,1.0);
 
         $(".cube").css({
             "height": 400 * ratio + "px",
@@ -164,38 +148,61 @@ Cube.resize = function(winWidth){
 };
 
 
+// Proportional lerp loop for mouse tracking.
+// Moves a fraction of remaining distance each frame — never overshoots,
+// naturally decelerates as it approaches target. Factor of 0.05 per 16.67ms
+// frame means ~1.5s to visually settle at target.
+function mouseLerpLoop(timestamp) {
+    if (!mousePrevTime) mousePrevTime = timestamp;
+    var deltaTime = timestamp - mousePrevTime;
+    mousePrevTime = timestamp;
+
+    var dt = Math.min(deltaTime || 16.67, 50) / 16.67;
+    // Delta-time correct lerp factor — consistent feel at 60Hz and 120Hz
+    var factor = 1 - Math.pow(1 - 0.05, dt);
+
+    Cube.currentX += (Cube.targetX - Cube.currentX) * factor;
+    Cube.currentY += (Cube.targetY - Cube.currentY) * factor;
+
+    Cube.viewport.el.style[transformProp] = "rotateX("+Cube.currentX+"deg) rotateY("+Cube.currentY+"deg)";
+
+    // Stop loop once cube has settled
+    if (Math.abs(Cube.targetX - Cube.currentX) < 0.01 && Math.abs(Cube.targetY - Cube.currentY) < 0.01) {
+        Cube.currentX = Cube.targetX;
+        Cube.currentY = Cube.targetY;
+        mouseAnimId = null;
+        mousePrevTime = null;
+        return;
+    }
+
+    mouseAnimId = requestAnimationFrame(mouseLerpLoop);
+}
+
 $("#theBlackBox").mouseenter(function(e){
-    $(document).on('mousemove', function(event) {
-        event.preventDefault();
-        $('#theBlackBox').trigger('move-viewport', {x: event.pageX, y: event.pageY});
+    $(document).on('mousemove.cube', function(event) {
+        var movementScaleFactor = 10;
+        Cube.targetX = (Cube.startX + (Cube.viewCenter.y - event.pageY) / movementScaleFactor)
+            .clamp(Cube.startX - Cube.xRange, Cube.startX + Cube.xRange);
+        Cube.targetY = (Cube.startY - (Cube.viewCenter.x - event.pageX) / movementScaleFactor)
+            .clamp(Cube.startY - Cube.yRange, Cube.startY + Cube.yRange);
+
+        if (!mouseAnimId) {
+            mousePrevTime = null;
+            mouseAnimId = requestAnimationFrame(mouseLerpLoop);
+        }
     });
 });
 
 $("#theBlackBox").mouseleave(function(e){
-    Cube.viewport.reset();
-    $(document).off('mousemove');
-});
+    $(document).off('mousemove.cube');
+    Cube.targetX = Cube.startX;
+    Cube.targetY = Cube.startY;
 
-
-
-$('#theBlackBox').on('move-viewport', function(e, movedMouse) {
-    var movementScaleFactor = 4;
-
-    Cube.viewport.update({
-        x: Cube.viewport.posVector.x + parseInt((Cube.viewCenter.y - movedMouse.y)/movementScaleFactor),
-        y: Cube.viewport.posVector.y - parseInt((Cube.viewCenter.x - movedMouse.x)/movementScaleFactor)
-    });
-
-    //console.log("mouse: ", movedMouse.x,movedMouse.y, "viewCenter: ", viewCenter.x, viewCenter.y, "offset: ", $("#theBlackBox").offset().top, "scroll: ", $(window).scrollTop(), "height: ", $("#theBlackBox").height());
-});
-
-function support(props) {
-    for(var i = 0, l = props.length; i < l; i++) {
-        if(typeof el.style[props[i]] !== "undefined") {
-            return props[i];
-        }
+    if (!mouseAnimId) {
+        mousePrevTime = null;
+        mouseAnimId = requestAnimationFrame(mouseLerpLoop);
     }
-}
+});
 
 
 //Extend JS with clamp function
